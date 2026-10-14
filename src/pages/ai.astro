@@ -1,0 +1,57 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+---
+<Base title="AI i drift" description="Praktisk og sikker AI for små og mellemstore virksomheder. DataMatrix bruger selv AI-agenter i driften — altid med et menneske, der godkender.">
+  <div class="wrap page-hero">
+    <div class="eyebrow">AI i drift</div>
+    <h1>AI, der arbejder for jer. <span class="serif">Under opsyn.</span></h1>
+    <p class="lead">Der bliver talt meget om AI. Vi bruger det hver dag i vores egen drift — og vi ved, hvor gevinsten er, og hvor faldgruberne er.</p>
+  </div>
+
+  <section style="padding-top:20px">
+    <div class="wrap split">
+      <div>
+        <h2>Sådan bruger vi selv AI</h2>
+        <p>Hos DataMatrix arbejder AI-agenter som assistenter. De gennemgår overvågning og alarmer, skriver udkast til dokumentation, tilbud og mails og holder styr på opgaverne.</p>
+        <p><b>Men intet sendes, ændres eller købes, uden at et menneske har sagt ja.</b> Den grundregel tager vi med ud til jer.</p>
+      </div>
+      <div class="card accent">
+        <h3>Vores fire spilleregler for AI</h3>
+        <ul class="checklist">
+          <li><b>Mennesket bestemmer.</b> AI foreslår, en medarbejder godkender.</li>
+          <li><b>Data bliver, hvor de hører til.</b> Vi ved, hvad AI har adgang til — og hvad den ikke har.</li>
+          <li><b>Alt kan efterprøves.</b> Handlinger logges, så man kan se, hvad der er sket.</li>
+          <li><b>Start småt.</b> Én konkret opgave, der virker, før den næste.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head"><h2>Det kan vi hjælpe jer med</h2><p>Vi kommer fra infrastruktur og sikkerhed. Derfor starter vi med fundamentet — ikke med hypen.</p></div>
+      <div class="cards">
+        <div class="card"><h3>Klar til Copilot</h3><p>Copilot kan se det, brugeren kan se. Vi rydder op i rettigheder og deling i Microsoft 365, så AI ikke finder det, den ikke skal.</p></div>
+        <div class="card"><h3>Automatisering af rutiner</h3><p>Gentagne opgaver i drift og administration, som AI kan forberede, så jeres folk kun skal godkende.</p></div>
+        <div class="card"><h3>Spilleregler og ansvar</h3><p>Hvilke værktøjer må bruges, til hvad, og med hvilke data? Vi hjælper med enkle, brugbare retningslinjer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Ofte stillede spørgsmål</h2>
+      <h3>Er det ikke kun for store virksomheder?</h3>
+      <p>Nej. Små virksomheder har ofte mest at vinde, fordi hver time tæller. Det vigtige er at vælge de rigtige opgaver.</p>
+      <h3>Er vores data sikre?</h3>
+      <p>Det afhænger af, hvordan løsningen er sat op. Derfor starter vi altid med at se på, hvilke data AI kan få adgang til, og hvem der kan se hvad.</p>
+      <h3>Hvor starter vi?</h3>
+      <p>Med en snak om jeres hverdag. Ofte er første skridt en gennemgang af Microsoft 365 og et par konkrete opgaver, der kan lettes.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cta"><div><h2>Nysgerrig på, hvad AI kan gøre for jer?</h2><p>Ingen buzzwords — bare en ærlig snak om, hvad der giver mening.</p></div><a class="btn" href={site.phoneHref}>Ring {site.phone}</a></div>
+  </div>
+</Base>

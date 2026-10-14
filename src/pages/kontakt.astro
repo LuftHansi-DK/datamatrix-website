@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+---
+<Base title="Kontakt" description="Kontakt DataMatrix: ring +45 2026 1188 eller skriv til kontakt@datamatrix.dk.">
+  <div class="wrap page-hero">
+    <div class="eyebrow">Kontakt</div>
+    <h1>Ring, skriv — eller <span class="serif">kom forbi</span></h1>
+    <p class="lead">Vi står stort set altid klar til at hjælpe med kort varsel. Og vi kommer gerne forbi til en uforpligtende snak.</p>
+  </div>
+  <div class="wrap contact-grid">
+    <div class="card"><h3>Telefon</h3><p><a href={site.phoneHref}>{site.phone}</a></p><p class="muted">Den hurtigste vej — også når det haster.</p></div>
+    <div class="card"><h3>E-mail</h3><p><a href={`mailto:${site.email}`}>{site.email}</a></p><p class="muted">Til spørgsmål, tilbud og alt, der ikke brænder.</p></div>
+    <div class="card"><h3>Adresse</h3><p>{site.legalName}<br />{site.street}<br />{site.city}<br />CVR {site.cvr}</p></div>
+  </div>
+  <div class="wrap" style="margin-top:28px"><p class="note">Er I allerede kunde og har brug for hjælp på skærmen? <a href="/fjernsupport/">Gå til fjernsupport →</a></p></div>
+</Base>

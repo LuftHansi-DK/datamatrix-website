@@ -1,0 +1,138 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import Mark from "../components/Mark.astro";
+import site from "../data/site.json";
+const years = new Date().getFullYear() - site.founded;
+const services = [
+  ["pulse", "Drift og overvågning", "Vi holder øje med servere, klienter og backup og griber ind, før småfejl bliver til nedetid."],
+  ["shield", "IT-sikkerhed", "Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer — sikkerhed som en rød tråd, ikke et tilkøb."],
+  ["backup", "Backup og beredskab", "Backup der er testet, og en plan for den dag, det går galt. Disaster recovery er et af vores specialer."],
+  ["cloud", "Microsoft 365 og cloud", "Mail, Teams, SharePoint og Azure sat op rigtigt — og den rette balance mellem sky og lokalt."],
+  ["server", "Servere, netværk og virtualisering", "Design og drift af infrastruktur, der kører stabilt år efter år. Vi leverer også hardware og licenser."],
+];
+---
+<Base description="DataMatrix er senior IT-partner for små og mellemstore virksomheder: drift, sikkerhed, backup, Microsoft 365, infrastruktur og AI brugt med omtanke. Siden 2004.">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Senior IT-partner · siden {site.founded}</div>
+        <h1>IT der bare virker. Og en partner, der <em class="serif">kender jer.</em></h1>
+        <p class="lead">DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med mere end 30 års erfaring, personlig service og AI brugt med omtanke.</p>
+        <div class="actions">
+          <a class="btn" href={site.phoneHref}>Ring {site.phone.replace("+45 ", "")}</a>
+          <a class="btn btn-ghost" href="/ydelser/">Se hvad vi laver</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="who">
+          <img src="/img/hans.jpg" alt="Hans Kristiansen" width="72" height="72" />
+          <div><b>Hans Kristiansen</b><span>Ejer og senior IT-konsulent</span></div>
+        </div>
+        <p class="quote">“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</p>
+        <div class="facts">
+          <div><b>{years} år</b><span>som DataMatrix</span></div>
+          <div><b>30+</b><span>års erfaring</span></div>
+          <div><b>1</b><span>fast kontakt</span></div>
+        </div>
+      </aside>
+    </div>
+    <div class="grid-deco"><Mark size={420} light /></div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Ydelser</div>
+        <h2>Det, vi tager ansvar for</h2>
+        <p>Fra den daglige drift til det store projekt. I kan få det hele, eller vi kan supplere den IT-ansvarlige, I allerede har.</p>
+      </div>
+      <div class="cards">
+        {services.map(([icon, title, text]) => (
+          <div class="card"><div class="icon"><Icon name={icon} /></div><h3>{title}</h3><p>{text}</p></div>
+        ))}
+        <div class="card accent">
+          <div class="icon"><Icon name="spark" /></div>
+          <h3>AI i drift</h3>
+          <p>Vi bruger selv AI-agenter i hverdagen — med et menneske, der godkender. Den erfaring tager vi med ud til jer.</p>
+          <p><a href="/ai/">Læs om AI hos DataMatrix →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Hvorfor DataMatrix</div>
+        <h2>Lille nok til at kende jer. <span class="serif">Stærk nok</span> til at stå bag jer.</h2>
+        <p>Store IT-huse har mange hænder. Vi har noget, der er sværere at skalere: en senior, der kender jeres virksomhed og tager personligt ansvar.</p>
+      </div>
+      <div class="compare">
+        <div class="them">
+          <h3>Det typiske store IT-hus</h3>
+          <ul>
+            <li>En ny tekniker hver gang</li>
+            <li>Sagskø og standardsvar</li>
+            <li>Pakkeløsninger, I ikke har bedt om</li>
+            <li>Langt til én, der kan tage en beslutning</li>
+          </ul>
+        </div>
+        <div class="us">
+          <h3>DataMatrix</h3>
+          <ul>
+            <li>Én fast senior kontakt, der kender jeres opsætning</li>
+            <li>Kort vej fra opkald til løsning — også uden for kontortid, når det brænder på</li>
+            <li>Løsninger skåret til jeres forretning og budget</li>
+            <li>I taler direkte med ejeren</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">Det ærlige spørgsmål</div>
+        <h2>“Hvad sker der, hvis Hans er på ferie?”</h2>
+        <p>Det er et rimeligt spørgsmål at stille et lille firma. Svaret er, at vi har bygget DataMatrix, så jeres drift aldrig afhænger af én person.</p>
+      </div>
+      <ul class="checklist">
+        <li><b>Faste back-up-teknikere.</b> Erfarne kolleger med egne firmaer, som træder til ved ferie, sygdom eller travlhed.</li>
+        <li><b>Dokumentation, andre kan arbejde efter.</b> Jeres miljø er beskrevet, så en kollega kan tage over uden at starte forfra.</li>
+        <li><b>Overvågning holder ikke ferie.</b> Alarmer og backupkontrol kører døgnet rundt.</li>
+        <li><b>Ekstra hænder ved behov.</b> Til større projekter trækker vi på specialister i vores netværk.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Sådan kommer vi i gang</div>
+        <h2>Fra første snak til tryg drift</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>En uforpligtende snak</h3><p>Ring, skriv, eller lad os komme forbi. Vi lytter først.</p></div>
+        <div class="step"><h3>Gennemgang</h3><p>Vi kigger på jeres IT, sikkerhed og backup og fortæller ærligt, hvad vi ser.</p></div>
+        <div class="step"><h3>Plan og pris</h3><p>Et klart forslag med prioriteter — det vigtigste først, intet unødvendigt.</p></div>
+        <div class="step"><h3>Drift og forbedring</h3><p>Vi holder systemerne kørende og foreslår løbende forbedringer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow" style="text-align:center">
+      <p class="serif" style="font-size:clamp(1.6rem,3vw,2.3rem);color:var(--ink);line-height:1.3">“Den bedste løsning er den enkleste, der virker.”</p>
+      <p class="muted">— den tommelfingerregel, vi har arbejdet efter siden {site.founded}</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cta">
+      <div><h2>Lad os tage en snak</h2><p>Ring eller skriv — vi kommer også gerne forbi til en uforpligtende kop kaffe.</p></div>
+      <a class="btn" href={site.phoneHref}>Ring {site.phone}</a>
+    </div>
+  </div>
+</Base>

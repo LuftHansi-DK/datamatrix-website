@@ -1,0 +1,18 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+---
+<Base title="Fjernsupport" description="Fjernsupport fra DataMatrix: ring først, og hent derefter programmet, så vi kan se med på din skærm.">
+  <div class="wrap page-hero narrow">
+    <div class="eyebrow">Fjernsupport</div>
+    <h1>Vi kigger med <span class="serif">over din skulder</span></h1>
+    <p class="lead">Med fjernsupport kan vi hjælpe på få minutter — uden at nogen skal køre ud.</p>
+  </div>
+  <div class="wrap narrow">
+    <ol class="steps" style="grid-template-columns:1fr;list-style:none;padding:0">
+      <li class="step"><h3>Ring til os først</h3><p>Ring på <a href={site.phoneHref}>{site.phone}</a>, så vi ved, at du venter.</p></li>
+      <li class="step"><h3>Hent programmet</h3><p>Klik på knappen herunder. Programmet hedder <b>TeamViewerQS</b> og hentes til din computer.</p><p><a class="btn" href={site.remoteSupportUrl} rel="noopener">Hent fjernsupport-programmet</a></p></li>
+      <li class="step"><h3>Kør programmet</h3><p>Åbn filen og læs dit ID og din adgangskode op for os. Du kan til enhver tid lukke forbindelsen igen.</p></li>
+    </ol>
+  </div>
+</Base>

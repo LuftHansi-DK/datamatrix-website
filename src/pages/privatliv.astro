@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+---
+<Base title="Privatliv" description="Privatlivspolitik for datamatrix.dk: ingen cookies, ingen sporing.">
+  <div class="wrap page-hero narrow"><div class="eyebrow">Privatliv</div><h1>Ingen cookies. <span class="serif">Ingen sporing.</span></h1></div>
+  <div class="wrap prose">
+    <p>Denne hjemmeside bruger ikke cookies, analyseværktøjer eller sporing fra tredjeparter. Skrifttyper og billeder hentes fra vores egen server.</p>
+    <p>Siden hostes hos Cloudflare, som af sikkerhedshensyn kan registrere tekniske oplysninger som IP-adresse i deres logs.</p>
+    <p>Skriver du til os på e-mail eller ringer, bruger vi kun dine oplysninger til at besvare din henvendelse og til et eventuelt kundeforhold.</p>
+    <p>Spørgsmål om dine data: <a href={`mailto:${site.email}`}>{site.email}</a> · {site.legalName}, {site.street}, {site.city}, CVR {site.cvr}.</p>
+  </div>
+</Base>

@@ -1,0 +1,27 @@
+---
+import Mark from "./Mark.astro";
+import site from "../data/site.json";
+const { lang = "da" } = Astro.props;
+const da = lang === "da";
+---
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="brand light"><Mark size={28} light /><span class="wordmark">Data<b>Matrix</b></span></div>
+      <p class="muted">{da ? "Senior IT-partner siden" : "Senior IT partner since"} {site.founded}.</p>
+    </div>
+    <div>
+      <h4>{da ? "Kontakt" : "Contact"}</h4>
+      <p><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+    <div>
+      <h4>{da ? "Adresse" : "Address"}</h4>
+      <p>{site.legalName}<br />{site.street}<br />{site.city}<br />CVR {site.cvr}</p>
+    </div>
+    <div>
+      <h4>{da ? "Genveje" : "Links"}</h4>
+      <p><a href="/fjernsupport/">{da ? "Fjernsupport" : "Remote support"}</a><br /><a href="/privatliv/">{da ? "Privatliv" : "Privacy"}</a><br /><a href={da ? "/en/" : "/"}>{da ? "English" : "Dansk"}</a></p>
+    </div>
+  </div>
+  <div class="wrap fine">© {new Date().getFullYear()} {site.legalName}. {da ? "Ingen cookies. Ingen sporing." : "No cookies. No tracking."}</div>
+</footer>

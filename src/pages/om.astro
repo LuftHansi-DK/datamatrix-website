@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+---
+<Base title="Om DataMatrix" description="DataMatrix blev grundlagt i 2004 af Hans Kristiansen. Senior IT-rådgivning med fokus på sikkerhed, driftssikkerhed og bundlinje.">
+  <div class="wrap page-hero">
+    <div class="eyebrow">Om DataMatrix</div>
+    <h1>Valget af IT-partner er <span class="serif">en tillidssag</span></h1>
+    <p class="lead">Tillid til, at vi rådgiver med jeres interesser forrest. At vi holder, hvad vi lover. Og at vi er til at få fat på, når det virkelig gælder.</p>
+  </div>
+  <section style="padding-top:20px">
+    <div class="wrap split">
+      <div class="portrait"><img src="/img/hans.jpg" alt="Hans Kristiansen, ejer af DataMatrix" width="420" height="420" /></div>
+      <div>
+        <h2>Hans Kristiansen</h2>
+        <p class="muted">Ejer og senior IT-konsulent</p>
+        <p>Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Han blev uddannet Bachelor of Science i Management Information Systems fra San Diego State University i 1990 og arbejdede derefter en årrække i USA — først som udvikler af databasesystemer, siden som IT-chef og medlem af bestyrelsen.</p>
+        <p>Den baggrund præger stadig rådgivningen: IT er ikke bare teknik. Det handler om at finde den løsning, der er bedst for den enkelte virksomhed — for brugerne, for driften og for bundlinjen.</p>
+        <p>Efter flere år som selvstændig IT-konsulent i Danmark grundlagde Hans DataMatrix i {site.founded}. Han er stadig personligt involveret i — og ansvarlig for — alle kunder.</p>
+      </div>
+    </div>
+  </section>
+  <section class="alt">
+    <div class="wrap split">
+      <div>
+        <h2>Et lille firma med et stærkt netværk</h2>
+        <p>DataMatrix er bevidst holdt lille. Det giver kort vej, personligt ansvar og en rådgiver, der kender jeres systemer.</p>
+        <p>Bag os står et fast netværk af erfarne teknikere med egne firmaer — specialister i bl.a. netværk og infrastruktur. De træder til ved ferie og sygdom, og når et projekt kræver flere hænder.</p>
+      </div>
+      <ul class="timeline">
+        <li><b>1990</b> — B.Sc. i Management Information Systems, San Diego State University</li>
+        <li><b>1990'erne</b> — Udvikler og siden IT-chef i USA</li>
+        <li><b>Tilbage i Danmark</b> — Selvstændig IT-konsulent</li>
+        <li><b>{site.founded}</b> — DataMatrix grundlægges</li>
+        <li><b>I dag</b> — Senior IT-partner for virksomheder fra små lokale firmaer til internationale produktionsvirksomheder — nu også med AI i driften</li>
+      </ul>
+    </div>
+  </section>
+</Base>

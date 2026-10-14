@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import site from "../../data/site.json";
+---
+<Base lang="en" title="Senior IT partner in Denmark" description="DataMatrix is a senior IT partner for small and mid-sized businesses in Denmark: operations, security, backup and DR, Microsoft 365, infrastructure and practical AI. Since 2004.">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Senior IT partner · since {site.founded}</div>
+      <h1>IT that just works. And a partner who <em class="serif">knows you.</em></h1>
+      <p class="lead">DataMatrix designs, runs and secures IT for small and mid-sized businesses — with more than 30 years of experience, personal service and AI used with care.</p>
+      <div class="actions"><a class="btn" href={site.phoneHref}>Call {site.phone}</a><a class="btn btn-ghost" href={`mailto:${site.email}`}>Email us</a></div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Services</div><h2>What we take responsibility for</h2></div>
+      <div class="cards">
+        <div class="card"><h3>Operations and monitoring</h3><p>Servers, clients and backups watched around the clock, with problems fixed before they become downtime.</p></div>
+        <div class="card"><h3>IT security</h3><p>Firewalls, mail and endpoint protection, access control and patching — security as a common thread, not an add-on.</p></div>
+        <div class="card"><h3>Backup and disaster recovery</h3><p>Backups that are tested, and a plan for the day things go wrong.</p></div>
+        <div class="card"><h3>Microsoft 365 and cloud</h3><p>Mail, Teams, SharePoint and Azure set up properly, with the right balance between cloud and on-premises.</p></div>
+        <div class="card"><h3>Servers, networks and virtualization</h3><p>Infrastructure designed to run reliably for years. We also supply hardware and licences.</p></div>
+        <div class="card accent" id="ai"><h3>AI in operations</h3><p>We use AI agents in our own daily work — always with a human who approves. We bring that experience to you: Copilot readiness, automation of routine tasks and clear rules for AI use.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="alt" id="about">
+    <div class="wrap split">
+      <div class="portrait"><img src="/img/hans.jpg" alt="Hans Kristiansen" width="420" height="420" /></div>
+      <div>
+        <h2>Small enough to know you. <span class="serif">Strong enough</span> to back you.</h2>
+        <p>DataMatrix was founded in {site.founded} by Hans Kristiansen, who holds a B.Sc. in Management Information Systems from San Diego State University and worked for years in the US as a developer and IT director before returning to Denmark.</p>
+        <p>You always deal with a senior consultant who knows your systems. Behind us stands a permanent network of experienced technicians with their own companies, who step in during holidays, illness or busy periods.</p>
+        <p>We work in Danish and English.</p>
+      </div>
+    </div>
+  </section>
+  <div class="wrap" id="contact" style="margin-top:96px">
+    <div class="cta"><div><h2>Let's talk</h2><p>{site.phone} · {site.email} · {site.legalName}, {site.street}, {site.city}, Denmark · CVR {site.cvr}</p></div><a class="btn" href={site.phoneHref}>Call us</a></div>
+  </div>
+</Base>
