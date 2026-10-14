@@ -7,3 +7,4 @@ dist/
 *.log
 .private-names.txt
 design/
+__pycache__/
