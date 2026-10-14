@@ -172,3 +172,4 @@ section{padding:96px 0}
 /* motto */
 .motto{font-size:clamp(1.9rem,4.4vw,3.4rem);color:var(--ink);line-height:1.2;margin:0 0 .6em}
 .logo{display:block;width:auto}
+:where(.hscroll) .sticky>.section-head{max-width:1112px}
