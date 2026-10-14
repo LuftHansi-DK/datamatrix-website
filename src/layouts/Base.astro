@@ -34,8 +34,10 @@ const ld = {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="stylesheet" href="/css/motion.css" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -50,6 +52,7 @@ const ld = {
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
   <body>
+    <div class="progress" aria-hidden="true"></div>
     <a class="skip" href="#main">{lang === "da" ? "Gå til indhold" : "Skip to content"}</a>
     <Header lang={lang} />
     <main id="main"><slot /></main>

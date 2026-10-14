@@ -1,0 +1,104 @@
+/* Served as-is from public/ on purpose: the build minifier folds animation-timeline into the animation shorthand, which browsers then drop. */
+/* ==========================================================================
+   Motion layer. Pure CSS — no JavaScript, no libraries.
+   - Page-to-page: cross-document View Transitions (Chrome/Edge/Safari 18.2+).
+   - Scroll: scroll-driven animations (Chrome/Edge 115+, Safari 26+).
+   Browsers without support (e.g. Firefox today) get the normal static site.
+   Everything is switched off for visitors who ask for reduced motion.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---------- page transitions -------------------------------------------- */
+  @view-transition { navigation: auto; }
+  .site-header { view-transition-name: header; }
+  .site-footer { view-transition-name: footer; }
+  main { view-transition-name: page; }
+  ::view-transition-old(page) { animation: vt-out .28s cubic-bezier(.4,0,1,1) both; }
+  ::view-transition-new(page) { animation: vt-in .5s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes vt-out { to { opacity: 0; transform: translateY(-24px) scale(.985); filter: blur(4px); } }
+  @keyframes vt-in  { from { opacity: 0; transform: translateY(48px); } }
+
+  /* ---------- hero entrance (time-based, on load) -------------------------- */
+  .hero .in { animation: rise-in .9s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--d, 0) * 110ms + 80ms); }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(28px); filter: blur(6px); } }
+  .hero-ill { animation: ill-in 1.2s cubic-bezier(.2,.8,.2,1) .35s both; }
+  @keyframes ill-in { from { opacity: 0; transform: translateY(40px) scale(.94) rotate(-2deg); } }
+  .hero::after { /* soft moving glow */
+    content: ""; position: absolute; inset: -20%; z-index: 0; pointer-events: none;
+    background: radial-gradient(500px 340px at 20% 30%, rgba(47,111,219,.28), transparent 70%),
+                radial-gradient(420px 300px at 80% 80%, rgba(242,165,65,.16), transparent 70%);
+    animation: glow 14s ease-in-out infinite alternate;
+  }
+  @keyframes glow { to { transform: translate(6%, -4%) rotate(8deg); } }
+}
+
+/* ---------- scroll-driven layer ------------------------------------------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* reading progress bar */
+    .progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60; background: linear-gradient(90deg, var(--amber), var(--blue));
+      transform-origin: 0 50%; animation: grow linear both; animation-timeline: scroll(root); }
+    @keyframes grow { from { transform: scaleX(0); } }
+
+    /* hero: content drifts up and fades as you leave it; illustration parallax */
+    .hero .hero-copy { animation: hero-out linear both; animation-timeline: view(); animation-range: exit 0% exit 90%; }
+    @keyframes hero-out { to { opacity: 0; transform: translateY(-80px) scale(.96); } }
+    .hero .hero-ill img { animation: parallax linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+    @keyframes parallax { to { transform: translateY(90px) rotate(2deg); } }
+
+    /* generic reveal */
+    .reveal, .card, .service, .section-head, .compare, .cta, .post-list li, .contact-grid .card {
+      animation: reveal linear both; animation-timeline: view(); animation-range: entry 5% cover 28%;
+    }
+    @keyframes reveal { from { opacity: 0; transform: translateY(56px) scale(.97); } }
+    .cards > :nth-child(3n+2) { animation-range: entry 12% cover 32%; }
+    .cards > :nth-child(3n)   { animation-range: entry 19% cover 36%; }
+
+    /* counters: 0 → value while the strip scrolls in */
+    @property --num { syntax: "<integer>"; inherits: false; initial-value: 0; }
+    .count { --num: var(--to); counter-reset: n var(--num); animation: count linear both; animation-timeline: view(); animation-range: entry 30% cover 45%; }
+    .count::before { content: counter(n) attr(data-suffix); }
+    .count > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    @keyframes count { from { --num: 0; } to { --num: var(--to); } }
+
+    /* motto: words light up as you read */
+    .motto .w { animation: word linear both; animation-timeline: view(); animation-range: cover calc(18% + var(--wi) * 2.2%) cover calc(26% + var(--wi) * 2.2%); }
+    @keyframes word { from { opacity: .12; filter: blur(3px); } }
+
+    /* ---------- stacked "pages" (desktop/tablet with enough height) ---------- */
+    @media (min-width: 900px) and (min-height: 640px) {
+      .stack { view-timeline: --stack; position: relative; }
+      .stack > .panel {
+        position: sticky; top: 72px; min-height: calc(100vh - 72px); display: flex; align-items: center;
+        border-radius: 32px 32px 0 0; box-shadow: 0 -24px 60px -30px rgba(11,31,58,.35);
+        transform-origin: 50% 0; padding: 48px 0;
+      }
+      .stack > .panel:first-child { border-radius: 0; box-shadow: none; }
+      .stack > .panel:not(:last-child) {
+        animation: tuck linear both; animation-timeline: --stack;
+        animation-range: contain calc(var(--i) / (var(--n) - 1) * 100%) contain calc((var(--i) + 1) / (var(--n) - 1) * 100%);
+      }
+      @keyframes tuck { to { transform: scale(.9) translateY(-2%); filter: brightness(.55) saturate(.8); border-radius: 32px; } }
+      .panel .split > * { animation: panel-in linear both; animation-timeline: view(); animation-range: entry 10% entry 90%; }
+      .panel .split > :last-child { animation-range: entry 25% entry 100%; }
+      @keyframes panel-in { from { opacity: 0; transform: translateY(80px); } }
+    }
+
+    /* ---------- horizontal steps (desktop) ---------- */
+    @media (min-width: 900px) and (min-height: 640px) {
+      .hscroll { height: 260vh; view-timeline: --hs; padding: 0; }
+      .hscroll .sticky { position: sticky; top: 72px; height: calc(100vh - 72px); display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+      .hscroll .steps { display: flex; gap: 28px; width: max-content; max-width: none; margin: 0; padding: 0 max(24px, calc((100vw - 1112px) / 2));
+        animation: slide-x linear both; animation-timeline: --hs; animation-range: contain 0% contain 100%; }
+      .hscroll .step { flex: 0 0 auto; width: min(440px, 38vw); background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 88px 34px 34px; box-shadow: var(--shadow); animation: none; }
+      .hscroll .step::before { top: 26px; left: 34px; font-size: 3rem; }
+      @keyframes slide-x { to { transform: translateX(calc(-100% + 100vw)); } }
+      .hscroll .bar-track { margin: 36px auto 0; width: min(1112px, calc(100vw - 48px)); height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+      .hscroll .bar-track i { display: block; height: 100%; background: var(--amber-deep); transform-origin: 0 50%; animation: grow linear both; animation-timeline: --hs; animation-range: contain 0% contain 100%; }
+    }
+  }
+}
+.hscroll .bar-track { display: none; }
+@supports (animation-timeline: view()) { @media (min-width: 900px) and (min-height: 640px) and (prefers-reduced-motion: no-preference) { .hscroll .bar-track { display: block; } } }

@@ -6,3 +6,5 @@ dist/
 .DS_Store
 *.log
 .private-names.txt
+design/
+__pycache__/

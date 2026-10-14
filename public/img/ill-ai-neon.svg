@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-label="Illustration: indkommende mails sorteres og prioriteres af AI, som skriver en runbook, og et menneske godkender"><defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><radialGradient id="rg" cx=".75" cy=".15" r=".95"><stop offset="0" stop-color="#1B3D72"/><stop offset="1" stop-color="#081629"/></radialGradient><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#5E8FE0" opacity=".35"/></pattern></defs><style>@keyframes draw{from{stroke-dashoffset:var(--l,60)}to{stroke-dashoffset:0}}
+@keyframes flow{to{stroke-dashoffset:-36}}
+@keyframes bob{50%{transform:translateY(-6px)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+@keyframes blink{0%,60%,100%{opacity:1}70%,90%{opacity:.25}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(12deg)}75%{transform:rotate(-10deg)}85%{transform:rotate(6deg)}}
+@keyframes rise{0%{opacity:0;transform:translateY(6px)}40%{opacity:1}100%{opacity:0;transform:translateY(-10px)}}
+@keyframes pop{0%,15%{transform:scale(0)}25%{transform:scale(1.12)}32%,100%{transform:scale(1)}}
+@keyframes slidein{0%{opacity:0;transform:translateX(-14px)}100%{opacity:1;transform:none}}
+.draw{stroke-dasharray:var(--l,60);animation:draw .7s cubic-bezier(.6,0,.2,1) both}
+.flow{animation:flow 1.6s linear infinite}
+.bob{animation:bob 4s ease-in-out infinite}
+.tw{transform-box:fill-box;transform-origin:center;animation:twinkle 2.6s ease-in-out infinite}
+.blink{animation:blink 2.4s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-in-out infinite}
+.ring{transform-box:fill-box;transform-origin:50% 0;animation:ring 3.2s ease-in-out infinite}
+.rise{animation:rise 2.8s ease-out infinite}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop 4s ease-out infinite}
+.slide{animation:slidein .6s ease-out both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style><rect width="600" height="420" rx="26" fill="url(#rg)"/><rect width="600" height="420" rx="26" fill="url(#dots)"/><g filter="url(#glow)">
+ <g transform="translate(40 110)"><g class="bob"><rect x="0" y="0" width="54" height="38" rx="6" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 3 L27 22 L52 3" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linejoin="round"/></g></g><g transform="translate(70 165)"><g class="bob" style="animation-delay:-1.3s"><rect x="0" y="0" width="54" height="38" rx="6" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 3 L27 22 L52 3" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linejoin="round"/></g></g><g transform="translate(30 225)"><g class="bob" style="animation-delay:-2.6s"><rect x="0" y="0" width="54" height="38" rx="6" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 3 L27 22 L52 3" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linejoin="round"/></g></g>
+ <path class="flow" d="M110 140 C150 150 160 180 190 195 M140 185 C160 190 170 195 190 200 M100 245 C140 240 160 220 190 208" fill="none" stroke="#8FB8FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7"/>
+ <!-- AI core: rounded square w/ datamatrix dots -->
+ <rect x="190" y="160" width="96" height="96" rx="22" fill="none" stroke="#8FB8FF" stroke-width="1.9"/>
+ <g fill="#fff">
+  <rect x="206" y="176" width="10" height="10" rx="2"/><rect x="206" y="192" width="10" height="10" rx="2"/><rect x="206" y="208" width="10" height="10" rx="2"/><rect x="206" y="224" width="10" height="10" rx="2"/>
+  <rect x="222" y="224" width="10" height="10" rx="2"/><rect x="238" y="224" width="10" height="10" rx="2"/><rect x="254" y="224" width="10" height="10" rx="2"/>
+  <rect x="238" y="176" width="10" height="10" rx="2"/><rect x="254" y="192" width="10" height="10" rx="2"/><rect x="222" y="200" width="10" height="10" rx="2"/>
+ </g>
+ <rect class="blink" x="238" y="200" width="10" height="10" rx="2" fill="#FFB648"/>
+ <path d="M238 160 v-18" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round"/><circle class="pulse" cx="238" cy="136" r="6" fill="none" stroke="#8FB8FF" stroke-width="2"/>
+ <path d="M286 208 H318" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+ <!-- prioritized cards -->
+ <g transform="translate(325 110)"><g class="slide" style="animation-delay:.4s"><rect width="150" height="42" rx="10" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="21" r="8" fill="none" stroke="#8FB8FF" stroke-width="2"/><path d="M40 16 H130" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round"/><path d="M40 27 H100" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" opacity=".35"/></g></g><g transform="translate(325 165)"><g class="slide" style="animation-delay:.6s"><rect width="150" height="42" rx="10" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="21" r="8" fill="none" stroke="#8FB8FF" stroke-width="2"/><path d="M40 16 H130" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round"/><path d="M40 27 H100" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" opacity=".35"/></g></g><g transform="translate(325 220)"><g class="slide" style="animation-delay:.8s"><rect width="150" height="42" rx="10" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="21" r="8" fill="none" stroke="#8FB8FF" stroke-width="2"/><path d="M40 16 H130" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round"/><path d="M40 27 H100" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" opacity=".35"/></g></g>
+ <path d="M318 131 V241" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M318 131 H325 M318 186 H325 M318 241 H325" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+ <!-- runbook doc -->
+ <g transform="translate(500 120)">
+  <path d="M0 0 h56 l18 18 v88 h-74 z" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 0 v18 h18" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 34 h48 M12 50 h40 M12 66 h48 M12 82 h30" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" opacity=".55"/>
+  <circle cx="58" cy="86" r="9" fill="none" stroke="#8FB8FF" stroke-width="2"/>
+ </g>
+ <path class="flow" d="M478 131 C490 131 492 150 500 156" fill="none" stroke="#8FB8FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7"/>
+ <!-- human approval: person with check bubble -->
+ <g transform="translate(440 300)">
+  <circle cx="0" cy="0" r="18" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-30 56 c4 -24 16 -34 30 -34 c14 0 26 10 30 34" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(46 -34)"><g class="pop"><rect x="-22" y="-18" width="48" height="36" rx="12" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M-10 0 l7 7 l14 -15" fill="none" stroke="#8FB8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-12 18 l-6 10 l14 -10" fill="none" stroke="#8FB8FF" stroke-width="1.9" stroke-linejoin="round"/></g></g>
+ </g>
+ <path class="flow" d="M400 275 C410 262 420 262 428 270" fill="none" stroke="#8FB8FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7"/>
+ <path class="tw" d="M80 70 v14 M73 77 h14"/><path class="tw" style="animation-delay:1.2s" d="M560 360 v12 M554 366 h12" stroke="#FFB648" stroke-width="1.9" stroke-linecap="round"/>
+</g></svg>
