@@ -1,20 +1,20 @@
-# Hans: please confirm before launch
+# Hans: review answers
 
-Claims in the new copy that I wrote from the old site or inferred. Strike or correct.
+Status 14 Oct 2026: all items answered by Hans (Discord). Kept here as the record.
 
-1. "Mere end 30 års erfaring" (old site said 30+; B.Sc. 1990).
-2. US career: "udvikler af databasesystemer, siden IT-chef og medlem af bestyrelsen" (from old site).
-3. "Faste back-up-teknikere … med egne firmaer" — still true? Who (not named on site)?
-4. "Jeres miljø er beskrevet, så en kollega kan tage over" — true for all fast-aftale customers?
-5. "Alarmer og backupkontrol kører døgnet rundt" — true for all customers on agreement?
-6. Virtualization: "bl.a. Hyper-V og VMware" — keep VMware?
-7. Fjernsupport: still TeamViewer QS (link `get.teamviewer.com/6d4qd6j`)? Or Atera/other?
-8. "Fra små lokale firmaer til internationale produktionsvirksomheder" (no names) — OK?
-9. Hardware brands: site says "anerkendte producenter" (old site named HPE, Lenovo, HP) — name them?
-10. Photo: old portrait used until a new one arrives.
-11. LinkedIn URL for the footer (optional).
-12. Motto "Den bedste løsning er den enkleste, der virker" as DataMatrix's own rule (Einstein attribution dropped).
-13. DECIDED 14 Oct (Hans): publish the missed-backup claim now. Monitoring: "Vi opdager også den backup, der aldrig kørte" + "Alarmer og backupkontrol kører døgnet rundt" — only publish when the Ops Center monitoring actually does this for customers on agreement. Live by launch?
-14. AI text: "AI-agenter gennemgår alle indkommende henvendelser og alarmer … vurderer hvad der haster, opretter opgaven og skriver en runbook — både til sig selv og til os". Alarms too, or only mail/requests today?
-15. "Prioritering … også kl. 22 en søndag" — fine as tone? (It implies reachability, not a guarantee.)
-16. Do we say which AI we use (Grok/xAI) on the site? I recommend not naming vendors; customers may ask about data handling, so have a short answer ready (xAI DPA/EU terms still unverified in our notes).
+1. "Mere end 30 års erfaring" — CONFIRMED.
+2. US career text — CONFIRMED.
+3. Faste back-up-teknikere med egne firmaer — CONFIRMED (unnamed on site).
+4. "Jeres miljø er beskrevet, så en kollega kan tage over" — CONFIRMED.
+5. "Alarmer og backupkontrol kører døgnet rundt" — CONFIRMED (Hans: "yea, I guess"). Re-check at launch together with 13.
+6. Virtualization — VMware is the bigger practice. Site now: "VMware vSphere og Hyper-V, inkl. delt SAN-lager".
+7. Fjernsupport stays TeamViewer QS (Atera/Splashtop needs an agent on the target PC).
+8. "Fra små lokale firmaer til internationale produktionsvirksomheder" — OK.
+9. Hardware brands — keep "anerkendte producenter", no brand names.
+10. Old portrait until a new one arrives — CONFIRMED.
+11. LinkedIn — Hans's personal profile in footer + schema sameAs.
+12. Motto as DataMatrix's own rule — OK.
+13. DECIDED 14 Oct: publish the missed-backup claim. Ops Center monitoring "soon" — confirm it is live for agreement customers before go-live.
+14. AI triage — mail/requests today; alarms "soon". Site now says "henvendelser" only. Add "og alarmer" back when alarm triage is live.
+15. "også kl. 22 en søndag" — OK (Hans is on standby 24/7/365 in practice; site describes reachability, never guarantees it — AGENTS.md).
+16. AI vendor — not named on the site.
