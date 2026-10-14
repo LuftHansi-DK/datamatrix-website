@@ -1,3 +1,4 @@
+/* Served as-is from public/ on purpose: the build minifier folds animation-timeline into the animation shorthand, which browsers then drop. */
 /* ==========================================================================
    Motion layer. Pure CSS — no JavaScript, no libraries.
    - Page-to-page: cross-document View Transitions (Chrome/Edge/Safari 18.2+).

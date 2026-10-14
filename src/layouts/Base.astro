@@ -2,7 +2,6 @@
 import "@fontsource-variable/inter";
 import "@fontsource-variable/fraunces";
 import "../styles/global.css";
-import "../styles/motion.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
@@ -35,6 +34,7 @@ const ld = {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="stylesheet" href="/css/motion.css" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <meta property="og:title" content={fullTitle} />
