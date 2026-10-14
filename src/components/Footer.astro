@@ -1,5 +1,5 @@
 ---
-import Mark from "./Mark.astro";
+import Logo from "./Logo.astro";
 import site from "../data/site.json";
 const { lang = "da" } = Astro.props;
 const da = lang === "da";
@@ -7,7 +7,7 @@ const da = lang === "da";
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <div class="brand light"><Mark size={28} light /><span class="wordmark">Data<b>Matrix</b></span></div>
+      <div class="brand light"><Logo height={28} light /></div>
       <p class="muted">{da ? "Senior IT-partner siden" : "Senior IT partner since"} {site.founded}.</p>
     </div>
     <div>

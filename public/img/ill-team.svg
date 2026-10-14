@@ -1,16 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" role="img" aria-label="Illustration: Hans i midten, forbundet med faste back-up-teknikere, mens en parasol antyder ferie"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" role="img" aria-label="Illustration: Hans i midten, forbundet med faste back-up-teknikere, mens en parasol antyder ferie"><defs><filter id="rough" x="-5%" y="-5%" width="115%" height="115%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="1" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.1" result="d"/><feOffset in="d" dx="6" dy="6" result="o"/><feFlood flood-color="#2F6FDB" flood-opacity=".16"/><feComposite in2="o" operator="in" result="s"/><feMerge><feMergeNode in="s"/><feMergeNode in="d"/></feMerge></filter></defs><style>@keyframes draw{from{stroke-dashoffset:var(--l,60)}to{stroke-dashoffset:0}}
+@keyframes flow{to{stroke-dashoffset:-36}}
+@keyframes bob{50%{transform:translateY(-6px)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+@keyframes blink{0%,60%,100%{opacity:1}70%,90%{opacity:.25}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(12deg)}75%{transform:rotate(-10deg)}85%{transform:rotate(6deg)}}
+@keyframes rise{0%{opacity:0;transform:translateY(6px)}40%{opacity:1}100%{opacity:0;transform:translateY(-10px)}}
+@keyframes pop{0%,15%{transform:scale(0)}25%{transform:scale(1.12)}32%,100%{transform:scale(1)}}
+@keyframes slidein{0%{opacity:0;transform:translateX(-14px)}100%{opacity:1;transform:none}}
+.draw{stroke-dasharray:var(--l,60);animation:draw .7s cubic-bezier(.6,0,.2,1) both}
+.flow{animation:flow 1.6s linear infinite}
+.bob{animation:bob 4s ease-in-out infinite}
+.tw{transform-box:fill-box;transform-origin:center;animation:twinkle 2.6s ease-in-out infinite}
+.blink{animation:blink 2.4s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-in-out infinite}
+.ring{transform-box:fill-box;transform-origin:50% 0;animation:ring 3.2s ease-in-out infinite}
+.rise{animation:rise 2.8s ease-out infinite}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop 4s ease-out infinite}
+.slide{animation:slidein .6s ease-out both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
 <path d="M50 220 C40 110 160 60 290 66 C440 72 530 150 515 255 C500 360 380 390 270 380 C140 370 60 330 50 220Z" fill="#DCE8FB"/>
 <g filter="url(#rough)">
- <path d="M280 200 L130 120 M280 200 L440 120 M280 200 L150 320 M280 200 L420 320" fill="none" stroke="#0B1F3A" stroke-width="2.2" stroke-dasharray="3 8" stroke-linecap="round"/>
- <circle cx="280" cy="205" r="62" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+ <path class="flow" d="M280 200 L130 120 M280 200 L440 120 M280 200 L150 320 M280 200 L420 320" fill="none" stroke="#0B1F3A" stroke-width="2.2" stroke-dasharray="3 8" stroke-linecap="round"/>
+ <circle class="pulse" style="animation-duration:3s" cx="280" cy="205" r="62" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
  <g transform="translate(280 205) scale(1.15)"><circle cx="0" cy="-14" r="16" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-28 40 c4 -22 14 -32 28 -32 c14 0 24 10 28 32 z" fill="#F2A541" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
  <circle cx="130" cy="120" r="42" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(130 122) scale(0.8)"><circle cx="0" cy="-14" r="16" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-28 40 c4 -22 14 -32 28 -32 c14 0 24 10 28 32 z" fill="#FDE7C4" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
  <circle cx="440" cy="120" r="42" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(440 122) scale(0.8)"><circle cx="0" cy="-14" r="16" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-28 40 c4 -22 14 -32 28 -32 c14 0 24 10 28 32 z" fill="#FDE7C4" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
  <circle cx="150" cy="320" r="42" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(150 322) scale(0.8)"><circle cx="0" cy="-14" r="16" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-28 40 c4 -22 14 -32 28 -32 c14 0 24 10 28 32 z" fill="#FDE7C4" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
  <circle cx="420" cy="320" r="42" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
  <!-- umbrella in last node = holiday -->
- <g transform="translate(420 322)"><path d="M-26 -4 a26 22 0 0 1 52 0 c-8 -6 -18 -6 -26 0 c-8 -6 -18 -6 -26 0z" fill="#F2A541" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 -4 v26 c0 6 -8 6 -8 0" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 -26 v-4" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <g transform="translate(420 322)"><g class="ring" style="animation-duration:5s"><path d="M-26 -4 a26 22 0 0 1 52 0 c-8 -6 -18 -6 -26 0 c-8 -6 -18 -6 -26 0z" fill="#F2A541" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 -4 v26 c0 6 -8 6 -8 0" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 -26 v-4" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g></g>
  <!-- documentation sheet handed over -->
- <g transform="translate(330 270) rotate(-8)"><path d="M0 0 h36 l10 10 v40 h-46 z" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18 h28 M8 28 h22 M8 38 h26" stroke="#0B1F3A" stroke-width="2" stroke-linecap="round" opacity=".5"/></g>
- <path d="M80 60 v14 M73 67 h14 M500 380 v12 M494 386 h12 M520 200 v10 M515 205 h10" stroke="#F2A541" stroke-width="2.4" stroke-linecap="round"/>
+ <g transform="translate(330 270) rotate(-8)"><g class="bob"><path d="M0 0 h36 l10 10 v40 h-46 z" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18 h28 M8 28 h22 M8 38 h26" stroke="#0B1F3A" stroke-width="2" stroke-linecap="round" opacity=".5"/></g></g>
+ <path class="tw" d="M80 60 v14 M73 67 h14"/><path class="tw" style="animation-delay:.9s" d="M500 380 v12 M494 386 h12"/><path class="tw" style="animation-delay:1.7s" d="M520 200 v10 M515 205 h10" stroke="#F2A541" stroke-width="2.4" stroke-linecap="round"/>
 </g></svg>

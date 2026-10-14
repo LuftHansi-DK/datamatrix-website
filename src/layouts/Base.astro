@@ -2,6 +2,7 @@
 import "@fontsource-variable/inter";
 import "@fontsource-variable/fraunces";
 import "../styles/global.css";
+import "../styles/motion.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
@@ -50,6 +51,7 @@ const ld = {
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
   <body>
+    <div class="progress" aria-hidden="true"></div>
     <a class="skip" href="#main">{lang === "da" ? "Gå til indhold" : "Skip to content"}</a>
     <Header lang={lang} />
     <main id="main"><slot /></main>
