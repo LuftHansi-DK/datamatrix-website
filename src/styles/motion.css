@@ -72,7 +72,7 @@
       .stack > .panel {
         position: sticky; top: 72px; min-height: calc(100vh - 72px); display: flex; align-items: center;
         border-radius: 32px 32px 0 0; box-shadow: 0 -24px 60px -30px rgba(11,31,58,.35);
-        transform-origin: 50% 0;
+        transform-origin: 50% 0; padding: 48px 0;
       }
       .stack > .panel:first-child { border-radius: 0; box-shadow: none; }
       .stack > .panel:not(:last-child) {
@@ -89,9 +89,9 @@
     @media (min-width: 900px) and (min-height: 640px) {
       .hscroll { height: 260vh; view-timeline: --hs; padding: 0; }
       .hscroll .sticky { position: sticky; top: 72px; height: calc(100vh - 72px); display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
-      .hscroll .steps { display: flex; gap: 28px; width: max-content; padding: 0 max(24px, calc((100vw - 1112px) / 2));
+      .hscroll .steps { display: flex; gap: 28px; width: max-content; max-width: none; margin: 0; padding: 0 max(24px, calc((100vw - 1112px) / 2));
         animation: slide-x linear both; animation-timeline: --hs; animation-range: contain 0% contain 100%; }
-      .hscroll .step { width: min(440px, 38vw); background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 88px 34px 34px; box-shadow: var(--shadow); animation: none; }
+      .hscroll .step { flex: 0 0 auto; width: min(440px, 38vw); background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 88px 34px 34px; box-shadow: var(--shadow); animation: none; }
       .hscroll .step::before { top: 26px; left: 34px; font-size: 3rem; }
       @keyframes slide-x { to { transform: translateX(calc(-100% + 100vw)); } }
       .hscroll .bar-track { margin: 36px auto 0; width: min(1112px, calc(100vw - 48px)); height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
