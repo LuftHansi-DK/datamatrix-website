@@ -6,7 +6,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
 const { title, description, lang = "da" } = Astro.props;
-const fullTitle = title ? `${title} · DataMatrix` : "DataMatrix · Senior IT-partner for små og mellemstore virksomheder";
+const fullTitle = title ? `${title} · DataMatrix` : (lang === "da" ? "IT-partner for små og mellemstore virksomheder på Sjælland · DataMatrix" : "Senior IT partner in Denmark · DataMatrix");
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ld = {
   "@context": "https://schema.org",
@@ -19,6 +19,11 @@ const ld = {
   founder: { "@type": "Person", name: site.owner },
   address: { "@type": "PostalAddress", streetAddress: site.street, postalCode: "4520", addressLocality: "Svinninge", addressCountry: "DK" },
   vatID: "DK" + site.cvr,
+  areaServed: [{ "@type": "AdministrativeArea", name: "Sjælland" }, { "@type": "Country", name: "Danmark" }],
+  knowsLanguage: ["da", "en"],
+  image: "https://www.datamatrix.dk/og.png",
+  logo: "https://www.datamatrix.dk/img/mark.svg",
+  knowsAbout: ["IT-drift", "IT-sikkerhed", "Backup", "Disaster recovery", "Microsoft 365", "Azure", "Virtualisering", "Netværk", "AI i drift"],
 };
 ---
 <!doctype html>
@@ -35,6 +40,12 @@ const ld = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://www.datamatrix.dk/og.png" />
+    <meta property="og:locale" content={lang === "da" ? "da_DK" : "en_GB"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" hreflang="da" href="https://www.datamatrix.dk/" />
+    <link rel="alternate" hreflang="en" href="https://www.datamatrix.dk/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.datamatrix.dk/" />
     <meta name="theme-color" content="#0B1F3A" />
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>

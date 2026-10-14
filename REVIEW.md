@@ -14,7 +14,7 @@ Claims in the new copy that I wrote from the old site or inferred. Strike or cor
 10. Photo: old portrait used until a new one arrives.
 11. LinkedIn URL for the footer (optional).
 12. Motto "Den bedste løsning er den enkleste, der virker" as DataMatrix's own rule (Einstein attribution dropped).
-13. Monitoring: "Vi opdager også den backup, der aldrig kørte" + "Alarmer og backupkontrol kører døgnet rundt" — only publish when the Ops Center monitoring actually does this for customers on agreement. Live by launch?
+13. DECIDED 14 Oct (Hans): publish the missed-backup claim now. Monitoring: "Vi opdager også den backup, der aldrig kørte" + "Alarmer og backupkontrol kører døgnet rundt" — only publish when the Ops Center monitoring actually does this for customers on agreement. Live by launch?
 14. AI text: "AI-agenter gennemgår alle indkommende henvendelser og alarmer … vurderer hvad der haster, opretter opgaven og skriver en runbook — både til sig selv og til os". Alarms too, or only mail/requests today?
 15. "Prioritering … også kl. 22 en søndag" — fine as tone? (It implies reachability, not a guarantee.)
 16. Do we say which AI we use (Grok/xAI) on the site? I recommend not naming vendors; customers may ask about data handling, so have a short answer ready (xAI DPA/EU terms still unverified in our notes).
