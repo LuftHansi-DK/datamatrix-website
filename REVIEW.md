@@ -17,4 +17,4 @@ Status 14 Oct 2026: all items answered by Hans (Discord). Kept here as the recor
 13. DECIDED 14 Oct: publish the missed-backup claim. Ops Center monitoring "soon" — confirm it is live for agreement customers before go-live.
 14. AI triage — mail/requests today; alarms "soon". Site now says "henvendelser" only. Add "og alarmer" back when alarm triage is live.
 15. "også kl. 22 en søndag" — OK (Hans is on standby 24/7/365 in practice; site describes reachability, never guarantees it — AGENTS.md).
-16. AI vendor — not named on the site.
+16. AI: harnesses named on /ai/ (Hermes Agent, OpenClaw, own Grok bot) — Hans 14 Oct. Have a short data-handling answer ready for customers who ask.
