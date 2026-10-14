@@ -1,11 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
-import Mark from "../components/Mark.astro";
 import site from "../data/site.json";
 const years = new Date().getFullYear() - site.founded;
 const services = [
-  ["pulse", "Drift og overvågning", "Vi holder øje med servere, klienter og backup og griber ind, før småfejl bliver til nedetid."],
+  ["pulse", "Drift og overvågning", "Vi holder øje med servere, klienter og backup — også den backup, der aldrig kørte — og griber ind, før småfejl bliver til nedetid."],
   ["shield", "IT-sikkerhed", "Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer — sikkerhed som en rød tråd, ikke et tilkøb."],
   ["backup", "Backup og beredskab", "Backup der er testet, og en plan for den dag, det går galt. Disaster recovery er et af vores specialer."],
   ["cloud", "Microsoft 365 og cloud", "Mail, Teams, SharePoint og Azure sat op rigtigt — og den rette balance mellem sky og lokalt."],
@@ -18,27 +17,30 @@ const services = [
       <div>
         <div class="eyebrow">Senior IT-partner · siden {site.founded}</div>
         <h1>IT der bare virker. Og en partner, der <em class="serif">kender jer.</em></h1>
-        <p class="lead">DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med mere end 30 års erfaring, personlig service og AI brugt med omtanke.</p>
+        <p class="lead">DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med mere end 30 års erfaring, personlig service og AI, der arbejder med i driften.</p>
         <div class="actions">
           <a class="btn" href={site.phoneHref}>Ring {site.phone.replace("+45 ", "")}</a>
           <a class="btn btn-ghost" href="/ydelser/">Se hvad vi laver</a>
         </div>
       </div>
-      <aside class="hero-card">
-        <div class="who">
-          <img src="/img/hans.jpg" alt="Hans Kristiansen" width="72" height="72" />
-          <div><b>Hans Kristiansen</b><span>Ejer og senior IT-konsulent</span></div>
-        </div>
-        <p class="quote">“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</p>
-        <div class="facts">
-          <div><b>{years} år</b><span>som DataMatrix</span></div>
-          <div><b>30+</b><span>års erfaring</span></div>
-          <div><b>1</b><span>fast kontakt</span></div>
-        </div>
-      </aside>
+      <div class="hero-ill"><img src="/img/ill-hero.svg" alt="" width="560" height="460" /></div>
     </div>
-    <div class="grid-deco"><Mark size={420} light /></div>
   </section>
+
+  <div class="wrap">
+    <aside class="hans-strip">
+      <img src="/img/hans.jpg" alt="Hans Kristiansen" width="96" height="96" />
+      <div class="hs-quote">
+        <p class="quote">“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</p>
+        <p class="muted"><b>Hans Kristiansen</b> · ejer og senior IT-konsulent</p>
+      </div>
+      <div class="facts">
+        <div><b>{years} år</b><span>som DataMatrix</span></div>
+        <div><b>30+</b><span>års erfaring</span></div>
+        <div><b>1</b><span>fast kontakt</span></div>
+      </div>
+    </aside>
+  </div>
 
   <section>
     <div class="wrap">
@@ -54,12 +56,37 @@ const services = [
         <div class="card accent">
           <div class="icon"><Icon name="spark" /></div>
           <h3>AI i drift</h3>
-          <p>Vi bruger selv AI-agenter i hverdagen — med et menneske, der godkender. Den erfaring tager vi med ud til jer.</p>
+          <p>AI sorterer, prioriterer og skriver runbooks i vores egen drift — med et menneske, der godkender. Den erfaring tager vi med ud til jer.</p>
           <p><a href="/ai/">Læs om AI hos DataMatrix →</a></p>
         </div>
       </div>
     </div>
   </section>
+  <section class="alt">
+    <div class="wrap split">
+      <div class="ill"><img src="/img/ill-backup.svg" alt="" width="560" height="400" loading="lazy" /></div>
+      <div>
+        <div class="eyebrow">Overvågning</div>
+        <h2>Vi opdager også den backup, <span class="serif">der aldrig kørte</span></h2>
+        <p>De fleste overvågningssystemer siger til, når en backup fejler. Men hvad med den, der slet ikke startede? Den giver ingen fejlbesked — og opdages typisk først den dag, man skal bruge den.</p>
+        <p>Vores overvågning ved, hvad der <em>burde</em> være sket, og slår alarm, når noget mangler. Det sker sjældent. Men det er netop dér, det tæller.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">AI i drift</div>
+        <h2>AI sorterer. AI prioriterer. <span class="serif">Et menneske beslutter.</span></h2>
+        <p>Hos DataMatrix gennemgår AI-agenter alle indkommende henvendelser og alarmer. De vurderer, hvad der haster, opretter opgaven og skriver en runbook — en trin-for-trin-plan for løsningen — både til sig selv og til os.</p>
+        <p>Resultatet er hurtigere hjælp og færre ting, der falder mellem to stole. Og intet bliver sendt, ændret eller købt, uden at et menneske har sagt ja.</p>
+        <p><a href="/ai/">Sådan bruger vi AI — og hvad det kan gøre for jer →</a></p>
+      </div>
+      <div class="ill"><img src="/img/ill-ai.svg" alt="" width="600" height="420" loading="lazy" /></div>
+    </div>
+  </section>
+
 
   <section class="alt">
     <div class="wrap">
@@ -97,6 +124,7 @@ const services = [
         <div class="eyebrow">Det ærlige spørgsmål</div>
         <h2>“Hvad sker der, hvis Hans er på ferie?”</h2>
         <p>Det er et rimeligt spørgsmål at stille et lille firma. Svaret er, at vi har bygget DataMatrix, så jeres drift aldrig afhænger af én person.</p>
+        <div class="ill small"><img src="/img/ill-team.svg" alt="" width="560" height="420" loading="lazy" /></div>
       </div>
       <ul class="checklist">
         <li><b>Faste back-up-teknikere.</b> Erfarne kolleger med egne firmaer, som træder til ved ferie, sygdom eller travlhed.</li>

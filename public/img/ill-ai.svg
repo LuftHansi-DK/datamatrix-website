@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-label="Illustration: indkommende mails sorteres og prioriteres af AI, som skriver en runbook, og et menneske godkender"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></defs>
+<path d="M40 220 C40 110 160 50 310 60 C470 70 570 140 560 250 C548 360 420 395 290 385 C150 375 40 330 40 220Z" fill="#DCE8FB"/>
+<g filter="url(#rough)">
+ <g transform="translate(40 110)"><rect x="0" y="0" width="54" height="38" rx="6" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 3 L27 22 L52 3" fill="none" stroke="#0B1F3A" stroke-width="2.2" stroke-linejoin="round"/></g><g transform="translate(70 165)"><rect x="0" y="0" width="54" height="38" rx="6" fill="#FDE7C4" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 3 L27 22 L52 3" fill="none" stroke="#0B1F3A" stroke-width="2.2" stroke-linejoin="round"/></g><g transform="translate(30 225)"><rect x="0" y="0" width="54" height="38" rx="6" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 3 L27 22 L52 3" fill="none" stroke="#0B1F3A" stroke-width="2.2" stroke-linejoin="round"/></g>
+ <path d="M110 140 C150 150 160 180 190 195 M140 185 C160 190 170 195 190 200 M100 245 C140 240 160 220 190 208" fill="none" stroke="#0B1F3A" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7"/>
+ <!-- AI core: rounded square w/ datamatrix dots -->
+ <rect x="190" y="160" width="96" height="96" rx="22" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="2.4"/>
+ <g fill="#fff">
+  <rect x="206" y="176" width="10" height="10" rx="2"/><rect x="206" y="192" width="10" height="10" rx="2"/><rect x="206" y="208" width="10" height="10" rx="2"/><rect x="206" y="224" width="10" height="10" rx="2"/>
+  <rect x="222" y="224" width="10" height="10" rx="2"/><rect x="238" y="224" width="10" height="10" rx="2"/><rect x="254" y="224" width="10" height="10" rx="2"/>
+  <rect x="238" y="176" width="10" height="10" rx="2"/><rect x="254" y="192" width="10" height="10" rx="2"/><rect x="222" y="200" width="10" height="10" rx="2"/>
+ </g>
+ <rect x="238" y="200" width="10" height="10" rx="2" fill="#F2A541"/>
+ <path d="M238 160 v-18" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><circle cx="238" cy="136" r="6" fill="#F2A541" stroke="#0B1F3A" stroke-width="2"/>
+ <path d="M286 208 H318" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+ <!-- prioritized cards -->
+ <g transform="translate(325 110)"><rect width="150" height="42" rx="10" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="21" r="8" fill="#E5484D" stroke="#0B1F3A" stroke-width="2"/><path d="M40 16 H130" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M40 27 H100" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" opacity=".35"/></g><g transform="translate(325 165)"><rect width="150" height="42" rx="10" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="21" r="8" fill="#F2A541" stroke="#0B1F3A" stroke-width="2"/><path d="M40 16 H130" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M40 27 H100" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" opacity=".35"/></g><g transform="translate(325 220)"><rect width="150" height="42" rx="10" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="21" r="8" fill="#46A758" stroke="#0B1F3A" stroke-width="2"/><path d="M40 16 H130" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M40 27 H100" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" opacity=".35"/></g>
+ <path d="M318 131 V241" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M318 131 H325 M318 186 H325 M318 241 H325" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+ <!-- runbook doc -->
+ <g transform="translate(500 120)">
+  <path d="M0 0 h56 l18 18 v88 h-74 z" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 0 v18 h18" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 34 h48 M12 50 h40 M12 66 h48 M12 82 h30" stroke="#0B1F3A" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+  <circle cx="58" cy="86" r="9" fill="#F2A541" stroke="#0B1F3A" stroke-width="2"/>
+ </g>
+ <path d="M478 131 C490 131 492 150 500 156" fill="none" stroke="#0B1F3A" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7"/>
+ <!-- human approval: person with check bubble -->
+ <g transform="translate(440 300)">
+  <circle cx="0" cy="0" r="18" fill="#fff" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-30 56 c4 -24 16 -34 30 -34 c14 0 26 10 30 34" fill="#FDE7C4" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(46 -34)"><rect x="-22" y="-18" width="48" height="36" rx="12" fill="#F2A541" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-10 0 l7 7 l14 -15" fill="none" stroke="#0B1F3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-12 18 l-6 10 l14 -10" fill="#F2A541" stroke="#0B1F3A" stroke-width="2.4" stroke-linejoin="round"/></g>
+ </g>
+ <path d="M400 275 C410 262 420 262 428 270" fill="none" stroke="#0B1F3A" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7"/>
+ <path d="M80 70 v14 M73 77 h14 M560 360 v12 M554 366 h12" stroke="#F2A541" stroke-width="2.4" stroke-linecap="round"/>
+</g></svg>
