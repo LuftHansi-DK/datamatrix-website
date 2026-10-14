@@ -16,7 +16,7 @@ const ld = {
   telephone: site.phone,
   email: site.email,
   foundingDate: String(site.founded),
-  founder: { "@type": "Person", name: site.owner },
+  founder: { "@type": "Person", name: site.owner, ...(site.linkedin ? { sameAs: [site.linkedin] } : {}) },
   address: { "@type": "PostalAddress", streetAddress: site.street, postalCode: "4520", addressLocality: "Svinninge", addressCountry: "DK" },
   vatID: "DK" + site.cvr,
   areaServed: [{ "@type": "AdministrativeArea", name: "Sjælland" }, { "@type": "Country", name: "Danmark" }],

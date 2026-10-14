@@ -12,7 +12,7 @@ const da = lang === "da";
     </div>
     <div>
       <h4>{da ? "Kontakt" : "Contact"}</h4>
-      <p><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a>{site.linkedin && <><br /><a href={site.linkedin} rel="me noopener">LinkedIn</a></>}</p>
     </div>
     <div>
       <h4>{da ? "Adresse" : "Address"}</h4>
