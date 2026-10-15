@@ -43,6 +43,10 @@
     addEventListener("scroll", () => M.set(Math.min(1, scrollY / (innerHeight * 0.9))), { passive: true });
   }
 
+  // Driftstavle clock (Copenhagen time)
+  const clk = $("[data-clock]");
+  if (clk) { const f = new Intl.DateTimeFormat("da-DK", { timeZone: "Europe/Copenhagen", hour: "2-digit", minute: "2-digit", second: "2-digit" }); const t = () => (clk.textContent = f.format(new Date())); t(); setInterval(t, 1000); }
+
   // Hero pull-focus (I/L)
   const hf = $(".hero-f");
   if (hf) requestAnimationFrame(() => setTimeout(() => hf.classList.add("focus"), 150));

@@ -1,0 +1,118 @@
+---
+// Animated "AI in operations" diagram (inline SVG, CSS animation only, themed by the look's CSS variables).
+// Requests stream into an AI core with orbiting agents → prioritised cards + a runbook being written → a human gate that approves.
+// variant="flow" (AI page hero) | "harness" (for experienced people: harnesses, tools, memory, guardrails).
+interface Props { variant?: "flow" | "harness"; lang?: "da" | "en" }
+const { variant = "flow", lang = "da" } = Astro.props;
+const da = lang === "da";
+const T = da
+  ? { req: "Henvendelser", mail: "Mail", tel: "Telefon", core: "AI-agenter", tri: "Triage", pri: "Prioritering", rb: "Runbook", dr: "Udkast", hi: "HØJ", mid: "MIDDEL", lo: "LAV", human: "Menneske", ok: "godkender", gate: "Intet sendes uden et ja", tools: "Værktøjer", mem: "Hukommelse", guard: "Sikkerhedsregler", m365: "Microsoft 365", cal: "Kalender", logs: "Logning", skills: "Skills" }
+  : { req: "Requests", mail: "Mail", tel: "Phone", core: "AI agents", tri: "Triage", pri: "Priority", rb: "Runbook", dr: "Draft", hi: "HIGH", mid: "MEDIUM", lo: "LOW", human: "Human", ok: "approves", gate: "Nothing sent without a yes", tools: "Tools", mem: "Memory", guard: "Guardrails", m365: "Microsoft 365", cal: "Calendar", logs: "Logging", skills: "Skills" };
+const label = variant === "flow"
+  ? (da ? "Illustration: henvendelser løber ind i AI-agenter, som sorterer, prioriterer og skriver runbook og udkast; et menneske godkender." : "Illustration: requests flow into AI agents that sort, prioritise and write a runbook and draft; a human approves.")
+  : (da ? "Illustration: flere agent-harnesses (Hermes Agent, OpenClaw, egen Grok-bot, OpenAI Dots) deler værktøjer og hukommelse inden for faste sikkerhedsregler." : "Illustration: several agent harnesses (Hermes Agent, OpenClaw, own Grok bot, OpenAI Dots) share tools and memory inside fixed guardrails.");
+const H = ["Hermes Agent", "OpenClaw", da ? "Egen Grok-bot" : "Own Grok bot", "OpenAI Dots"];
+---
+{variant === "flow" && (
+<svg class="aid aid-flow" viewBox="0 0 760 460" role="img" aria-label={label}>
+  <defs>
+    <radialGradient id="aidCore" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--b1)" stop-opacity=".55" /><stop offset=".6" stop-color="var(--b2)" stop-opacity=".12" /><stop offset="1" stop-color="var(--b2)" stop-opacity="0" /></radialGradient>
+    <filter id="aidGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+    <linearGradient id="aidScanG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--b1)" stop-opacity="0" /><stop offset="1" stop-color="var(--b1)" stop-opacity=".12" /></linearGradient>
+    <pattern id="aidGrid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="aid-gridline" /></pattern>
+  </defs>
+  <rect width="760" height="460" fill="url(#aidGrid)" class="aid-grid" />
+  <rect class="aid-scan" x="0" y="-60" width="760" height="60" fill="url(#aidScanG)" />
+
+  <!-- inputs -->
+  <text class="aid-cap" x="34" y="92">{T.req}</text>
+  <g class="aid-in" transform="translate(34,112)"><rect width="128" height="46" rx="8" /><path d="M14 14h22v16H14z M14 14l11 9 11-9" class="aid-ico" /><text x="48" y="28">{T.mail}</text></g>
+  <g class="aid-in" transform="translate(34,176)"><rect width="128" height="46" rx="8" /><path d="M16 14c0 10 6 16 16 16l3-5-5-3-2 2c-3-1-5-3-6-6l2-2-3-5z" class="aid-ico" /><text x="48" y="28">{T.tel}</text></g>
+  <path id="aidP1" class="aid-wire" d="M162 135 C 230 135, 250 200, 318 210" />
+  <path id="aidP2" class="aid-wire" d="M162 199 C 220 199, 260 214, 318 220" />
+  <circle class="aid-pulse" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#aidP1" /></animateMotion></circle>
+  <circle class="aid-pulse" r="4"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#aidP2" /></animateMotion></circle>
+
+  <!-- core -->
+  <g transform="translate(400,215)">
+    <circle r="120" fill="url(#aidCore)" class="aid-breathe" />
+    <circle r="96" class="aid-orbit o1" />
+    <circle r="72" class="aid-orbit o2" />
+    <g class="aid-spin s1"><circle cx="96" cy="0" r="5" class="aid-sat" /><circle cx="-96" cy="0" r="3" class="aid-sat dim" /></g>
+    <g class="aid-spin s2"><circle cx="0" cy="72" r="4" class="aid-sat warm" /><circle cx="0" cy="-72" r="3" class="aid-sat dim" /></g>
+    <g class="aid-mark" filter="url(#aidGlow)" transform="translate(-34,-38) scale(.6)">
+      <polygon points="50,-4 79.4,13 50,30 20.6,13" fill="#6E9BF0" /><polygon points="20.6,13 50,30 50,64 20.6,47" fill="#2F6FDB" /><polygon points="79.4,13 50,30 50,64 79.4,47" fill="#1E4FA6" />
+      <polygon points="83.6,15.4 113,32.4 83.6,49.4 54.1,32.4" fill="#6E9BF0" /><polygon points="54.1,32.4 83.6,49.4 83.6,83.4 54.1,66.4" fill="#2F6FDB" /><polygon points="113,32.4 83.6,49.4 83.6,83.4 113,66.4" fill="#1E4FA6" />
+      <polygon points="16.4,15.4 45.9,32.4 16.4,49.4 -13,32.4" fill="#6E9BF0" /><polygon points="-13,32.4 16.4,49.4 16.4,83.4 -13,66.4" fill="#2F6FDB" /><polygon points="45.9,32.4 16.4,49.4 16.4,83.4 45.9,66.4" fill="#1E4FA6" />
+      <g class="aid-nudge"><polygon points="63.3,42.4 92.7,59.4 63.3,76.4 33.8,59.4" fill="#fff" /><polygon points="33.8,59.4 63.3,76.4 63.3,110.4 33.8,93.4" fill="#E4E8EF" /><polygon points="92.7,59.4 63.3,76.4 63.3,110.4 92.7,93.4" fill="#C3CAD6" /></g>
+    </g>
+    <text class="aid-core" y="78" text-anchor="middle">{T.core}</text>
+    <g class="aid-tag t1" transform="translate(-150,-104)"><rect width="96" height="26" rx="13" /><text x="48" y="17" text-anchor="middle">{T.tri}</text></g>
+    <g class="aid-tag t2" transform="translate(54,-112)"><rect width="110" height="26" rx="13" /><text x="55" y="17" text-anchor="middle">{T.pri}</text></g>
+    <g class="aid-tag t3" transform="translate(-160,92)"><rect width="96" height="26" rx="13" /><text x="48" y="17" text-anchor="middle">{T.rb}</text></g>
+    <g class="aid-tag t4" transform="translate(70,96)"><rect width="84" height="26" rx="13" /><text x="42" y="17" text-anchor="middle">{T.dr}</text></g>
+  </g>
+
+  <!-- outputs: prioritised cards + runbook being written -->
+  <path id="aidP3" class="aid-wire" d="M520 200 C 560 180, 570 120, 596 110" />
+  <path id="aidP4" class="aid-wire" d="M520 235 C 560 250, 570 300, 596 300" />
+  <circle class="aid-pulse" r="4"><animateMotion dur="2s" begin=".6s" repeatCount="indefinite"><mpath href="#aidP3" /></animateMotion></circle>
+  <circle class="aid-pulse" r="4"><animateMotion dur="2s" begin="1.6s" repeatCount="indefinite"><mpath href="#aidP4" /></animateMotion></circle>
+  <g transform="translate(596,62)">
+    <g><g class="aid-card c1"><rect width="140" height="30" rx="6" /><rect class="aid-prio hi" x="10" y="11" width="8" height="8" rx="2" /><text x="26" y="20">{T.hi}</text><rect class="aid-bar" x="78" y="13" width="50" height="4" rx="2" /></g></g>
+    <g transform="translate(0,38)"><g class="aid-card c2"><rect width="140" height="30" rx="6" /><rect class="aid-prio mid" x="10" y="11" width="8" height="8" rx="2" /><text x="26" y="20">{T.mid}</text><rect class="aid-bar" x="90" y="13" width="38" height="4" rx="2" /></g></g>
+    <g transform="translate(0,76)"><g class="aid-card c3"><rect width="140" height="30" rx="6" /><rect class="aid-prio lo" x="10" y="11" width="8" height="8" rx="2" /><text x="26" y="20">{T.lo}</text><rect class="aid-bar" x="100" y="13" width="28" height="4" rx="2" /></g></g>
+  </g>
+  <g transform="translate(596,252)" class="aid-doc">
+    <rect width="140" height="96" rx="6" />
+    <text x="12" y="20" class="aid-doc-h">{T.rb}</text>
+    <rect class="aid-line l1" x="12" y="32" width="104" height="4" rx="2" /><rect class="aid-line l2" x="12" y="46" width="84" height="4" rx="2" />
+    <rect class="aid-line l3" x="12" y="60" width="112" height="4" rx="2" /><rect class="aid-line l4" x="12" y="74" width="66" height="4" rx="2" />
+  </g>
+
+  <!-- human gate -->
+  <path id="aidP5" class="aid-wire warmw" d="M666 348 C 666 380, 560 392, 470 392" />
+  <circle class="aid-pulse warm" r="4"><animateMotion dur="2.6s" begin="2s" repeatCount="indefinite"><mpath href="#aidP5" /></animateMotion></circle>
+  <g transform="translate(300,360)" class="aid-gate">
+    <rect width="170" height="64" rx="32" />
+    <circle cx="32" cy="32" r="18" class="aid-gate-c" />
+    <path d="M23 32l6 6 12-13" class="aid-check" />
+    <text x="60" y="29" class="aid-gate-t">{T.human}</text><text x="60" y="46" class="aid-gate-s">{T.ok}</text>
+  </g>
+  <text x="30" y="440" class="aid-foot">{T.gate}</text>
+</svg>
+)}
+
+{variant === "harness" && (
+<svg class="aid aid-harness" viewBox="0 0 640 520" role="img" aria-label={label}>
+  <defs>
+    <radialGradient id="aidCore2" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--warm)" stop-opacity=".35" /><stop offset="1" stop-color="var(--warm)" stop-opacity="0" /></radialGradient>
+    <pattern id="aidGrid2" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="aid-dot" /></pattern>
+  </defs>
+  <rect width="640" height="520" fill="url(#aidGrid2)" />
+  <g transform="translate(320,260)">
+    <circle r="226" class="aid-guard" />
+    <text class="aid-cap" x="0" y="-234" text-anchor="middle">{T.guard}</text>
+    <circle r="160" class="aid-orbit o1" />
+    <circle r="90" fill="url(#aidCore2)" class="aid-breathe" />
+    <circle r="56" class="aid-mem" />
+    <circle r="56" class="aid-mem-ring" />
+    <text class="aid-core" y="-4" text-anchor="middle">{T.mem}</text>
+    <text class="aid-core sub" y="14" text-anchor="middle">+ {T.skills}</text>
+    {H.map((n, i) => {
+      const a = (-90 + i * 90) * Math.PI / 180, x = Math.cos(a) * 160, y = Math.sin(a) * 160;
+      return (<g>
+        <line x1={Math.cos(a) * 60} y1={Math.sin(a) * 60} x2={x} y2={y} class="aid-wire" />
+        <circle r="3.5" class="aid-pulse"><animate attributeName="cx" values={`${x};${Math.cos(a) * 60};${x}`} dur={`${3 + i * .4}s`} repeatCount="indefinite" /><animate attributeName="cy" values={`${y};${Math.sin(a) * 60};${y}`} dur={`${3 + i * .4}s`} repeatCount="indefinite" /></circle>
+        <g class="aid-h" transform={`translate(${x},${y})`}><rect x="-70" y="-20" width="140" height="40" rx="20" /><text y="5" text-anchor="middle">{n}</text></g>
+      </g>);
+    })}
+    {[T.mail, T.cal, T.m365, T.logs].map((n, i) => {
+      const a = (-45 + i * 90) * Math.PI / 180, x = Math.cos(a) * 205, y = Math.sin(a) * 205;
+      return (<g class="aid-tool" transform={`translate(${x},${y})`}><circle r="5" /><text y="-12" text-anchor="middle">{n}</text></g>);
+    })}
+    <g class="aid-spin s1"><circle cx="226" cy="0" r="4" class="aid-sat warm" /></g>
+    <g class="aid-spin s3"><circle cx="0" cy="160" r="3" class="aid-sat" /></g>
+  </g>
+</svg>
+)}
