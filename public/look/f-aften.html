@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>F · Monolit Aften — DataMatrix look-prototype</title>
+<link rel="stylesheet" href="monolit.css">
+<style>
+body{background:var(--deep);color:#AEBBCF}
+h1,h2,h3{color:#fff}
+header{position:fixed;inset:0 0 auto;z-index:30;transition:background .4s}
+header.sc{background:rgba(11,22,38,.8);backdrop-filter:blur(14px)}
+.bar{display:flex;justify-content:space-between;align-items:center;height:80px}.bar img{height:26px}
+nav{display:flex;gap:34px;align-items:center;font-size:.86rem;color:#D5DDEA}nav a{text-decoration:none}nav a:hover{color:#fff}
+@media(max-width:900px){nav a:not(.btn){display:none}}
+/* hero */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:30% 50%;filter:blur(18px) brightness(.7);transform:scale(1.12);transition:filter 2.4s cubic-bezier(.2,.7,.2,1),transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.hero.focus .bg img{filter:blur(0) brightness(.9);transform:scale(1.02)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,22,38,.15) 0%,rgba(11,22,38,.55) 45%,rgba(11,22,38,.92) 75%),linear-gradient(0deg,var(--deep) 0%,transparent 30%)}
+.hero .in{position:relative;z-index:2;height:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero .copy{grid-column:2;padding-right:max(40px,calc((100vw - 1240px)/2 + 40px));padding-left:20px}
+.hero .lab{color:var(--warm)}
+.hero h1{font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.02;margin:24px 0}
+.hero p{font-size:1.1rem;max-width:42ch;margin:0 0 36px;color:#C9D3E2}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.hero .scene{position:absolute;left:24%;top:16%;z-index:3;--S:58px;--G:66px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.5))}
+.hero .cap{position:absolute;left:max(40px,calc((100vw - 1240px)/2 + 40px));bottom:34px;z-index:3;color:#C9D3E2;display:flex;gap:12px;align-items:center}
+.hero .cap i{width:8px;height:8px;border-radius:50%;background:#5EE0B5;box-shadow:0 0 10px #5EE0B5}
+@media(max-width:900px){.hero .in{grid-template-columns:1fr;align-items:end;padding-bottom:90px}.hero .copy{grid-column:1;padding:0 22px}.hero::after{background:linear-gradient(0deg,var(--deep) 10%,rgba(11,22,38,.75) 55%,rgba(11,22,38,.3))}.hero .scene{left:auto;right:18%;top:20%}}
+/* sections */
+section{padding:140px 0}
+.chap{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-bottom:80px}
+.chap .lab{color:var(--warm);padding-top:14px}
+.chap h2{font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1.04}
+.chap p{font-size:1.12rem;max-width:50ch;margin:22px 0 0}
+@media(max-width:900px){.chap{grid-template-columns:1fr;gap:12px;margin-bottom:48px}}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.pil{background:var(--deep);padding:40px 34px 44px;position:relative;overflow:hidden;min-height:260px}
+.pil h3{font-size:1.5rem;font-weight:400;margin:48px 0 12px}
+.pil p{margin:0;font-size:.95rem}
+.pil .k{width:22px;height:22px}
+.pil::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,120%),rgba(233,182,119,.12),transparent 50%);opacity:0;transition:opacity .3s}
+.pil:hover::before{opacity:1}
+.pil.photo{padding:0}.pil.photo img{width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.pillars{grid-template-columns:1fr}.pil{min-height:0}.pil.photo{height:260px}}
+/* watch section */
+.watch{display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:stretch;background:#0E1B2E}
+.watch .ph{min-height:620px}
+.watch .txt{padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
+.watch h2{font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.06;margin:18px 0 24px}
+.toast{position:absolute;left:8%;top:12%;width:min(340px,80%);background:rgba(15,25,42,.72);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;color:#DDE5F1;font-size:.88rem;box-shadow:0 20px 50px -10px rgba(0,0,0,.6);opacity:0;transform:translateY(-14px) scale(.98);transition:all .7s cubic-bezier(.2,.8,.2,1)}
+.toast.on{opacity:1;transform:none}
+.toast+.toast{top:calc(12% + 92px)}
+.toast b{color:#fff;display:block;font-weight:600}
+.toast .t{float:right;color:#8E9BB0;font-size:.75rem}
+.toast .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--warm);margin-right:8px}
+.toast.ok .dot{background:#5EE0B5}
+@media(max-width:900px){.watch{grid-template-columns:1fr}.watch .ph{min-height:420px}.watch .txt{padding:56px 22px}}
+/* person */
+.person{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.person .pt{width:280px;height:340px;overflow:hidden;border-radius:4px;position:relative}
+.person .pt img{width:100%;height:100%;object-fit:cover;filter:sepia(.35) saturate(1.3) contrast(1.05) brightness(.95)}
+.person .pt::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(233,182,119,.18),rgba(11,22,38,.25))}
+.person blockquote{font-family:"IT";font-weight:300;font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;color:#fff;letter-spacing:-.03em;margin:20px 0 28px}
+.nums{display:flex;gap:56px;margin-top:40px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}
+.nums b{display:block;font-family:"IT";font-weight:200;font-size:3.4rem;line-height:1;color:#fff;letter-spacing:-.04em}
+@media(max-width:800px){.person{grid-template-columns:1fr}.person .pt{width:100%;height:360px}.nums{gap:28px}}
+/* cta over photo */
+.cta{position:relative;padding:180px 0;text-align:center;overflow:hidden}
+.cta .ph{position:absolute;inset:0}
+.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 50%,rgba(11,22,38,.55),rgba(11,22,38,.92))}
+.cta .wrap{position:relative;z-index:2}
+.cta h2{font-size:clamp(2.8rem,7vw,6rem);line-height:1;margin:22px 0 40px}
+footer{border-top:1px solid rgba(255,255,255,.08)}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap bar">
+  <a href="#"><img src="../img/logo-light.svg" alt="DataMatrix"></a>
+  <nav><a href="#">Ydelser</a><a href="#">AI i drift</a><a href="#">Om</a><a href="#">Indsigt</a><a href="#">Kontakt</a><a class="btn o" href="tel:+4520261188" style="padding:10px 16px">20 26 11 88</a></nav>
+</div></header>
+
+<div class="hero" id="hero">
+  <div class="bg"><img src="photos/nas.jpg" alt=""></div>
+  <div class="scene"><div class="world" id="world"></div></div>
+  <div class="in">
+    <div class="copy">
+      <span class="lab">Senior IT-partner · siden 2004</span>
+      <h1>IT der bare virker. <b>En partner, der kender jer.</b></h1>
+      <p>DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med mere end 30 års erfaring, personlig service og AI, der arbejder med i driften.</p>
+      <div class="acts"><a class="btn mag" href="tel:+4520261188">Ring 20 26 11 88 →</a><a class="btn o" href="#ydelser">Se hvad vi laver</a></div>
+    </div>
+  </div>
+  <div class="cap lab"><i></i>Overvågning kører — også i aften</div>
+</div>
+
+<section id="ydelser"><div class="wrap">
+  <div class="chap"><span class="lab">Ydelser</span><div><h2>Det, vi tager <b>ansvar</b> for.</h2><p>Fra den daglige drift til det store projekt. I kan få det hele, eller vi kan supplere den IT-ansvarlige, I allerede har.</p></div></div>
+  <div class="pillars" id="pills">
+    <div class="pil"><svg class="k" viewBox="0 0 22 22"><rect x="2" y="2" width="18" height="18" fill="#6E9BF0"/></svg><h3>Drift og overvågning</h3><p>Servere, klienter og backup — også den backup, der aldrig kørte.</p></div>
+    <div class="pil photo ph"><img class="rf" src="photos/drive.jpg" alt=""></div>
+    <div class="pil"><svg class="k" viewBox="0 0 22 22"><rect x="2" y="2" width="18" height="18" fill="#2F6FDB"/></svg><h3>IT-sikkerhed</h3><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer — en rød tråd, ikke et tilkøb.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 22 22"><rect x="2" y="2" width="18" height="18" fill="#1E4FA6"/></svg><h3>Backup og beredskab</h3><p>Testet backup og en plan for den dag, det går galt. Disaster recovery er et af vores specialer.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 22 22"><rect x="2" y="2" width="18" height="18" fill="none" stroke="#6E9BF0" stroke-width="2"/></svg><h3>Microsoft 365, cloud og infrastruktur</h3><p>Mail, Teams, Azure, servere, netværk og virtualisering — sat op rigtigt og drevet stabilt.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 22 22"><rect x="2" y="2" width="18" height="18" fill="#fff"/></svg><h3>AI i drift</h3><p>AI sorterer, prioriterer og skriver runbooks — og et menneske godkender, før noget sker.</p></div>
+  </div>
+</div></section>
+
+<div class="watch" id="watch">
+  <div class="ph"><img class="rf" src="photos/phone.jpg" alt="">
+    <div class="toast" id="t1"><span class="t">06:00</span><b><span class="dot"></span>NAS-backup startede ikke i nat</b>Ingen fejl — men heller intet job.</div>
+    <div class="toast ok" id="t2"><span class="t">06:04</span><b><span class="dot"></span>Runbook klar · kørt efter godkendelse</b>Backup gennemført 06:41.</div>
+  </div>
+  <div class="txt">
+    <span class="lab" style="color:var(--warm)">Overvågning</span>
+    <h2>Vi opdager også den backup, <b>der aldrig kørte.</b></h2>
+    <p>De fleste overvågningssystemer siger til, når en backup fejler. Men den, der slet ikke startede, giver ingen fejlbesked — og opdages typisk først den dag, man skal bruge den.</p>
+    <p>Vores overvågning ved, hvad der <em>burde</em> være sket. Så I kan sove roligt.</p>
+    <p class="note">Notifikationerne er en illustration.</p>
+  </div>
+</div>
+
+<section><div class="wrap person">
+  <div class="pt"><img src="../img/hans.jpg" alt="Hans Kristiansen"></div>
+  <div><span class="lab" style="color:var(--warm)">Hvorfor DataMatrix</span>
+    <blockquote>“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</blockquote>
+    <span style="color:#fff">Hans Kristiansen <span style="color:#7F8DA4">· ejer og senior IT-konsulent</span></span>
+    <div class="nums"><div><b>22</b>år som DataMatrix</div><div><b>30+</b>års erfaring</div><div><b>1</b>fast kontakt</div></div>
+  </div>
+</div></section>
+
+<div class="cta">
+  <div class="ph"><img class="rf" src="photos/meeting.jpg" alt=""></div>
+  <div class="wrap"><span class="lab" style="color:var(--warm)">Kontakt</span>
+    <h2>Lad os tage <b>en snak.</b></h2>
+    <div class="acts" style="justify-content:center"><a class="btn mag" href="tel:+4520261188">Ring +45 20 26 11 88 →</a><a class="btn o" href="mailto:kontakt@datamatrix.dk">kontakt@datamatrix.dk</a></div>
+  </div>
+</div>
+<footer><div class="wrap"><span>© 2026 DataMatrix ApS · Lindevej 5 · 4520 Svinninge · CVR 28124147</span><span>Ingen cookies. Ingen sporing. · Prototype: fotos er AI-genererede pladsholdere</span></div></footer>
+
+<script src="monolit.js"></script>
+<script>
+addEventListener('scroll',()=>document.getElementById('hd').classList.toggle('sc',scrollY>40),{passive:true});
+// Trick 1: the hero "pulls focus" on load — bokeh to sharp, like a camera finding its subject.
+requestAnimationFrame(()=>setTimeout(()=>document.getElementById('hero').classList.add('focus'),150));
+// Trick 2: the 3D logo floats in the room, follows mouse / phone tilt, and comes apart as you scroll off the hero.
+const M=Monolith(document.getElementById('world'));
+addEventListener('scroll',()=>M.set(Math.min(1,scrollY/(innerHeight*.9))),{passive:true});
+// Trick 3: every photo pulls focus as it scrolls in.
+rackFocus('.rf');magnetic('.mag');
+// Trick 4: warm light follows the cursor across the service grid.
+document.getElementById('pills').addEventListener('pointermove',e=>{for(const k of e.currentTarget.children){const r=k.getBoundingClientRect();k.style.setProperty('--x',e.clientX-r.left+'px');k.style.setProperty('--y',e.clientY-r.top+'px')}});
+// Trick 5: the phone "receives" the alarm, then the all-clear.
+new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting)return;o.disconnect();setTimeout(()=>t1.classList.add('on'),600);setTimeout(()=>t2.classList.add('on'),2600)},{threshold:.45}).observe(document.getElementById('watch'));
+</script>
+</body>
+</html>
