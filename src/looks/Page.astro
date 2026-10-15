@@ -38,6 +38,6 @@ const front = route === "" || route === "en";
       <span class="lab">Indsigt · {post.data.date.toLocaleDateString("da-DK", { day: "numeric", month: "long", year: "numeric" })}</span>
       <h1 style="font-size:clamp(2rem,4vw,3.2rem)">{post.data.title}</h1>
     </div></div>
-    <div class="inner"><article class="wrap article"><Content /><p style="margin-top:2em"><a href="/indsigt/">← Alle indlæg</a></p></article></div>
+    <div class="inner"><div class="wrap"><article class="article"><Content /><p style="margin-top:2em"><a href="/indsigt/">← Alle indlæg</a></p></article></div></div>
   )}
 </LookBase>

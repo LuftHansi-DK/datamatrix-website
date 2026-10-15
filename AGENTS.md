@@ -10,15 +10,20 @@ Do not push to `main`, do not merge, do not change repo settings, Cloudflare or 
 ## Workflow
 1. `git switch -c <short-topic>` from an up-to-date `main`.
 2. Make the smallest change that does the job. Keep the existing design.
-3. `npm ci && npm run check` must pass (content guard + build).
+3. `npm ci && npm run check` must pass (content guard + look copy check + rotation tests + build).
 4. Open a PR: what changed, why, and the preview URL once Cloudflare posts it.
 
 ## Where things live
 - Contact facts (phone, mail, address, CVR, remote-support link): `src/data/site.json` — the only place to change them.
-- Pages: `src/pages/*.astro` (Danish), `src/pages/en/index.astro` (English).
+- **Page text lives in one file per look**: `src/looks/i.json`, `j.json`, `k.json`, `l.json` (Danish + English under `en`).
+  The site rotates these four looks weekly, and **every look must have its own wording** — the same fact, said differently.
+  Allowed claims: `src/looks/FACTS.md`. Structure: `src/looks/skeleton.json`. Changing a fact means changing it in all four files.
+  `npm run check` fails if two looks share a sentence.
+- Page templates: `src/looks/*.astro`; `src/pages/*.astro` are thin wrappers. Do not hard-code text in templates.
 - News/articles ("Indsigt"): one Markdown file per post in `src/content/indsigt/`
   with frontmatter `title`, `description` (≤200 chars), `date` (YYYY-MM-DD), `draft`. Use `draft: true` until Hans approves.
-- Design: `src/styles/global.css`. Logo mark: `src/components/Mark.astro`, `public/img/mark.svg`.
+- Design: `public/looks/looks.css` + `looks.js`. Logo mark: `src/components/Logo.astro`, `public/img/mark.svg`.
+- Weekly look rotation: `lib/look.mjs`, `functions/_middleware.js`. To show one look for everybody until a Monday: `lib/look-pin.json`.
 
 ## Content rules
 - Danish first; plain, warm, professional. No buzzwords, no hype. English page mirrors the Danish facts.
