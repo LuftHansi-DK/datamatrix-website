@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>D · Kontrolrum — DataMatrix look-prototype</title>
+<style>
+@font-face{font-family:"Grot";src:url(fonts/space-grotesk-latin-wght-normal.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Mono";src:url(fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2");font-weight:100 800;font-display:swap}
+:root{--bg:#ECEEF1;--panel:#fff;--ink:#0D1524;--text:#3B4558;--muted:#7C8596;--line:#D5D9E0;--blue:#2F6FDB;--ok:#1FA971;--warn:#E5892A;--bad:#D9483B}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:400 16px/1.6 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+ background-color:var(--bg);background-image:linear-gradient(rgba(13,21,36,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(13,21,36,.045) 1px,transparent 1px);background-size:32px 32px}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+@media(max-width:700px){.wrap{padding:0 16px}}
+.m{font-family:"Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+h1,h2,h3{font-family:"Grot",sans-serif;color:var(--ink);letter-spacing:-.025em;margin:0;font-weight:600}
+/* top strip */
+.strip{background:var(--ink);color:#9AA6BA}
+.strip .wrap{display:flex;justify-content:space-between;height:34px;align-items:center}
+.strip b{color:#fff;font-weight:500}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:8px;box-shadow:0 0 8px var(--ok)}
+header{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.bar img{height:26px}
+nav{display:flex;gap:4px;align-items:center}
+nav a{text-decoration:none;font-size:.88rem;padding:8px 14px;border-radius:6px;color:var(--ink)}nav a:hover{background:var(--bg)}
+@media(max-width:900px){nav a:not(.btn){display:none}.strip .hide{display:none}}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff!important;text-decoration:none;font-weight:600;font-size:.9rem;padding:13px 20px;border-radius:6px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18);transition:filter .15s,transform .1s}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:translateY(1px)}
+.btn.sec{background:var(--panel);color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--line),inset 0 -2px 0 var(--line)}
+.btn kbd{font:500 .7rem "Mono";padding:2px 6px;border-radius:4px;background:rgba(255,255,255,.18)}
+/* hero */
+.hero{padding:72px 0 64px}
+.hg{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:stretch}
+@media(max-width:1000px){.hg{grid-template-columns:1fr}}
+.tag{display:inline-flex;gap:8px;padding:6px 10px;border:1px solid var(--line);background:var(--panel);border-radius:6px;color:var(--ink)}
+h1{font-size:clamp(2.6rem,5.6vw,4.8rem);line-height:1;letter-spacing:-.04em;margin:26px 0 24px}
+h1 span{color:var(--blue)}
+.lead{font-size:1.15rem;max-width:46ch;margin:0 0 32px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border:1px solid var(--line);background:var(--panel);border-radius:10px;overflow:hidden}
+.spec div{padding:16px 18px;border-right:1px solid var(--line)}.spec div:last-child{border:0}
+.spec b{display:block;font-family:"Grot";font-size:1.7rem;color:var(--ink);font-weight:600;letter-spacing:-.03em}
+/* console */
+.console{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 0 rgba(13,21,36,.04),0 30px 60px -30px rgba(13,21,36,.25);display:flex;flex-direction:column;overflow:hidden}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);color:var(--muted)}
+.ch b{color:var(--ink);font-weight:600}
+.jobs{flex:none}
+.job{display:grid;grid-template-columns:18px 1.4fr 1fr 90px;gap:12px;align-items:center;padding:12px 18px;border-bottom:1px solid #EEF0F3;font-size:.9rem;transition:background .4s}
+.job .n{color:var(--ink);font-weight:500}.job .t{font-family:"Mono";font-size:.75rem;color:var(--muted)}
+.job .s{font-family:"Mono";font-size:.7rem;text-align:right;letter-spacing:.05em}
+.job i{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+.job.run i{background:var(--blue);animation:pu 1s infinite}.job.run .s{color:var(--blue)}
+.job.ok .s{color:var(--ok)}
+.job.miss{background:#FFF6EC}.job.miss i{background:var(--warn);box-shadow:0 0 0 4px rgba(229,137,42,.18);animation:pu .8s infinite}.job.miss .s{color:var(--warn)}
+.job.fixed{background:#F0FAF5}
+@keyframes pu{50%{opacity:.35}}
+.bar2{height:4px;background:#EEF0F3;border-radius:2px;overflow:hidden;grid-column:2/5;display:none}.job.run .bar2{display:block}
+.bar2 u{display:block;height:100%;width:0;background:var(--blue);transition:width .2s linear}
+.log{background:#0D1524;color:#9AA6BA;font:400 .76rem/1.75 "Mono",monospace;padding:14px 18px;flex:1;min-height:150px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.log .w{color:#F2A541}.log .o{color:#5EE0B5}.log .b{color:#8DB2F5}
+/* sections */
+section{padding:96px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px;flex-wrap:wrap}
+.sh h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;max-width:18ch;margin-top:12px}
+.sh p{max-width:44ch;margin:0}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.mods{grid-template-columns:1fr}}
+.mod{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;transition:border-color .2s,transform .2s}
+.mod:hover{border-color:var(--blue)}
+.mod .top{display:flex;justify-content:space-between;color:var(--muted);margin-bottom:34px}
+.mod .top span:last-child{display:flex;align-items:center;gap:6px}
+.mod h3{font-size:1.25rem;margin-bottom:8px}
+.mod p{margin:0;font-size:.94rem}
+.mod.ai{background:var(--ink);border-color:var(--ink);color:#9AA6BA}.mod.ai h3{color:#fff}.mod.ai .top{color:#6B7891}
+.spark{display:block;width:100%;height:36px;margin-top:22px}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.st{padding:26px 22px;border-right:1px solid var(--line);position:relative}
+.st:last-child{border:0;background:#F0FAF5}
+.st .m{color:var(--muted)}.st h3{font-size:1.08rem;margin:16px 0 6px}.st p{margin:0;font-size:.88rem}
+.st::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--blue);transition:width .5s}
+.pipe.go .st::after{animation:fill 6s linear infinite;animation-delay:calc(var(--i)*1.2s)}
+@keyframes fill{0%{width:0}18%{width:100%}100%{width:100%}}
+.st:last-child::after{background:var(--ok)}
+@media(max-width:900px){.pipe{grid-template-columns:1fr}.st{border-right:0;border-bottom:1px solid var(--line)}}
+/* person */
+.person{display:grid;grid-template-columns:300px 1fr;gap:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.person img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.person .b{padding:40px}
+.person blockquote{font-family:"Grot";font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;color:var(--ink);margin:16px 0 28px;font-weight:500;letter-spacing:-.02em}
+.kv{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
+.kv div{padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.kv .m{color:var(--muted);display:block}
+@media(max-width:800px){.person{grid-template-columns:1fr}.person img{height:320px}}
+.cta{background:var(--ink);color:#9AA6BA;border-radius:16px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.cta h2{color:#fff;font-size:clamp(2rem,4vw,3.2rem)}
+footer{padding:40px 0;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="strip m"><div class="wrap"><span><span class="dot"></span>Overvågning kører · <b id="clock">--:--:--</b> dansk tid</span><span class="hide">DataMatrix ApS · CVR 28124147 · Svinninge</span></div></div>
+<header><div class="wrap bar">
+  <a href="#"><img src="../img/logo.svg" alt="DataMatrix"></a>
+  <nav><a href="#">Ydelser</a><a href="#">AI i drift</a><a href="#">Om</a><a href="#">Indsigt</a><a href="#">Kontakt</a>&nbsp;<a class="btn" href="tel:+4520261188" style="padding:9px 14px">20 26 11 88</a></nav>
+</div></header>
+
+<div class="hero"><div class="wrap hg">
+  <div>
+    <span class="tag m">● Senior IT-partner · siden 2004</span>
+    <h1>IT der bare virker. <span>En partner, der kender jer.</span></h1>
+    <p class="lead">DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med mere end 30 års erfaring, personlig service og AI, der arbejder med i driften.</p>
+    <div class="acts"><a class="btn" href="tel:+4520261188">Ring 20 26 11 88 <kbd>↵</kbd></a><a class="btn sec" href="#ydelser">Se hvad vi laver</a></div>
+    <div class="spec"><div><b>22 år</b><span class="m">som DataMatrix</span></div><div><b>30+</b><span class="m">års erfaring</span></div><div><b>1</b><span class="m">fast kontakt</span></div></div>
+  </div>
+  <div class="console" aria-label="Illustration af overvågning">
+    <div class="ch m"><span><b>Natlige jobs</b> · eksempel</span><span>Illustration · simuleret</span></div>
+    <div class="jobs" id="jobs"></div>
+    <div class="log" id="log"></div>
+  </div>
+</div></div>
+
+<section id="ydelser" style="padding-top:40px"><div class="wrap">
+  <div class="sh"><div><span class="m" style="color:var(--blue)">01 / Ydelser</span><h2>Det, vi tager ansvar for</h2></div><p>Fra den daglige drift til det store projekt. I kan få det hele, eller vi kan supplere den IT-ansvarlige, I allerede har.</p></div>
+  <div class="mods">
+    <div class="mod"><div class="top m"><span>MOD-01</span><span><i class="dot"></i>Drift</span></div><h3>Drift og overvågning</h3><p>Servere, klienter og backup — også den backup, der aldrig kørte.</p><svg class="spark" viewBox="0 0 200 36"><polyline fill="none" stroke="#2F6FDB" stroke-width="1.5" points="0,26 20,24 40,25 60,20 80,22 100,14 120,18 140,12 160,15 180,9 200,11"/></svg></div>
+    <div class="mod"><div class="top m"><span>MOD-02</span><span><i class="dot"></i>Sikkerhed</span></div><h3>IT-sikkerhed</h3><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer.</p><svg class="spark" viewBox="0 0 200 36"><polyline fill="none" stroke="#2F6FDB" stroke-width="1.5" points="0,18 25,18 25,8 50,8 50,18 100,18 100,8 125,8 125,18 200,18"/></svg></div>
+    <div class="mod"><div class="top m"><span>MOD-03</span><span><i class="dot"></i>Beredskab</span></div><h3>Backup og beredskab</h3><p>Testet backup og en plan for den dag, det går galt. DR er et speciale.</p><svg class="spark" viewBox="0 0 200 36"><g fill="#2F6FDB"><rect x="2" y="12" width="22" height="18"/><rect x="30" y="12" width="22" height="18"/><rect x="58" y="12" width="22" height="18"/><rect x="86" y="12" width="22" height="18" fill="none" stroke="#E5892A" stroke-dasharray="3 2"/><rect x="114" y="12" width="22" height="18"/><rect x="142" y="12" width="22" height="18"/><rect x="170" y="12" width="22" height="18"/></g></svg></div>
+    <div class="mod"><div class="top m"><span>MOD-04</span><span><i class="dot"></i>Cloud</span></div><h3>Microsoft 365 og cloud</h3><p>Mail, Teams, SharePoint og Azure sat op rigtigt — sky og lokalt i balance.</p></div>
+    <div class="mod"><div class="top m"><span>MOD-05</span><span><i class="dot"></i>Infra</span></div><h3>Servere, netværk, virtualisering</h3><p>Infrastruktur, der kører stabilt år efter år. Også hardware og licenser.</p></div>
+    <div class="mod ai"><div class="top m"><span>MOD-06</span><span><i class="dot"></i>AI</span></div><h3>AI i drift</h3><p>AI sorterer, prioriterer og skriver runbooks — med et menneske, der godkender.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:24px"><div class="wrap">
+  <div class="sh"><div><span class="m" style="color:var(--blue)">02 / AI i drift</span><h2>AI sorterer. Et menneske beslutter.</h2></div><p>Hver henvendelse går gennem samme spor. Intet bliver sendt, ændret eller købt, uden at et menneske har sagt ja.</p></div>
+  <div class="pipe" id="pipe">
+    <div class="st" style="--i:0"><span class="m">01 · Ind</span><h3>Henvendelse</h3><p>Mail, telefon eller alarm.</p></div>
+    <div class="st" style="--i:1"><span class="m">02 · AI</span><h3>Triage</h3><p>Hvad haster, hvem er ramt?</p></div>
+    <div class="st" style="--i:2"><span class="m">03 · AI</span><h3>Opgave</h3><p>Oprettet og prioriteret.</p></div>
+    <div class="st" style="--i:3"><span class="m">04 · AI</span><h3>Runbook</h3><p>Trin-for-trin-plan for løsningen.</p></div>
+    <div class="st" style="--i:4"><span class="m">05 · Menneske</span><h3>Godkendt</h3><p>Først da sker der noget.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:24px"><div class="wrap">
+  <div class="person">
+    <img src="../img/hans.jpg" alt="Hans Kristiansen">
+    <div class="b"><span class="m" style="color:var(--blue)">03 / Kontakt</span>
+      <blockquote>“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</blockquote>
+      <div class="kv"><div><span class="m">Navn</span>Hans Kristiansen</div><div><span class="m">Rolle</span>Ejer · senior IT-konsulent</div><div><span class="m">Back-up</span>Faste kolleger ved ferie og sygdom</div><div><span class="m">Svartid</span>Kort vej fra opkald til løsning</div></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="cta"><div><h2>Lad os tage en snak</h2><p style="margin:8px 0 0">Ring eller skriv — vi kommer også gerne forbi.</p></div><a class="btn" href="tel:+4520261188">Ring +45 20 26 11 88</a></div></div>
+<footer><div class="wrap m"><span>© 2026 DataMatrix ApS · Lindevej 5 · 4520 Svinninge</span><span>Ingen cookies · ingen sporing</span></div></footer>
+
+<script>
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// live clock, Copenhagen time
+const ck=document.getElementById('clock');const tick=()=>ck.textContent=new Date().toLocaleTimeString('da-DK',{timeZone:'Europe/Copenhagen',hour12:false});tick();setInterval(tick,1000);
+// Party trick: a simulated night of backup jobs. One job never starts -> detected -> runbook -> human approves.
+const J=[['DC01 · systemstate','01:00'],['FILE01 · Veeam','01:30'],['SQL02 · databaser','02:00'],['NAS-BACKUP · kopi','02:30'],['M365 · postkasser','03:00'],['FW-01 · konfig','03:30']];
+const jobs=document.getElementById('jobs'),log=document.getElementById('log');
+jobs.innerHTML=J.map(([n,t],i)=>`<div class="job" id="j${i}"><i></i><span class="n">${n}</span><span class="t">planlagt ${t}</span><span class="s m">VENTER</span><div class="bar2"><u></u></div></div>`).join('');
+const L=(c,s)=>{const d=document.createElement('div');d.innerHTML=`<span class="b">${new Date().toLocaleTimeString('da-DK',{hour12:false})}</span> <span class="${c}">${s}</span>`;log.append(d);while(log.children.length>6)log.firstChild.remove()};
+const sleep=ms=>new Promise(r=>setTimeout(r,RM?0:ms));
+async function night(){for(let i=0;i<J.length;i++){const e=document.getElementById('j'+i);e.className='job';e.querySelector('.s').textContent='VENTER'}
+ L('','ny nat · 6 jobs forventet');
+ for(let i=0;i<J.length;i++){const e=document.getElementById('j'+i),s=e.querySelector('.s'),u=e.querySelector('u');
+  if(i===3){await sleep(700);e.className='job miss';s.textContent='IKKE STARTET';L('w',`${J[i][0]}: forventet ${J[i][1]} · intet job · ingen fejl`);await sleep(1300);
+   L('b','alarm → triage · prioritet HØJ');await sleep(900);L('b','runbook oprettet: genstart planlægger, kør manuelt');await sleep(1100);
+   L('o','menneske godkendte · job startet');e.className='job run';s.textContent='KØRER';
+  } else {e.className='job run';s.textContent='KØRER'}
+  for(let p=0;p<=100;p+=10){u.style.width=p+'%';await sleep(70)}
+  e.className=i===3?'job ok fixed':'job ok';s.textContent=i===3?'OK · HÅNDTERET':'OK';await sleep(250)}
+ L('o','alle 6 jobs OK');await sleep(4500);night()}
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();night()}}).observe(jobs);
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){document.getElementById('pipe').classList.add('go');o.disconnect()}}).observe(document.getElementById('pipe'));
+</script>
+</body>
+</html>

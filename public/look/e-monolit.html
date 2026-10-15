@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>E · Monolit — DataMatrix look-prototype</title>
+<style>
+@font-face{font-family:"IT";src:url(fonts/inter-tight-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--deep:#0B1626;--deep2:#12233B;--fog:#E8ECF1;--white:#fff;--ink:#0B1626;--text:#475266;--muted:#8590A2;--line:#D6DCE4;--b1:#6E9BF0;--b2:#2F6FDB;--b3:#1E4FA6;--S:110px;--G:128px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--text);font:400 17px/1.65 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:700px){.wrap{padding:0 22px}}
+.lab{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500}
+h1,h2,h3{font-family:"IT",sans-serif;font-weight:300;letter-spacing:-.035em;margin:0;color:var(--ink)}
+header{position:fixed;inset:0 0 auto;z-index:30;mix-blend-mode:normal;transition:background .4s}
+header.sc{background:rgba(11,22,38,.82);backdrop-filter:blur(14px)}
+.bar{display:flex;justify-content:space-between;align-items:center;height:80px}
+.bar img{height:26px}
+nav{display:flex;gap:34px;align-items:center;font-size:.86rem;color:#C5CFDE}
+nav a{text-decoration:none}nav a:hover{color:#fff}
+@media(max-width:900px){nav a:not(.btn){display:none}}
+.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.03em;padding:16px 26px;border-radius:4px;background:#fff;color:var(--ink)!important;transition:background .3s,color .3s;will-change:transform}
+.btn:hover{background:var(--b1);color:#fff!important}
+.btn.o{background:transparent;color:#fff!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.btn.o:hover{background:rgba(255,255,255,.08)}
+.btn.d{background:var(--ink);color:#fff!important}.btn.d:hover{background:var(--b2)}
+/* hero with 3D monolith */
+.hero{position:relative;height:200vh;background:radial-gradient(70% 60% at 70% 45%,#1B355A 0%,transparent 70%),linear-gradient(180deg,var(--deep),var(--deep2))}
+.stage{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden}
+.copy{padding-left:max(40px,calc((100vw - 1240px)/2 + 40px));color:#B7C3D6;position:relative;z-index:2}
+.copy .lab{color:var(--b1)}
+.hero h1{color:#fff;font-size:clamp(2.8rem,6vw,5.6rem);line-height:1;margin:28px 0 28px;max-width:11ch}
+.hero h1 b{font-weight:600}
+.copy p{max-width:40ch;font-size:1.12rem;margin:0 0 40px}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.scene{height:100%;perspective:1400px;display:grid;place-items:center;position:relative}
+.world{position:relative;width:0;height:0;transform-style:preserve-3d;transform:rotateX(var(--rx,-32deg)) rotateY(var(--ry,45deg))}
+.cube{position:absolute;width:var(--S);height:var(--S);transform-style:preserve-3d;transition:transform .15s linear}
+.f{position:absolute;inset:0;backface-visibility:hidden}
+.f.t{transform:rotateX(90deg) translateZ(calc(var(--S)/2));background:linear-gradient(135deg,#8DB2F5,var(--b1))}
+.f.bo{transform:rotateX(-90deg) translateZ(calc(var(--S)/2));background:#0A1220}
+.f.fr{transform:translateZ(calc(var(--S)/2));background:linear-gradient(180deg,#3B7BE6,var(--b2))}
+.f.bk{transform:rotateY(180deg) translateZ(calc(var(--S)/2));background:var(--b3)}
+.f.r{transform:rotateY(90deg) translateZ(calc(var(--S)/2));background:linear-gradient(180deg,#2457B3,var(--b3))}
+.f.l{transform:rotateY(-90deg) translateZ(calc(var(--S)/2));background:linear-gradient(180deg,#3B7BE6,var(--b2))}
+.f{box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.cube.w .f.t{background:linear-gradient(135deg,#fff,#EEF2F7)}.cube.w .f.fr,.cube.w .f.l{background:linear-gradient(180deg,#F1F4F8,#DCE2EA)}.cube.w .f.r,.cube.w .f.bk{background:linear-gradient(180deg,#C9D1DD,#AEB8C7)}
+.tag3{position:absolute;white-space:nowrap;color:#fff;font:500 .72rem "Inter";letter-spacing:.24em;text-transform:uppercase;opacity:0;transition:opacity .4s;transform-style:flat}
+.glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(closest-side,rgba(110,155,240,.35),transparent);filter:blur(10px)}
+.scroll{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);color:#7F8DA4;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll i{width:1px;height:42px;background:linear-gradient(#7F8DA4,transparent);animation:sd 2s infinite}
+@keyframes sd{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.legend{position:absolute;right:max(40px,calc((100vw - 1240px)/2 + 40px));bottom:90px;display:grid;gap:10px;color:#B7C3D6;font-size:.9rem;z-index:2}
+.legend div{display:flex;gap:12px;align-items:center;opacity:0;transform:translateX(12px);transition:.5s}
+.legend div.on{opacity:1;transform:none}
+.legend i{width:10px;height:10px;display:inline-block}
+@media(max-width:900px){.stage{grid-template-columns:1fr;grid-template-rows:auto 1fr}.copy{padding:110px 22px 0}.hero h1{margin:18px 0}.copy p{margin-bottom:24px}:root{--S:64px;--G:72px}.legend{left:22px;right:auto;bottom:70px}.scroll{display:none}}
+/* sections */
+section{padding:150px 0}
+.chap{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-bottom:90px}
+.chap .lab{color:var(--b2);padding-top:14px}
+.chap h2{font-size:clamp(2.2rem,4.6vw,4rem);line-height:1.04}
+.chap h2 b{font-weight:600}
+.chap p{font-size:1.15rem;max-width:50ch;margin:24px 0 0}
+@media(max-width:900px){.chap{grid-template-columns:1fr;gap:12px;margin-bottom:56px}}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+.pil{background:#fff;padding:44px 36px 48px;min-height:300px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.pil .k{width:28px;height:28px;margin-bottom:auto}
+.pil h3{font-size:1.65rem;margin:56px 0 12px;font-weight:400}
+.pil p{margin:0;font-size:.96rem}
+.pil::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--b2);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.pil:hover::after{transform:scaleX(1)}
+.pil.dk{background:var(--deep);color:#AEBBCF}.pil.dk h3{color:#fff}
+@media(max-width:900px){.pillars{grid-template-columns:1fr}.pil{min-height:0}}
+.fog{background:var(--fog)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:900px){.duo{grid-template-columns:1fr;gap:40px}}
+.duo h2{font-size:clamp(2rem,3.8vw,3.2rem);line-height:1.06;margin:18px 0 24px}.duo h2 b{font-weight:600}
+.blocks{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.blocks i{aspect-ratio:1/2.2;background:linear-gradient(180deg,var(--b1),var(--b2));display:block;opacity:0;transform:translateY(20px);transition:.6s cubic-bezier(.2,.7,.2,1)}
+.blocks.on i{opacity:1;transform:none}
+.blocks i:nth-child(4){background:transparent;box-shadow:inset 0 0 0 1px var(--b2);background-image:repeating-linear-gradient(135deg,transparent 0 7px,rgba(47,111,219,.15) 7px 8px)}
+.blocks.on i:nth-child(4){animation:mis 2.2s 1.2s ease-in-out infinite}
+@keyframes mis{50%{box-shadow:inset 0 0 0 2px var(--b2),0 0 0 6px rgba(47,111,219,.12)}}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px;color:var(--muted)}
+.days span{font-size:.65rem;letter-spacing:.2em;text-align:center}
+.person{display:grid;grid-template-columns:5fr 7fr;background:var(--deep);color:#AEBBCF}
+.person img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);min-height:520px}
+.person .b{padding:80px 72px;display:flex;flex-direction:column;justify-content:center}
+.person blockquote{font-family:"IT";font-weight:300;font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;color:#fff;letter-spacing:-.03em;margin:24px 0 32px}
+.nums{display:flex;gap:56px;margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
+.nums b{display:block;font-family:"IT";font-weight:200;font-size:3.6rem;line-height:1;color:#fff;letter-spacing:-.04em}
+@media(max-width:900px){.person{grid-template-columns:1fr}.person img{min-height:340px;max-height:420px}.person .b{padding:48px 22px}.nums{gap:28px}}
+.cta{padding:170px 0;text-align:center}
+.cta h2{font-size:clamp(2.8rem,7vw,6rem);line-height:1;margin:22px 0 46px}.cta h2 b{font-weight:600}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:.82rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap bar">
+  <a href="#"><img src="../img/logo-light.svg" alt="DataMatrix"></a>
+  <nav><a href="#">Ydelser</a><a href="#">AI i drift</a><a href="#">Om</a><a href="#">Indsigt</a><a href="#">Kontakt</a><a class="btn o" href="tel:+4520261188" style="padding:10px 16px">20 26 11 88</a></nav>
+</div></header>
+
+<div class="hero" id="hero"><div class="stage">
+  <div class="copy">
+    <span class="lab">Senior IT-partner · siden 2004</span>
+    <h1>IT der bare virker. <b>En partner, der kender jer.</b></h1>
+    <p>DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med mere end 30 års erfaring, personlig service og AI, der arbejder med i driften.</p>
+    <div class="acts"><a class="btn mag" href="tel:+4520261188">Ring 20 26 11 88 →</a><a class="btn o" href="#ydelser">Se hvad vi laver</a></div>
+  </div>
+  <div class="scene" id="scene"><div class="glow"></div><div class="world" id="world"></div></div>
+  <div class="legend" id="legend">
+    <div><i style="background:#6E9BF0"></i>Drift og overvågning</div>
+    <div><i style="background:#2F6FDB"></i>Sikkerhed</div>
+    <div><i style="background:#1E4FA6"></i>Backup og beredskab</div>
+    <div><i style="background:#fff"></i>Jer — i midten</div>
+  </div>
+  <div class="scroll lab">Scroll<i></i></div>
+</div></div>
+
+<section id="ydelser"><div class="wrap">
+  <div class="chap"><span class="lab">Ydelser</span><div><h2>Det, vi tager <b>ansvar</b> for.</h2><p>Fra den daglige drift til det store projekt. I kan få det hele, eller vi kan supplere den IT-ansvarlige, I allerede har.</p></div></div>
+  <div class="pillars">
+    <div class="pil"><svg class="k" viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" fill="#6E9BF0"/></svg><h3>Drift og overvågning</h3><p>Servere, klienter og backup — også den backup, der aldrig kørte.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" fill="#2F6FDB"/></svg><h3>IT-sikkerhed</h3><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer — en rød tråd, ikke et tilkøb.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" fill="#1E4FA6"/></svg><h3>Backup og beredskab</h3><p>Testet backup og en plan for den dag, det går galt. Disaster recovery er et af vores specialer.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" fill="none" stroke="#2F6FDB" stroke-width="2"/></svg><h3>Microsoft 365 og cloud</h3><p>Mail, Teams, SharePoint og Azure sat op rigtigt — den rette balance mellem sky og lokalt.</p></div>
+    <div class="pil"><svg class="k" viewBox="0 0 28 28"><rect x="4" y="4" width="9" height="9" fill="#6E9BF0"/><rect x="15" y="4" width="9" height="9" fill="#2F6FDB"/><rect x="4" y="15" width="9" height="9" fill="#1E4FA6"/></svg><h3>Infrastruktur</h3><p>Servere, netværk og virtualisering, der kører stabilt år efter år. Også hardware og licenser.</p></div>
+    <div class="pil dk"><svg class="k" viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" fill="#fff"/></svg><h3>AI i drift</h3><p>AI sorterer, prioriterer og skriver runbooks — og et menneske godkender, før noget sker.</p></div>
+  </div>
+</div></section>
+
+<section class="fog"><div class="wrap duo">
+  <div>
+    <span class="lab" style="color:var(--b2)">Overvågning</span>
+    <h2>Vi opdager også den backup, <b>der aldrig kørte.</b></h2>
+    <p>De fleste overvågningssystemer siger til, når en backup fejler. Men den, der slet ikke startede, giver ingen fejlbesked — og opdages typisk først den dag, man skal bruge den.</p>
+    <p>Vores overvågning ved, hvad der <em>burde</em> være sket.</p>
+  </div>
+  <div><div class="blocks" id="blocks"><i></i><i style="transition-delay:.08s"></i><i style="transition-delay:.16s"></i><i style="transition-delay:.24s"></i><i style="transition-delay:.32s"></i><i style="transition-delay:.40s"></i><i style="transition-delay:.48s"></i></div>
+  <div class="days"><span>MAN</span><span>TIR</span><span>ONS</span><span style="color:var(--b2)">TOR</span><span>FRE</span><span>LØR</span><span>SØN</span></div></div>
+</div></section>
+
+<div class="person">
+  <img src="../img/hans.jpg" alt="Hans Kristiansen">
+  <div class="b"><span class="lab" style="color:var(--b1)">Hvorfor DataMatrix</span>
+    <blockquote>“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</blockquote>
+    <span style="color:#fff">Hans Kristiansen <span style="color:#7F8DA4">· ejer og senior IT-konsulent</span></span>
+    <div class="nums"><div><b>22</b>år som DataMatrix</div><div><b>30+</b>års erfaring</div><div><b>1</b>fast kontakt</div></div>
+  </div>
+</div>
+
+<div class="cta"><div class="wrap">
+  <span class="lab" style="color:var(--b2)">Kontakt</span>
+  <h2>Lad os tage <b>en snak.</b></h2>
+  <div class="acts" style="justify-content:center"><a class="btn d mag" href="tel:+4520261188">Ring +45 20 26 11 88 →</a><a class="btn" href="mailto:kontakt@datamatrix.dk" style="box-shadow:inset 0 0 0 1px var(--line)">kontakt@datamatrix.dk</a></div>
+</div></div>
+<footer><div class="wrap"><span>© 2026 DataMatrix ApS · Lindevej 5 · 4520 Svinninge · CVR 28124147</span><span>Ingen cookies. Ingen sporing.</span></div></footer>
+
+<script>
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+addEventListener('scroll',()=>document.getElementById('hd').classList.toggle('sc',scrollY>innerHeight*1.6),{passive:true});
+// Party trick 1: the B2 logo as a real 3D object (CSS 3D, no WebGL). Mouse tilts it; scroll pulls it apart into the four "pillars".
+const world=document.getElementById('world');
+const C=[{k:'b',x:1,z:0},{k:'b',x:0,z:0},{k:'b',x:1,z:1},{k:'w',x:0,z:1}];
+const faces='<div class="f t"></div><div class="f bo"></div><div class="f fr"></div><div class="f bk"></div><div class="f r"></div><div class="f l"></div>';
+const els=C.map(c=>{const d=document.createElement('div');d.className='cube'+(c.k==='w'?' w':'');d.innerHTML=faces;world.append(d);return d});
+let rx=-32,ry=45,trx=-32,try_=45,prog=0;
+const css=getComputedStyle(document.documentElement);
+function layout(){const S=parseFloat(css.getPropertyValue('--S')),G=parseFloat(css.getPropertyValue('--G'));
+ const e=prog;// 0 = logo, 1 = exploded
+ els.forEach((el,i)=>{const c=C[i];let x=(c.x-.5)*G,z=(c.z-.5)*G,y=0;
+  // B2: white block slides out diagonally (breathing), then everything separates and lifts in a stair
+  const slide=c.k==='w'?(.18+.06*Math.sin(Date.now()/900))*G*(1-e):0;x-=slide;z+=slide;
+  x*=1+e*1.4;z*=1+e*1.4;y=-e*[0.2,0.8,1.4,2.2][i]*S*.5;
+  const spin=c.k==='w'?e*90:0;
+  el.style.transform=`translate3d(${x-S/2}px,${y-S/2}px,${z}px) rotateY(${spin}deg)`});
+ document.querySelectorAll('#legend div').forEach((d,i)=>d.classList.toggle('on',e>.25+i*.15))}
+addEventListener('pointermove',e=>{if(RM)return;trx=-32+(e.clientY/innerHeight-.5)*-18;try_=45+(e.clientX/innerWidth-.5)*40});
+addEventListener('deviceorientation',e=>{if(e.gamma==null)return;try_=45+e.gamma*.6;trx=-32+(e.beta-45)*-.3});
+function loop(){const h=document.getElementById('hero').getBoundingClientRect();prog=Math.min(1,Math.max(0,-h.top/(h.height-innerHeight)));
+ rx+=(trx-rx)*.06;ry+=(try_+prog*30-ry)*.06;world.style.setProperty('--rx',rx+'deg');world.style.setProperty('--ry',ry+'deg');layout();
+ if(!RM)requestAnimationFrame(loop)}
+loop();if(RM)addEventListener('scroll',loop,{passive:true});
+// Party trick 2: magnetic call buttons
+document.querySelectorAll('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.3}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){document.getElementById('blocks').classList.add('on');o.disconnect()}},{threshold:.5}).observe(document.getElementById('blocks'));
+</script>
+</body>
+</html>
