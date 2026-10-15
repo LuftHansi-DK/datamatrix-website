@@ -21,8 +21,8 @@ const lines = [
 ---
 {kind === "agent" && <div class="agent" role="img" aria-label={`${a.request} → ${a.rule}`} data-lines={JSON.stringify(lines)}></div>}
 {kind === "why" && (
-  <section><div class="wrap person">
-    <div class="pt"><img src="/img/hans.jpg" alt="Hans Kristiansen" width="350" height="350" loading="lazy" /></div>
+  <section><div class:list={["wrap person", { solo: !da }]}>
+    {da && <div class="pt"><img src="/img/hans.jpg" alt="Hans Kristiansen" width="350" height="350" loading="lazy" /></div>}
     <div><span class="lab">{f.why.lab}</span>
       <blockquote>“{f.why.quote.replace(/^["“”„«»]+|["“”„«»]+$/g, "")}”</blockquote>
       <span class="who">Hans Kristiansen <span>· {f.why.role}</span></span>

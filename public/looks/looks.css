@@ -447,3 +447,7 @@ section{padding:130px 0;position:relative}
 @media(max-width:900px){.ops-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.ops-grid{grid-template-columns:1fr}.ops-ill{display:none}}
 @media (prefers-reduced-motion:reduce){.ops-status .s1,.ops-status .s2{display:none}.ops-status .s3{opacity:1}.ops-jobs i{background:#2FA57F}}
 .card:not(.on) h3{white-space:normal;font-size:1.05rem;line-height:1.2}
+/* EN page: portrait is shown once (About), the quote block goes without it */
+.person.solo{grid-template-columns:1fr;max-width:980px}
+#about .split{grid-template-columns:minmax(0,360px) 1fr;gap:72px;align-items:center}
+@media(max-width:900px){#about .split{grid-template-columns:1fr;gap:28px}}
