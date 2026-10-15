@@ -11,15 +11,15 @@
 .hero p{font-size:1.1rem;max-width:42ch;margin:0 0 36px;color:#C9D3E2}
 .hero .vis{position:relative;height:100vh}
 .hero .vis .ph{position:absolute;inset:0;-webkit-mask:linear-gradient(90deg,transparent,#000 35%);mask:linear-gradient(90deg,transparent,#000 35%)}
-.hero .vis .ph img{filter:brightness(.75)}
+.hero .vis .ph img{filter:brightness(.9)}
 .hero .scene{position:absolute;left:18%;top:50%;transform:translateY(-50%);--S:76px;--G:88px;filter:drop-shadow(0 40px 40px rgba(0,0,0,.6))}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.hero .vis{height:46vh;order:-1}.hero .vis .ph{-webkit-mask:linear-gradient(0deg,transparent,#000 40%);mask:linear-gradient(0deg,transparent,#000 40%)}.hero .scene{left:50%;--S:48px;--G:56px}.hero .copy{padding:0 22px 60px}}
 /* chapter player */
 .player{position:relative;height:min(82vh,760px);border-radius:8px;overflow:hidden;background:#000}
 .sh{position:absolute;inset:0;opacity:0;transition:opacity 1s}
 .sh.on{opacity:1}
-.sh img{width:100%;height:100%;object-fit:cover;filter:blur(14px) brightness(.55);transform:scale(1.15);transition:filter 1.6s ease,transform 8s linear}
-.sh.on img{filter:blur(0) brightness(.72);transform:scale(1.02)}
+.sh img{width:100%;height:100%;object-fit:cover;filter:blur(14px) brightness(.7);transform:scale(1.15);transition:filter 1.6s ease,transform 8s linear}
+.sh.on img{filter:blur(0) brightness(.92);transform:scale(1.02)}
 .player::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,19,34,.92),rgba(10,19,34,.35) 55%,transparent),linear-gradient(0deg,rgba(10,19,34,.85),transparent 45%);pointer-events:none}
 .bars{position:absolute;left:28px;right:28px;top:24px;display:flex;gap:6px;z-index:3}
 .bars i{flex:1;height:3px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden}
@@ -51,9 +51,9 @@
 /* foundation grid */
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .fc{position:relative;min-height:380px;overflow:hidden;display:flex;align-items:flex-end}
-.fc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5) blur(3px);transform:scale(1.06);transition:filter .8s,transform 1.2s}
-.fc:hover img{filter:brightness(.7) blur(0);transform:scale(1)}
-.fc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,19,34,.95),transparent 70%)}
+.fc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78) blur(2px);transform:scale(1.06);transition:filter .8s,transform 1.2s}
+.fc:hover img{filter:brightness(.95) blur(0);transform:scale(1)}
+.fc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,19,34,.92),rgba(10,19,34,.25) 55%,transparent 80%)}
 .fc .c{position:relative;z-index:2;padding:36px}
 .fc .n{font-family:"IT";font-weight:200;font-size:2.6rem;color:rgba(233,182,119,.6);line-height:1}
 .fc h3{font-size:1.5rem;font-weight:500;margin:6px 0 8px}.fc p{margin:0;max-width:46ch}
@@ -73,16 +73,16 @@
     <p>DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med AI, der arbejder med i driften, og mere end 30 års erfaring bag.</p>
     <div class="acts"><a class="btn mag" href="tel:+4520261188">Ring 20 26 11 88 →</a><a class="btn o" href="#ydelser">Se på 30 sekunder ↓</a></div>
   </div>
-  <div class="vis"><div class="ph"><img class="rf" src="photos/aisle.jpg" alt=""></div><div class="scene"><div class="world" id="world"></div></div></div>
+  <div class="vis"><div class="ph"><img class="rf" src="photos/k/hero.jpg" alt=""></div><div class="scene"><div class="world" id="world"></div></div></div>
 </div>
 
 <section id="ydelser" style="padding-top:60px"><div class="wrap">
   <div class="player" id="player">
-    <div class="sh on"><img src="photos/ai-desk.jpg" alt=""></div>
-    <div class="sh"><img src="photos/fiber.jpg" alt=""></div>
-    <div class="sh"><img src="photos/laptop.jpg" alt=""></div>
-    <div class="sh"><img src="photos/engineer.jpg" alt=""></div>
-    <div class="sh"><img src="photos/tape.jpg" alt=""></div>
+    <div class="sh on"><img src="photos/k/ai.jpg" alt=""></div>
+    <div class="sh"><img src="photos/k/sikkerhed.jpg" alt=""></div>
+    <div class="sh"><img src="photos/k/cloud.jpg" alt=""></div>
+    <div class="sh"><img src="photos/k/drift.jpg" alt=""></div>
+    <div class="sh"><img src="photos/k/backup.jpg" alt=""></div>
     <div class="bars" id="bars"><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i></div>
     <button class="pp" id="pp">❚❚ PAUSE</button>
     <div class="txt">
@@ -122,10 +122,10 @@
 <section style="padding-top:20px"><div class="wrap">
   <div class="chap"><span class="lab">Fundamentet</span><div><h2>Det, AI <b>står på.</b></h2><p>AI er kun så god som det, den kører på. Derfor tager vi også ansvar for resten.</p></div></div>
   <div class="fg">
-    <div class="fc"><img src="photos/fiber.jpg" alt=""><div class="c"><span class="n">02</span><h3>IT-sikkerhed</h3><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer.</p></div></div>
-    <div class="fc"><img src="photos/laptop.jpg" alt=""><div class="c"><span class="n">03</span><h3>Microsoft 365 og cloud</h3><p>Mail, Teams, SharePoint og Azure sat op rigtigt — sky og lokalt i balance.</p></div></div>
-    <div class="fc"><img src="photos/engineer.jpg" alt=""><div class="c"><span class="n">04</span><h3>Drift og overvågning</h3><p>Servere, netværk og virtualisering, der kører stabilt år efter år.</p></div></div>
-    <div class="fc" id="bk"><img src="photos/tape.jpg" alt="">
+    <div class="fc"><img src="photos/k/sikkerhed.jpg" alt=""><div class="c"><span class="n">02</span><h3>IT-sikkerhed</h3><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer.</p></div></div>
+    <div class="fc"><img src="photos/k/cloud.jpg" alt=""><div class="c"><span class="n">03</span><h3>Microsoft 365 og cloud</h3><p>Mail, Teams, SharePoint og Azure sat op rigtigt — sky og lokalt i balance.</p></div></div>
+    <div class="fc"><img src="photos/k/drift.jpg" alt=""><div class="c"><span class="n">04</span><h3>Drift og overvågning</h3><p>Servere, netværk og virtualisering, der kører stabilt år efter år.</p></div></div>
+    <div class="fc" id="bk"><img src="photos/k/backup.jpg" alt="">
       <div class="toast" id="t1" style="right:6%;top:8%"><span class="t">06:00</span><b><span class="dot"></span>Backup startede ikke i nat</b>Ingen fejl — men heller intet job.</div>
       <div class="c"><span class="n">05</span><h3>Backup og beredskab</h3><p>Vi opdager også den backup, der aldrig kørte. Og har en testet plan for den dag, det går galt. <span class="note">(notifikation = illustration)</span></p></div></div>
   </div>
@@ -140,7 +140,7 @@
   </div>
 </div></section>
 
-<div class="cta"><div class="ph"><img class="rf" src="photos/meeting.jpg" alt=""></div>
+<div class="cta"><div class="ph"><img class="rf" src="photos/k/cta.jpg" alt=""></div>
   <div class="wrap"><span class="lab">Kontakt</span><h2>Lad os tage <b>en snak.</b></h2>
   <div class="acts" style="justify-content:center"><a class="btn mag" href="tel:+4520261188">Ring +45 20 26 11 88 →</a><a class="btn o" href="mailto:kontakt@datamatrix.dk">kontakt@datamatrix.dk</a></div></div></div>
 <footer><div class="wrap"><span>© 2026 DataMatrix ApS · Lindevej 5 · 4520 Svinninge · CVR 28124147</span><span>Ingen cookies. Ingen sporing. · Prototype: fotos er AI-genererede pladsholdere</span></div></footer>
