@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>L · Dag — DataMatrix look-prototype</title>
+<link rel="stylesheet" href="monolit.css"><link rel="stylesheet" href="r3.css">
+<style>
+.hero{position:relative;height:100vh;min-height:660px;overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:35% 50%;filter:blur(18px) brightness(.65);transform:scale(1.12);transition:filter 2.4s cubic-bezier(.2,.7,.2,1),transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.hero.focus .bg img{filter:blur(0) brightness(.85);transform:scale(1.02)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,19,34,.1) 0%,rgba(10,19,34,.5) 45%,rgba(10,19,34,.93) 75%),linear-gradient(0deg,#0A1322 0%,transparent 30%)}
+.hero .in{position:relative;z-index:2;height:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero .copy{grid-column:2;padding-right:max(40px,calc((100vw - 1240px)/2 + 40px));padding-left:20px}
+.hero h1{font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.02;margin:24px 0}
+.hero p{font-size:1.1rem;max-width:44ch;margin:0 0 36px;color:#C9D3E2}
+.hero .scene{position:absolute;left:30%;top:14%;z-index:3;--S:54px;--G:62px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.5))}
+@media(max-width:900px){.hero .in{grid-template-columns:1fr;align-items:end;padding-bottom:70px}.hero .copy{grid-column:1;padding:0 22px}.hero::after{background:linear-gradient(0deg,#0A1322 12%,rgba(10,19,34,.7) 50%,rgba(10,19,34,.05) 80%)}.hero .scene{left:auto;right:16%;top:18%}}
+/* AI */
+.aiwrap{display:grid;grid-template-columns:1.2fr 1fr;gap:0;margin-bottom:56px;min-height:560px}
+.aiwrap .ph{border-radius:6px 0 0 6px}
+.aiwrap .ph .glass{position:absolute;left:6%;right:6%;bottom:7%}
+.aiwrap .txt{background:#0E1A2D;padding:56px 52px;border-radius:0 6px 6px 0}
+.aiwrap h3{font-size:1.6rem;font-weight:400;margin-bottom:14px}
+.aiwrap ul{list-style:none;padding:0;margin:20px 0 0}
+.aiwrap li{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}
+.aiwrap li b{color:#fff;font-weight:500;display:block}
+@media(max-width:900px){.aiwrap{grid-template-columns:1fr}.aiwrap .ph{min-height:520px;border-radius:6px 6px 0 0}.aiwrap .txt{padding:36px 24px;border-radius:0 0 6px 6px}}
+/* zigzag services */
+.zz{display:grid;grid-template-columns:1fr 1fr;min-height:520px;margin-bottom:2px}
+.zz:nth-of-type(even) .ph{order:2}
+.zz .ph{min-height:420px}
+.zz .ph img{will-change:transform}
+.zz .t{padding:72px 64px;display:flex;flex-direction:column;justify-content:center;background:#0C1728}
+.zz .n{font-family:"IT";font-weight:200;font-size:4rem;line-height:1;color:rgba(233,182,119,.35)}
+.zz h2{font-size:clamp(2rem,3.4vw,3rem);line-height:1.06;margin:10px 0 18px}
+.zz ul{margin:16px 0 0;padding-left:1.1em}.zz li{margin-bottom:6px}
+@media(max-width:900px){.zz{grid-template-columns:1fr}.zz:nth-of-type(even) .ph{order:0}.zz .t{padding:44px 22px}.zz .ph{min-height:300px}}
+</style>
+<style>
+/* L · Dag: same layout as I, daylight palette. Overrides r3.css (dark). */
+:root{--warm:#A0703F}
+body{background:#F6F7F8;color:#4A5568}
+h1,h2,h3{color:#0B1626}
+.lab{color:#A0703F}
+header.sc{background:rgba(246,247,248,.9);box-shadow:0 1px 0 rgba(11,22,38,.08)}
+nav{color:#24324A}nav a:hover{color:#2F6FDB}nav a.ai{color:#A0703F}
+.hero .bg img{filter:blur(18px) brightness(1.02)}
+.hero.focus .bg img{filter:blur(0) brightness(1.04) saturate(1.04)}
+.hero::after{background:linear-gradient(90deg,rgba(246,247,248,0) 0%,rgba(246,247,248,.35) 42%,rgba(246,247,248,.9) 66%,rgba(246,247,248,.97) 100%),linear-gradient(0deg,#F6F7F8 0%,transparent 22%)}
+.hero p{color:#3E4A5E}
+.hero .scene{filter:drop-shadow(0 30px 30px rgba(11,22,38,.25))}
+@media(max-width:900px){.hero::after{background:linear-gradient(0deg,#F6F7F8 16%,rgba(246,247,248,.88) 48%,rgba(246,247,248,0) 80%)}}
+.aiwrap .txt{background:#fff;box-shadow:0 1px 0 rgba(11,22,38,.06)}
+.aiwrap li{border-top:1px solid rgba(11,22,38,.09)}
+.aiwrap li b{color:#0B1626}
+.glass{background:rgba(255,255,255,.8);border:1px solid rgba(11,22,38,.08);box-shadow:0 30px 60px -24px rgba(11,22,38,.35)}
+.agent{color:#4A5568}.agent .h{color:#0B1626}.agent .o{color:#14866A}.agent .k{color:#2F6FDB}
+.caps{background:rgba(11,22,38,.1)}.caps>div{background:#F6F7F8}
+.caps .n{color:rgba(160,112,63,.75)}
+.rules span{color:#24324A;background:#fff;box-shadow:inset 0 0 0 1px rgba(11,22,38,.14)}
+.harness{background:linear-gradient(90deg,rgba(160,112,63,.09),transparent 70%)}
+.harness .chips span{background:rgba(11,22,38,.06);color:#0B1626}
+.zz .t{background:#fff}
+.zz:nth-of-type(even) .t{background:#EEF1F4}
+.zz .n{color:rgba(160,112,63,.45)}
+.person .pt img{filter:sepia(.2) saturate(1.1) brightness(1.05)}
+.person .pt::after{background:linear-gradient(160deg,rgba(233,182,119,.14),rgba(246,247,248,.05))}
+.person blockquote{color:#0B1626}
+.nums{border-top:1px solid rgba(11,22,38,.12)}.nums b{color:#0B1626}
+.cta::after{background:radial-gradient(60% 70% at 50% 50%,rgba(246,247,248,.82),rgba(246,247,248,.55))}
+footer{border-top:1px solid rgba(11,22,38,.08)}
+.toast{background:rgba(255,255,255,.88);border:1px solid rgba(11,22,38,.08);color:#4A5568;box-shadow:0 20px 40px -14px rgba(11,22,38,.3)}
+.toast b{color:#0B1626}.toast .t{color:#7A8597}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap bar">
+  <a href="#"><img src="../img/logo.svg" alt="DataMatrix"></a>
+  <nav><a class="ai" href="#ai">AI</a><a href="#sik">Sikkerhed</a><a href="#cloud">Microsoft 365</a><a href="#drift">Drift</a><a href="#">Om</a><a class="btn l" href="tel:+4520261188" style="padding:10px 16px">20 26 11 88</a></nav>
+</div></header>
+
+<div class="hero" id="hero">
+  <div class="bg"><img src="photos/l/hero.jpg" alt=""></div>
+  <div class="scene"><div class="world" id="world"></div></div>
+  <div class="in"><div class="copy">
+    <span class="lab">AI i drift · Senior IT-partner siden 2004</span>
+    <h1>IT der bare virker. <b>En partner, der kender jer.</b></h1>
+    <p>DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med AI, der arbejder med i driften, og mere end 30 års erfaring bag.</p>
+    <div class="acts"><a class="btn d mag" href="tel:+4520261188">Ring 20 26 11 88 →</a><a class="btn l" href="#ai">Sådan bruger vi AI</a></div>
+  </div></div>
+</div>
+
+<section id="ai"><div class="wrap">
+  <div class="chap"><span class="lab">01 · AI i drift</span><div><h2>AI, der arbejder for jer. <b>Under opsyn.</b></h2><p>Der bliver talt meget om AI. Vi bruger det hver dag i vores egen drift — flere AI-agenter side om side — og vi ved, hvor gevinsten er, og hvor faldgruberne er.</p></div></div>
+  <div class="aiwrap">
+    <div class="ph"><img class="rf" src="photos/l/ai.jpg" alt=""><div class="glass"><div class="agent" id="agent"></div></div></div>
+    <div class="txt">
+      <h3>Det kan vi hjælpe jer med</h3>
+      <p>Vi kommer fra infrastruktur og sikkerhed. Derfor starter vi med fundamentet — ikke med hypen.</p>
+      <ul>
+        <li><b>Klar til Copilot</b>Copilot kan se det, brugeren kan se. Vi rydder op i rettigheder og deling i Microsoft 365, så AI ikke finder det, den ikke skal.</li>
+        <li><b>Automatisering af rutiner</b>Gentagne opgaver i drift og administration, som AI forbereder, så jeres folk kun skal godkende.</li>
+        <li><b>Spilleregler og ansvar</b>Hvilke værktøjer må bruges, til hvad og med hvilke data — enkle, brugbare retningslinjer.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caps">
+    <div><span class="n">01</span><h3>Triage</h3><p>Alle henvendelser læses, sorteres og kobles til den rigtige kunde og opgave.</p></div>
+    <div><span class="n">02</span><h3>Prioritering</h3><p>Det, der haster, kommer først — også kl. 22 en søndag.</p></div>
+    <div><span class="n">03</span><h3>Runbooks</h3><p>En trin-for-trin-plan for hver opgave: hvad agenten klarer, og hvad et menneske skal gøre.</p></div>
+    <div><span class="n">04</span><h3>Udkast</h3><p>Svar, dokumentation og tilbud forberedes — et menneske godkender.</p></div>
+  </div>
+  <div class="rules"><span><b>1</b>Mennesket bestemmer</span><span><b>2</b>Data bliver, hvor de hører til</span><span><b>3</b>Alt kan efterprøves</span><span><b>4</b>Start småt</span></div>
+  <div class="harness"><h3>For de øvede: lad os sparre.</h3><p>Vi bruger ikke bare en chatbot. Vi bygger og driver vores egne AI-agenter — med værktøjer, hukommelse, skills og faste sikkerhedsregler — og kender mulighederne og faldgruberne indefra.</p>
+    <div class="chips"><span>Hermes Agent</span><span>OpenClaw</span><span>Egen Grok-bot</span><span>OpenAI Dots</span><span>Orkestrering</span><span>Mindst mulige rettigheder</span><span>Hukommelse &amp; skills</span><span>Modelvalg</span></div></div>
+</div></section>
+
+<div class="zz" id="sik"><div class="ph"><img class="rf px" src="photos/l/sikkerhed.jpg" alt=""></div><div class="t"><span class="n">02</span><span class="lab">IT-sikkerhed</span><h2>Sikkerhed som en rød tråd, <b>ikke et tilkøb.</b></h2><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer — tænkt ind fra starten og holdt ved lige.</p></div></div>
+<div class="zz" id="cloud"><div class="ph"><img class="rf px" src="photos/l/cloud.jpg" alt=""></div><div class="t"><span class="n">03</span><span class="lab">Microsoft 365 og cloud</span><h2>Sat op rigtigt. <b>Klar til AI.</b></h2><p>Mail, Teams, SharePoint og Azure — med styr på rettigheder og deling, og den rette balance mellem sky og lokalt.</p></div></div>
+<div class="zz" id="drift"><div class="ph"><img class="rf px" src="photos/l/drift.jpg" alt=""></div><div class="t"><span class="n">04</span><span class="lab">Drift og overvågning</span><h2>Infrastruktur, der kører <b>år efter år.</b></h2><p>Servere, netværk og virtualisering — VMware vSphere og Hyper-V, inkl. delt SAN-lager. Overvåget, opdateret og dokumenteret, så en kollega kan tage over.</p></div></div>
+<div class="zz" id="backup"><div class="ph"><img class="rf px" src="photos/l/backup.jpg" alt="">
+  <div class="toast" id="t1" style="left:7%;top:10%"><span class="t">06:00</span><b><span class="dot"></span>Backup startede ikke i nat</b>Ingen fejl — men heller intet job.</div>
+  <div class="toast ok" id="t2" style="left:7%;top:calc(10% + 92px)"><span class="t">06:05</span><b><span class="dot"></span>Hans har fået besked</b>Vi tager den, før nogen savner noget.</div></div>
+  <div class="t"><span class="n">05</span><span class="lab">Backup og beredskab</span><h2>Det, ingen tænker på — <b>før den dag, det gælder.</b></h2><p>De fleste overvågningssystemer siger til, når en backup fejler. Vores opdager også den, der aldrig kørte. Og vi har en testet plan for den dag, det går galt — disaster recovery er et af vores specialer.</p><p class="note">Notifikationerne er en illustration.</p></div></div>
+
+<section><div class="wrap person">
+  <div class="pt"><img src="../img/hans.jpg" alt="Hans Kristiansen"></div>
+  <div><span class="lab">Hvorfor DataMatrix</span>
+    <blockquote>“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</blockquote>
+    <span style="color:#0B1626">Hans Kristiansen <span style="color:#6B778A">· ejer og senior IT-konsulent</span></span>
+    <div class="nums"><div><b>22</b>år som DataMatrix</div><div><b>30+</b>års erfaring</div><div><b>1</b>fast kontakt</div></div>
+  </div>
+</div></section>
+
+<div class="cta"><div class="ph"><img class="rf" src="photos/l/cta.jpg" alt=""></div>
+  <div class="wrap"><span class="lab">Kontakt</span><h2>Lad os tage <b>en snak.</b></h2>
+  <div class="acts" style="justify-content:center"><a class="btn d mag" href="tel:+4520261188">Ring +45 20 26 11 88 →</a><a class="btn l" href="mailto:kontakt@datamatrix.dk">kontakt@datamatrix.dk</a></div></div></div>
+<footer><div class="wrap"><span>© 2026 DataMatrix ApS · Lindevej 5 · 4520 Svinninge · CVR 28124147</span><span>Ingen cookies. Ingen sporing. · Prototype L · dagslys</span></div></footer>
+
+<script src="monolit.js"></script><script src="r3.js"></script>
+<script>
+headerScroll();
+requestAnimationFrame(()=>setTimeout(()=>document.getElementById('hero').classList.add('focus'),150));
+const M=Monolith(document.getElementById('world'));addEventListener('scroll',()=>M.set(Math.min(1,scrollY/(innerHeight*.9))),{passive:true});
+rackFocus('.rf');magnetic('.mag');agentConsole(document.getElementById('agent'));toasts(document.getElementById('backup'),['t1','t2']);
+// Trick: photos pull focus AND drift slowly against the scroll (parallax), like a camera dolly.
+const px=[...document.querySelectorAll('.px')];
+addEventListener('scroll',()=>px.forEach(el=>{const r=el.parentElement.getBoundingClientRect();const p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.objectPosition=`50% ${50+p*30}%`}),{passive:true});
+</script>
+</body>
+</html>
