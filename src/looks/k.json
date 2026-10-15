@@ -1,8 +1,8 @@
 {
  "_look": "k",
  "footer": {
-  "tagline": "Senior IT-partner for små og mellemstore virksomheder, siden {founded}.",
-  "fine": "Ingen cookies og ingen sporing på denne side. Fonte og billeder kommer fra vores egen server."
+  "tagline": "Siden {founded} har vi drevet og sikret IT for små og mellemstore virksomheder.",
+  "fine": "Siden sætter ingen cookies og sporer ingen. Fonte og billeder hentes fra vores egen server."
  },
  "front": {
   "hero": {
@@ -16,7 +16,7 @@
    "lab": "01 · AI i drift",
    "h": "Hver henvendelse får en plan.",
    "hb": "Et menneske siger ja.",
-   "p": "Vi bruger AI hver eneste dag i vores egen drift, hvor flere agenter arbejder side om side. Derfor ved vi af erfaring, hvor det sparer tid, og hvor man skal træde varsomt.",
+   "p": "Hos os er AI en del af hverdagen: flere agenter arbejder side om side i vores egen drift. Den erfaring viser os, hvor det sparer tid, og hvor man bør gå forsigtigt frem.",
    "helpH": "Det kan I få hjælp til",
    "helpP": "Vi starter med det, AI skal køre på: rettigheder, data og sikkerhed.",
    "help": [
@@ -67,8 +67,8 @@
    "task": "opgave oprettet på kunden",
    "runbook": "1 tjek adgang · 2 tjek server · 3 ring tilbage",
    "draft": "svar til kunden skrevet",
-   "human": "afventer Hans' ja ✓",
-   "rule": "Agenterne forbereder. Intet sendes, ændres eller købes, før et menneske har sagt ja."
+   "human": "venter på et menneskes ja ✓",
+   "rule": "Agenterne gør forarbejdet. Et menneske siger ja, før noget bliver sendt, ændret eller købt."
   },
   "services": {
    "lab": "02 · Ydelser",
@@ -84,7 +84,7 @@
     "cloud": {
      "h": "Microsoft 365",
      "hb": "sat ordentligt op.",
-     "p": "Mail, Teams, SharePoint og OneDrive, også når I flytter fra en gammel løsning. Vi hjælper med at vælge, hvad der skal i skyen, og hvad der skal blive lokalt."
+     "p": "Mail, Teams, SharePoint og OneDrive, også når I flytter fra en gammel løsning. Vi gennemgår sammen, hvad der giver mening i skyen, og hvad der bør køre lokalt."
     },
     "drift": {
      "h": "Drift",
@@ -133,13 +133,13 @@
    "lab": "Ydelser",
    "h1": "Hvad vi gør,",
    "h1b": "og hvordan.",
-   "lead": "I kan have en fast aftale med os eller bruge os til enkelte opgaver. Vi kan stå for hele jeres IT eller være sparringspartner for jeres egen IT-ansvarlige.",
+   "lead": "Det kan være en fast aftale eller en enkelt opgave. Enten tager vi os af hele jeres IT, eller også sparrer vi med jeres egen IT-ansvarlige.",
    "items": [
     {
      "intro": "Vi holder øje med jeres systemer og griber ind, når noget ikke ser rigtigt ud.",
      "bullets": [
-      "Overvågning af servere, klienter, backup og certifikater",
-      "Opdateringer og vedligehold efter en fast plan",
+      "Vi overvåger servere, klienter, backup og certifikater",
+      "Vi opdaterer og vedligeholder efter en aftalt plan",
       "Hjælp til brugerne over telefon, mail og fjernsupport",
       "Dokumentation, så en kollega kan tage over uden at starte forfra"
      ]
@@ -149,8 +149,8 @@
      "bullets": [
       "Firewall, opdeling af netværket og sikker fjernadgang",
       "Beskyttelse af mail og af den enkelte computer",
-      "Adgangsstyring, MFA og oprydning i rettigheder",
-      "Sikkerhedsgennemgang med konkrete prioriteter"
+      "Vi styrer adgange, slår MFA til og rydder op i rettigheder",
+      "En sikkerhedsgennemgang, der munder ud i konkrete prioriteter"
      ]
     },
     {
@@ -168,22 +168,22 @@
       "Opsætning, flytning og drift af mail, Teams, SharePoint og OneDrive",
       "Azure og hybride løsninger",
       "Gennemgang af licenser, så I ikke betaler for for meget",
-      "Råd om, hvad der hører hjemme i skyen, og hvad der ikke gør"
+      "Rådgivning om valget mellem sky og lokal drift"
      ]
     },
     {
      "intro": "Vi planlægger og bygger den infrastruktur, resten af jeres IT kører på.",
      "bullets": [
-      "Design af IT- og netværksinfrastruktur",
+      "Vi designer jeres IT- og netværksinfrastruktur",
       "Servere og virtualisering på VMware vSphere og Hyper-V, også med delt SAN-lager",
       "Switche, trådløst netværk og firewalls",
-      "Planlægning af udskiftning og flytning"
+      "Vi planlægger udskiftninger og flytninger"
      ]
     },
     {
      "intro": "Vi køber ind for jer og sørger for, at det bliver sat op.",
      "bullets": [
-      "Servere, pc'er og netværksudstyr fra anerkendte producenter",
+      "Vi finder den rette server, pc eller switch hos anerkendte producenter",
       "Licenser til Microsoft og andre programmer",
       "Overskuelige tilbud, I kan sammenligne",
       "Installation og opsætning, når udstyret kommer"
@@ -193,8 +193,8 @@
      "intro": "Vi bruger AI i vores egen drift hver dag og hjælper jer med at tage det i brug på en sikker måde.",
      "bullets": [
       "Microsoft 365 gjort klar til Copilot",
-      "Rutineopgaver, som AI forbereder og jeres folk godkender",
-      "Enkle regler for, hvilke AI-værktøjer der må bruges til hvad",
+      "Rutiner automatiseret: AI forbereder, jeres folk godkender",
+      "Klare rammer for AI-værktøjer: opgaver og data",
       "Sparring om agenter for udviklere og IT-folk"
      ]
     }
@@ -227,7 +227,7 @@
    "h1b": "Et menneske beslutter.",
    "lead": "Her kan I se, hvordan vi selv bruger AI i hverdagen, og hvordan vi kan hjælpe jer med at komme i gang uden at miste overblikket.",
    "useH": "Sådan bruger vi selv AI",
-   "useP": "Flere AI-agenter arbejder side om side i vores drift, og hver har sine faste opgaver.",
+   "useP": "I vores drift har hver AI-agent sine faste opgaver, og flere af dem arbejder side om side.",
    "use": [
     [
      "Triage",
@@ -267,19 +267,19 @@
     ]
    ],
    "helpH": "Det kan vi gøre for jer",
-   "helpP": "Vi tager udgangspunkt i jeres infrastruktur og sikkerhed, ikke i det, der er populært lige nu.",
+   "helpP": "Vi bygger videre på jeres infrastruktur og sikkerhed i stedet for at jagte det, der er moderne lige nu.",
    "help": [
     [
      "Klar til Copilot",
      "Copilot viser brugeren alt, vedkommende har adgang til. Vi gennemgår rettigheder og deling i Microsoft 365, så Copilot ikke finder noget, den ikke bør."
     ],
     [
-     "Automatisering af rutiner",
+     "Rutiner, der kører af sig selv",
      "Vi finder de gentagne opgaver, hvor AI kan lave forarbejdet, mens jeres medarbejdere godkender."
     ],
     [
      "Regler for AI-værktøjer",
-     "Sammen skriver vi ned, hvilke værktøjer der må bruges til hvad, og med hvilke data."
+     "Sammen skriver vi en kort liste: hvilket værktøj til hvilken opgave, og hvilke data det må arbejde med."
     ]
    ],
    "proLab": "For de øvede",
@@ -293,16 +293,16 @@
      "Hvornår én agent er nok, og hvornår det giver mening at have fem."
     ],
     [
-     "Værktøjer og integrationer",
-     "Adgang til mail, kalender, Microsoft 365 og egne systemer med så få rettigheder som muligt."
+     "Værktøjer, integrationer og adgange",
+     "Adgang for agenten til mail, kalender, Microsoft 365 og egne systemer, men kun med de rettigheder, den har brug for."
     ],
     [
      "Hukommelse og skills",
-     "Hvad agenten skal huske, hvad den skal glemme, og hvordan det forbliver gennemskueligt."
+     "Hvad agenten bør huske, hvad den skal glemme, og hvordan man kan se, hvad den ved."
     ],
     [
      "Sikkerhed i praksis",
-     "Kun udkast, godkendelse før handling, logning og skarp adskillelse mellem kunder."
+     "Sådan gør vi: udkast i stedet for handlinger, godkendelse først, logning af alt og streng adskillelse af kunderne."
     ],
     [
      "Valg af model og pris",
@@ -317,11 +317,11 @@
     ],
     [
      "Er vores data sikre?",
-     "Det afhænger af opsætningen. Derfor begynder vi med at undersøge, hvilke data AI kan få fat i."
+     "Svaret afhænger af, hvordan løsningen er bygget. Vi starter derfor med at kortlægge de data, AI kan få adgang til."
     ],
     [
      "Hvordan kommer vi i gang?",
-     "Ofte starter vi med en gennemgang af Microsoft 365 og et par konkrete opgaver."
+     "Trin et er typisk en gennemgang af jeres Microsoft 365. Trin to er et par konkrete opgaver, vi kan tage fat på."
     ]
    ],
    "ctaH": "Vil I prøve med én opgave?",
@@ -341,7 +341,7 @@
    "netH": "Lille firma med et fast netværk",
    "net": [
     "DataMatrix er bevidst holdt lille. Det betyder, at der er kort vej fra jeres opkald til en beslutning, og at ansvaret ligger hos én person.",
-    "Ved ferie, sygdom og travle perioder træder et fast netværk af erfarne teknikere ind. De har hver deres egen virksomhed, og ved større projekter henter vi specialister ind, for eksempel til netværk og infrastruktur."
+    "Er der ferie, sygdom eller meget at lave, tager et fast netværk af erfarne teknikere over. Hver af dem driver sin egen virksomhed. Til større projekter, for eksempel inden for netværk og infrastruktur, kalder vi specialister ind."
    ],
    "timeline": [
     [
@@ -354,7 +354,7 @@
     ],
     [
      "Tilbage i Danmark",
-     "Selvstændig IT-konsulent"
+     "Arbejder som selvstændig IT-konsulent"
     ],
     [
      "{founded}",
@@ -362,7 +362,7 @@
     ],
     [
      "I dag",
-     "Senior IT-partner for alt fra små lokale firmaer til internationale produktionsvirksomheder, nu også med AI i driften"
+     "Senior IT-partner for virksomheder i alle størrelser, både små lokale firmaer og internationale produktionsvirksomheder, og AI er blevet en del af den daglige drift"
     ]
    ]
   },
@@ -371,9 +371,9 @@
    "h1": "Ring, skriv",
    "h1b": "eller få besøg.",
    "lead": "Fortæl os, hvad der driller, eller hvad I overvejer. Så tager vi den derfra.",
-   "phoneNote": "Det er Hans selv, der tager telefonen.",
+   "phoneNote": "Ringer I, taler I direkte med ejeren.",
    "mailNote": "Vi svarer på mail så hurtigt, vi kan.",
-   "remoteNote": "Er I allerede kunde og har brug for, at vi kigger med på skærmen?"
+   "remoteNote": "Er I allerede kunde, og skal vi kigge med på jeres skærm?"
   },
   "fjernsupport": {
    "lab": "Fjernsupport",
@@ -383,7 +383,7 @@
    "steps": [
     [
      "Ring først til os",
-     "Ring på {phone}, så vi ved, at I er klar."
+     "Ring først på {phone}, så vi er klar til at tage imod jer."
     ],
     [
      "Hent programmet",
@@ -402,8 +402,8 @@
    "h1b": "jeres data.",
    "paras": [
     "Denne side bruger ingen cookies, ingen statistikværktøjer og ingen sporing fra tredjeparter. Fonte og billeder hentes fra vores egen server.",
-    "Siden ligger hos Cloudflare, som af sikkerhedshensyn kan registrere tekniske oplysninger som jeres IP-adresse.",
-    "Skriver eller ringer I til os, bruger vi oplysningerne til at svare jer og, hvis I bliver kunde, til kundeforholdet.",
+    "Hjemmesiden hostes hos Cloudflare. Af sikkerhedshensyn kan de logge tekniske data, for eksempel jeres IP-adresse.",
+    "Kontakter I os på mail eller telefon, bruger vi kun oplysningerne til at svare og, hvis I bliver kunde, til kundeforholdet.",
     "Vil I vide, hvilke oplysninger vi har om jer, så skriv til os på"
    ]
   },
@@ -421,6 +421,10 @@
   }
  },
  "en": {
+  "footer": {
+   "tagline": "Running and securing IT for small and mid-sized firms since {founded}.",
+   "fine": "We set no cookies and track nothing; fonts and images are served from our own server."
+  },
   "front": {
    "hero": {
     "lab": "AI in operations · senior IT partner since {founded}",
@@ -433,7 +437,7 @@
     "lab": "01 · AI in operations",
     "h": "Every request gets a plan.",
     "hb": "A person says yes.",
-    "p": "We use AI every day in our own operations, with several agents working side by side. That is how we have learnt where it saves time and where to tread carefully.",
+    "p": "AI is part of our daily operations, with several agents working alongside each other. Using it ourselves has taught us where it saves time and where caution is needed.",
     "helpH": "Where we can help",
     "helpP": "We begin with what AI depends on: permissions, data and security.",
     "help": [
@@ -461,7 +465,7 @@
      ],
      [
       "Runbooks",
-      "It writes a step-by-step plan showing what the agent can do itself and what needs a person."
+      "Next comes a step-by-step plan: the steps the agent can take itself, and the steps that need a person."
      ],
      [
       "Drafts",
@@ -484,8 +488,8 @@
     "task": "task logged for the customer",
     "runbook": "1 check access · 2 check server · 3 call back",
     "draft": "reply to customer drafted",
-    "human": "waiting for Hans to approve ✓",
-    "rule": "The agents prepare the work. Nothing is sent, changed or bought until a person has said yes."
+    "human": "waiting for a human to approve ✓",
+    "rule": "The agents prepare the work, and a person says yes before anything is sent, changed or bought."
    },
    "services": {
     "lab": "02 · Services",
@@ -518,7 +522,7 @@
    "toasts": [
     {
      "time": "06:00",
-     "t": "Last night's backup never started",
+     "t": "The nightly backup didn't start",
      "p": "No error message, and no job either."
     },
     {
@@ -549,8 +553,8 @@
    "h": "One person who",
    "hb": "knows your setup.",
    "paras": [
-    "Hans Kristiansen founded DataMatrix in {founded}. He holds a B.Sc. in Management Information Systems from San Diego State University and spent years in the USA, first building database systems and later as IT director.",
-    "You deal with a senior consultant who knows your systems. When extra hands are needed, a fixed network of experienced technicians, each running their own company, steps in.",
+    "DataMatrix was founded by Hans Kristiansen in {founded}. After a B.Sc. in Management Information Systems from San Diego State University, he spent years in the USA, building database systems first and later working as IT director.",
+    "Your contact is a senior consultant who knows your systems. If extra hands are needed, a fixed network of experienced technicians steps in, each running their own company.",
     "We are happy to work in Danish or English."
    ]
   },

@@ -181,7 +181,7 @@
      ]
     },
     {
-     "intro": "Vi leverer det udstyr og de licenser, vi anbefaler — til konkurrencedygtige priser.",
+     "intro": "Vi leverer det udstyr og de licenser, vi anbefaler.",
      "bullets": [
       "Servere, pc'er og netværksudstyr fra anerkendte producenter",
       "Microsoft- og andre softwarelicenser",
@@ -421,6 +421,10 @@
   }
  },
  "en": {
+  "footer": {
+   "tagline": "Senior IT partner since {founded}.",
+   "fine": "No cookies. No tracking."
+  },
   "front": {
    "hero": {
     "lab": "Senior IT partner with AI · since {founded}",

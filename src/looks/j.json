@@ -26,7 +26,7 @@
     ],
     [
      "Mindre rutinearbejde",
-     "AI forbereder de faste opgaver, og en af jeres medarbejdere godkender dem."
+     "AI gør de faste opgaver klar, og en af jeres egne folk giver det endelige ja."
     ],
     [
      "Klare aftaler om AI",
@@ -48,7 +48,7 @@
     ],
     [
      "Udkast",
-     "Svar, dokumentation og tilbud ligger klar som udkast."
+     "Udkast til svar, dokumentation og tilbud står klar, når vi tager over."
     ]
    ],
    "rules": [
@@ -64,8 +64,8 @@
    "request": "»Vores fællesdrev er pludselig blevet meget langsomt. Kan I kigge på det?«",
    "triage": "kunde genkendt · fildrev · prioritet",
    "prio": "MIDDEL",
-   "task": "opgave oprettet og knyttet til kunden",
-   "runbook": "1 tjek diskplads og belastning · 2 se seneste ændringer · 3 Hans vurderer næste skridt",
+   "task": "opgave oprettet under den rette kunde",
+   "runbook": "1 tjek diskplads og belastning · 2 se seneste ændringer · 3 et menneske vurderer næste skridt",
    "draft": "udkast til svar klar",
    "human": "venter på et ja ✓",
    "rule": "Agenterne gør klar. Men der bliver hverken sendt, ændret eller købt noget, før et menneske har sagt ja."
@@ -118,7 +118,7 @@
    "nums": [
     "år med DataMatrix",
     "års erfaring med IT",
-    "fast person at ringe til"
+    "fast kontakt, der kender jer"
    ]
   },
   "cta": {
@@ -186,7 +186,7 @@
       "Servere, computere og netværksudstyr fra anerkendte producenter, sat op hos jer",
       "Microsoft-licenser og licenser til andre programmer",
       "Overskuelige tilbud",
-      "Installation og opsætning"
+      "Installeret og klar til brug"
      ]
     },
     {
@@ -194,7 +194,7 @@
      "bullets": [
       "Gennemgang af Microsoft 365, før Copilot bliver slået til",
       "Automatisering af rutiner, hvor AI forbereder og mennesker godkender",
-      "Enkle regler for brug af AI-værktøjer og data",
+      "Fælles spilleregler for AI-værktøjer og data",
       "Sparring med udviklere og IT-folk, der selv bygger agenter"
      ]
     }
@@ -202,7 +202,7 @@
    "steps": [
     [
      "En snak",
-     "Ring eller skriv, eller lad os komme ud til jer."
+     "Tag telefonen, send en mail, eller lad os komme forbi."
     ],
     [
      "Et ærligt blik",
@@ -263,7 +263,7 @@
     ],
     [
      "Små skridt",
-     "Én konkret opgave skal virke, før vi tager den næste."
+     "Vi får én opgave til at virke, før vi giver os i kast med den næste."
     ]
    ],
    "helpH": "Sådan kan vi hjælpe jer",
@@ -312,8 +312,8 @@
    "faqH": "Spørgsmål, vi ofte får",
    "faq": [
     [
-     "Er AI kun for store virksomheder?",
-     "Nej. Små virksomheder får tit mest ud af det, fordi hver time tæller."
+     "Er AI kun noget for de store?",
+     "Nej, tværtimod. I en lille virksomhed tæller hver time, og derfor er gevinsten ofte størst dér."
     ],
     [
      "Er vores data i sikkerhed?",
@@ -341,7 +341,7 @@
    "netH": "Et lille firma med et fast netværk",
    "net": [
     "DataMatrix er bevidst holdt lille. Det giver kort vej fra spørgsmål til svar, og ansvaret ligger hos én person.",
-    "Ved ferie, sygdom og travle perioder træder et fast netværk af erfarne teknikere med egne firmaer til, og til større projekter henter vi specialister ind, for eksempel inden for netværk og infrastruktur. Jeres miljø er dokumenteret, så de kan tage over uden at starte forfra."
+    "Når der er ferie, sygdom eller travlt, står et fast netværk af erfarne teknikere klar, hver med sit eget firma. Ved større projekter kommer der specialister med, for eksempel til netværk og infrastruktur. Jeres miljø er skrevet ned, så de kan tage over uden at begynde forfra."
    ],
    "timeline": [
     [
@@ -350,7 +350,7 @@
     ],
     [
      "1990'erne",
-     "Udvikler af databasesystemer og senere IT-direktør i USA"
+     "Først udvikler af databasesystemer i USA, siden IT-direktør"
     ],
     [
      "Hjemme igen",
@@ -421,6 +421,10 @@
   }
  },
  "en": {
+  "footer": {
+   "tagline": "Keeping watch over your IT since {founded}.",
+   "fine": "This site uses neither cookies nor tracking."
+  },
   "front": {
    "hero": {
     "lab": "Senior IT partner, with AI at work · since {founded}",
@@ -453,7 +457,7 @@
     "caps": [
      [
       "Triage",
-      "Every request is read, sorted and linked to the right customer and task."
+      "Each incoming request is read and sorted, then tied to the right customer and task."
      ],
      [
       "Priority",
@@ -465,7 +469,7 @@
      ],
      [
       "Drafts",
-      "Replies, documentation and quotes are waiting as drafts."
+      "Draft replies, documentation and quotes are ready for us to pick up."
      ]
     ],
     "rules": [
@@ -482,7 +486,7 @@
     "triage": "customer recognised · file share · priority",
     "prio": "MEDIUM",
     "task": "task created and linked to customer",
-    "runbook": "1 check disk space and load · 2 review recent changes · 3 Hans decides next step",
+    "runbook": "1 check disk space and load · 2 review recent changes · 3 a human decides next step",
     "draft": "reply drafted",
     "human": "waiting for a yes ✓",
     "rule": "The agents do the preparing. No message goes out, nothing is changed and nothing is bought without a human yes."
@@ -506,7 +510,7 @@
      "drift": {
       "h": "Operations and monitoring,",
       "hb": "every single day",
-      "p": "We watch servers, clients, backups and certificates, and patch on a fixed schedule. Virtualisation on VMware vSphere and Hyper-V, including shared SAN storage."
+      "p": "Servers, clients, backups and certificates stay under watch, and patches go in on a fixed schedule. We virtualise on VMware vSphere and Hyper-V, including shared SAN storage."
      },
      "backup": {
       "h": "Backup and recovery,",
@@ -530,7 +534,7 @@
    "toastNote": "Example only: these notifications are illustrative.",
    "why": {
     "lab": "Why DataMatrix",
-    "quote": "When you call, there is no need to explain it all again. You reach someone who already knows your systems.",
+    "quote": "No need to explain everything again when you call: the person who answers already knows your systems.",
     "role": "owner and senior IT consultant",
     "nums": [
      "years as DataMatrix",

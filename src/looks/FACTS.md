@@ -46,7 +46,7 @@ Source of truth for contact data: `src/data/site.json` (use tokens, never hard-c
 - AI FAQ facts: small companies often gain most because every hour counts; data safety depends on setup, so we start by checking what data AI can reach; first step is often an M365 review and a couple of concrete tasks.
 
 ## Never write
-- Uptime %, team size, "guaranteed 24/7", customer names/logos/quotes/cases, named partner technicians, prices, brand names of hardware.
-- "AI triages alarms" (not live yet). "Einstein" quotes. Superlatives about our AI ("most advanced", "unique").
+- Uptime %, team size, round-the-clock guarantees, customer names/logos/quotes/cases, named partner technicians, prices, brand names of hardware.
+- "AI triages alarms" (not live yet). quotes attributed to famous people. Superlatives about our AI ("most advanced", "unique").
 - Fake people/premises ("our team", "our office/workshop"). Photos are illustrative.
 - Cookie talk other than: no cookies, no tracking, no analytics, fonts/images from our own server; hosted at Cloudflare, which may log technical data like IP address for security; email/phone data used only to answer and for a customer relationship.

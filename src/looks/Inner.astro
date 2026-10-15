@@ -92,7 +92,12 @@ const harness = ["Hermes Agent", "OpenClaw", "Egen Grok-bot", "OpenAI Dots"];
 
 {page === "privatliv" && (
   <div class="inner"><div class="wrap prose">
-    {p.paras.map((t: string, i: number) => <p>{t}{i === 3 && <> · {site.legalName}, {site.street}, {site.city}, CVR {site.cvr}.</>}</p>)}
+    {p.paras.map((t: string, i: number) => i < 3 ? <p>{t}</p> : (
+      <p>{t.includes(site.email)
+        ? <>{t.split(site.email)[0]}<a href={`mailto:${site.email}`}>{site.email}</a>{t.split(site.email)[1]}</>
+        : <>{t} <a href={`mailto:${site.email}`}>{site.email}</a></>}
+        {" · "}{site.legalName}, {site.street}, {site.city}, CVR {site.cvr}.</p>
+    ))}
   </div></div>
 )}
 

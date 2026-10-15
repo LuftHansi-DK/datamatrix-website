@@ -11,21 +11,20 @@ const L = da
   ? ["▸ ny henvendelse", "▸ triage", "▸ opgave", "▸ runbook", "▸ udkast", "▸ menneske"]
   : ["▸ new request", "▸ triage", "▸ task", "▸ runbook", "▸ draft", "▸ human"];
 const lines = [
-  ["k", pad(L[0])], ["h", `"${a.request.replace(/^["“”]+|["“”]+$/g, "")}"\n`],
+  ["k", pad(L[0])], ["h", `"${a.request.replace(/^["“”„«»]+|["“”„«»]+$/g, "")}"\n`],
   ["k", pad(L[1])], ["", a.triage + " "], ["w", a.prio], ["", "\n"],
   ["k", pad(L[2])], ["", a.task + "\n"],
   ["k", pad(L[3])], ["", a.runbook + "\n"],
   ["k", pad(L[4])], ["", a.draft + "\n"],
   ["k", pad(L[5])], ["o", a.human + "\n\n"], ["h", a.rule],
 ];
-const short = site.phone.replace("+45 ", "");
 ---
 {kind === "agent" && <div class="agent" role="img" aria-label={`${a.request} → ${a.rule}`} data-lines={JSON.stringify(lines)}></div>}
 {kind === "why" && (
   <section><div class="wrap person">
     <div class="pt"><img src="/img/hans.jpg" alt="Hans Kristiansen" width="350" height="350" loading="lazy" /></div>
     <div><span class="lab">{f.why.lab}</span>
-      <blockquote>“{f.why.quote.replace(/^["“”]+|["“”]+$/g, "")}”</blockquote>
+      <blockquote>“{f.why.quote.replace(/^["“”„«»]+|["“”„«»]+$/g, "")}”</blockquote>
       <span class="who">Hans Kristiansen <span>· {f.why.role}</span></span>
       <div class="nums"><div><b>{new Date().getFullYear() - site.founded}</b>{f.why.nums[0]}</div><div><b>30+</b>{f.why.nums[1]}</div><div><b>1</b>{f.why.nums[2]}</div></div>
     </div>
