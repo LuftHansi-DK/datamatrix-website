@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "node scripts/check-content.mjs && astro build"
+    "check": "node scripts/check-content.mjs && node scripts/check-looks.mjs && node --test scripts/test-look.mjs && astro build",
+    "test": "node --test scripts/test-look.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

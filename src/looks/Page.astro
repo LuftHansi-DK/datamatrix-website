@@ -1,0 +1,43 @@
+---
+// One entry point for every page of every look. route = "", "ai", "ydelser", "om", "kontakt", "fjernsupport",
+// "privatliv", "indsigt", "en", "notfound" or "indsigt/<slug>" (with post).
+// Titles/descriptions are shared across looks on purpose (stable SEO).
+import { render } from "astro:content";
+import LookBase from "./LookBase.astro";
+import FrontFocus from "./FrontFocus.astro";
+import FrontJ from "./FrontJ.astro";
+import FrontK from "./FrontK.astro";
+import Inner from "./Inner.astro";
+import type { Look } from "./lib";
+interface Props { look: Look; route: string; post?: any }
+const { look, route, post } = Astro.props;
+const META: Record<string, [string | undefined, string]> = {
+  "": [undefined, "DataMatrix er senior IT-partner for små og mellemstore virksomheder: drift, sikkerhed, backup, Microsoft 365, infrastruktur og AI brugt med omtanke. Siden 2004."],
+  en: ["Senior IT partner in Denmark", "DataMatrix is a senior IT partner for small and mid-sized businesses in Denmark: operations, security, backup and DR, Microsoft 365, infrastructure and practical AI. Since 2004."],
+  ai: ["AI i drift", "Praktisk og sikker AI for små og mellemstore virksomheder. DataMatrix bruger selv AI-agenter i driften — altid med et menneske, der godkender."],
+  ydelser: ["Ydelser", "Drift, IT-sikkerhed, backup og beredskab, Microsoft 365, servere og netværk, indkøb og AI i drift — for små og mellemstore virksomheder."],
+  om: ["Om DataMatrix", "DataMatrix blev grundlagt i 2004 af Hans Kristiansen. Senior IT-rådgivning med fokus på sikkerhed, driftssikkerhed og bundlinje."],
+  kontakt: ["Kontakt", "Kontakt DataMatrix: ring +45 2026 1188 eller skriv til kontakt@datamatrix.dk."],
+  fjernsupport: ["Fjernsupport", "Fjernsupport fra DataMatrix: ring først, og hent derefter programmet, så vi kan se med på din skærm."],
+  privatliv: ["Privatliv", "Privatlivspolitik for datamatrix.dk: ingen cookies, ingen sporing."],
+  indsigt: ["Indsigt", "Korte artikler og nyheder fra DataMatrix om drift, sikkerhed og AI i praksis."],
+  notfound: ["Siden findes ikke", "Siden blev ikke fundet."],
+};
+const isPost = route.startsWith("indsigt/") && post;
+const [title, description] = isPost ? [post.data.title, post.data.description] : META[route];
+const path = route === "" ? "/" : route === "notfound" ? "/404/" : `/${route}/`;
+const Content = isPost ? (await render(post)).Content : null;
+const Front = look === "j" ? FrontJ : look === "k" ? FrontK : FrontFocus;
+const front = route === "" || route === "en";
+---
+<LookBase look={look} lang={route === "en" ? "en" : "da"} title={title} description={description} path={path} solid={!front}>
+  {front && <Front look={look} lang={route === "en" ? "en" : "da"} />}
+  {!front && !isPost && <Inner look={look} page={route} />}
+  {isPost && Content && (
+    <div class="page-hero" style="padding-bottom:30px"><div class="wrap">
+      <span class="lab">Indsigt · {post.data.date.toLocaleDateString("da-DK", { day: "numeric", month: "long", year: "numeric" })}</span>
+      <h1 style="font-size:clamp(2rem,4vw,3.2rem)">{post.data.title}</h1>
+    </div></div>
+    <div class="inner"><article class="wrap article"><Content /><p style="margin-top:2em"><a href="/indsigt/">← Alle indlæg</a></p></article></div>
+  )}
+</LookBase>

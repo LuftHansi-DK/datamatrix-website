@@ -1,0 +1,82 @@
+---
+// Layout for the rotating looks. Title/description/canonical are SHARED across looks (SEO stays stable);
+// only body wording and design differ. Canonical always points at the clean URL (never /v/...).
+import Logo from "../components/Logo.astro";
+import { copy, site, type Look } from "./lib";
+interface Props { look: Look; lang?: "da" | "en"; title?: string; description: string; path: string; solid?: boolean }
+const { look, lang = "da", title, description, path, solid = false } = Astro.props;
+const da = lang === "da";
+const c = copy(look);
+const fullTitle = title ? `${title} · DataMatrix` : (da ? "IT-partner for små og mellemstore virksomheder på Sjælland · DataMatrix" : "Senior IT partner in Denmark · DataMatrix");
+const canonical = new URL(path, Astro.site);
+const ld = {
+  "@context": "https://schema.org", "@type": "ProfessionalService", name: site.legalName, url: "https://www.datamatrix.dk/",
+  telephone: site.phone, email: site.email, foundingDate: String(site.founded),
+  founder: { "@type": "Person", name: site.owner, ...(site.linkedin ? { sameAs: [site.linkedin] } : {}) },
+  address: { "@type": "PostalAddress", streetAddress: site.street, postalCode: "4520", addressLocality: "Svinninge", addressCountry: "DK" },
+  vatID: "DK" + site.cvr,
+  areaServed: [{ "@type": "AdministrativeArea", name: "Sjælland" }, { "@type": "Country", name: "Danmark" }],
+  knowsLanguage: ["da", "en"], image: "https://www.datamatrix.dk/og.png", logo: "https://www.datamatrix.dk/img/mark.svg",
+  knowsAbout: ["IT-drift", "IT-sikkerhed", "Backup", "Disaster recovery", "Microsoft 365", "Azure", "Virtualisering", "Netværk", "AI i drift"],
+};
+const nav = da
+  ? [["/ai/", "AI i drift", "ai"], ["/ydelser/", "Ydelser", ""], ["/om/", "Om DataMatrix", ""], ["/indsigt/", "Indsigt", ""], ["/kontakt/", "Kontakt", ""]]
+  : [["/en/#ai", "AI", "ai"], ["/en/#services", "Services", ""], ["/en/#about", "About", ""], ["/en/#contact", "Contact", ""]];
+const light = look !== "l";
+const short = site.phone.replace("+45 ", "");
+---
+<!doctype html>
+<html lang={lang} data-look={look}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="preload" href="/looks/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/looks/looks.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://www.datamatrix.dk/og.png" />
+    <meta property="og:locale" content={da ? "da_DK" : "en_GB"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" hreflang="da" href="https://www.datamatrix.dk/" />
+    <link rel="alternate" hreflang="en" href="https://www.datamatrix.dk/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.datamatrix.dk/" />
+    <meta name="theme-color" content={look === "l" ? "#F6F7F8" : "#0A1322"} />
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">{da ? "Gå til indhold" : "Skip to content"}</a>
+    <header class:list={["site-header", { solid }]}>
+      <div class="wrap bar">
+        <a href={da ? "/" : "/en/"} class="brand" aria-label={da ? "DataMatrix – forside" : "DataMatrix – home"}><Logo height={30} light={light} /></a>
+        <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Menu" />
+        <label for="navtoggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
+        <nav aria-label={da ? "Hovedmenu" : "Main menu"}>
+          {nav.map(([href, label, cls]) => (
+            <a href={href} class={cls || undefined} aria-current={da && path.startsWith(href) ? "page" : undefined}>{label}</a>
+          ))}
+          <a href={da ? "/en/" : "/"} lang={da ? "en" : "da"}>{da ? "EN" : "DA"}</a>
+          <a class="btn o" href={site.phoneHref}>{short}</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div><div class="brand"><Logo height={28} light={light} /></div><p>{c.footer && (da ? c.footer.tagline : c.en.footer.tagline)}</p></div>
+        <div><h4>{da ? "Kontakt" : "Contact"}</h4><p><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a>{site.linkedin && <><br /><a href={site.linkedin} rel="me noopener">LinkedIn</a></>}</p></div>
+        <div><h4>{da ? "Adresse" : "Address"}</h4><p>{site.legalName}<br />{site.street}<br />{site.city}<br />CVR {site.cvr}</p></div>
+        <div><h4>{da ? "Genveje" : "Links"}</h4><p><a href="/fjernsupport/">{da ? "Fjernsupport" : "Remote support"}</a><br /><a href="/privatliv/">{da ? "Privatliv" : "Privacy"}</a><br /><a href={da ? "/en/" : "/"}>{da ? "English" : "Dansk"}</a></p></div>
+      </div>
+      <div class="wrap fine">© {new Date().getFullYear()} {site.legalName}. {da ? c.footer.fine : c.en.footer.fine}</div>
+    </footer>
+    <script is:inline src="/looks/looks.js" defer></script>
+  </body>
+</html>

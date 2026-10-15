@@ -1,0 +1,643 @@
+{
+ "_look": "<i|j|k|l>",
+ "footer": {
+  "tagline": "<one short line under the logo, e.g. what we are + since {founded}>",
+  "fine": "<privacy one-liner: no cookies, no tracking — own wording>"
+ },
+ "front": {
+  "hero": {
+   "lab": "<eyebrow: AI + senior IT partner since {founded}, 4-8 words>",
+   "h1": "<headline part 1 (normal weight), 3-6 words>",
+   "h1b": "<headline part 2 (bold), 3-6 words>",
+   "lead": "<1-2 sentences: who we are, for whom, AI in operations, 30+ years>",
+   "cta2": "<secondary button text (primary is always the phone button)>"
+  },
+  "ai": {
+   "lab": "<section label, e.g. '01 · AI i drift'>",
+   "h": "<headline part 1>",
+   "hb": "<headline part 2 bold>",
+   "p": "<2 sentences: we use AI daily, several agents, know gains and pitfalls>",
+   "helpH": "<subheading: what we can help you with>",
+   "helpP": "<1 sentence: we start from infrastructure/security, not hype>",
+   "help": [
+    [
+     "<Copilot readiness title>",
+     "<1-2 sentences>"
+    ],
+    [
+     "<automation title>",
+     "<1 sentence>"
+    ],
+    [
+     "<rules/responsibility title>",
+     "<1 sentence>"
+    ]
+   ],
+   "caps": [
+    [
+     "<Triage>",
+     "<1 sentence>"
+    ],
+    [
+     "<Prioritering>",
+     "<1 sentence>"
+    ],
+    [
+     "<Runbooks>",
+     "<1 sentence>"
+    ],
+    [
+     "<Udkast>",
+     "<1 sentence>"
+    ]
+   ],
+   "rules": [
+    "<rule 1: human decides, 2-5 words>",
+    "<rule 2: data stays>",
+    "<rule 3: verifiable>",
+    "<rule 4: start small>"
+   ],
+   "harnessH": "<for experienced people: let's spar — headline>",
+   "harnessP": "<2 sentences: not just a chatbot; we build and run our own agents with tools, memory, skills, security rules>"
+  },
+  "agent": {
+   "request": "<a realistic short customer request in quotes, e.g. a slow server / printer / mailbox problem — different per look>",
+   "triage": "<'kunde genkendt · prioritet' style, short>",
+   "prio": "<HØJ|MIDDEL style word>",
+   "task": "<short: task created and linked>",
+   "runbook": "<3 short numbered steps on one line, e.g. '1 … · 2 … · 3 …'>",
+   "draft": "<short: reply draft ready>",
+   "human": "<short: waiting for approval ✓>",
+   "rule": "<the core rule: nothing sent/changed/bought without a yes — own wording>"
+  },
+  "services": {
+   "lab": "<section label>",
+   "h": "<headline part 1>",
+   "hb": "<headline part 2 bold>",
+   "p": "<1 sentence intro>",
+   "items": {
+    "sikkerhed": {
+     "h": "<headline part 1>",
+     "hb": "<bold part>",
+     "p": "<1-2 sentences>"
+    },
+    "cloud": {
+     "h": "<headline part 1>",
+     "hb": "<bold part>",
+     "p": "<1-2 sentences>"
+    },
+    "drift": {
+     "h": "<headline part 1>",
+     "hb": "<bold part>",
+     "p": "<1-2 sentences, may mention VMware vSphere and Hyper-V incl. shared SAN storage>"
+    },
+    "backup": {
+     "h": "<headline part 1>",
+     "hb": "<bold part>",
+     "p": "<2 sentences incl. the backup that never ran + tested DR plan>"
+    }
+   }
+  },
+  "toasts": [
+   {
+    "time": "06:00",
+    "t": "<notification title: backup did not start last night>",
+    "p": "<short: no error, but no job either>"
+   },
+   {
+    "time": "06:05",
+    "t": "<notification title: Hans has been told>",
+    "p": "<short: handled before anyone misses anything>"
+   }
+  ],
+  "toastNote": "<tiny note: the notifications are an illustration>",
+  "why": {
+   "lab": "<section label: why DataMatrix>",
+   "quote": "<a short sentence in Hans's voice (first person plural OK): you reach someone who knows your systems, not a ticket number — OWN wording; Hans approves>",
+   "role": "<'ejer og senior IT-konsulent' style>",
+   "nums": [
+    "<label under '{years}': years as DataMatrix>",
+    "<label under '30+': years of experience>",
+    "<label under '1': fixed contact>"
+   ]
+  },
+  "cta": {
+   "lab": "<label>",
+   "h": "<headline part 1>",
+   "hb": "<bold part>",
+   "p": "<1 sentence: call or write; we also visit for an informal talk>"
+  }
+ },
+ "pages": {
+  "ydelser": {
+   "lab": "Ydelser",
+   "h1": "<headline part 1>",
+   "h1b": "<bold part>",
+   "lead": "<1-2 sentences: agreement or single tasks, full operation or sparring>",
+   "items": [
+    {
+     "intro": "<Drift og overvågning: 1 sentence>",
+     "bullets": [
+      "<4 bullets, facts from FACTS.md>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    },
+    {
+     "intro": "<IT-sikkerhed>",
+     "bullets": [
+      "<>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    },
+    {
+     "intro": "<Backup og beredskab>",
+     "bullets": [
+      "<>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    },
+    {
+     "intro": "<Microsoft 365 og cloud>",
+     "bullets": [
+      "<>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    },
+    {
+     "intro": "<Servere, netværk og virtualisering>",
+     "bullets": [
+      "<>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    },
+    {
+     "intro": "<Indkøb af hardware og licenser>",
+     "bullets": [
+      "<>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    },
+    {
+     "intro": "<AI i drift>",
+     "bullets": [
+      "<>",
+      "<>",
+      "<>",
+      "<>"
+     ]
+    }
+   ],
+   "steps": [
+    [
+     "<getting started 1 title>",
+     "<1 sentence>"
+    ],
+    [
+     "<2>",
+     "<>"
+    ],
+    [
+     "<3>",
+     "<>"
+    ],
+    [
+     "<4>",
+     "<>"
+    ]
+   ],
+   "stepsH": "<heading for the getting-started steps>",
+   "ctaH": "<CTA headline>",
+   "ctaP": "<1 sentence>"
+  },
+  "ai": {
+   "lab": "AI i drift",
+   "h1": "<headline part 1>",
+   "h1b": "<bold>",
+   "lead": "<1-2 sentences>",
+   "useH": "<how we use AI ourselves>",
+   "useP": "<1 sentence: several agents side by side>",
+   "use": [
+    [
+     "<Triage>",
+     "<1 sentence>"
+    ],
+    [
+     "<Prioritering>",
+     "<1 sentence, may use 'også kl. 22 en søndag'>"
+    ],
+    [
+     "<Runbooks>",
+     "<1 sentence>"
+    ],
+    [
+     "<Udkast>",
+     "<1 sentence>"
+    ]
+   ],
+   "useRule": "<the core rule in bold-worthy wording + we bring it to you>",
+   "rulesH": "<our four rules for AI>",
+   "rules": [
+    [
+     "<rule 1>",
+     "<1 sentence>"
+    ],
+    [
+     "<rule 2>",
+     "<>"
+    ],
+    [
+     "<rule 3>",
+     "<>"
+    ],
+    [
+     "<rule 4>",
+     "<>"
+    ]
+   ],
+   "helpH": "<what we can help you with>",
+   "helpP": "<1 sentence>",
+   "help": [
+    [
+     "<Copilot>",
+     "<1-2 sentences>"
+    ],
+    [
+     "<automation>",
+     "<>"
+    ],
+    [
+     "<rules>",
+     "<>"
+    ]
+   ],
+   "proLab": "<for experienced people>",
+   "proH": "<headline part 1>",
+   "proHb": "<bold>",
+   "proP1": "<2 sentences naming Hermes Agent, OpenClaw, our own Grok bot and OpenAI Dots, with tools, memory, skills, security rules; no superlatives>",
+   "proP2": "<1-2 sentences: developers/IT people who want someone to think aloud with — call>",
+   "pro": [
+    [
+     "<agents & orchestration>",
+     "<>"
+    ],
+    [
+     "<tools & integrations, least privilege>",
+     "<>"
+    ],
+    [
+     "<memory & skills>",
+     "<>"
+    ],
+    [
+     "<security in practice>",
+     "<>"
+    ],
+    [
+     "<model choice & cost>",
+     "<>"
+    ]
+   ],
+   "faqH": "<FAQ heading>",
+   "faq": [
+    [
+     "<Q: only for big companies?>",
+     "<A>"
+    ],
+    [
+     "<Q: is our data safe?>",
+     "<A>"
+    ],
+    [
+     "<Q: where do we start?>",
+     "<A>"
+    ]
+   ],
+   "ctaH": "<CTA headline>",
+   "ctaP": "<1 sentence>"
+  },
+  "om": {
+   "lab": "Om DataMatrix",
+   "h1": "<headline part 1>",
+   "h1b": "<bold>",
+   "lead": "<1-2 sentences about trust>",
+   "role": "<ejer og senior IT-konsulent style>",
+   "bio": [
+    "<para 1: 30+ yrs, SDSU 1990, USA developer → IT director + board>",
+    "<para 2: IT is not just tech; best solution for users, operations, bottom line>",
+    "<para 3: self-employed in DK, founded DataMatrix {founded}, still personally responsible for all customers>"
+   ],
+   "netH": "<small firm, strong network heading>",
+   "net": [
+    "<para: deliberately small → short way, personal responsibility>",
+    "<para: fixed network of technicians with own companies; holiday, illness, bigger projects>"
+   ],
+   "timeline": [
+    [
+     "1990",
+     "<B.Sc. MIS, SDSU>"
+    ],
+    [
+     "<1990'erne>",
+     "<developer, later IT director in USA>"
+    ],
+    [
+     "<Tilbage i Danmark>",
+     "<self-employed>"
+    ],
+    [
+     "{founded}",
+     "<DataMatrix founded>"
+    ],
+    [
+     "<I dag>",
+     "<senior partner from small local firms to international production companies, now with AI>"
+    ]
+   ]
+  },
+  "kontakt": {
+   "lab": "Kontakt",
+   "h1": "<part 1>",
+   "h1b": "<bold>",
+   "lead": "<1-2 sentences>",
+   "phoneNote": "<1 short sentence>",
+   "mailNote": "<1 short sentence>",
+   "remoteNote": "<1 sentence for existing customers who need screen help (link text added automatically)>"
+  },
+  "fjernsupport": {
+   "lab": "Fjernsupport",
+   "h1": "<part 1>",
+   "h1b": "<bold>",
+   "lead": "<1 sentence>",
+   "steps": [
+    [
+     "<call us first>",
+     "<1 sentence with {phone}>"
+    ],
+    [
+     "<download the program>",
+     "<1 sentence: program is called TeamViewerQS>"
+    ],
+    [
+     "<run it>",
+     "<1-2 sentences: read ID + password to us; you can close the connection any time>"
+    ]
+   ],
+   "button": "<download button text>"
+  },
+  "privatliv": {
+   "lab": "Privatliv",
+   "h1": "<part 1>",
+   "h1b": "<bold>",
+   "paras": [
+    "<no cookies, analytics or third-party tracking; fonts/images from own server>",
+    "<hosted at Cloudflare; may log technical data like IP for security>",
+    "<email/phone data only to answer + customer relationship>",
+    "<questions about your data: {email} (address appended automatically)>"
+   ]
+  },
+  "indsigt": {
+   "lab": "Indsigt",
+   "h1": "<part 1>",
+   "h1b": "<bold>",
+   "lead": "<1 sentence: short practical posts on security, operations, AI — for managers>"
+  },
+  "notfound": {
+   "h1": "<part 1>",
+   "h1b": "<bold>",
+   "lead": "<1 sentence: maybe moved with the new website>",
+   "button": "<to the front page>"
+  }
+ },
+ "en": {
+  "_doc": "English. Same keys as top-level 'front' (+ 'extra' if your look has extras) plus 'about'. Natural English in this look's voice, not a literal translation. Danish-only labels like 'Ydelser' become English.",
+  "footer": {
+   "tagline": "<English: one short line under the logo>",
+   "fine": "<English privacy one-liner: no cookies, no tracking — own wording>"
+  },
+  "front": {
+   "hero": {
+    "lab": "<eyebrow: AI + senior IT partner since {founded}, 4-8 words>",
+    "h1": "<headline part 1 (normal weight), 3-6 words>",
+    "h1b": "<headline part 2 (bold), 3-6 words>",
+    "lead": "<1-2 sentences: who we are, for whom, AI in operations, 30+ years>",
+    "cta2": "<secondary button text (primary is always the phone button)>"
+   },
+   "ai": {
+    "lab": "<section label, e.g. '01 · AI i drift'>",
+    "h": "<headline part 1>",
+    "hb": "<headline part 2 bold>",
+    "p": "<2 sentences: we use AI daily, several agents, know gains and pitfalls>",
+    "helpH": "<subheading: what we can help you with>",
+    "helpP": "<1 sentence: we start from infrastructure/security, not hype>",
+    "help": [
+     [
+      "<Copilot readiness title>",
+      "<1-2 sentences>"
+     ],
+     [
+      "<automation title>",
+      "<1 sentence>"
+     ],
+     [
+      "<rules/responsibility title>",
+      "<1 sentence>"
+     ]
+    ],
+    "caps": [
+     [
+      "<Triage>",
+      "<1 sentence>"
+     ],
+     [
+      "<Prioritering>",
+      "<1 sentence>"
+     ],
+     [
+      "<Runbooks>",
+      "<1 sentence>"
+     ],
+     [
+      "<Udkast>",
+      "<1 sentence>"
+     ]
+    ],
+    "rules": [
+     "<rule 1: human decides, 2-5 words>",
+     "<rule 2: data stays>",
+     "<rule 3: verifiable>",
+     "<rule 4: start small>"
+    ],
+    "harnessH": "<for experienced people: let's spar — headline>",
+    "harnessP": "<2 sentences: not just a chatbot; we build and run our own agents with tools, memory, skills, security rules>"
+   },
+   "agent": {
+    "request": "<a realistic short customer request in quotes, e.g. a slow server / printer / mailbox problem — different per look>",
+    "triage": "<'kunde genkendt · prioritet' style, short>",
+    "prio": "<HØJ|MIDDEL style word>",
+    "task": "<short: task created and linked>",
+    "runbook": "<3 short numbered steps on one line, e.g. '1 … · 2 … · 3 …'>",
+    "draft": "<short: reply draft ready>",
+    "human": "<short: waiting for approval ✓>",
+    "rule": "<the core rule: nothing sent/changed/bought without a yes — own wording>"
+   },
+   "services": {
+    "lab": "<section label>",
+    "h": "<headline part 1>",
+    "hb": "<headline part 2 bold>",
+    "p": "<1 sentence intro>",
+    "items": {
+     "sikkerhed": {
+      "h": "<headline part 1>",
+      "hb": "<bold part>",
+      "p": "<1-2 sentences>"
+     },
+     "cloud": {
+      "h": "<headline part 1>",
+      "hb": "<bold part>",
+      "p": "<1-2 sentences>"
+     },
+     "drift": {
+      "h": "<headline part 1>",
+      "hb": "<bold part>",
+      "p": "<1-2 sentences, may mention VMware vSphere and Hyper-V incl. shared SAN storage>"
+     },
+     "backup": {
+      "h": "<headline part 1>",
+      "hb": "<bold part>",
+      "p": "<2 sentences incl. the backup that never ran + tested DR plan>"
+     }
+    }
+   },
+   "toasts": [
+    {
+     "time": "06:00",
+     "t": "<notification title: backup did not start last night>",
+     "p": "<short: no error, but no job either>"
+    },
+    {
+     "time": "06:05",
+     "t": "<notification title: Hans has been told>",
+     "p": "<short: handled before anyone misses anything>"
+    }
+   ],
+   "toastNote": "<tiny note: the notifications are an illustration>",
+   "why": {
+    "lab": "<section label: why DataMatrix>",
+    "quote": "<a short sentence in Hans's voice (first person plural OK): you reach someone who knows your systems, not a ticket number — OWN wording; Hans approves>",
+    "role": "<'ejer og senior IT-konsulent' style>",
+    "nums": [
+     "<label under '{years}': years as DataMatrix>",
+     "<label under '30+': years of experience>",
+     "<label under '1': fixed contact>"
+    ]
+   },
+   "cta": {
+    "lab": "<label>",
+    "h": "<headline part 1>",
+    "hb": "<bold part>",
+    "p": "<1 sentence: call or write; we also visit for an informal talk>"
+   }
+  },
+  "about": {
+   "h": "<part 1>",
+   "hb": "<bold>",
+   "paras": [
+    "<founded {founded} by Hans; B.Sc. MIS SDSU; years in US as developer and IT director>",
+    "<senior consultant who knows your systems; network of technicians with own companies>",
+    "<we work in Danish and English>"
+   ]
+  }
+ },
+ "extra": {
+  "_doc": "Look-specific front-page keys. J needs: hint, tabs, paneH. K needs: flow, flowIntro, player, playLabel, foundation. I and L: omit 'extra' entirely. Same keys again in en.extra (English).",
+  "hint": "<J only: tiny hint under the torch hero, e.g. 'shine around with the mouse'>",
+  "tabs": [
+   "<J: tab 1 how we use AI>",
+   "<J: tab 2 what we do for you>",
+   "<J: tab 3 for experienced people>"
+  ],
+  "paneH": [
+   [
+    "<J pane 1 h>",
+    "<bold>"
+   ],
+   [
+    "<J pane 2 h>",
+    "<bold>"
+   ],
+   [
+    "<J pane 3 h>",
+    "<bold>"
+   ]
+  ],
+  "flow": [
+   [
+    "<K node 1 title: request>",
+    "<sub: mail · telefon>"
+   ],
+   [
+    "<Triage>",
+    "<sub>"
+   ],
+   [
+    "<Task>",
+    "<sub>"
+   ],
+   [
+    "<Runbook + draft>",
+    "<sub>"
+   ],
+   [
+    "<Human>",
+    "<sub: approves — or not>"
+   ]
+  ],
+  "flowIntro": "<K: 1 sentence leading into the flow diagram>",
+  "player": [
+   [
+    "<K ch1 AI h>",
+    "<bold>",
+    "<1 sentence>"
+   ],
+   [
+    "<K ch2 security h>",
+    "<bold>",
+    "<1 sentence>"
+   ],
+   [
+    "<K ch3 M365 h>",
+    "<bold>",
+    "<1 sentence>"
+   ],
+   [
+    "<K ch4 drift h>",
+    "<bold>",
+    "<1 sentence>"
+   ],
+   [
+    "<K ch5 backup h>",
+    "<bold>",
+    "<1 sentence>"
+   ]
+  ],
+  "playLabel": "<K: secondary hero button, e.g. 'see it in 30 seconds'>",
+  "foundation": {
+   "lab": "<K label>",
+   "h": "<K headline part 1>",
+   "hb": "<bold>",
+   "p": "<K: AI is only as good as what it runs on>"
+  }
+ }
+}

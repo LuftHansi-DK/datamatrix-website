@@ -1,0 +1,86 @@
+---
+// /looks/ — Hans's preview page (noindex, not linked). Lets you see all four looks on production without waiting 4 weeks.
+// No cookies: ?look=x is carried on internal links by functions/_middleware.js while you click around.
+import pin from "../../../lib/look-pin.json";
+import { LOOKS, LOOK_NAMES, photo } from "../../looks/lib";
+const DESC: Record<string, string> = {
+  i: "Mørk aften, varme fotos der trækker i fokus. Zigzag-rækker med parallax.",
+  j: "Mørkt serverrum — musen er en lommelygte. AI-faner som stories, kort der folder sig ud.",
+  k: "30-sekunders kapitelafspiller, animeret agent-flow, fotos af folk i arbejde.",
+  l: "Dagslys med lidt grønt. Samme opbygning som I. Bruges også som fallback.",
+};
+---
+<!doctype html>
+<html lang="da" data-look="l">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Looks · DataMatrix (intern)</title>
+  <link rel="stylesheet" href="/looks/looks.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    body{padding:60px 0 100px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+    .lk{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 0 rgba(11,22,38,.08)}
+    .lk img{width:100%;height:220px;object-fit:cover}
+    .lk .b{padding:22px 24px}
+    .lk h2{font-size:1.6rem;margin:0 0 6px}
+    .lk .acts{margin-top:16px;gap:8px}.lk .btn{padding:11px 16px;font-size:.82rem}
+    .now{display:inline-block;margin-left:10px;font:600 .7rem/1 Inter;letter-spacing:.14em;text-transform:uppercase;background:#A0703F;color:#fff;padding:6px 8px;border-radius:3px;vertical-align:middle}
+    table{border-collapse:collapse;margin-top:14px}td{padding:6px 18px 6px 0;border-top:1px solid rgba(11,22,38,.08)}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="lab">Intern · ikke i søgemaskiner</span>
+    <h1 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:14px 0">De fire looks</h1>
+    <p style="max-width:62ch">Hjemmesiden skifter look hver mandag kl. 00:00 (dansk tid): I → J → K → L. Klik på et look for at se <b>hele siden</b> i det — det følger med, mens du klikker rundt i samme fane. Ingen cookies, intet gemmes.</p>
+    <p id="live" class="note" style="font-size:.95rem">Henter hvilket look der vises lige nu…</p>
+    {pin.look && <p class="note" style="font-size:.95rem">Låst for alle: <b>{String(pin.look).toUpperCase()}</b> til mandag {pin.until}.</p>}
+
+    <div class="grid">
+      {LOOKS.map((l) => (
+        <div class="lk" id={`lk-${l}`}>
+          <img src={photo(l, "hero").jpg.replace("-1536.jpg", "-768.webp")} alt="" loading="lazy" />
+          <div class="b"><h2>{LOOK_NAMES[l]}<span class="now" hidden>Vises nu</span></h2><p style="margin:0">{DESC[l]}</p>
+            <div class="acts">
+              <a class="btn" href={`/?look=${l}`}>Forside</a>
+              <a class="btn o" href={`/ai/?look=${l}`}>AI-siden</a>
+              <a class="btn o" href={`/ydelser/?look=${l}`}>Ydelser</a>
+              <a class="btn o" href={`/en/?look=${l}`}>English</a>
+            </div></div>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="font-size:1.6rem;margin-top:56px">De næste uger</h2>
+    <table id="sched"></table>
+
+    <h2 style="font-size:1.6rem;margin-top:56px">Vise et bestemt look for alle?</h2>
+    <p style="max-width:62ch">Skriv til Hermes, fx: <i>“vis K for alle til mandag”</i>. Hermes laver en lille ændring (en PR), du trykker Merge, og efter ca. et minut viser hele siden K for alle — indtil mandag kl. 00:00, hvor den normale rotation tager over igen.</p>
+  </div>
+
+  <script>
+    import { rotationLook, weekMonday } from "../../../lib/look.mjs";
+    const names = { i: "I · Fokus", j: "J · Lommelygte", k: "K · Kapitler", l: "L · Dag" };
+    const live = document.getElementById("live");
+    const mark = (l) => { const el = document.querySelector(`#lk-${l} .now`); if (el) el.hidden = false; };
+    fetch("/", { method: "HEAD", cache: "no-store" }).then((r) => {
+      const h = r.headers.get("X-DM-Look");
+      if (!h) throw new Error();
+      const [l, src] = h.split(";").map((s) => s.trim());
+      const why = { rotation: "ugens rotation", pin: "låst for alle", fallback: "fallback" }[src] || src;
+      live.innerHTML = `Lige nu viser siden <b>${names[l] || l}</b> (${why}).`;
+      mark(l);
+    }).catch(() => { const l = rotationLook(new Date()); live.innerHTML = `Efter planen vises <b>${names[l]}</b> denne uge.`; mark(l); });
+    const rows = [];
+    for (let w = 0; w < 8; w++) {
+      const d = new Date(Date.now() + w * 7 * 864e5);
+      const m = weekMonday(d);
+      rows.push(`<tr><td>${w === 0 ? "Denne uge" : "Uge fra"} ${m.split("-").reverse().join(".")}</td><td><b>${names[rotationLook(d)]}</b></td></tr>`);
+    }
+    document.getElementById("sched").innerHTML = rows.join("");
+  </script>
+</body>
+</html>

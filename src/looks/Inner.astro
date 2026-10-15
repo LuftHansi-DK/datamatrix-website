@@ -1,0 +1,113 @@
+---
+// All Danish inner pages for every look. Structure is shared; wording comes from src/looks/<look>.json (pages.*).
+import { getCollection } from "astro:content";
+import Photo from "./Photo.astro";
+import AiDiagram from "./AiDiagram.astro";
+import OpsBoard from "./OpsBoard.astro";
+import { copy, site, PAGE_PHOTO, type Look } from "./lib";
+interface Props { look: Look; page: string }
+const { look, page } = Astro.props;
+const c = copy(look);
+const p = c.pages[page];
+const posts = page === "indsigt" ? (await getCollection("indsigt", ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date) : [];
+const fmt = (d: Date) => d.toLocaleDateString("da-DK", { day: "numeric", month: "long", year: "numeric" });
+const svcNames = ["Drift og overvågning", "IT-sikkerhed", "Backup og beredskab", "Microsoft 365 og cloud", "Servere, netværk og virtualisering", "Indkøb af hardware og licenser", "AI i drift"];
+const harness = ["Hermes Agent", "OpenClaw", "Egen Grok-bot", "OpenAI Dots"];
+---
+<div class="page-hero">
+  <div class="bgp"><Photo look={look} slot={PAGE_PHOTO[page] ?? "hero"} eager /></div>
+  <div class="wrap">
+    {page !== "notfound" && <span class="lab">{p.lab}</span>}
+    {page === "notfound" && <span class="lab">404</span>}
+    <h1>{p.h1} <b>{p.h1b}</b></h1>
+    {p.lead && <p class="lead">{p.lead}</p>}
+    {page === "notfound" && <p style="margin-top:30px"><a class="btn" href="/">{p.button}</a></p>}
+  </div>
+</div>
+
+{page === "ydelser" && (
+  <div class="inner"><div class="wrap">
+    <OpsBoard />
+    {p.items.map((it: any, i: number) => (
+      <div class="svc" id={i === 6 ? "ai" : undefined}><div><span class="n">0{i + 1}</span><h2>{svcNames[i]}</h2></div>
+        <div><p>{it.intro}</p><ul class="list">{it.bullets.map((b: string) => <li>{b}</li>)}</ul>
+        {i === 6 && <p><a href="/ai/">AI i drift →</a></p>}</div></div>
+    ))}
+    <h2 style="margin-top:72px">{p.stepsH}</h2>
+    <div class="steps4">{p.steps.map(([t, s]: string[], i: number) => <div><span class="n">0{i + 1}</span><h3>{t}</h3><p>{s}</p></div>)}</div>
+    <div class="strip"><div><h2>{p.ctaH}</h2><p>{p.ctaP}</p></div><a class="btn mag" href={site.phoneHref}>Ring {site.phone} →</a></div>
+  </div></div>
+)}
+
+{page === "ai" && (
+  <div class="inner"><div class="wrap">
+    <div class="ai-vis" style="margin:0 auto 80px"><AiDiagram variant="flow" /></div>
+    <div class="split">
+      <div><h2>{p.useH}</h2><p>{p.useP}</p>
+        <ul class="list">{p.use.map(([t, s]: string[]) => <li><b>{t}.</b> {s}</li>)}</ul>
+        <p><b style="color:var(--ink)">{p.useRule}</b></p></div>
+      <div class="box"><h3>{p.rulesH}</h3><ul class="list">{p.rules.map(([t, s]: string[]) => <li><b>{t}.</b> {s}</li>)}</ul></div>
+    </div>
+    <h2 style="margin-top:90px">{p.helpH}</h2><p style="max-width:60ch">{p.helpP}</p>
+    <div class="cards3" style="margin-top:24px">{p.help.map(([t, s]: string[]) => <div><h3>{t}</h3><p>{s}</p></div>)}</div>
+    <div class="split" style="margin-top:90px">
+      <div><span class="lab">{p.proLab}</span><h2 style="margin-top:14px">{p.proH} <b>{p.proHb}</b></h2><p>{p.proP1}</p><p>{p.proP2}</p>
+        <div class="chips">{harness.map((n) => <span>{n}</span>)}</div>
+        <ul class="list" style="margin-top:28px">{p.pro.map(([t, s]: string[]) => <li><b>{t}.</b> {s}</li>)}</ul></div>
+      <div class="ai-vis side"><AiDiagram variant="harness" /></div>
+    </div>
+    <div class="prose faq" style="margin-top:90px"><h2>{p.faqH}</h2>{p.faq.map(([q, a]: string[]) => <><h3>{q}</h3><p>{a}</p></>)}</div>
+    <div class="strip"><div><h2>{p.ctaH}</h2><p>{p.ctaP}</p></div><a class="btn mag" href={site.phoneHref}>Ring {site.phone} →</a></div>
+  </div></div>
+)}
+
+{page === "om" && (
+  <div class="inner"><div class="wrap">
+    <div class="split">
+      <div class="portrait"><img src="/img/hans.jpg" alt="Hans Kristiansen, ejer af DataMatrix" width="350" height="350" /></div>
+      <div><h2>Hans Kristiansen</h2><p class="note" style="font-size:.9rem;margin:-8px 0 18px">{p.role}</p>{p.bio.map((b: string) => <p>{b}</p>)}</div>
+    </div>
+    <div class="split" style="margin-top:90px">
+      <div><h2>{p.netH}</h2>{p.net.map((b: string) => <p>{b}</p>)}</div>
+      <ul class="timeline">{p.timeline.map(([w, t]: string[]) => <li><b>{w}</b> — {t}</li>)}</ul>
+    </div>
+  </div></div>
+)}
+
+{page === "kontakt" && (
+  <div class="inner"><div class="wrap">
+    <div class="contact3">
+      <div><span class="lab">Telefon</span><p style="margin:14px 0 8px"><a class="big" href={site.phoneHref}>{site.phone}</a></p><p class="note">{p.phoneNote}</p></div>
+      <div><span class="lab">E-mail</span><p style="margin:14px 0 8px"><a class="big" href={`mailto:${site.email}`}>{site.email}</a></p><p class="note">{p.mailNote}</p></div>
+      <div><span class="lab">Adresse</span><p style="margin:14px 0 0">{site.legalName}<br />{site.street}<br />{site.city}<br />CVR {site.cvr}</p></div>
+    </div>
+    <p style="margin-top:32px">{p.remoteNote} <a href="/fjernsupport/">Fjernsupport →</a></p>
+  </div></div>
+)}
+
+{page === "fjernsupport" && (
+  <div class="inner"><div class="wrap" style="max-width:820px">
+    <ol class="rsteps">
+      {p.steps.map(([t, s]: string[], i: number) => (
+        <li><h3>{t}</h3><p>{s}</p>{i === 1 && <p><a class="btn" href={site.remoteSupportUrl} rel="noopener">{p.button}</a></p>}</li>
+      ))}
+    </ol>
+  </div></div>
+)}
+
+{page === "privatliv" && (
+  <div class="inner"><div class="wrap prose">
+    {p.paras.map((t: string, i: number) => i < 3 ? <p>{t}</p> : (
+      <p>{t.includes(site.email)
+        ? <>{t.split(site.email)[0]}<a href={`mailto:${site.email}`}>{site.email}</a>{t.split(site.email)[1]}</>
+        : <>{t} <a href={`mailto:${site.email}`}>{site.email}</a></>}
+        {" · "}{site.legalName}, {site.street}, {site.city}, CVR {site.cvr}.</p>
+    ))}
+  </div></div>
+)}
+
+{page === "indsigt" && (
+  <div class="inner"><div class="wrap" style="max-width:820px">
+    <ul class="posts">{posts.map((x) => <li><a href={`/indsigt/${x.id}/`}>{x.data.title}</a><p class="note" style="font-size:.9rem">{fmt(x.data.date)} · {x.data.description}</p></li>)}</ul>
+  </div></div>
+)}

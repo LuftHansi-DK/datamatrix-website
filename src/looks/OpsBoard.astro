@@ -1,0 +1,43 @@
+---
+// "Driftstavle" — an animated, illustrative monitoring board for /ydelser/ (CSS animation; clock via looks.js).
+// Illustration only: no real customer data, no metrics/uptime claims. Story: everything green, then a backup job
+// that never started is noticed (no error message!) and handled — the thing we do that most monitoring doesn't.
+const hosts = ["SRV-DC01", "SRV-FIL02", "SRV-APP03"];
+const pts = [[0,20],[18,20],[24,20],[28,8],[33,32],[38,14],[42,20],[70,20],[76,20],[80,10],[85,30],[90,16],[94,20],[120,20]];
+const beat = "M" + [...pts, ...pts.slice(1).map(([x, y]) => [x + 120, y])].map(([x, y]) => `${x} ${y}`).join(" L"); // two periods, slid by CSS
+---
+<div class="ops" aria-label="Illustration: en driftstavle med servere, backup, certifikater, Microsoft 365, firewall og opdateringer. En backup, der aldrig startede, bliver opdaget og håndteret." role="img">
+  <div class="ops-top"><span class="ops-live"><i></i>Driftstavle</span><span class="ops-clock" data-clock>--:--:--</span><span class="ops-ill">Illustration</span></div>
+  <div class="ops-grid">
+    <div class="ops-t ops-srv"><h4>Servere</h4>
+      {hosts.map((h, i) => (
+        <div class="ops-row"><span class="ops-dot ok"></span><span class="ops-name">{h}</span>
+          <svg viewBox="0 0 120 40" preserveAspectRatio="none" class="ops-beat" style={`--d:${i * -0.7}s`}><path d={beat} /></svg></div>
+      ))}
+    </div>
+    <div class="ops-t ops-bk"><h4>Backup i nat</h4>
+      <div class="ops-jobs">{Array.from({ length: 16 }, (_, i) => <i class={i === 11 ? "miss" : undefined} style={`--i:${i}`}></i>)}</div>
+      <div class="ops-status"><span class="s1">Kører nattens job…</span><span class="s2">Et job startede aldrig — ingen fejlbesked</span><span class="s3">Opdaget og håndteret ✓</span></div>
+    </div>
+    <div class="ops-t ops-cert"><h4>Certifikater</h4>
+      <div class="ops-bar"><span>Webmail</span><b style="--w:82%"></b></div>
+      <div class="ops-bar"><span>VPN</span><b style="--w:64%"></b></div>
+      <div class="ops-bar warn"><span>Fornyes snart</span><b style="--w:18%"></b></div>
+    </div>
+    <div class="ops-t ops-m365"><h4>Microsoft 365</h4>
+      <svg viewBox="0 0 80 80" class="ops-ring"><circle cx="40" cy="40" r="32" class="bg" /><circle cx="40" cy="40" r="32" class="fg" /></svg>
+      <ul><li><span class="ops-dot ok"></span>MFA</li><li><span class="ops-dot ok"></span>Deling</li><li><span class="ops-dot ok"></span>Licenser</li></ul>
+    </div>
+    <div class="ops-t ops-fw"><h4>Firewall</h4>
+      <svg viewBox="0 0 220 70" class="ops-shield">
+        {Array.from({ length: 7 }, (_, i) => <circle r="3" cy={12 + (i * 9) % 50} class="ops-pkt" style={`--i:${i}`} />)}
+        <path d="M168 8 l22 8 v18 c0 14 -10 24 -22 28 c-12 -4 -22 -14 -22 -28 v-18 z" class="ops-sh" />
+      </svg>
+      <p class="ops-sub">Uønsket trafik stoppes ved døren</p>
+    </div>
+    <div class="ops-t ops-upd"><h4>Opdateringer</h4>
+      <div class="ops-prog"><b></b></div>
+      <p class="ops-sub">Planlagt vindue · servere og klienter</p>
+    </div>
+  </div>
+</div>
