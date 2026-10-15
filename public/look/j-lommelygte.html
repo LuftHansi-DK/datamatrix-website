@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>J · Aften Lommelygte — DataMatrix look-prototype</title>
+<link rel="stylesheet" href="monolit.css"><link rel="stylesheet" href="r3.css">
+<style>
+/* hero: dark server room, your cursor is the torch */
+.hero{position:relative;height:100vh;min-height:660px;overflow:hidden;background:#050A12;cursor:crosshair}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .dark{filter:brightness(.22) saturate(.6) blur(2px)}
+.hero .lit{filter:brightness(1.05) saturate(1.1);-webkit-mask:radial-gradient(circle var(--r,260px) at var(--mx,30%) var(--my,45%),#000 0%,rgba(0,0,0,.85) 35%,transparent 100%);mask:radial-gradient(circle var(--r,260px) at var(--mx,30%) var(--my,45%),#000 0%,rgba(0,0,0,.85) 35%,transparent 100%)}
+.hero .warmth{position:absolute;inset:0;background:radial-gradient(circle calc(var(--r,260px)*1.3) at var(--mx,30%) var(--my,45%),rgba(233,182,119,.16),transparent 70%);mix-blend-mode:screen;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0A1322 0%,rgba(10,19,34,.2) 40%,transparent 60%);pointer-events:none}
+.hero .in{position:absolute;left:0;right:0;bottom:12vh;z-index:3;pointer-events:none}
+.hero .in a{pointer-events:auto}
+.hero h1{font-size:clamp(2.8rem,6.4vw,6rem);line-height:1;margin:22px 0;max-width:15ch}
+.hero p{font-size:1.12rem;max-width:48ch;margin:0 0 34px;color:#C9D3E2}
+.hero .scene{position:absolute;right:max(60px,calc((100vw - 1240px)/2 + 80px));top:22%;z-index:3;--S:64px;--G:74px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.hint{position:absolute;right:max(40px,calc((100vw - 1240px)/2 + 40px));bottom:12vh;z-index:3;color:#7F8DA4;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase}
+@media(max-width:900px){.hero .scene{right:12%;top:16%;--S:44px;--G:51px}.hint{display:none}.hero .in{bottom:8vh}}
+/* AI tabs */
+.tabs{display:flex;gap:4px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:0;overflow-x:auto}
+.tabs button{all:unset;cursor:pointer;padding:16px 22px;color:#8E9BB0;font-size:.95rem;position:relative;white-space:nowrap}
+.tabs button.on{color:#fff}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--warm);transform:scaleX(0);transition:transform .4s}
+.tabs button.on::after{transform:scaleX(1)}
+.tabs button i{position:absolute;left:0;bottom:-1px;height:2px;background:rgba(233,182,119,.35);width:0}
+.stage{position:relative;min-height:600px;border-radius:0 0 6px 6px;overflow:hidden}
+.pane{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}
+.pane.on{opacity:1;visibility:visible}
+.pane>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(14px) brightness(.6);transform:scale(1.08);transition:filter 1.4s,transform 6s linear}
+.pane.on>img{filter:blur(0) brightness(.75);transform:scale(1)}
+.pane::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,19,34,.95) 0%,rgba(10,19,34,.75) 45%,rgba(10,19,34,.15) 100%)}
+.pane .c{position:relative;z-index:2;padding:56px;max-width:620px}
+.pane h3{font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:300;letter-spacing:-.03em;margin-bottom:16px}
+.pane h3 b{font-weight:600}
+.pane ul{list-style:none;padding:0;margin:18px 0 0}.pane li{padding:11px 0;border-top:1px solid rgba(255,255,255,.1)}.pane li b{color:#fff;font-weight:500}
+.pane .glass{position:absolute;right:5%;bottom:8%;width:min(460px,44%);z-index:2}
+.pane .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pane .chips span{font-size:.78rem;padding:6px 10px;background:rgba(255,255,255,.08);color:#fff;border-radius:3px}
+@media(max-width:900px){.stage{min-height:820px}.pane .c{padding:32px 22px}.pane .glass{left:22px;right:22px;width:auto;bottom:22px}.pane::after{background:rgba(10,19,34,.82)}}
+/* expanding photo cards */
+.deck{display:flex;gap:10px;height:560px}
+.card{flex:1;position:relative;overflow:hidden;border-radius:6px;transition:flex .7s cubic-bezier(.2,.7,.2,1);cursor:pointer;min-width:0}
+.card.on{flex:3.2}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(8px) brightness(.5) saturate(.8);transform:scale(1.1);transition:filter .9s,transform 1.2s}
+.card.on img{filter:blur(0) brightness(.7);transform:scale(1)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,19,34,.95),transparent 65%)}
+.card .c{position:absolute;left:28px;right:28px;bottom:28px;z-index:2}
+.card .n{font-family:"IT";font-weight:200;font-size:2.6rem;color:rgba(233,182,119,.6);line-height:1}
+.card h3{font-size:1.4rem;font-weight:500;margin:8px 0 0;white-space:nowrap}
+.card p{margin:12px 0 0;max-width:46ch;opacity:0;transform:translateY(10px);transition:all .5s .2s;max-height:0}
+.card.on p{opacity:1;transform:none;max-height:300px}
+@media(max-width:900px){.deck{flex-direction:column;height:auto}.card{flex:none;height:110px}.card.on{flex:none;height:440px}.card h3{white-space:normal}}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap bar">
+  <a href="#"><img src="../img/logo-light.svg" alt="DataMatrix"></a>
+  <nav><a class="ai" href="#ai">AI</a><a href="#ydelser">Ydelser</a><a href="#">Om</a><a href="#">Indsigt</a><a href="#">Kontakt</a><a class="btn o" href="tel:+4520261188" style="padding:10px 16px">20 26 11 88</a></nav>
+</div></header>
+
+<div class="hero" id="hero">
+  <img class="dark" src="photos/aisle.jpg" alt="">
+  <img class="lit" src="photos/aisle.jpg" alt="">
+  <div class="warmth"></div>
+  <div class="scene"><div class="world" id="world"></div></div>
+  <div class="in"><div class="wrap">
+    <span class="lab">AI i drift · Senior IT-partner siden 2004</span>
+    <h1>IT der bare virker. <b>En partner, der kender jer.</b></h1>
+    <p>DataMatrix designer, driver og sikrer IT for små og mellemstore virksomheder — med AI, der arbejder med i driften, og mere end 30 års erfaring bag.</p>
+    <div class="acts"><a class="btn mag" href="tel:+4520261188">Ring 20 26 11 88 →</a><a class="btn o" href="#ai">Sådan bruger vi AI</a></div>
+  </div></div>
+  <div class="hint">Lys rundt med musen</div>
+</div>
+
+<section id="ai"><div class="wrap">
+  <div class="chap"><span class="lab">01 · AI i drift</span><div><h2>AI, der arbejder for jer. <b>Under opsyn.</b></h2><p>Vi bruger AI hver dag i vores egen drift — flere AI-agenter side om side — og vi ved, hvor gevinsten er, og hvor faldgruberne er.</p></div></div>
+  <div class="tabs" id="tabs"><button class="on">Sådan bruger vi selv AI<i></i></button><button>Det kan vi for jer<i></i></button><button>For de øvede<i></i></button></div>
+  <div class="stage" id="stage">
+    <div class="pane on"><img src="photos/ai-desk.jpg" alt=""><div class="c">
+      <h3>Flere agenter. <b>Ét menneske, der godkender.</b></h3>
+      <ul><li><b>Triage.</b> Alle henvendelser læses, sorteres og kobles til den rigtige kunde og opgave.</li><li><b>Prioritering.</b> Det, der haster, kommer først — også kl. 22 en søndag.</li><li><b>Runbooks.</b> En trin-for-trin-plan for hver opgave.</li><li><b>Udkast.</b> Svar, dokumentation og tilbud forberedes.</li></ul></div>
+      <div class="glass"><div class="agent" id="agent"></div></div></div>
+    <div class="pane"><img src="photos/meeting.jpg" alt=""><div class="c">
+      <h3>Vi starter med fundamentet — <b>ikke med hypen.</b></h3>
+      <ul><li><b>Klar til Copilot.</b> Copilot kan se det, brugeren kan se. Vi rydder op i rettigheder og deling i Microsoft 365.</li><li><b>Automatisering af rutiner.</b> AI forbereder, jeres folk godkender.</li><li><b>Spilleregler og ansvar.</b> Hvilke værktøjer, til hvad, med hvilke data.</li><li><b>Fire regler:</b> mennesket bestemmer · data bliver, hvor de hører til · alt kan efterprøves · start småt.</li></ul></div></div>
+    <div class="pane"><img src="photos/engineer.jpg" alt=""><div class="c">
+      <h3>Allerede i gang? <b>Lad os sparre.</b></h3>
+      <p>Vi bruger ikke bare en chatbot. Vi bygger og driver vores egne AI-agenter i den daglige drift — med værktøjer, hukommelse, skills og faste sikkerhedsregler.</p>
+      <ul><li><b>Agenter og orkestrering</b> — og hvornår én er bedre end fem.</li><li><b>Værktøjer og integrationer</b> med mindst mulige rettigheder.</li><li><b>Hukommelse og skills</b> — gennemsigtigt og kontrollerbart.</li><li><b>Modelvalg</b> — hvilken model til hvilken opgave, og hvad det koster.</li></ul>
+      <div class="chips"><span>Hermes Agent</span><span>OpenClaw</span><span>Egen Grok-bot</span></div></div></div>
+  </div>
+</div></section>
+
+<section id="ydelser" style="padding-top:40px"><div class="wrap">
+  <div class="chap"><span class="lab">02 · Ydelser</span><div><h2>Fundamentet, <b>vi tager ansvar for.</b></h2></div></div>
+  <div class="deck" id="deck">
+    <div class="card on"><img src="photos/fiber.jpg" alt=""><div class="c"><span class="n">02</span><h3>IT-sikkerhed</h3><p>Firewall, mail- og endpointbeskyttelse, adgangsstyring og opdateringer — sikkerhed som en rød tråd, ikke et tilkøb.</p></div></div>
+    <div class="card"><img src="photos/laptop.jpg" alt=""><div class="c"><span class="n">03</span><h3>Microsoft 365 og cloud</h3><p>Mail, Teams, SharePoint og Azure sat op rigtigt — med styr på rettigheder og deling, klar til AI.</p></div></div>
+    <div class="card"><img src="photos/engineer.jpg" alt=""><div class="c"><span class="n">04</span><h3>Drift og overvågning</h3><p>Servere, netværk og virtualisering — VMware vSphere og Hyper-V, inkl. delt SAN-lager. Overvåget og dokumenteret.</p></div></div>
+    <div class="card"><img src="photos/tape.jpg" alt=""><div class="c"><span class="n">05</span><h3>Backup og beredskab</h3><p>Det, ingen tænker på før den dag, det gælder. Vi opdager også den backup, der aldrig kørte — og har en testet plan for den dag, det går galt.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap person">
+  <div class="pt"><img src="../img/hans.jpg" alt="Hans Kristiansen"></div>
+  <div><span class="lab">Hvorfor DataMatrix</span>
+    <blockquote>“Når I ringer, taler I med én, der kender jeres systemer — ikke et sagsnummer.”</blockquote>
+    <span style="color:#fff">Hans Kristiansen <span style="color:#7F8DA4">· ejer og senior IT-konsulent</span></span>
+    <div class="nums"><div><b>22</b>år som DataMatrix</div><div><b>30+</b>års erfaring</div><div><b>1</b>fast kontakt</div></div>
+  </div>
+</div></section>
+
+<div class="cta"><div class="ph"><img class="rf" src="photos/drive.jpg" alt=""></div>
+  <div class="wrap"><span class="lab">Kontakt</span><h2>Lad os tage <b>en snak.</b></h2>
+  <div class="acts" style="justify-content:center"><a class="btn mag" href="tel:+4520261188">Ring +45 20 26 11 88 →</a><a class="btn o" href="mailto:kontakt@datamatrix.dk">kontakt@datamatrix.dk</a></div></div></div>
+<footer><div class="wrap"><span>© 2026 DataMatrix ApS · Lindevej 5 · 4520 Svinninge · CVR 28124147</span><span>Ingen cookies. Ingen sporing. · Prototype: fotos er AI-genererede pladsholdere</span></div></footer>
+
+<script src="monolit.js"></script><script src="r3.js"></script>
+<script>
+headerScroll();rackFocus('.rf');magnetic('.mag');agentConsole(document.getElementById('agent'));
+const M=Monolith(document.getElementById('world'));addEventListener('scroll',()=>M.set(Math.min(1,scrollY/(innerHeight*.9))),{passive:true});
+// Trick 1: torch — the server room is dark; your cursor is a warm flashlight. On touch it sweeps by itself.
+(()=>{const H=document.getElementById('hero');let auto=true,x=30,y=45,tx=30,ty=45;
+ H.addEventListener('pointermove',e=>{auto=false;const r=H.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*100;ty=(e.clientY-r.top)/r.height*100});
+ H.addEventListener('pointerleave',()=>auto=true);
+ (function f(t){if(auto){tx=35+25*Math.sin(t/2600);ty=42+14*Math.sin(t/1700)}x+=(tx-x)*.08;y+=(ty-y)*.08;H.style.setProperty('--mx',x+'%');H.style.setProperty('--my',y+'%');if(!RM)requestAnimationFrame(f)})(0)})();
+// Trick 2: AI tabs auto-advance like stories (progress bar under each tab), click to jump; each photo pulls focus.
+(()=>{const B=[...document.querySelectorAll('#tabs button')],P=[...document.querySelectorAll('#stage .pane')];let cur=0,t0=performance.now(),hold=false;const DUR=9000;
+ const go=i=>{cur=i;t0=performance.now();B.forEach((b,k)=>{b.classList.toggle('on',k===i);b.querySelector('i').style.width='0'});P.forEach((p,k)=>p.classList.toggle('on',k===i))};
+ B.forEach((b,i)=>b.onclick=()=>{go(i);hold=true});
+ document.getElementById('stage').addEventListener('pointerenter',()=>hold=true);
+ (function f(t){if(!hold){const p=(t-t0)/DUR;B[cur].querySelector('i').style.width=Math.min(100,p*100)+'%';if(p>=1)go((cur+1)%B.length)}requestAnimationFrame(f)})(t0)})();
+// Trick 3: service cards expand on hover/tap; the chosen photo comes into focus.
+document.querySelectorAll('#deck .card').forEach(c=>{const on=()=>document.querySelectorAll('#deck .card').forEach(k=>k.classList.toggle('on',k===c));c.addEventListener('pointerenter',on);c.addEventListener('click',on)});
+</script>
+</body>
+</html>
