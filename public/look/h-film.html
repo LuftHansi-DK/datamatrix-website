@@ -13,8 +13,8 @@ nav{display:flex;gap:34px;align-items:center;font-size:.86rem;color:#D5DDEA}nav 
 @media(max-width:900px){nav a:not(.btn){display:none}}
 /* opening */
 .open{height:100vh;min-height:620px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(60% 50% at 50% 40%,#1B355A,transparent 70%)}
-.open .scene{height:300px;margin-bottom:10px}
-.open h1{font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.02;max-width:16ch;margin:0 auto 22px}
+.open .scene{height:260px;margin:40px 0 0}
+.open h1{font-size:clamp(2.4rem,5.4vw,5rem);line-height:1.02;max-width:20ch;margin:0 auto 22px;text-wrap:balance}
 .open p{max-width:50ch;margin:0 auto 34px;font-size:1.1rem;color:#C9D3E2}
 .acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .letter{position:absolute;left:0;right:0;height:9vh;background:#000;z-index:3;transition:transform 1.4s cubic-bezier(.7,0,.2,1)}
@@ -38,10 +38,10 @@ nav{display:flex;gap:34px;align-items:center;font-size:.86rem;color:#D5DDEA}nav 
 .cap .lab{color:var(--warm)}
 .mini{position:absolute;right:max(40px,calc((100vw - 1240px)/2 + 40px));top:18vh;z-index:3;--S:40px;--G:46px;height:200px;width:200px}
 .prog{position:absolute;right:max(40px,calc((100vw - 1240px)/2 + 40px));bottom:14vh;z-index:3;display:grid;gap:10px;font-size:.78rem;color:#7F8DA4;text-align:right}
-.prog span{transition:color .3s}.prog span.on{color:#fff}
+.prog span{transition:color .3s;text-shadow:0 1px 10px rgba(0,0,0,.9)}.prog span.on{color:#fff}
 .prog span::after{content:"";display:inline-block;width:18px;height:1px;background:currentColor;margin-left:10px;vertical-align:middle;transition:width .4s}
 .prog span.on::after{width:44px;background:var(--warm)}
-@media(max-width:900px){.mini{top:12vh;right:10px;--S:30px;--G:35px}.prog{display:none}.cap{right:22px;left:22px;bottom:10vh}.cap .n{font-size:3.4rem}.screen::after{background:linear-gradient(0deg,rgba(8,17,30,.95) 10%,rgba(8,17,30,.5) 55%,rgba(8,17,30,.2))}}
+@media(max-width:900px){.open .scene{height:170px;--S:54px;--G:62px;margin-top:70px}.mini{top:12vh;right:10px;--S:30px;--G:35px}.prog{display:none}.cap{right:22px;left:22px;bottom:10vh}.cap .n{font-size:3.4rem}.screen::after{background:linear-gradient(0deg,rgba(8,17,30,.95) 10%,rgba(8,17,30,.5) 55%,rgba(8,17,30,.2))}}
 /* after film */
 section{padding:140px 0}
 .sv{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:64px}
