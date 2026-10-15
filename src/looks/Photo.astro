@@ -1,0 +1,11 @@
+---
+// <picture> with responsive WebP + JPEG fallback. Decorative by default (alt="").
+import { photo, type Look } from "./lib";
+interface Props { look: Look; slot: string; class?: string; sizes?: string; eager?: boolean; alt?: string }
+const { look, slot, class: cls, sizes = "100vw", eager = false, alt = "" } = Astro.props;
+const p = photo(look, slot);
+---
+<picture class={cls}>
+  <source type="image/webp" srcset={p.webp} sizes={sizes} />
+  <img src={p.jpg} alt={alt} width="1536" height="1024" loading={eager ? "eager" : "lazy"} decoding="async" fetchpriority={eager ? "high" : undefined} />
+</picture>

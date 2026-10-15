@@ -1,18 +1,10 @@
 ---
-import Base from "../../layouts/Base.astro";
-import { getCollection, render } from "astro:content";
+import Page from "../../looks/Page.astro";
+import { getCollection } from "astro:content";
 export async function getStaticPaths() {
   const posts = await getCollection("indsigt", ({ data }) => !data.draft);
   return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 const { post } = Astro.props;
-const { Content } = await render(post);
 ---
-<Base title={post.data.title} description={post.data.description}>
-  <article class="wrap page-hero prose">
-    <div class="eyebrow">Indsigt · {post.data.date.toLocaleDateString("da-DK", { day: "numeric", month: "long", year: "numeric" })}</div>
-    <h1 style="font-size:clamp(2rem,4vw,3rem)">{post.data.title}</h1>
-    <Content />
-    <p style="margin-top:2em"><a href="/indsigt/">← Alle indlæg</a></p>
-  </article>
-</Base>
+<Page look="l" route={`indsigt/${post.id}`} post={post} />

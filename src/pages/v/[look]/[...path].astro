@@ -1,0 +1,17 @@
+---
+// Pre-built variants for looks I/J/K. Never linked or indexed: functions/_middleware.js serves them on the clean
+// URLs (rewrite) and 301s direct hits to /<path>?look=<x>. robots.txt disallows /v/, sitemap filters /v/.
+import Page from "../../../looks/Page.astro";
+import { getCollection } from "astro:content";
+import { VARIANT_LOOKS } from "../../../looks/lib";
+export async function getStaticPaths() {
+  const posts = await getCollection("indsigt", ({ data }) => !data.draft);
+  const routes = ["", "en", "ai", "ydelser", "om", "kontakt", "fjernsupport", "privatliv", "indsigt"];
+  return VARIANT_LOOKS.flatMap((look) => [
+    ...routes.map((r) => ({ params: { look, path: r || undefined }, props: { look, route: r } })),
+    ...posts.map((post) => ({ params: { look, path: `indsigt/${post.id}` }, props: { look, route: `indsigt/${post.id}`, post } })),
+  ]);
+}
+const { look, route, post } = Astro.props;
+---
+<Page look={look} route={route} post={post} />

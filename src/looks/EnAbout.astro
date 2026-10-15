@@ -1,0 +1,12 @@
+---
+// English page: About block (EN has one page; the Danish site has /om/).
+import { copy, type Look } from "./lib";
+const { look } = Astro.props as { look: Look };
+const a = copy(look).en.about;
+---
+<section id="about"><div class="wrap split">
+  <div class="portrait"><img src="/img/hans.jpg" alt="Hans Kristiansen" width="350" height="350" loading="lazy" /></div>
+  <div><span class="lab">About</span><h2 style="font-size:clamp(2rem,3.6vw,3rem);line-height:1.06;margin:14px 0 22px">{a.h} <b>{a.hb}</b></h2>
+    {a.paras.map((p: string) => <p>{p}</p>)}
+  </div>
+</div></section>

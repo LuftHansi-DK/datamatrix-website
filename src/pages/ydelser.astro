@@ -1,32 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
-import site from "../data/site.json";
-const items = [
-  ["Drift og overvågning", "Den daglige drift, så I kan passe jeres forretning.", ["Overvågning af servere, klienter, backup og certifikater — også backup, der aldrig kørte", "Opdateringer og vedligehold efter en fast plan", "Support til brugerne via telefon, mail og fjernsupport", "Dokumentation af jeres miljø, så viden ikke forsvinder"]],
-  ["IT-sikkerhed", "Sikkerhed har været den røde tråd i alt, vi laver, siden 2004.", ["Firewall, netværkssegmentering og sikker fjernadgang", "Mail- og endpointbeskyttelse", "Adgangsstyring, MFA og oprydning i rettigheder", "Gennemgang af jeres sikkerhed med konkrete prioriteter"]],
-  ["Backup og beredskab", "Backup er kun noget værd, hvis den kan gendannes. Det tester vi.", ["Backup af servere, Microsoft 365 og data — lokalt og offsite", "Disaster recovery-planer og gendannelsestest", "Beredskabsplan: hvem gør hvad, når det går galt", "Hurtig hjælp ved nedbrud og hændelser"]],
-  ["Microsoft 365 og cloud", "Den rette balance mellem sky og lokalt — der er ingen one size fits all.", ["Opsætning, migrering og drift af mail, Teams, SharePoint og OneDrive", "Azure og hybride løsninger", "Licensoptimering, så I ikke betaler for mere, end I bruger", "Rådgivning om, hvad der giver mening at flytte — og hvad der ikke gør"]],
-  ["Servere, netværk og virtualisering", "Infrastruktur, der er designet til at køre stabilt i mange år.", ["Design af IT- og netværksinfrastruktur", "Servere og virtualisering (VMware vSphere og Hyper-V, inkl. delt SAN-lager)", "Switche, Wi-Fi og firewalls", "Planlægning og gennemførelse af udskiftninger og flytninger"]],
-  ["Indkøb af hardware og licenser", "Vi leverer det udstyr og de licenser, vi anbefaler — til konkurrencedygtige priser.", ["Servere, pc'er og netværksudstyr fra anerkendte producenter", "Microsoft- og andre softwarelicenser", "Klare tilbud uden overraskelser", "Installation og opsætning, når det kommer frem"]],
-  ["AI i drift", "Praktisk og sikker brug af AI — med udgangspunkt i det, vi selv gør.", ["Klargøring af Microsoft 365 til Copilot: rettigheder, deling og data", "Triage, prioritering og runbooks med AI — et menneske godkender", "Spilleregler for brug af AI i virksomheden", "Se mere på siden om AI i drift"]],
-];
+// Plain static page = look L (fallback). Looks I/J/K: src/pages/v/[look]/[...path].astro, picked by functions/_middleware.js.
+import Page from "../looks/Page.astro";
 ---
-<Base title="Ydelser" description="Drift, IT-sikkerhed, backup og beredskab, Microsoft 365, servere og netværk, indkøb og AI i drift — for små og mellemstore virksomheder.">
-  <div class="wrap page-hero">
-    <div class="eyebrow">Ydelser</div>
-    <h1>Alt det, der skal til, for at IT <span class="serif">bare virker</span></h1>
-    <p class="lead">Fast aftale eller enkeltopgaver. Hele IT-driften eller sparring til jeres egen IT-ansvarlige. Vi finder den model, der passer.</p>
-  </div>
-  <div class="wrap">
-    {items.map(([title, intro, bullets]) => (
-      <div class="service">
-        <div><h2>{title}</h2></div>
-        <div><p>{intro}</p><ul class="checklist">{bullets.map((b) => <li>{b}</li>)}</ul>
-        {title === "AI i drift" && <p><a href="/ai/">Læs om AI i drift →</a></p>}</div>
-      </div>
-    ))}
-  </div>
-  <div class="wrap" style="margin-top:40px">
-    <div class="cta"><div><h2>Er I i tvivl om, hvor I skal starte?</h2><p>Så start med en snak. Vi fortæller ærligt, hvad vi ser — og hvad der kan vente.</p></div><a class="btn" href={site.phoneHref}>Ring {site.phone}</a></div>
-  </div>
-</Base>
+<Page look="l" route="ydelser" />

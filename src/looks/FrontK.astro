@@ -1,0 +1,85 @@
+---
+// Front page, look K "Kapitler": split hero, a 30-second chapter player you control, animated agent flow, foundation grid.
+import Photo from "./Photo.astro";
+import Blocks from "./Blocks.astro";
+import EnAbout from "./EnAbout.astro";
+import { copy, site } from "./lib";
+interface Props { lang?: "da" | "en" }
+const { lang = "da" } = Astro.props;
+const look = "k";
+const da = lang === "da";
+const c = copy(look);
+const f = da ? c.front : c.en.front;
+const x = da ? c.extra : c.en.extra;
+const short = site.phone.replace("+45 ", "");
+const chips = ["Hermes Agent", "OpenClaw", da ? "Egen Grok-bot" : "Own Grok bot", "OpenAI Dots"];
+const chapters = da ? ["AI i drift", "Sikkerhed", "Microsoft 365", "Drift", "Backup"] : ["AI", "Security", "Microsoft 365", "Operations", "Backup"];
+const slots = ["ai", "sikkerhed", "cloud", "drift", "backup"];
+const names = da
+  ? { sikkerhed: "IT-sikkerhed", cloud: "Microsoft 365 og cloud", drift: "Drift og overvågning", backup: "Backup og beredskab" }
+  : { sikkerhed: "IT security", cloud: "Microsoft 365 and cloud", drift: "Operations and monitoring", backup: "Backup and disaster recovery" };
+const order = ["sikkerhed", "cloud", "drift", "backup"] as const;
+const X = [10, 250, 490, 730, 970];
+---
+<div class="hero-k">
+  <div class="copy">
+    <span class="lab">{f.hero.lab}</span>
+    <h1>{f.hero.h1} <b>{f.hero.h1b}</b></h1>
+    <p>{f.hero.lead}</p>
+    <div class="acts"><a class="btn mag" href={site.phoneHref}>{da ? "Ring" : "Call"} {short} →</a><a class="btn o" href="#chapters">{x.playLabel}</a></div>
+  </div>
+  <div class="vis"><div class="ph rf"><Photo look={look} slot="hero" eager sizes="(max-width:900px) 100vw, 50vw" /></div><div class="scene" aria-hidden="true"><div class="world" id="world"></div></div></div>
+</div>
+
+<section id="chapters" style="padding-top:60px"><div class="wrap">
+  <div class="player" id="player">
+    {slots.map((s, i) => <div class:list={["sh", { on: i === 0 }]}><Photo look={look} slot={s} /></div>)}
+    <div class="bars" id="bars" aria-hidden="true">{slots.map(() => <i><u></u></i>)}</div>
+    <button class="pp" id="pp" data-pause={da ? "❚❚ PAUSE" : "❚❚ PAUSE"} data-play={da ? "▶ AFSPIL" : "▶ PLAY"}>❚❚ PAUSE</button>
+    <div class="ptxt">
+      {x.player.map(([h, hb, p]: string[], i: number) => (
+        <div class:list={["c", { on: i === 0 }]}><span class="lab">0{i + 1} · {chapters[i]}</span><h2>{h} <b>{hb}</b></h2><p>{p}</p></div>
+      ))}
+    </div>
+    <div class="thumbs" id="thumbs">{chapters.map((t, i) => <button class={i === 0 ? "on" : undefined}>{t}</button>)}</div>
+  </div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <div class="chap"><span class="lab">{f.ai.lab}</span><div><h2>{f.ai.h} <b>{f.ai.hb}</b></h2><p>{f.ai.p} {x.flowIntro}</p></div></div>
+  <div class="flow">
+    <svg viewBox="0 0 1160 170" id="flow" role="img" aria-label={x.flow.map((n: string[]) => n[0]).join(" → ")}><defs><filter id="gl"><feGaussianBlur stdDeviation="3" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
+      <path d="M190 85 H250 M430 85 H490 M670 85 H730 M910 85 H970" />
+      {x.flow.map(([t, s]: string[], i: number) => (
+        <g class:list={["node", { h: i === 4 }]} transform={`translate(${X[i]},40)`}><rect width="180" height="90" rx="8" /><text x="20" y="40">{t}</text><text class="s" x="20" y="64">{s}</text></g>
+      ))}
+      <circle id="dot" r="6" fill="#E9B677" filter="url(#gl)" cx="100" cy="85" />
+    </svg>
+    <div class="flow-m">{x.flow.map(([t, s]: string[], i: number) => <div class={i === 4 ? "h" : undefined}>{t}<span>{s}</span></div>)}</div>
+  </div>
+  <div class="two">
+    <div><h3>{f.ai.helpH}</h3><p>{f.ai.helpP}</p>
+      <ul>{f.ai.help.map(([t, p]: string[]) => <li><b>{t}</b>{p}</li>)}</ul>
+      <div class="rules">{f.ai.rules.map((r: string, i: number) => <span><b>{i + 1}</b>{r}</span>)}</div></div>
+    <div class="glass" style="position:relative"><Blocks kind="agent" look={look} f={f} lang={lang} /></div>
+  </div>
+  <div class="harness"><h3>{f.ai.harnessH}</h3><p>{f.ai.harnessP}</p><div class="chips">{chips.map((n) => <span>{n}</span>)}</div>
+    {da && <p style="margin-top:14px"><a href="/ai/">{chapters[0]} →</a></p>}</div>
+</div></section>
+
+<section id="services" style="padding-top:20px"><div class="wrap">
+  <div class="chap"><span class="lab">{x.foundation.lab}</span><div><h2>{x.foundation.h} <b>{x.foundation.hb}</b></h2><p>{x.foundation.p}</p></div></div>
+  <div class="fg">
+    {order.map((key, i) => (
+      <div class="fc" data-toasts={key === "backup" ? "" : undefined}><Photo look={look} slot={key} sizes="(max-width:800px) 100vw, 50vw" />
+        {key === "backup" && <div class="toast" style="right:6%;top:8%" aria-hidden="true"><span class="t">{f.toasts[0].time}</span><b><span class="dot"></span>{f.toasts[0].t}</b>{f.toasts[0].p}</div>}
+        <div class="c"><span class="n">0{i + 2}</span><h3>{names[key]}</h3><p>{f.services.items[key].p}{key === "backup" && <> <span class="note">({f.toastNote})</span></>}</p></div>
+      </div>
+    ))}
+  </div>
+  {da && <p style="margin-top:22px"><a href="/ydelser/">{f.services.lab.replace(/^\d+\s*·\s*/, "")} →</a></p>}
+</div></section>
+
+{!da && <EnAbout look={look} />}
+<Blocks kind="why" look={look} f={f} lang={lang} />
+<Blocks kind="cta" look={look} f={f} lang={lang} />

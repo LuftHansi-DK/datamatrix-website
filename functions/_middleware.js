@@ -53,7 +53,7 @@ export async function onRequest(context) {
     }
 
     // Only pages (Astro uses trailing slashes). Assets, files, redirects: untouched.
-    if (!path.endsWith("/")) return next();
+    if (!path.endsWith("/") || path.startsWith("/looks/")) return next();
 
     const override = url.searchParams.get("look");
     const pin = await readPin(env);
