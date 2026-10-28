@@ -5,7 +5,7 @@ import pin from "../../../lib/look-pin.json";
 import { LOOKS, LOOK_NAMES, photo } from "../../looks/lib";
 const DESC: Record<string, string> = {
   i: "Mørk aften, varme fotos der trækker i fokus. Zigzag-rækker med parallax.",
-  j: "Mørkt serverrum — musen er en lommelygte. AI-faner som stories, kort der folder sig ud.",
+  m: "Lyst morgenlys — et blødt lys følger musen og vækker fotos og kort.",
   k: "30-sekunders kapitelafspiller, animeret agent-flow, fotos af folk i arbejde.",
   l: "Dagslys med lidt grønt. Samme opbygning som I. Bruges også som fallback.",
 };
@@ -27,15 +27,16 @@ const DESC: Record<string, string> = {
     .lk h2{font-size:1.6rem;margin:0 0 6px}
     .lk .acts{margin-top:16px;gap:8px}.lk .btn{padding:11px 16px;font-size:.82rem}
     .now{display:inline-block;margin-left:10px;font:600 .7rem/1 Inter;letter-spacing:.14em;text-transform:uppercase;background:#A0703F;color:#fff;padding:6px 8px;border-radius:3px;vertical-align:middle}
+    .now[hidden]{display:none!important}
     table{border-collapse:collapse;margin-top:14px}td{padding:6px 18px 6px 0;border-top:1px solid rgba(11,22,38,.08)}
     @media(max-width:800px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
-<body>
+<body data-pin-look={pin.look ?? ""} data-pin-until={pin.until ?? ""}>
   <div class="wrap">
     <span class="lab">Intern · ikke i søgemaskiner</span>
     <h1 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:14px 0">De fire looks</h1>
-    <p style="max-width:62ch">Hjemmesiden skifter look hver mandag kl. 00:00 (dansk tid): I → J → K → L. Klik på et look for at se <b>hele siden</b> i det — det følger med, mens du klikker rundt i samme fane. Ingen cookies, intet gemmes.</p>
+    <p style="max-width:62ch">Hjemmesiden skifter look hver mandag kl. 00:00 (dansk tid): I → M → K → L. Klik på et look for at se <b>hele siden</b> i det — det følger med, mens du klikker rundt i samme fane. Ingen cookies, intet gemmes.</p>
     <p id="live" class="note" style="font-size:.95rem">Henter hvilket look der vises lige nu…</p>
     {pin.look && <p class="note" style="font-size:.95rem">Låst for alle: <b>{String(pin.look).toUpperCase()}</b> til mandag {pin.until}.</p>}
 
@@ -58,22 +59,34 @@ const DESC: Record<string, string> = {
     <table id="sched"></table>
 
     <h2 style="font-size:1.6rem;margin-top:56px">Vise et bestemt look for alle?</h2>
-    <p style="max-width:62ch">Skriv til Hermes, fx: <i>“vis K for alle til mandag”</i>. Hermes laver en lille ændring (en PR), du trykker Merge, og efter ca. et minut viser hele siden K for alle — indtil mandag kl. 00:00, hvor den normale rotation tager over igen.</p>
+    <p style="max-width:62ch">Skriv til Grok Bot, fx: <i>“vis K for alle til mandag”</i>. Grok Bot laver en lille ændring (en PR), du trykker Merge, og efter ca. et minut viser hele siden K for alle — indtil mandag kl. 00:00, hvor den normale rotation tager over igen.</p>
   </div>
 
   <script>
-    import { rotationLook, weekMonday } from "../../../lib/look.mjs";
-    const names = { i: "I · Fokus", j: "J · Lommelygte", k: "K · Kapitler", l: "L · Dag" };
+    import { rotationLook, weekMonday, activePin } from "../../../lib/look.mjs";
+    const names = { i: "I · Fokus", m: "M · Morgen", k: "K · Kapitler", l: "L · Dag" };
     const live = document.getElementById("live");
-    const mark = (l) => { const el = document.querySelector(`#lk-${l} .now`); if (el) el.hidden = false; };
+    const mark = (active) => {
+      document.querySelectorAll(".lk .now").forEach((el) => { el.hidden = true; });
+      if (!active || !names[active]) return;
+      const el = document.querySelector(`#lk-${active} .now`);
+      if (el) el.hidden = false;
+    };
+    const now = new Date();
+    const pinLook = document.body.dataset.pinLook;
+    const pinUntil = document.body.dataset.pinUntil;
+    const pin = pinLook && pinUntil ? { look: pinLook, until: pinUntil } : null;
+    const badgeLook = activePin(pin, now) || rotationLook(now);
+    mark(badgeLook);
     fetch("/", { method: "HEAD", cache: "no-store" }).then((r) => {
       const h = r.headers.get("X-DM-Look");
       if (!h) throw new Error();
       const [l, src] = h.split(";").map((s) => s.trim());
       const why = { rotation: "ugens rotation", pin: "låst for alle", fallback: "fallback" }[src] || src;
       live.innerHTML = `Lige nu viser siden <b>${names[l] || l}</b> (${why}).`;
-      mark(l);
-    }).catch(() => { const l = rotationLook(new Date()); live.innerHTML = `Efter planen vises <b>${names[l]}</b> denne uge.`; mark(l); });
+    }).catch(() => {
+      live.innerHTML = `Efter planen vises <b>${names[badgeLook]}</b> denne uge.`;
+    });
     const rows = [];
     for (let w = 0; w < 8; w++) {
       const d = new Date(Date.now() + w * 7 * 864e5);

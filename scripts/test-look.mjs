@@ -5,9 +5,9 @@ import { chooseLook, rotationLook, weekMonday, copenhagenDate, activePin } from 
 
 const at = (iso) => new Date(iso);
 
-test("anchor week is I, then J, K, L, I", () => {
+test("anchor week is I, then M, K, L, I", () => {
   assert.equal(rotationLook(at("2026-10-19T10:00:00+02:00")), "i");
-  assert.equal(rotationLook(at("2026-10-26T10:00:00+01:00")), "j");
+  assert.equal(rotationLook(at("2026-10-26T10:00:00+01:00")), "m");
   assert.equal(rotationLook(at("2026-11-02T10:00:00+01:00")), "k");
   assert.equal(rotationLook(at("2026-11-09T10:00:00+01:00")), "l");
   assert.equal(rotationLook(at("2026-11-16T10:00:00+01:00")), "i");
@@ -26,7 +26,7 @@ test("switch is Monday 00:00 Copenhagen, not UTC", () => {
 
 test("DST end night (25 Oct 2026) does not shift the switch", () => {
   assert.equal(rotationLook(at("2026-10-25T22:59:00Z")), "i"); // Sun 23:59 CET
-  assert.equal(rotationLook(at("2026-10-25T23:00:00Z")), "j"); // Mon 00:00 CET
+  assert.equal(rotationLook(at("2026-10-25T23:00:00Z")), "m"); // Mon 00:00 CET
 });
 
 test("cycle is stable across New Year (ISO week 53 years)", () => {
@@ -47,9 +47,15 @@ test("override beats pin beats rotation; bad input ignored", () => {
   const now = at("2026-10-20T12:00:00+02:00"); // I week
   assert.deepEqual(chooseLook({ now }), { look: "i", source: "rotation" });
   assert.deepEqual(chooseLook({ now, pin: { look: "k", until: "2026-10-26" } }), { look: "k", source: "pin" });
-  assert.deepEqual(chooseLook({ now, override: "j", pin: { look: "k", until: "2026-10-26" } }), { look: "j", source: "override" });
+  assert.deepEqual(chooseLook({ now, override: "m", pin: { look: "k", until: "2026-10-26" } }), { look: "m", source: "override" });
   assert.deepEqual(chooseLook({ now, override: "x" }), { look: "i", source: "rotation" });
+  assert.deepEqual(chooseLook({ now, override: "j" }), { look: "i", source: "rotation" });
   assert.deepEqual(chooseLook({ now, pin: { look: "z", until: "2026-10-26" } }), { look: "i", source: "rotation" });
+});
+
+test("removed look j is not in rotation or override", () => {
+  let t = at("2026-10-19T12:00:00+02:00").getTime();
+  for (let w = 0; w < 60; w++, t += 7 * 864e5) assert.notEqual(rotationLook(new Date(t)), "j");
 });
 
 test("pin expires Monday 00:00 Copenhagen", () => {

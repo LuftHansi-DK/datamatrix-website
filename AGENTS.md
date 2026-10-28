@@ -15,7 +15,7 @@ Do not push to `main`, do not merge, do not change repo settings, Cloudflare or 
 
 ## Where things live
 - Contact facts (phone, mail, address, CVR, remote-support link): `src/data/site.json` — the only place to change them.
-- **Page text lives in one file per look**: `src/looks/i.json`, `j.json`, `k.json`, `l.json` (Danish + English under `en`).
+- **Page text lives in one file per look**: `src/looks/i.json`, `m.json`, `k.json`, `l.json` (Danish + English under `en`).
   The site rotates these four looks weekly, and **every look must have its own wording** — the same fact, said differently.
   Allowed claims: `src/looks/FACTS.md`. Structure: `src/looks/skeleton.json`. Changing a fact means changing it in all four files.
   `npm run check` fails if two looks share a sentence.

@@ -107,36 +107,6 @@
     }, { threshold: 0.4 }).observe(host);
   });
 
-  // J: torch. Mouse = torch; touch = follows finger, otherwise sweeps slowly by itself. Reduced motion = fully lit (CSS).
-  const H = $(".hero-t");
-  if (H && !RM) {
-    let auto = true, x = 30, y = 45, tx = 30, ty = 45, idle;
-    const move = (cx, cy) => { auto = false; const r = H.getBoundingClientRect(); tx = ((cx - r.left) / r.width) * 100; ty = ((cy - r.top) / r.height) * 100; clearTimeout(idle); idle = setTimeout(() => (auto = true), 2500); };
-    H.addEventListener("pointermove", (e) => move(e.clientX, e.clientY));
-    H.addEventListener("touchmove", (e) => { const t = e.touches[0]; if (t) move(t.clientX, t.clientY); }, { passive: true });
-    H.addEventListener("pointerleave", () => (auto = true));
-    (function f(t) {
-      if (auto) { tx = 38 + 26 * Math.sin(t / 2600); ty = 42 + 14 * Math.sin(t / 1700); }
-      x += (tx - x) * 0.08; y += (ty - y) * 0.08;
-      H.style.setProperty("--mx", x + "%"); H.style.setProperty("--my", y + "%");
-      requestAnimationFrame(f);
-    })(0);
-  }
-
-  // J: AI tabs auto-advance like stories; click to jump (then hold).
-  const tabs = $$("#tabs button"), panes = $$("#stage .pane");
-  if (tabs.length) {
-    let cur = 0, t0 = performance.now(), hold = RM;
-    const go = (i) => { cur = i; t0 = performance.now(); tabs.forEach((b, k) => { b.classList.toggle("on", k === i); b.setAttribute("aria-selected", k === i); b.querySelector("i").style.width = "0"; }); panes.forEach((p, k) => p.classList.toggle("on", k === i)); };
-    tabs.forEach((b, i) => (b.onclick = () => { go(i); hold = true; }));
-    $("#stage").addEventListener("pointerenter", () => (hold = true));
-    (function f(t) { if (!hold) { const p = (t - t0) / 9000; tabs[cur].querySelector("i").style.width = Math.min(100, p * 100) + "%"; if (p >= 1) go((cur + 1) % tabs.length); } requestAnimationFrame(f); })(t0);
-  }
-
-  // J: expanding service cards
-  const cards = $$("#deck .card");
-  cards.forEach((c) => { const on = () => cards.forEach((k) => k.classList.toggle("on", k === c)); c.addEventListener("pointerenter", on); c.addEventListener("click", on); c.addEventListener("focus", on); });
-
   // K: chapter player — plays only while visible, pause button, tap a chapter to jump. No scroll hijack.
   const P = $("#player");
   if (P) {
@@ -161,5 +131,39 @@
       dot.setAttribute("cx", x); nodes.forEach((n, i) => n.classList.toggle("lit", Math.abs(X[i] - x) < 40));
       requestAnimationFrame(f);
     })(t0);
+  }
+
+  // M · Morgen: warm spotlight on hero; sections wake on scroll. Touch = slow drift, no pointer tracking.
+  if (document.documentElement.dataset.look === "m") {
+    const H = $(".hero-m");
+    if (H && !RM) {
+      const fine = matchMedia("(pointer:fine)").matches;
+      let auto = !fine, x = 42, y = 38, tx = 42, ty = 38, idle;
+      const move = (cx, cy) => {
+        if (!fine) return;
+        auto = false;
+        const r = H.getBoundingClientRect();
+        tx = ((cx - r.left) / r.width) * 100;
+        ty = ((cy - r.top) / r.height) * 100;
+        clearTimeout(idle);
+        idle = setTimeout(() => (auto = true), 2800);
+      };
+      H.addEventListener("pointermove", (e) => move(e.clientX, e.clientY));
+      H.addEventListener("pointerleave", () => (auto = true));
+      (function f(t) {
+        if (auto) { tx = 40 + 22 * Math.sin(t / 3200); ty = 36 + 16 * Math.sin(t / 2100); }
+        x += (tx - x) * 0.07; y += (ty - y) * 0.07;
+        H.style.setProperty("--mx", x + "%");
+        H.style.setProperty("--my", y + "%");
+        requestAnimationFrame(f);
+      })(0);
+    }
+    if (RM) $$(".wake").forEach((el) => el.classList.add("on"));
+    else {
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      $$(".wake").forEach((el) => io.observe(el));
+    }
   }
 })();

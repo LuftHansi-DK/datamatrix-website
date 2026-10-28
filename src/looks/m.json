@@ -1,0 +1,568 @@
+{
+ "_look": "m",
+ "footer": {
+  "tagline": "Lyst IT-partnerskab · siden {founded}.",
+  "fine": "Ingen cookies, ingen analyse — kun det, siden selv leverer."
+ },
+ "front": {
+  "hero": {
+   "lab": "Morgenlys · senior IT-partner siden {founded}",
+   "h1": "Klart lys over",
+   "h1b": "jeres IT.",
+   "lead": "DataMatrix passer drift, sikkerhed og backup for små og mellemstore virksomheder — med over 30 års erfaring, personlig kontakt og AI, der hjælper os i hverdagen.",
+   "cta2": "Udforsk ydelserne"
+  },
+  "ai": {
+   "lab": "01 · AI i morgenræset",
+   "h": "Agenter sorterer.",
+   "hb": "Mennesker beslutter.",
+   "p": "Vi har AI i vores egen drift hver eneste dag — flere agenter, der arbejder parallelt. Det giver os erfaring med både gevinster og grænser.",
+   "helpH": "Det kan vi tage med til jer",
+   "helpP": "Fundamentet kommer først: rettigheder, data og sikkerhed — derefter værktøjerne.",
+   "help": [
+    [
+     "Copilot-klarhed",
+     "Copilot ser det samme som brugeren. Vi rydder derfor i Microsoft 365, så AI ikke rammer det forkerte."
+    ],
+    [
+     "Lette rutiner",
+     "Gentagne opgaver kan AI klargøre, mens jeres folk godkender resultatet."
+    ],
+    [
+     "Ansvarlige rammer",
+     "Hvilke AI-værktøjer, til hvilke opgaver og med hvilke data — vi hjælper med regler, der kan bruges."
+    ]
+   ],
+   "caps": [
+    [
+     "Indlæsning",
+     "Alle henvendelser læses og kobles til den rigtige kunde og sag."
+    ],
+    [
+     "Hastighed",
+     "Det pressede kommer først — også sent en søndag aften."
+    ],
+    [
+     "Planer",
+     "Hver opgave får en trinplan: hvad agenten gør, og hvad et menneske skal tage."
+    ],
+    [
+     "Klargøring",
+     "Svar, noter og tilbud ligger som udkast, klar til gennemgang."
+    ]
+   ],
+   "rules": [
+    "Et menneske har ordet",
+    "Data bliver hjemme",
+    "Spor kan følges",
+    "Én opgave ad gangen"
+   ],
+   "harnessH": "Erfarne med AI? Vi deler gerne erfaring.",
+   "harnessP": "Vi kører egne agenter i produktion — med værktøjer, hukommelse, skills og faste sikkerhedsregler, ikke bare en chatbot."
+  },
+  "agent": {
+   "request": "„Printeren på kontoret svarer slet ikke i dag.“",
+   "triage": "kunde fundet · prioritet: middel",
+   "prio": "MIDDEL",
+   "task": "sag oprettet og knyttet til kunden",
+   "runbook": "1 Tjek kø og driver · 2 Genstart spooler · 3 Bekræft hos bruger",
+   "draft": "svarudkast ligger klar",
+   "human": "afventer godkendelse ✓",
+   "rule": "Forslag fra agenten — ja fra et menneske. Indtil da sker der intet med udsendelse, ændringer eller køb."
+  },
+  "services": {
+   "lab": "02 · Ydelser i dagslys",
+   "h": "Det, I kan",
+   "hb": "regne med",
+   "p": "Fra daglig drift til større projekter — hele pakken eller sparring til jeres egen IT.",
+   "items": {
+    "sikkerhed": {
+     "h": "Sikkerhed som",
+     "hb": "grundtone",
+     "p": "Firewall, beskyttelse af mail og enheder, adgangskontrol og opdateringer — ikke et tillæg, men en del af hverdagen."
+    },
+    "cloud": {
+     "h": "Sky og",
+     "hb": "Microsoft 365",
+     "p": "Teams, mail, SharePoint og Azure sat fornuftigt op — med ærlig rådgivning om, hvad der hører hjemme i skyen."
+    },
+    "drift": {
+     "h": "Drift med",
+     "hb": "varme hænder",
+     "p": "Servere, klienter, certifikater og backup overvåges; VMware vSphere og Hyper-V inkl. delt SAN er en del af praksis."
+    },
+    "backup": {
+     "h": "Backup der",
+     "hb": "tåler brug",
+     "p": "Vi fanger også den kørsel, der aldrig startede — uden fejlmelding. Genetablering og beredskab testes, så de holder, når de skal."
+    }
+   }
+  },
+  "toasts": [
+   {
+    "time": "06:00",
+    "t": "Ingen backup i nat",
+    "p": "Jobbet startede aldrig — ingen alarm."
+   },
+   {
+    "time": "06:04",
+    "t": "Vi har reageret",
+    "p": "Fikset, før arbejdsdagen begynder."
+   }
+  ],
+  "toastNote": "Eksempler til illustration.",
+  "why": {
+   "lab": "03 · Hvorfor os",
+   "quote": "I får én fast kontakt, der kender jeres miljø — ikke et anonymt nummer.",
+   "role": "ejer og senior IT-konsulent",
+   "nums": [
+    "år som DataMatrix",
+    "års erfaring",
+    "én fast kontakt"
+   ]
+  },
+  "cta": {
+   "lab": "Kontakt",
+   "h": "Tag fat",
+   "hb": "i os",
+   "p": "Ring, skriv eller bed os komme forbi til en rolig, uforpligtende snak."
+  }
+ },
+ "pages": {
+  "ydelser": {
+   "lab": "Ydelser",
+   "h1": "Det, der skal til,",
+   "h1b": "for ro i maven",
+   "lead": "Fast aftale eller enkeltstående opgaver. Hele driften eller sparring til den IT-ansvarlige, I allerede har.",
+   "items": [
+    {
+     "intro": "Daglig drift, så I kan fokusere på forretningen.",
+     "bullets": [
+      "Døgnet rundt kigger vi på servere, klienter, backup og certifikater — også stille udeblevne jobs",
+      "Planlagte opdateringer og vedligehold",
+      "Brugerhjælp på telefon, mail og via fjernsupport",
+      "Miljøet dokumenteres, så en kollega kan overtage"
+     ]
+    },
+    {
+     "intro": "Sikkerhed har fulgt os siden {founded}.",
+     "bullets": [
+      "Firewall, segmentering og sikker fjernadgang",
+      "Beskyttelse af mail og arbejdsstationer",
+      "Styret adgang, MFA og ryddede rettigheder",
+      "Gennemgang med konkrete næste skridt"
+     ]
+    },
+    {
+     "intro": "Backup giver først værdi, når den kan genskabes — derfor tester vi.",
+     "bullets": [
+      "Backup af servere, M365 og data — lokalt og et andet sted",
+      "Disaster recovery og gendannelsestest",
+      "Beredskab: hvem gør hvad, når det brænder",
+      "Rask assistance, når noget går i stykker"
+     ]
+    },
+    {
+     "intro": "Sky er ikke enten-eller — vi finder balancen.",
+     "bullets": [
+      "Mail, Teams, SharePoint og OneDrive: opsætning, flytning og drift",
+      "Azure og hybrid",
+      "Licenser, der matcher forbruget",
+      "Rådgivning om, hvad der bør flyttes — og hvad der bør blive"
+     ]
+    },
+    {
+     "intro": "Infrastruktur, der holder i mange år.",
+     "bullets": [
+      "Design af IT- og netværksmiljø",
+      "Servere og virtualisering (VMware vSphere og Hyper-V, inkl. delt SAN)",
+      "Netværksudstyr: switches, Wi-Fi og firewalls",
+      "Udskiftninger og flytninger planlagt og gennemført"
+     ]
+    },
+    {
+     "intro": "Indkøb efter det, vi selv ville vælge.",
+     "bullets": [
+      "Indkøb af servere, pc'er og netværk fra producenter, vi stoler på",
+      "Microsoft- og andre licenser",
+      "Tydelige tilbud",
+      "Installation, når udstyret er på plads"
+     ]
+    },
+    {
+     "intro": "AI med omtanke — bygget på det, vi selv gør.",
+     "bullets": [
+      "Microsoft 365 klar til Copilot: rettigheder og deling",
+      "Triage, prioritering og runbooks — med menneskelig godkendelse",
+      "Regler for AI i virksomheden",
+      "Mere på siden om AI i drift"
+     ]
+    }
+   ],
+   "steps": [
+    [
+     "Uformel snak",
+     "Ring, skriv eller få et besøg. Vi lytter først."
+    ],
+    [
+     "Gennemgang",
+     "IT, sikkerhed og backup vurderes ærligt."
+    ],
+    [
+     "Plan",
+     "Prioriteret forslag — vigtigst først."
+    ],
+    [
+     "Drift",
+     "Vi holder det kørende og foreslår forbedringer."
+    ]
+   ],
+   "stepsH": "Fra snak til tryg drift",
+   "ctaH": "Usikker på, hvor I skal begynde?",
+   "ctaP": "Start med en samtale. Vi siger ærligt, hvad der kan vente — og hvad der ikke bør."
+  },
+  "ai": {
+   "lab": "AI i drift",
+   "h1": "AI til",
+   "h1b": "jeres hverdag",
+   "lead": "Vi bruger AI i egen drift og kender både muligheder og faldgruber.",
+   "useH": "Sådan ser det ud hos os",
+   "useP": "AI-agenter er en fast del af driften hos DataMatrix ApS.",
+   "use": [
+    [
+     "Indlæsning",
+     "Indkommende henvendelser læses, sorteres og knyttes til kunde og opgave."
+    ],
+    [
+     "Prioritet",
+     "Det hasterende først — også sent om aftenen."
+    ],
+    [
+     "Runbooks",
+     "Trinplan: hvad agenten gør, og hvad et menneske skal."
+    ],
+    [
+     "Udkast",
+     "Svar, dokumentation og tilbud klargøres."
+    ]
+   ],
+   "useRule": "Uanset hvad agenten foreslår, sendes, ændres eller købes intet uden et menneskes ja.",
+   "rulesH": "Fire regler for ansvarlig AI",
+   "rules": [
+    [
+     "Mennesket bestemmer",
+     "AI foreslår — en person godkender."
+    ],
+    [
+     "Data på plads",
+     "Vi ved, hvad AI må se — og hvad den ikke må."
+    ],
+    [
+     "Sporbarhed",
+     "Handlinger logges."
+    ],
+    [
+     "Små skridt",
+     "Én opgave, der virker, ad gangen."
+    ]
+   ],
+   "helpH": "Det kan vi hjælpe med",
+   "helpP": "Rettigheder, data og sikkerhed først — så værktøjerne.",
+   "help": [
+    [
+     "Copilot-klarhed",
+     "Vi rydder rettigheder og deling i Microsoft 365."
+    ],
+    [
+     "Rutiner",
+     "AI forbereder gentagne opgaver til godkendelse."
+    ],
+    [
+     "Rammer",
+     "Simple regler for værktøjer og data."
+    ]
+   ],
+   "proLab": "For erfarne",
+   "proH": "Allerede dybt nede i AI?",
+   "proHb": "Lad os sparre.",
+   "proP1": "Vi driver egne agenter i produktion — Hermes Agent, OpenClaw, vores Grok-bot og OpenAI Dots — med værktøjer, hukommelse, skills og sikkerhedsregler.",
+   "proP2": "Er I IT-folk eller udviklere, der vil have en sparringspartner med hænderne i maskinrummet, så ring.",
+   "pro": [
+    [
+     "Orkestrering",
+     "Hvornår flere agenter giver mening — og hvornår én er nok."
+    ],
+    [
+     "Integrationer",
+     "Integrationer mod mail, kalender, Microsoft 365 og jeres egne løsninger — med minimal adgang."
+    ],
+    [
+     "Hukommelse",
+     "Hvad agenten må huske — og hvad den skal glemme."
+    ],
+    [
+     "Sikkerhed",
+     "Kun udkast, godkendelse, logning og skarp kundeskille."
+    ],
+    [
+     "Modeller",
+     "Valg af model og omkostninger."
+    ]
+   ],
+   "faqH": "Spørgsmål, vi ofte hører",
+   "faq": [
+    [
+     "Kun for store?",
+     "Nej — små virksomheder vinder ofte mest, fordi tiden er knap."
+    ],
+    [
+     "Data sikre?",
+     "Det afhænger af opsætningen — derfor starter vi med adgang."
+    ],
+    [
+     "Hvor begynder vi?",
+     "Ofte med Microsoft 365 og et par konkrete opgaver."
+    ]
+   ],
+   "ctaH": "Nysgerrig på AI hos jer?",
+   "ctaP": "En ærlig snak uden buzzwords."
+  },
+  "om": {
+   "lab": "Om DataMatrix",
+   "h1": "IT-partner er",
+   "h1b": "tillid",
+   "lead": "Tillid til rådgivning i jeres interesse, til det, vi lover — og til at vi er til at få fat på, når det gælder.",
+   "role": "Ejer og senior IT-konsulent",
+   "bio": [
+    "Hans har arbejdet med IT og sikkerhed i over 30 år. B.Sc. i Management Information Systems fra San Diego State University (1990), derefter år i USA som udvikler og IT-chef.",
+    "Rådgivningen handler om den løsning, der er bedst for den enkelte virksomhed — for brugere, drift og bundlinje.",
+    "Efter selvstændig tid grundlagde Hans DataMatrix i {founded} og er stadig personligt ansvarlig for alle kunder."
+   ],
+   "netH": "Lille firma, stærkt netværk",
+   "net": [
+    "DataMatrix er bevidst lille: kort vej, personligt ansvar og kendskab til jeres systemer.",
+    "Erfarne teknikere med egne firmaer træder til ved ferie, sygdom og projekter, der kræver flere hænder."
+   ],
+   "timeline": [
+    [
+     "1990",
+     "B.Sc. i Management Information Systems, San Diego State University"
+    ],
+    [
+     "1990'erne",
+     "Udvikler og senere IT-leder i USA"
+    ],
+    [
+     "Tilbage i Danmark",
+     "Selvstændig konsulent i Danmark"
+    ],
+    [
+     "{founded}",
+     "DataMatrix grundlægges"
+    ],
+    [
+     "I dag",
+     "Senior IT-partner for virksomheder i mange størrelser — med AI i driften"
+    ]
+   ]
+  },
+  "kontakt": {
+   "lab": "Kontakt",
+   "h1": "Skriv, ring —",
+   "h1b": "eller kom forbi",
+   "lead": "Vi svarer hurtigt og kommer gerne forbi til en uforpligtende snak.",
+   "phoneNote": "Den direkte vej — også når det haster.",
+   "mailNote": "Til alt, der ikke brænder lige nu.",
+   "remoteNote": "Kunde allerede? Fjernsupport er den hurtige vej på skærmen."
+  },
+  "fjernsupport": {
+   "lab": "Fjernsupport",
+   "h1": "Vi ser med",
+   "h1b": "på skærmen",
+   "lead": "Fjernsupport løser mange ting på minutter — uden kørsel.",
+   "steps": [
+    [
+     "Ring til os først",
+     "Start med et opkald til {phone}, så vi er klar til at forbinde."
+    ],
+    [
+     "Hent programmet",
+     "Brug knappen herunder. TeamViewerQS hentes til din pc."
+    ],
+    [
+     "Kør programmet",
+     "Start filen og giv os ID og kode. Du kan afbryde når som helst."
+    ]
+   ],
+   "button": "Download fjernsupport"
+  },
+  "privatliv": {
+   "lab": "Privatliv",
+   "h1": "Uden cookies.",
+   "h1b": "Uden sporing.",
+   "paras": [
+    "Siden bruger hverken cookies, analyse eller tredjepartssporing. Skrift og billeder kommer fra vores egen server.",
+    "Hosting hos Cloudflare kan logge tekniske data som IP-adresse af sikkerhedshensyn.",
+    "Mail og telefon bruger vi kun til at svare og til et evt. kundeforhold.",
+    "Spørgsmål om data:"
+   ]
+  },
+  "indsigt": {
+   "lab": "Indsigt",
+   "h1": "Noter fra",
+   "h1b": "hverdagen",
+   "lead": "Korte indlæg om drift, sikkerhed og AI — til ledere."
+  },
+  "notfound": {
+   "h1": "Siden findes",
+   "h1b": "ikke her",
+   "lead": "Den kan være flyttet, da vi fik ny hjemmeside.",
+   "button": "Til forsiden"
+  }
+ },
+ "en": {
+  "footer": {
+   "tagline": "Bright IT partnership · since {founded}.",
+   "fine": "No cookies, no analytics — only what this site serves."
+  },
+  "front": {
+   "hero": {
+    "lab": "Morning light · senior IT partner since {founded}",
+    "h1": "Clear daylight on",
+    "h1b": "your IT.",
+    "lead": "DataMatrix runs, secures and backs up IT for small and mid-sized businesses — with 30+ years of experience, a personal contact and AI helping us every day.",
+    "cta2": "Explore our services"
+   },
+   "ai": {
+    "lab": "01 · AI in the morning",
+    "h": "Agents sort.",
+    "hb": "People decide.",
+    "p": "We use AI in our own operations every day — several agents in parallel. That teaches us both the wins and the limits.",
+    "helpH": "What we can bring to you",
+    "helpP": "Foundations first: permissions, data and security — then the tools.",
+    "help": [
+     [
+      "Copilot-ready",
+      "Copilot sees what the user sees. We tidy Microsoft 365 so AI does not reach the wrong things."
+     ],
+     [
+      "Light routines",
+      "Recurring work can be prepared by AI while your people approve the result."
+     ],
+     [
+      "Sensible guardrails",
+      "Which AI tools, for which jobs and with which data — we help you write rules people can follow."
+     ]
+    ],
+    "caps": [
+     [
+      "Intake",
+      "Incoming requests are read and matched to the right customer and task."
+     ],
+     [
+      "Urgency",
+      "What is urgent comes first — even late on a Sunday evening."
+     ],
+     [
+      "Plans",
+      "Each job gets steps: what the agent does and what a human must take."
+     ],
+     [
+      "Prep",
+      "Replies, notes and quotes sit as drafts, ready for review."
+     ]
+    ],
+    "rules": [
+     "A human has the final word",
+     "Data stays at home",
+     "Trails can be followed",
+     "One job at a time"
+    ],
+    "harnessH": "Already deep into AI? Happy to compare notes.",
+    "harnessP": "We run our own agents in production — with tools, memory, skills and fixed security rules, not just a chatbot."
+   },
+   "agent": {
+    "request": "“The office printer does not respond at all today.”",
+    "triage": "customer found · priority: medium",
+    "prio": "MEDIUM",
+    "task": "case created and linked to the customer",
+    "runbook": "1 Check queue and driver · 2 Restart spooler · 3 Confirm with user",
+    "draft": "reply draft is ready",
+    "human": "awaiting approval ✓",
+    "rule": "Agents suggest; a human says yes. Until then, nothing is sent, changed or purchased."
+   },
+   "services": {
+    "lab": "02 · Services in daylight",
+    "h": "What you can",
+    "hb": "count on",
+    "p": "From daily operations to larger projects — the full package or sparring for your own IT person.",
+    "items": {
+     "sikkerhed": {
+      "h": "Security as",
+      "hb": "a baseline",
+      "p": "Firewalls, mail and endpoint protection, access control and patching — not an add-on, but part of the day."
+     },
+     "cloud": {
+      "h": "Cloud and",
+      "hb": "Microsoft 365",
+      "p": "Teams, mail, SharePoint and Azure configured sensibly — with straight advice on cloud vs on-premises."
+     },
+     "drift": {
+      "h": "Operations with",
+      "hb": "steady hands",
+      "p": "Servers, clients, certificates and backup are watched; VMware vSphere and Hyper-V incl. shared SAN are part of practice."
+     },
+     "backup": {
+      "h": "Backup that",
+      "hb": "survives use",
+      "p": "We also catch the run that never started — with no error. Recovery and contingency are tested so they hold when needed."
+     }
+    }
+   },
+   "toasts": [
+    {
+     "time": "06:00",
+     "t": "No backup last night",
+     "p": "The job never started — no alert."
+    },
+    {
+     "time": "06:04",
+     "t": "We responded",
+     "p": "Fixed before the workday begins."
+    }
+   ],
+   "toastNote": "Examples for illustration.",
+   "why": {
+    "lab": "03 · Why us",
+    "quote": "You get one fixed contact who knows your environment — not an anonymous queue number.",
+    "role": "owner and senior IT consultant",
+    "nums": [
+     "years as DataMatrix",
+     "years of experience",
+     "one fixed contact"
+    ]
+   },
+   "cta": {
+    "lab": "Contact",
+    "h": "Reach",
+    "hb": "out",
+    "p": "Call, write or ask us to drop by for a calm, no-obligation chat."
+   }
+  },
+  "about": {
+   "h": "Close enough to know your setup.",
+   "hb": "Strong enough when it counts.",
+   "paras": [
+    "Hans Kristiansen founded DataMatrix in {founded} after a B.Sc. in MIS (San Diego State, 1990) and years in the US as a developer and IT director.",
+    "You speak to a senior consultant who knows your systems. Experienced technicians with their own companies back us up when needed.",
+    "We serve customers in Danish and English."
+   ]
+  },
+  "extra": {
+   "hint": "Let the morning light follow your cursor — on touch the page wakes on its own."
+  }
+ },
+ "extra": {
+  "hint": "Lad morgenlyset følge musen — på touch vågner siden af sig selv."
+ }
+}

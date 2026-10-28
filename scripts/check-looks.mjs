@@ -4,8 +4,8 @@
 import { readFileSync, existsSync } from "node:fs";
 
 const ONLY = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
-const LOOKS = ONLY ? [ONLY] : ["i", "j", "k", "l"];
-const EXTRA = { i: [], l: [], j: ["hint", "tabs", "paneH"], k: ["flow", "flowIntro", "player", "playLabel", "foundation"] };
+const LOOKS = ONLY ? [ONLY] : ["i", "m", "k", "l"];
+const EXTRA = { i: [], l: [], m: ["hint"], k: ["flow", "flowIntro", "player", "playLabel", "foundation"] };
 const skel = JSON.parse(readFileSync("src/looks/skeleton.json", "utf8"));
 let errors = 0;
 const err = (m) => { console.error("check-looks: " + m); errors++; };

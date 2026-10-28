@@ -1,0 +1,65 @@
+---
+// Front page, look M "Morgen": light morning spotlight, editorial grid, waking service strip.
+import Photo from "./Photo.astro";
+import Blocks from "./Blocks.astro";
+import EnAbout from "./EnAbout.astro";
+import { copy, site } from "./lib";
+interface Props { lang?: "da" | "en" }
+const { lang = "da" } = Astro.props;
+const look = "m";
+const da = lang === "da";
+const c = copy(look);
+const f = da ? c.front : c.en.front;
+const x = da ? c.extra : c.en.extra;
+const short = site.phone.replace("+45 ", "");
+const chips = ["Hermes Agent", "OpenClaw", da ? "Egen Grok-bot" : "Own Grok bot", "OpenAI Dots"];
+const names = da
+  ? { sikkerhed: "IT-sikkerhed", cloud: "Microsoft 365 og cloud", drift: "Drift og overvågning", backup: "Backup og beredskab" }
+  : { sikkerhed: "IT security", cloud: "Microsoft 365 and cloud", drift: "Operations and monitoring", backup: "Backup and disaster recovery" };
+const order = ["sikkerhed", "cloud", "drift", "backup"] as const;
+---
+<div class="hero-m" id="hero">
+  <Photo look={look} slot="hero" class="dim" eager />
+  <Photo look={look} slot="hero" class="lit" eager />
+  <div class="sun-glow" aria-hidden="true"></div>
+  <div class="scene" aria-hidden="true"><div class="world" id="world"></div></div>
+  <div class="in"><div class="wrap">
+    <span class="lab">{f.hero.lab}</span>
+    <h1>{f.hero.h1} <b>{f.hero.h1b}</b></h1>
+    <p>{f.hero.lead}</p>
+    <div class="acts"><a class="btn mag" href={site.phoneHref}>{da ? "Ring" : "Call"} {short} →</a><a class="btn o" href="#ai">{f.hero.cta2}</a></div>
+  </div></div>
+  <div class="hint" aria-hidden="true">{x.hint}</div>
+</div>
+
+<section id="ai"><div class="wrap">
+  <div class="chap"><span class="lab">{f.ai.lab}</span><div><h2>{f.ai.h} <b>{f.ai.hb}</b></h2><p>{f.ai.p}</p></div></div>
+  <div class="m-ai">
+    <div class="m-ai-ph rf wake"><Photo look={look} slot="ai" sizes="(max-width:900px) 100vw, 55vw" /><div class="glass"><Blocks kind="agent" look={look} f={f} lang={lang} /></div></div>
+    <div class="m-ai-side">
+      <div class="wake"><h3>{f.ai.helpH}</h3><p>{f.ai.helpP}</p>
+        <ul>{f.ai.help.map(([t, p]: string[]) => <li><b>{t}</b>{p}</li>)}</ul></div>
+      <div class="caps m-caps wake">{f.ai.caps.map(([t, p]: string[], i: number) => <div><span class="n">0{i + 1}</span><h3>{t}</h3><p>{p}</p></div>)}</div>
+      <div class="rules wake">{f.ai.rules.map((r: string, i: number) => <span><b>{i + 1}</b>{r}</span>)}</div>
+      <div class="harness wake"><h3>{f.ai.harnessH}</h3><p>{f.ai.harnessP}</p><div class="chips">{chips.map((n) => <span>{n}</span>)}</div>
+        {da && <p style="margin-top:14px"><a href="/ai/">{f.ai.lab.replace(/^\d+\s*·\s*/, "")} →</a></p>}</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="chap wake"><span class="lab">{f.services.lab}</span><div><h2>{f.services.h} <b>{f.services.hb}</b></h2><p>{f.services.p}</p></div></div>
+  <div class="m-svc" id="m-svc">
+    {order.map((key, i) => (
+      <article class="m-svc-card wake" tabindex="0">
+        <Photo look={look} slot={key} sizes="(max-width:900px) 100vw, 28vw" />
+        <div class="c"><span class="n">0{i + 2}</span><span class="lab">{names[key]}</span><h3>{f.services.items[key].h} <b>{f.services.items[key].hb}</b></h3><p>{f.services.items[key].p}</p></div>
+      </article>
+    ))}
+  </div>
+  {da && <p class="wake" style="margin-top:22px"><a href="/ydelser/">{f.services.lab.replace(/^\d+\s*·\s*/, "")} →</a></p>}
+</div></section>
+
+{!da && <EnAbout look={look} />}
+<Blocks kind="why" look={look} f={f} lang={lang} />
+<Blocks kind="cta" look={look} f={f} lang={lang} />

@@ -1,6 +1,6 @@
 # Facts every look may use (and nothing else)
 
-The site rotates four looks (I, J, K, L) weekly. Each look has its **own wording** (Danish and English),
+The site rotates four looks (I, M, K, L) weekly. Each look has its **own wording** (Danish and English),
 but every look tells the **same true facts**. Copywriters (human or agent) may only use the facts below.
 Anything new → ask Hans before it goes in a PR (list it in the PR under "Nye påstande").
 

@@ -18,19 +18,19 @@ From now on Grok Bot manages the site for Hans. Hermes no longer works on it unl
   DNS lives at Curanet (ns1/ns2.123hotel.dk): `www` is a CNAME → `datamatrix-website.pages.dev`.
   **MX/mail (Centera → M365) must never be touched.**
 - Old WordPress URLs (`/about`, `/service`, `/news`) give a 301 to the new pages (PR #4).
-- Rotating looks are live. This week (from Mon 26 Oct) the header is `X-DM-Look: j; rotation`.
-- PRs #1–#6 are all merged. No open PRs. `npm run check` passes on `main` (`edd8bad`).
+- Rotating looks are live. Rotation is **I → M → K → L** (look J removed 28 Oct 2026). Week from Mon 26 Oct 2026 shows **M · Morgen**.
+- PRs #1–#6 are all merged. `npm run check` passes on `main` (`edd8bad`).
 - Stack: Astro static site, Node 22, `npm run build` → `dist/`, plus one Pages Function, `functions/_middleware.js`.
 
-## The four rotating looks (Hans's design decisions, 15 Oct)
+## The four rotating looks (Hans's design decisions)
 - **I Fokus**: warm and quiet, zigzag photo rows, parallax.
-- **J Lommelygte**: dark server room; the cursor is a torch. On touch screens the torch sweeps and follows your finger. With reduced motion, photos are fully lit.
+- **M Morgen**: light morning look; soft spotlight, editorial front page (replaced J in rotation 28 Oct 2026).
 - **K Kapitler**: a chapter player the visitor controls, plus an animated agent-flow diagram.
 - **L Dag**: daylight version of I. This is also the **fallback** if the function fails.
-- They rotate I → J → K → L weekly. Each switch happens **Monday 00:00 Europe/Copenhagen** for everybody (anchor Mon 2026-10-19 = I).
+- They rotate **I → M → K → L** weekly. Each switch happens **Monday 00:00 Europe/Copenhagen** for everybody (anchor Mon 2026-10-19 = I).
   The whole site follows the look, Danish and English.
 - **No cookies, no storage, no consent banner. Ever.** The look depends only on the date.
-- Preview any look: add `?look=i|j|k|l` to any URL. The `/looks/` page (unlinked, noindex) shows the live look and the next 8 weeks.
+- Preview any look: add `?look=i|m|k|l` to any URL. The `/looks/` page (unlinked, noindex) shows the live look and the next 8 weeks.
 - **Show one look to everybody:** set `lib/look-pin.json` (`look`, `until` = a Monday) via PR. It ends automatically. To return to rotation, set both to `null`.
 - Each look has its own photo set and its **own wording**, Danish and English. Hans wants no two looks to share a sentence.
   `npm run check` (`scripts/check-looks.mjs`) fails on shared or near-duplicate sentences.
@@ -38,7 +38,7 @@ From now on Grok Bot manages the site for Hans. Hermes no longer works on it unl
 - Brand: logo B2 (iso 2×2 blocks, the white one slides out), name **"DataMatrix"** (no "IT"), blue `#3569B4` family.
 
 ## Common tasks
-- **Change a text:** edit the same field in all four of `src/looks/{i,j,k,l}.json`, saying it differently in each.
+- **Change a text:** edit the same field in all four of `src/looks/{i,m,k,l}.json`, saying it differently in each.
   Fix the English (`en`) too. Run `npm run check`, open a PR, and give Hans the preview link.
 - **Change contact facts** (phone, mail, address, CVR, support link): only in `src/data/site.json`.
 - **New claim** (anything not in `FACTS.md`): ask Hans first, then add it to `FACTS.md` in the same PR.
@@ -80,7 +80,7 @@ From now on Grok Bot manages the site for Hans. Hermes no longer works on it unl
 
 ## Verify after a change is merged
 ```
-curl -sI https://www.datamatrix.dk/ | grep -i x-dm-look      # e.g. "j; rotation" (or "pin" when pinned)
+curl -sI https://www.datamatrix.dk/ | grep -i x-dm-look      # e.g. "m; rotation" (or "pin" when pinned)
 curl -sI "https://www.datamatrix.dk/?look=k" | grep -i x-dm-look   # "k; override"
 curl -sI https://www.datamatrix.dk/ | grep -i set-cookie      # must print nothing
 ```
