@@ -162,4 +162,38 @@
       requestAnimationFrame(f);
     })(t0);
   }
+
+  // M · Morgen: warm spotlight on hero; sections wake on scroll. Touch = slow drift, no pointer tracking.
+  if (document.documentElement.dataset.look === "m") {
+    const H = $(".hero-m");
+    if (H && !RM) {
+      const fine = matchMedia("(pointer:fine)").matches;
+      let auto = !fine, x = 42, y = 38, tx = 42, ty = 38, idle;
+      const move = (cx, cy) => {
+        if (!fine) return;
+        auto = false;
+        const r = H.getBoundingClientRect();
+        tx = ((cx - r.left) / r.width) * 100;
+        ty = ((cy - r.top) / r.height) * 100;
+        clearTimeout(idle);
+        idle = setTimeout(() => (auto = true), 2800);
+      };
+      H.addEventListener("pointermove", (e) => move(e.clientX, e.clientY));
+      H.addEventListener("pointerleave", () => (auto = true));
+      (function f(t) {
+        if (auto) { tx = 40 + 22 * Math.sin(t / 3200); ty = 36 + 16 * Math.sin(t / 2100); }
+        x += (tx - x) * 0.07; y += (ty - y) * 0.07;
+        H.style.setProperty("--mx", x + "%");
+        H.style.setProperty("--my", y + "%");
+        requestAnimationFrame(f);
+      })(0);
+    }
+    if (RM) $$(".wake").forEach((el) => el.classList.add("on"));
+    else {
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      $$(".wake").forEach((el) => io.observe(el));
+    }
+  }
 })();

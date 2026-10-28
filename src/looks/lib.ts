@@ -5,11 +5,12 @@ import i from "./i.json";
 import j from "./j.json";
 import k from "./k.json";
 import l from "./l.json";
+import m from "./m.json";
 
-export const LOOKS = ["i", "j", "k", "l"] as const;
+export const LOOKS = ["i", "j", "k", "l", "m"] as const;
 export type Look = (typeof LOOKS)[number];
-export const VARIANT_LOOKS: Look[] = ["i", "j", "k"]; // L = the plain static pages (fallback)
-export const LOOK_NAMES: Record<Look, string> = { i: "I · Fokus", j: "J · Lommelygte", k: "K · Kapitler", l: "L · Dag" };
+export const VARIANT_LOOKS: Look[] = ["i", "j", "k", "m"]; // L = the plain static pages (fallback)
+export const LOOK_NAMES: Record<Look, string> = { i: "I · Fokus", j: "J · Lommelygte", k: "K · Kapitler", l: "L · Dag", m: "M · Morgen" };
 
 const years = String(new Date().getFullYear() - site.founded);
 const fill = (s: string) =>
@@ -20,7 +21,7 @@ function deep(v: any): any {
   if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([a, b]) => [a, deep(b)]));
   return v;
 }
-const RAW: Record<Look, any> = { i, j, k, l };
+const RAW: Record<Look, any> = { i, j, k, l, m };
 const CACHE: Partial<Record<Look, any>> = {};
 export function copy(look: Look): any {
   return (CACHE[look] ??= deep(RAW[look]));
@@ -32,6 +33,7 @@ const P: Record<Look, Record<string, string>> = {
   j: { hero: "hero", ai: "ai", approve: "approve", runbook: "runbook", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
   k: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
   l: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
+  m: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
 };
 export function photo(look: Look, slot: string) {
   const name = P[look][slot] ?? P[look].hero;

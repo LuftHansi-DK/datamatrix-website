@@ -52,6 +52,13 @@ test("override beats pin beats rotation; bad input ignored", () => {
   assert.deepEqual(chooseLook({ now, pin: { look: "z", until: "2026-10-26" } }), { look: "i", source: "rotation" });
 });
 
+test("preview look M: override works, never in rotation", () => {
+  const now = at("2026-10-20T12:00:00+02:00");
+  assert.deepEqual(chooseLook({ now, override: "m" }), { look: "m", source: "override" });
+  let t = at("2026-10-19T12:00:00+02:00").getTime();
+  for (let w = 0; w < 60; w++, t += 7 * 864e5) assert.notEqual(rotationLook(new Date(t)), "m");
+});
+
 test("pin expires Monday 00:00 Copenhagen", () => {
   const pin = { look: "k", until: "2026-10-26" };
   assert.equal(activePin(pin, at("2026-10-25T22:59:00Z")), "k");
