@@ -5,7 +5,6 @@
 import { render } from "astro:content";
 import LookBase from "./LookBase.astro";
 import FrontFocus from "./FrontFocus.astro";
-import FrontJ from "./FrontJ.astro";
 import FrontK from "./FrontK.astro";
 import FrontM from "./FrontM.astro";
 import Inner from "./Inner.astro";
@@ -28,7 +27,7 @@ const isPost = route.startsWith("indsigt/") && post;
 const [title, description] = isPost ? [post.data.title, post.data.description] : META[route];
 const path = route === "" ? "/" : route === "notfound" ? "/404/" : `/${route}/`;
 const Content = isPost ? (await render(post)).Content : null;
-const Front = look === "j" ? FrontJ : look === "k" ? FrontK : look === "m" ? FrontM : FrontFocus;
+const Front = look === "k" ? FrontK : look === "m" ? FrontM : FrontFocus;
 const front = route === "" || route === "en";
 ---
 <LookBase look={look} lang={route === "en" ? "en" : "da"} title={title} description={description} path={path} solid={!front}>

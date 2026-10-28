@@ -2,15 +2,14 @@
 // facts in src/data/site.json. Tokens {phone} {email} {founded} {years} are filled here.
 import site from "../data/site.json";
 import i from "./i.json";
-import j from "./j.json";
 import k from "./k.json";
 import l from "./l.json";
 import m from "./m.json";
 
-export const LOOKS = ["i", "j", "k", "l", "m"] as const;
+export const LOOKS = ["i", "m", "k", "l"] as const;
 export type Look = (typeof LOOKS)[number];
-export const VARIANT_LOOKS: Look[] = ["i", "j", "k", "m"]; // L = the plain static pages (fallback)
-export const LOOK_NAMES: Record<Look, string> = { i: "I · Fokus", j: "J · Lommelygte", k: "K · Kapitler", l: "L · Dag", m: "M · Morgen" };
+export const VARIANT_LOOKS: Look[] = ["i", "m", "k"]; // L = the plain static pages (fallback)
+export const LOOK_NAMES: Record<Look, string> = { i: "I · Fokus", m: "M · Morgen", k: "K · Kapitler", l: "L · Dag" };
 
 const years = String(new Date().getFullYear() - site.founded);
 const fill = (s: string) =>
@@ -21,7 +20,7 @@ function deep(v: any): any {
   if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([a, b]) => [a, deep(b)]));
   return v;
 }
-const RAW: Record<Look, any> = { i, j, k, l, m };
+const RAW: Record<Look, any> = { i, k, l, m };
 const CACHE: Partial<Record<Look, any>> = {};
 export function copy(look: Look): any {
   return (CACHE[look] ??= deep(RAW[look]));
@@ -30,7 +29,6 @@ export function copy(look: Look): any {
 // Which photo each look uses for each slot (files in public/looks/photos/<look>/<name>-768|1536.webp + -1536.jpg).
 const P: Record<Look, Record<string, string>> = {
   i: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
-  j: { hero: "hero", ai: "ai", approve: "approve", runbook: "runbook", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
   k: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
   l: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },
   m: { hero: "hero", ai: "ai", sikkerhed: "sikkerhed", cloud: "cloud", drift: "drift", backup: "backup", cta: "cta" },

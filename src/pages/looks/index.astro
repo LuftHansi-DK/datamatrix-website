@@ -5,12 +5,10 @@ import pin from "../../../lib/look-pin.json";
 import { LOOKS, LOOK_NAMES, photo } from "../../looks/lib";
 const DESC: Record<string, string> = {
   i: "Mørk aften, varme fotos der trækker i fokus. Zigzag-rækker med parallax.",
-  j: "Mørkt serverrum — musen er en lommelygte. AI-faner som stories, kort der folder sig ud.",
+  m: "Lyst morgenlys — et blødt lys følger musen og vækker fotos og kort.",
   k: "30-sekunders kapitelafspiller, animeret agent-flow, fotos af folk i arbejde.",
   l: "Dagslys med lidt grønt. Samme opbygning som I. Bruges også som fallback.",
-  m: "Lyst morgenlys — et blødt lys følger musen og vækker fotos og kort. Kun forhåndsvisning, ikke i rotationen endnu.",
 };
-const PREVIEW = new Set(["m"]);
 ---
 <!doctype html>
 <html lang="da" data-look="l">
@@ -29,7 +27,6 @@ const PREVIEW = new Set(["m"]);
     .lk h2{font-size:1.6rem;margin:0 0 6px}
     .lk .acts{margin-top:16px;gap:8px}.lk .btn{padding:11px 16px;font-size:.82rem}
     .now{display:inline-block;margin-left:10px;font:600 .7rem/1 Inter;letter-spacing:.14em;text-transform:uppercase;background:#A0703F;color:#fff;padding:6px 8px;border-radius:3px;vertical-align:middle}
-    .preview{background:#3569B4}
     table{border-collapse:collapse;margin-top:14px}td{padding:6px 18px 6px 0;border-top:1px solid rgba(11,22,38,.08)}
     @media(max-width:800px){.grid{grid-template-columns:1fr}}
   </style>
@@ -37,8 +34,8 @@ const PREVIEW = new Set(["m"]);
 <body>
   <div class="wrap">
     <span class="lab">Intern · ikke i søgemaskiner</span>
-    <h1 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:14px 0">De fire looks + et forslag</h1>
-    <p style="max-width:62ch">Hjemmesiden skifter look hver mandag kl. 00:00 (dansk tid): I → J → K → L. Klik på et look for at se <b>hele siden</b> i det — det følger med, mens du klikker rundt i samme fane. Ingen cookies, intet gemmes.</p>
+    <h1 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:14px 0">De fire looks</h1>
+    <p style="max-width:62ch">Hjemmesiden skifter look hver mandag kl. 00:00 (dansk tid): I → M → K → L. Klik på et look for at se <b>hele siden</b> i det — det følger med, mens du klikker rundt i samme fane. Ingen cookies, intet gemmes.</p>
     <p id="live" class="note" style="font-size:.95rem">Henter hvilket look der vises lige nu…</p>
     {pin.look && <p class="note" style="font-size:.95rem">Låst for alle: <b>{String(pin.look).toUpperCase()}</b> til mandag {pin.until}.</p>}
 
@@ -46,7 +43,7 @@ const PREVIEW = new Set(["m"]);
       {LOOKS.map((l) => (
         <div class="lk" id={`lk-${l}`}>
           <img src={photo(l, "hero").jpg.replace("-1536.jpg", "-768.webp")} alt="" loading="lazy" />
-          <div class="b"><h2>{LOOK_NAMES[l]}<span class="now" hidden>Vises nu</span>{PREVIEW.has(l) && <span class="now preview">Forhåndsvisning</span>}</h2><p style="margin:0">{DESC[l]}</p>
+          <div class="b"><h2>{LOOK_NAMES[l]}<span class="now" hidden>Vises nu</span></h2><p style="margin:0">{DESC[l]}</p>
             <div class="acts">
               <a class="btn" href={`/?look=${l}`}>Forside</a>
               <a class="btn o" href={`/ai/?look=${l}`}>AI-siden</a>
@@ -66,9 +63,9 @@ const PREVIEW = new Set(["m"]);
 
   <script>
     import { rotationLook, weekMonday } from "../../../lib/look.mjs";
-    const names = { i: "I · Fokus", j: "J · Lommelygte", k: "K · Kapitler", l: "L · Dag", m: "M · Morgen" };
+    const names = { i: "I · Fokus", m: "M · Morgen", k: "K · Kapitler", l: "L · Dag" };
     const live = document.getElementById("live");
-    const mark = (l) => { const el = document.querySelector(`#lk-${l} .now:not(.preview)`); if (el) el.hidden = false; };
+    const mark = (l) => { const el = document.querySelector(`#lk-${l} .now`); if (el) el.hidden = false; };
     fetch("/", { method: "HEAD", cache: "no-store" }).then((r) => {
       const h = r.headers.get("X-DM-Look");
       if (!h) throw new Error();

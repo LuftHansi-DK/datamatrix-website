@@ -107,36 +107,6 @@
     }, { threshold: 0.4 }).observe(host);
   });
 
-  // J: torch. Mouse = torch; touch = follows finger, otherwise sweeps slowly by itself. Reduced motion = fully lit (CSS).
-  const H = $(".hero-t");
-  if (H && !RM) {
-    let auto = true, x = 30, y = 45, tx = 30, ty = 45, idle;
-    const move = (cx, cy) => { auto = false; const r = H.getBoundingClientRect(); tx = ((cx - r.left) / r.width) * 100; ty = ((cy - r.top) / r.height) * 100; clearTimeout(idle); idle = setTimeout(() => (auto = true), 2500); };
-    H.addEventListener("pointermove", (e) => move(e.clientX, e.clientY));
-    H.addEventListener("touchmove", (e) => { const t = e.touches[0]; if (t) move(t.clientX, t.clientY); }, { passive: true });
-    H.addEventListener("pointerleave", () => (auto = true));
-    (function f(t) {
-      if (auto) { tx = 38 + 26 * Math.sin(t / 2600); ty = 42 + 14 * Math.sin(t / 1700); }
-      x += (tx - x) * 0.08; y += (ty - y) * 0.08;
-      H.style.setProperty("--mx", x + "%"); H.style.setProperty("--my", y + "%");
-      requestAnimationFrame(f);
-    })(0);
-  }
-
-  // J: AI tabs auto-advance like stories; click to jump (then hold).
-  const tabs = $$("#tabs button"), panes = $$("#stage .pane");
-  if (tabs.length) {
-    let cur = 0, t0 = performance.now(), hold = RM;
-    const go = (i) => { cur = i; t0 = performance.now(); tabs.forEach((b, k) => { b.classList.toggle("on", k === i); b.setAttribute("aria-selected", k === i); b.querySelector("i").style.width = "0"; }); panes.forEach((p, k) => p.classList.toggle("on", k === i)); };
-    tabs.forEach((b, i) => (b.onclick = () => { go(i); hold = true; }));
-    $("#stage").addEventListener("pointerenter", () => (hold = true));
-    (function f(t) { if (!hold) { const p = (t - t0) / 9000; tabs[cur].querySelector("i").style.width = Math.min(100, p * 100) + "%"; if (p >= 1) go((cur + 1) % tabs.length); } requestAnimationFrame(f); })(t0);
-  }
-
-  // J: expanding service cards
-  const cards = $$("#deck .card");
-  cards.forEach((c) => { const on = () => cards.forEach((k) => k.classList.toggle("on", k === c)); c.addEventListener("pointerenter", on); c.addEventListener("click", on); c.addEventListener("focus", on); });
-
   // K: chapter player — plays only while visible, pause button, tap a chapter to jump. No scroll hijack.
   const P = $("#player");
   if (P) {

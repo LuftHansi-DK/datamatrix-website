@@ -2,7 +2,7 @@
 // No cookies, no storage, no consent banner — ever. The look depends only on the date
 // (or on ?look= while previewing, or on a pin Hans sets for everybody).
 //
-// How: the plain static pages are look L (fallback). Looks I/J/K are pre-built under /v/<look>/...
+// How: the plain static pages are look L (fallback). Looks I/M/K are pre-built under /v/<look>/...
 // This function rewrites /ydelser/ -> /v/k/ydelser/ internally; the visitor's URL never changes.
 // If anything here fails, the plain static page (L) is served.
 import { chooseLook, isLook, FALLBACK } from "../lib/look.mjs";
@@ -44,7 +44,8 @@ export async function onRequest(context) {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Direct hits on the internal variant paths -> clean URL with an explicit preview override.
+    // Direct hits on the internal variant paths -> clean URL (with ?look= only for valid looks).
+    // Retired looks (e.g. old /v/j/...) redirect to the same path without override.
     const m = path.match(VARIANT_PREFIX);
     if (m) {
       const dest = new URL(m[2], url);

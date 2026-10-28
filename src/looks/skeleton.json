@@ -1,5 +1,5 @@
 {
- "_look": "<i|j|k|l|m>",
+ "_look": "<i|m|k|l>",
  "footer": {
   "tagline": "<one short line under the logo, e.g. what we are + since {founded}>",
   "fine": "<privacy one-liner: no cookies, no tracking — own wording>"
@@ -561,27 +561,8 @@
   }
  },
  "extra": {
-  "_doc": "Look-specific front-page keys. J needs: hint, tabs, paneH. K needs: flow, flowIntro, player, playLabel, foundation. I and L: omit 'extra' entirely. Same keys again in en.extra (English).",
-  "hint": "<J only: tiny hint under the torch hero, e.g. 'shine around with the mouse'>",
-  "tabs": [
-   "<J: tab 1 how we use AI>",
-   "<J: tab 2 what we do for you>",
-   "<J: tab 3 for experienced people>"
-  ],
-  "paneH": [
-   [
-    "<J pane 1 h>",
-    "<bold>"
-   ],
-   [
-    "<J pane 2 h>",
-    "<bold>"
-   ],
-   [
-    "<J pane 3 h>",
-    "<bold>"
-   ]
-  ],
+  "_doc": "Look-specific front-page keys. M needs: hint. K needs: flow, flowIntro, player, playLabel, foundation. I and L: omit 'extra' entirely. Same keys again in en.extra (English).",
+  "hint": "<M: tiny hint under the morning-light hero, e.g. let the light follow the mouse>",
   "flow": [
    [
     "<K node 1 title: request>",
