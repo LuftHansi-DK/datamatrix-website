@@ -27,11 +27,12 @@ const DESC: Record<string, string> = {
     .lk h2{font-size:1.6rem;margin:0 0 6px}
     .lk .acts{margin-top:16px;gap:8px}.lk .btn{padding:11px 16px;font-size:.82rem}
     .now{display:inline-block;margin-left:10px;font:600 .7rem/1 Inter;letter-spacing:.14em;text-transform:uppercase;background:#A0703F;color:#fff;padding:6px 8px;border-radius:3px;vertical-align:middle}
+    .now[hidden]{display:none!important}
     table{border-collapse:collapse;margin-top:14px}td{padding:6px 18px 6px 0;border-top:1px solid rgba(11,22,38,.08)}
     @media(max-width:800px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
-<body>
+<body data-pin-look={pin.look ?? ""} data-pin-until={pin.until ?? ""}>
   <div class="wrap">
     <span class="lab">Intern · ikke i søgemaskiner</span>
     <h1 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:14px 0">De fire looks</h1>
@@ -62,18 +63,30 @@ const DESC: Record<string, string> = {
   </div>
 
   <script>
-    import { rotationLook, weekMonday } from "../../../lib/look.mjs";
+    import { rotationLook, weekMonday, activePin } from "../../../lib/look.mjs";
     const names = { i: "I · Fokus", m: "M · Morgen", k: "K · Kapitler", l: "L · Dag" };
     const live = document.getElementById("live");
-    const mark = (l) => { const el = document.querySelector(`#lk-${l} .now`); if (el) el.hidden = false; };
+    const mark = (active) => {
+      document.querySelectorAll(".lk .now").forEach((el) => { el.hidden = true; });
+      if (!active || !names[active]) return;
+      const el = document.querySelector(`#lk-${active} .now`);
+      if (el) el.hidden = false;
+    };
+    const now = new Date();
+    const pinLook = document.body.dataset.pinLook;
+    const pinUntil = document.body.dataset.pinUntil;
+    const pin = pinLook && pinUntil ? { look: pinLook, until: pinUntil } : null;
+    const badgeLook = activePin(pin, now) || rotationLook(now);
+    mark(badgeLook);
     fetch("/", { method: "HEAD", cache: "no-store" }).then((r) => {
       const h = r.headers.get("X-DM-Look");
       if (!h) throw new Error();
       const [l, src] = h.split(";").map((s) => s.trim());
       const why = { rotation: "ugens rotation", pin: "låst for alle", fallback: "fallback" }[src] || src;
       live.innerHTML = `Lige nu viser siden <b>${names[l] || l}</b> (${why}).`;
-      mark(l);
-    }).catch(() => { const l = rotationLook(new Date()); live.innerHTML = `Efter planen vises <b>${names[l]}</b> denne uge.`; mark(l); });
+    }).catch(() => {
+      live.innerHTML = `Efter planen vises <b>${names[badgeLook]}</b> denne uge.`;
+    });
     const rows = [];
     for (let w = 0; w < 8; w++) {
       const d = new Date(Date.now() + w * 7 * 864e5);
