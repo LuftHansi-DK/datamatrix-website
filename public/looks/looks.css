@@ -332,8 +332,9 @@ section{padding:130px 0;position:relative}
 .m-svc-card .c h3{margin-top:0}
 .m-svc-card:focus-within picture img,.m-svc-card:hover picture img{filter:none;transform:scale(1.02)}
 @media (prefers-reduced-motion:reduce){.m-svc-card picture img{transition:none}}
-[data-look=m] .wake{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-[data-look=m] .wake.on{opacity:1;transform:none}
+.js[data-look=m] .wake:not(.on){opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js[data-look=m] .wake.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js[data-look=m] .wake:not(.on){opacity:1;transform:none;transition:none}}
 @media(max-width:900px){.m-svc{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.m-svc{grid-template-columns:1fr}.m-svc-card picture{height:160px}.m-svc-card::after{height:160px}}
 
