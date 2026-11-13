@@ -8,7 +8,7 @@ interface Props { look: Look; lang?: "da" | "en"; title?: string; description: s
 const { look, lang = "da", title, description, path, solid = false } = Astro.props;
 const da = lang === "da";
 const c = copy(look);
-const fullTitle = title ? `${title} · DataMatrix` : (da ? "IT-partner for små og mellemstore virksomheder på Sjælland · DataMatrix" : "Senior IT partner in Denmark · DataMatrix");
+const fullTitle = title ? `${title} · DataMatrix` : (da ? "IT-partner med AI-pakker på Sjælland · DataMatrix" : "Senior IT partner with AI packages · DataMatrix");
 const canonical = new URL(path, Astro.site);
 const ld = {
   "@context": "https://schema.org", "@type": "ProfessionalService", name: site.legalName, url: "https://www.datamatrix.dk/",
@@ -18,7 +18,26 @@ const ld = {
   vatID: "DK" + site.cvr,
   areaServed: [{ "@type": "AdministrativeArea", name: "Sjælland" }, { "@type": "Country", name: "Danmark" }],
   knowsLanguage: ["da", "en"], image: "https://www.datamatrix.dk/og.png", logo: "https://www.datamatrix.dk/img/mark.svg",
-  knowsAbout: ["IT-drift", "IT-sikkerhed", "Backup", "Disaster recovery", "Microsoft 365", "Azure", "Virtualisering", "Netværk", "AI i drift"],
+  knowsAbout: ["IT-drift", "IT-sikkerhed", "Backup", "Disaster recovery", "Microsoft 365", "Azure", "Virtualisering", "Netværk", "AI i drift", "AI-tjek", "AI-sikring", "AI-tilsyn", "AI-start"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog", name: da ? "AI-pakker" : "AI packages",
+    itemListElement: [
+      { name: "AI-tjek", minPrice: 8500, monthly: false },
+      { name: "AI-sikring", minPrice: 24500, monthly: false },
+      { name: "AI-tilsyn", minPrice: 2500, monthly: true },
+      { name: "AI-start", minPrice: 4500, monthly: true },
+    ].map(({ name, minPrice, monthly }) => ({
+      "@type": "Offer", name,
+      description: da
+        ? `${monthly ? "Månedlig pris" : "Engangspris"}${name === "AI-start" ? " i 12 måneder" : ""}. Den præcise pris aftales, før arbejdet starter.`
+        : `${monthly ? "Monthly price" : "One-off price"}${name === "AI-start" ? " for 12 months" : ""}. The exact price is agreed before work starts.`,
+      priceSpecification: {
+        "@type": monthly ? "UnitPriceSpecification" : "PriceSpecification",
+        priceCurrency: "DKK", minPrice, valueAddedTaxIncluded: false,
+        ...(monthly ? { unitCode: "MON" } : {}),
+      },
+    })),
+  },
 };
 const nav = da
   ? [["/ai/", "AI i drift", "ai"], ["/ydelser/", "Ydelser", ""], ["/om/", "Om DataMatrix", ""], ["/indsigt/", "Indsigt", ""], ["/kontakt/", "Kontakt", ""]]
@@ -48,6 +67,9 @@ const short = site.phone.replace("+45 ", "");
     <meta property="og:image" content="https://www.datamatrix.dk/og.png" />
     <meta property="og:locale" content={da ? "da_DK" : "en_GB"} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.datamatrix.dk/og.png" />
     <link rel="alternate" hreflang="da" href="https://www.datamatrix.dk/" />
     <link rel="alternate" hreflang="en" href="https://www.datamatrix.dk/en/" />
     <link rel="alternate" hreflang="x-default" href="https://www.datamatrix.dk/" />
