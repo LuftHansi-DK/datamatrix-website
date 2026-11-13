@@ -1,0 +1,7 @@
+---
+const { c } = Astro.props;
+---
+<div>
+  <ol class="dl-flow">{c.flow.map((s: string, i: number) => <li class:list={[{ 'dl-bronze': i === 4, 'dl-green': i === 5 }]} style={`--step:${i}`}><i aria-hidden="true"></i><span>{s}</span></li>)}</ol>
+  <div class="dl-legend"><span><i class="dl-dot dl-b"></i>{c.legendAgent}</span><span><i class="dl-dot dl-h"></i>{c.legendHuman}</span><span><i class="dl-dot dl-g"></i>{c.legendLog}</span></div>
+</div>

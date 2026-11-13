@@ -1,0 +1,12 @@
+---
+interface Props { name: string; alt: string; sizes?: string }
+const { name, alt, sizes = '(max-width: 900px) calc(100vw - 44px), 560px' } = Astro.props;
+const wide = ['people-hands-rack', 'review-table'].includes(name) ? 1152 : 1280;
+const height = wide === 1152 ? 864 : 720;
+const base = `/looks/photos/dag/${name}`;
+---
+<picture>
+  <source type="image/avif" srcset={`${base}-640.avif 640w, ${base}-${wide}.avif ${wide}w`} sizes={sizes} />
+  <source type="image/webp" srcset={`${base}-640.webp 640w, ${base}-${wide}.webp ${wide}w`} sizes={sizes} />
+  <img src={`${base}-1280.jpg`} alt={alt} width={wide} height={height} loading="lazy" decoding="async" />
+</picture>

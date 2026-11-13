@@ -619,6 +619,242 @@
    "h": "<K headline part 1>",
    "hb": "<bold>",
    "p": "<K: AI is only as good as what it runs on>"
+  },
+  "dag": {
+    "hero": {
+      "lab": "Text",
+      "h1": "Text",
+      "h1b": "Text",
+      "lead": "Text",
+      "cta2": "Text",
+      "trust": [
+        "Text",
+        "Text",
+        "Text",
+        "Text"
+      ]
+    },
+    "approval": {
+      "title": "Text",
+      "app": "Text",
+      "ask": "Text",
+      "verdict": "Text",
+      "reject": "Text",
+      "approve": "Text",
+      "status": "Text",
+      "note": "Text",
+      "scopes": [
+        "Text",
+        "Text"
+      ],
+      "alt": "Text"
+    },
+    "now": {
+      "lab": "Text",
+      "h": "Text",
+      "hb": "Text",
+      "items": [
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ]
+      ],
+      "close": "Text"
+    },
+    "ai": {
+      "lab": "Text",
+      "h": "Text",
+      "hb": "Text",
+      "p": "Text",
+      "rule": "Text",
+      "rules": [
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ]
+      ],
+      "legendAgent": "Text",
+      "legendHuman": "Text",
+      "stack": "Text",
+      "flow": [
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text"
+      ],
+      "legendLog": "Text"
+    },
+    "packages": {
+      "lab": "Text",
+      "h": "Text",
+      "hb": "Text",
+      "p": "Text",
+      "items": [
+        {
+          "name": "Text",
+          "tag": "Text",
+          "p": "Text",
+          "you": "Text",
+          "price": "Text"
+        },
+        {
+          "name": "Text",
+          "tag": "Text",
+          "p": "Text",
+          "you": "Text",
+          "price": "Text"
+        },
+        {
+          "name": "Text",
+          "tag": "Text",
+          "p": "Text",
+          "you": "Text",
+          "price": "Text"
+        },
+        {
+          "name": "Text",
+          "tag": "Text",
+          "p": "Text",
+          "you": "Text",
+          "price": "Text"
+        }
+      ],
+      "matureH": "Text",
+      "matureP": "Text",
+      "note": "Text"
+    },
+    "base": {
+      "lab": "Text",
+      "h": "Text",
+      "hb": "Text",
+      "p": "Text",
+      "items": [
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ]
+      ],
+      "missH": "Text",
+      "missP": "Text",
+      "engage": "Text"
+    },
+    "steps": {
+      "lab": "Text",
+      "h": "Text",
+      "items": [
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ]
+      ]
+    },
+    "people": {
+      "lab": "Text",
+      "quote": "Text",
+      "p": "Text",
+      "cover": "Text",
+      "nums": [
+        "Text",
+        "Text",
+        "Text"
+      ]
+    },
+    "faq": {
+      "lab": "Text",
+      "h": "Text",
+      "items": [
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ],
+        [
+          "Text",
+          "Text"
+        ]
+      ]
+    },
+    "cta": {
+      "lab": "Text",
+      "h": "Text",
+      "hb": "Text",
+      "p": "Text"
+    },
+    "ui": {
+      "call": "Text",
+      "talk": "Text",
+      "you": "Text",
+      "vat": "Text",
+      "once": "Text",
+      "monthly": "Text",
+      "portrait": "Text",
+      "illustration": "Text",
+      "toast1": "Text",
+      "toast1p": "Text",
+      "toast2": "Text",
+      "toast2p": "Text"
+    },
+    "photos": {
+      "people-approve": "Text",
+      "people-hands-rack": "Text",
+      "people-meeting": "Text",
+      "desk-pullfocus": "Text",
+      "rack-plant": "Text",
+      "review-table": "Text"
+    }
   }
- }
+}
 }

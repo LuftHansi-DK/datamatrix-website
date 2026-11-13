@@ -4,6 +4,7 @@
 // Titles/descriptions are shared across looks on purpose (stable SEO).
 import { render } from "astro:content";
 import LookBase from "./LookBase.astro";
+import FrontL from "./FrontL.astro";
 import FrontFocus from "./FrontFocus.astro";
 import FrontK from "./FrontK.astro";
 import FrontM from "./FrontM.astro";
@@ -27,7 +28,7 @@ const isPost = route.startsWith("indsigt/") && post;
 const [title, description] = isPost ? [post.data.title, post.data.description] : META[route];
 const path = route === "" ? "/" : route === "notfound" ? "/404/" : `/${route}/`;
 const Content = isPost ? (await render(post)).Content : null;
-const Front = look === "k" ? FrontK : look === "m" ? FrontM : FrontFocus;
+const Front = look === "l" ? FrontL : look === "k" ? FrontK : look === "m" ? FrontM : FrontFocus;
 const front = route === "" || route === "en";
 ---
 <LookBase look={look} lang={route === "en" ? "en" : "da"} title={title} description={description} path={path} solid={!front}>

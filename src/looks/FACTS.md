@@ -46,7 +46,15 @@ Source of truth for contact data: `src/data/site.json` (use tokens, never hard-c
 - AI FAQ facts: small companies often gain most because every hour counts; data safety depends on setup, so we start by checking what data AI can reach; first step is often an M365 review and a couple of concrete tasks.
 
 ## Never write
-- Uptime %, team size, round-the-clock guarantees, customer names/logos/quotes/cases, named partner technicians, prices, brand names of hardware.
+- Uptime %, team size, round-the-clock guarantees, customer names/logos/quotes/cases, named partner technicians, prices except the explicitly approved look L packages below, brand names of hardware.
 - "AI triages alarms" (not live yet). quotes attributed to famous people. Superlatives about our AI ("most advanced", "unique").
 - Fake people/premises ("our team", "our office/workshop"). Photos are illustrative.
 - Cookie talk other than: no cookies, no tracking, no analytics, fonts/images from our own server; hosted at Cloudflare, which may log technical data like IP address for security; email/phone data used only to answer and for a customer relationship.
+
+## Pakker og priser (look L, Hans 13 Nov 2026)
+- Hans has approved these packages and fixed prices for look L only. All amounts exclude VAT (ekskl. moms); the other looks retain their existing service descriptions.
+- AI-tjek: 8.500 kr. (DKK 8,500), fixed one-off price. Maps apps and AI tools with Microsoft 365 access, who granted permission and mail-sending rights; delivers a short report with the ten most important fixes. The customer's administrator grants read access with guidance; no duration or content-access limitation is promised.
+- AI-sikring: 24.500 kr. (DKK 24,500), fixed one-off price. Implements fixes under a customer-approved plan; approval for new apps, appropriate mail-sending rights and protection of sensitive data; includes an AI policy in Danish and a short staff guide. The customer approves before changes.
+- AI-tilsyn: 2.500 kr. pr. måned (DKK 2,500 per month). Monthly checks for new apps, permissions and forwarding, notification of changes, assessment of proposed AI tools before use and a brief quarterly status report. Customers submit the tools they want to use.
+- AI-start (recommended): 4.500 kr. pr. måned i 12 måneder (DKK 4,500 per month for 12 months). Includes AI-tjek + AI-sikring + 12 months of AI-tilsyn in one agreement with one regular contact.
+- AI agents prepare package work; an experienced consultant reviews and takes responsibility for the result. No proportion of automated work or delivery time is promised.
