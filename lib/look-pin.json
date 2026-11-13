@@ -1,5 +1,5 @@
 {
   "look": "l",
-  "until": "2027-01-04",
-  "_comment": "Set the look for EVERYBODY: look = i|m|k|l, until = a Monday (YYYY-MM-DD); takes effect when merged, ends Monday 00:00 Copenhagen. null = normal weekly rotation."
+  "until": null,
+  "_comment": "Set the look for EVERYBODY: look = i|m|k|l; until = null pins indefinitely, or a Monday (YYYY-MM-DD) ends the pin at 00:00 Copenhagen. look = null restores weekly rotation. Takes effect when merged."
 }

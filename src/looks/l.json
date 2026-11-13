@@ -334,7 +334,7 @@
    "lead": "Tillid til, at vi rådgiver med jeres interesser forrest. At vi holder, hvad vi lover. Og at vi er til at få fat på, når det virkelig gælder.",
    "role": "Ejer og senior IT-konsulent",
    "bio": [
-    "Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Han blev uddannet Bachelor of Science i Management Information Systems fra San Diego State University i 1990 og arbejdede derefter en årrække i USA — først som udvikler af databasesystemer, siden som IT-chef og medlem af bestyrelsen.",
+    "Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Han blev uddannet Bachelor of Science i Management Information Systems fra San Diego State University i 1990 og arbejdede derefter en årrække i USA — først som udvikler af databasesystemer, siden som IT-chef og medlem af ledelsen.",
     "Den baggrund præger stadig rådgivningen: IT er ikke bare teknik. Det handler om at finde den løsning, der er bedst for den enkelte virksomhed — for brugerne, for driften og for bundlinjen.",
     "Efter flere år som selvstændig IT-konsulent i Danmark grundlagde Hans DataMatrix i {founded}. Han er stadig personligt involveret i — og ansvarlig for — alle kunder."
    ],
@@ -656,28 +656,28 @@
             "tag": "The overview",
             "p": "We map the apps and AI tools with access to your Microsoft 365, who granted permission and what can send mail on your behalf. You receive a short report with the ten most important fixes.",
             "you": "Your administrator grants read access, with our guidance.",
-            "price": "DKK 8,500"
+            "price": "from DKK 8,500"
           },
           {
             "name": "AI-sikring",
             "tag": "Put controls in place",
             "p": "We implement fixes following a plan you approve. New apps require approval, mail-sending rights are restricted and sensitive data stays where it belongs. Includes an AI policy in Danish and a short staff guide.",
             "you": "You approve the plan before we make changes.",
-            "price": "DKK 24,500"
+            "price": "from DKK 24,500"
           },
           {
             "name": "AI-tilsyn",
             "tag": "Keep it in order",
             "p": "Each month we check for new apps, permissions and forwarding, and flag changes. New AI tools can be assessed before use. You receive a brief quarterly status report.",
             "you": "Send us the tools your colleagues would like to use.",
-            "price": "DKK 2,500 per month"
+            "price": "from DKK 2,500 per month"
           },
           {
             "name": "AI-start",
             "tag": "Recommended start",
             "p": "AI-tjek, AI-sikring and 12 months of AI-tilsyn in one agreement, paid monthly. A practical route to understanding and controlling your AI access.",
             "you": "One agreement, a clear overview and one regular contact.",
-            "price": "DKK 4,500 per month for 12 months"
+            "price": "from DKK 4,500 per month for 12 months"
           }
         ],
         "matureH": "Already working with AI?",
@@ -777,8 +777,8 @@
         "talk": "Talk it through with us",
         "you": "Your part",
         "vat": "All prices excl. VAT.",
-        "once": "Fixed price, one-off",
-        "monthly": "Fixed monthly price",
+        "once": "One-off price",
+        "monthly": "Per month",
         "portrait": "Hans Kristiansen",
         "illustration": "Illustration",
         "toast1": "Backup job missing",
@@ -886,7 +886,7 @@
       },
       "packages": {
         "lab": "Pakker",
-        "h": "Faste pakker.",
+        "h": "Pakker med klart indhold.",
         "hb": "Klart indhold, kendt pris.",
         "p": "Vores AI-agenter gør forarbejdet, og en erfaren konsulent står inde for resultatet.",
         "items": [
@@ -895,28 +895,28 @@
             "tag": "Overblikket",
             "p": "Vi kortlægger, hvilke apps og AI-værktøjer der har adgang til jeres Microsoft 365, hvem der har givet lov, og hvad der kan sende mail i jeres navn. I får en kort rapport med de ti vigtigste rettelser.",
             "you": "Jeres administrator giver os læseadgang, og vi guider undervejs.",
-            "price": "8.500 kr."
+            "price": "fra 8.500 kr."
           },
           {
             "name": "AI-sikring",
             "tag": "Ryd op og lås fast",
             "p": "Vi gennemfører rettelserne efter en plan, I har godkendt. Nye apps kræver godkendelse, kun det rette kan sende mail, og følsomme data bliver hjemme. Hertil kommer en AI-politik på dansk og en kort guide til medarbejderne.",
             "you": "I godkender planen, før vi ændrer noget.",
-            "price": "24.500 kr."
+            "price": "fra 24.500 kr."
           },
           {
             "name": "AI-tilsyn",
             "tag": "Hold det på plads",
             "p": "Hver måned tjekker vi for nye apps, adgange og videresendelser og giver besked, når noget har ændret sig. Et nyt AI-værktøj kan blive vurderet, før det tages i brug, og hvert kvartal får I en kort status.",
             "you": "I sender os blot de værktøjer, medarbejderne gerne vil bruge.",
-            "price": "2.500 kr. pr. måned"
+            "price": "fra 2.500 kr. pr. måned"
           },
           {
             "name": "AI-start",
             "tag": "Anbefalet start",
-            "p": "AI-tjek, AI-sikring og et års tilsyn samlet i én aftale med fast månedlig betaling. Den nemmeste måde at komme fra usikkerhed til overblik på.",
+            "p": "AI-tjek, AI-sikring og et års tilsyn samlet i én aftale med en aftalt månedlig betaling. Den nemmeste måde at komme fra usikkerhed til overblik på.",
             "you": "Én aftale, ét overblik, én fast kontaktperson.",
-            "price": "4.500 kr. pr. måned i 12 måneder"
+            "price": "fra 4.500 kr. pr. måned i 12 måneder"
           }
         ],
         "matureH": "Har I selv styr på AI?",
@@ -963,7 +963,7 @@
             "AI-værktøjer, adgange, sikkerhed og backup bliver gennemgået, og I får et ærligt billede af tilstanden."
           ],
           [
-            "Plan og fast pris",
+            "Plan og aftalt pris",
             "Det vigtigste kommer først, og I kender prisen, inden arbejdet starter."
           ],
           [
@@ -1016,8 +1016,8 @@
         "talk": "Tal med os om det",
         "you": "Det gør I",
         "vat": "Alle priser er ekskl. moms.",
-        "once": "Fast pris, engangs",
-        "monthly": "Fast månedlig pris",
+        "once": "Engangspris",
+        "monthly": "Pr. måned",
         "portrait": "Hans Kristiansen",
         "illustration": "Illustration",
         "toast1": "Backupjobbet mangler",
