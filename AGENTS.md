@@ -23,7 +23,7 @@ Do not push to `main`, do not merge, do not change repo settings, Cloudflare or 
 - News/articles ("Indsigt"): one Markdown file per post in `src/content/indsigt/`
   with frontmatter `title`, `description` (≤200 chars), `date` (YYYY-MM-DD), `draft`. Use `draft: true` until Hans approves.
 - Design: `public/looks/looks.css` + `looks.js`. Logo mark: `src/components/Logo.astro`, `public/img/mark.svg`.
-- Weekly look rotation: `lib/look.mjs`, `functions/_middleware.js`. To show one look for everybody until a Monday: `lib/look-pin.json`.
+- Weekly look rotation: `lib/look.mjs`, `functions/_middleware.js`. To show one look for everybody: `lib/look-pin.json` (`until` = a Monday, or `null` for an indefinite pin; `look: null` restores rotation).
 
 ## Content rules
 - Danish first; plain, warm, professional. No buzzwords, no hype. English page mirrors the Danish facts.

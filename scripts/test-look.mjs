@@ -64,3 +64,21 @@ test("pin expires Monday 00:00 Copenhagen", () => {
   assert.equal(activePin(pin, at("2026-10-25T23:00:00Z")), null);
   assert.equal(activePin({ look: null, until: null }, at("2026-10-20T12:00:00Z")), null);
 });
+
+test("an explicit null end date pins indefinitely; preview override still wins", () => {
+  const pin = { look: "l", until: null };
+  for (const date of ["2026-11-16T00:00:00+01:00", "2027-01-04T00:00:00+01:00", "2035-07-02T12:00:00+02:00"]) {
+    const now = at(date);
+    assert.equal(activePin(pin, now), "l");
+    assert.deepEqual(chooseLook({ now, pin }), { look: "l", source: "pin" });
+    assert.deepEqual(chooseLook({ now, override: "k", pin }), { look: "k", source: "override" });
+  }
+});
+
+test("disabled and malformed pins retain weekly rotation", () => {
+  const now = at("2026-11-16T12:00:00+01:00");
+  for (const pin of [null, { look: null, until: null }, { look: null, until: "2027-01-04" }, { look: "j", until: null }, { look: "l" }, { look: "l", until: "invalid" }]) {
+    assert.equal(activePin(pin, now), null);
+    assert.deepEqual(chooseLook({ now, pin }), { look: "i", source: "rotation" });
+  }
+});

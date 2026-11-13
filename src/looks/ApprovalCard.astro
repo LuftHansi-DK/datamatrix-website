@@ -1,0 +1,14 @@
+---
+const { c } = Astro.props;
+---
+<div class="dl-stage" role="img" aria-label={c.alt}>
+  <div class="dl-card dl-back2" aria-hidden="true"></div><div class="dl-card dl-back1" aria-hidden="true"></div>
+  <div class="dl-card dl-ap" aria-hidden="true">
+    <div class="dl-ap-top"><span><i class="dl-dot dl-b"></i>{c.title}</span><span class="dl-ill">{c.note}</span></div>
+    <div class="dl-ap-app"><span class="dl-appic"></span><div><b>{c.app}</b><p>{c.ask}</p></div></div>
+    <div class="dl-scopes">{c.scopes.map((s: string, i: number) => <span class:list={[{ 'dl-w': i === 1 }]}>{s}</span>)}</div>
+    <p class="dl-verdict">{c.verdict}</p>
+    <div class="dl-ap-acts"><span class="dl-b2 dl-o">{c.reject}</span><span class="dl-b2 dl-h">{c.approve}</span></div>
+    <div class="dl-ap-status"><i class="dl-pulse"></i>{c.status}</div>
+  </div>
+</div>

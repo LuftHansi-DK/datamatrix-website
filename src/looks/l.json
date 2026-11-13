@@ -334,7 +334,7 @@
    "lead": "Tillid til, at vi rådgiver med jeres interesser forrest. At vi holder, hvad vi lover. Og at vi er til at få fat på, når det virkelig gælder.",
    "role": "Ejer og senior IT-konsulent",
    "bio": [
-    "Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Han blev uddannet Bachelor of Science i Management Information Systems fra San Diego State University i 1990 og arbejdede derefter en årrække i USA — først som udvikler af databasesystemer, siden som IT-chef og medlem af bestyrelsen.",
+    "Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Han blev uddannet Bachelor of Science i Management Information Systems fra San Diego State University i 1990 og arbejdede derefter en årrække i USA — først som udvikler af databasesystemer, siden som IT-chef og medlem af ledelsen.",
     "Den baggrund præger stadig rådgivningen: IT er ikke bare teknik. Det handler om at finde den løsning, der er bedst for den enkelte virksomhed — for brugerne, for driften og for bundlinjen.",
     "Efter flere år som selvstændig IT-konsulent i Danmark grundlagde Hans DataMatrix i {founded}. Han er stadig personligt involveret i — og ansvarlig for — alle kunder."
    ],
@@ -557,6 +557,482 @@
     "You always deal with a senior consultant who knows your systems. Behind us stands a permanent network of experienced technicians with their own companies, who step in during holidays, illness or busy periods.",
     "We work in Danish and English."
    ]
+  },
+  "extra": {
+    "dag": {
+      "hero": {
+        "lab": "Responsible AI · operations and security · since {founded}",
+        "h1": "Put AI to work,",
+        "h1b": "and keep hold of the decisions.",
+        "lead": "We help small and mid-sized businesses adopt AI responsibly, supported by reliable operations, security and backup. Our advice draws on more than 30 years in IT and the AI agents we use in our own daily work.",
+        "cta2": "Explore the packages",
+        "trust": [
+          "Since {founded}",
+          "30+ years in IT",
+          "One regular contact",
+          "Svinninge, Zealand"
+        ]
+      },
+      "approval": {
+        "title": "Draft from an agent",
+        "app": "New app requests access",
+        "ask": "A meeting-notes app wants to read calendars and send mail on behalf of the business.",
+        "verdict": "Assessment: broad access, a decision is needed",
+        "reject": "Reject",
+        "approve": "Approve",
+        "status": "Waiting for a human",
+        "note": "Illustration",
+        "scopes": [
+          "Read calendars",
+          "Send company mail"
+        ],
+        "alt": "Illustration: An app requests calendar and mail access. A draft awaits a human decision."
+      },
+      "now": {
+        "lab": "An everyday risk",
+        "h": "AI can become part of work quickly.",
+        "hb": "Who keeps track of the access?",
+        "items": [
+          [
+            "One click opens a door",
+            "A new AI tool can gain access to mail and files with a click. Review permissions before you start using it."
+          ],
+          [
+            "Mail in your company’s name",
+            "An app may be allowed to send company mail. Set clear rules for who approves each action."
+          ],
+          [
+            "AI in the meeting",
+            "An AI note-taker may store meeting notes outside your own systems. Decide on data and access before inviting it."
+          ]
+        ],
+        "close": "A useful start can be small. We help you review access and choose a concrete task."
+      },
+      "ai": {
+        "lab": "Responsible AI",
+        "h": "The agent prepares.",
+        "hb": "A person gives the go-ahead.",
+        "p": "We run AI agents in our own daily operations. They read requests, identify the customer and task, assess urgency and prepare a plan and draft. That practical experience informs the advice we give you.",
+        "rule": "Nothing gets sent, changed or purchased until a human has said yes.",
+        "rules": [
+          [
+            "People decide",
+            "The system makes a proposal; someone in your business makes the decision."
+          ],
+          [
+            "Keep data in its place",
+            "Before introducing a tool, we map the information it can reach."
+          ],
+          [
+            "Leave a readable trail",
+            "Actions are recorded so they can be checked afterwards."
+          ],
+          [
+            "Begin with one task",
+            "Get one useful task working safely before adding another."
+          ]
+        ],
+        "legendAgent": "Agent preparation",
+        "legendHuman": "Human decision",
+        "legendLog": "Completed and logged",
+        "stack": "Our agents use Hermes Agent, OpenClaw, our own Grok bot and OpenAI Dots, with fixed security rules.",
+        "flow": [
+          "Request read",
+          "Customer and task identified",
+          "Step-by-step plan",
+          "Draft ready",
+          "A human says yes",
+          "Completed and logged"
+        ]
+      },
+      "packages": {
+        "lab": "Packages",
+        "h": "Defined packages.",
+        "hb": "Clear scope, clear prices.",
+        "p": "Our AI agents prepare the work, and an experienced consultant reviews and takes responsibility for the result.",
+        "items": [
+          {
+            "name": "AI-tjek",
+            "tag": "The overview",
+            "p": "We map the apps and AI tools with access to your Microsoft 365, who granted permission and what can send mail on your behalf. You receive a short report with the ten most important fixes.",
+            "you": "Your administrator grants read access, with our guidance.",
+            "price": "from DKK 8,500"
+          },
+          {
+            "name": "AI-sikring",
+            "tag": "Put controls in place",
+            "p": "We implement fixes following a plan you approve. New apps require approval, mail-sending rights are restricted and sensitive data stays where it belongs. Includes an AI policy in Danish and a short staff guide.",
+            "you": "You approve the plan before we make changes.",
+            "price": "from DKK 24,500"
+          },
+          {
+            "name": "AI-tilsyn",
+            "tag": "Keep it in order",
+            "p": "Each month we check for new apps, permissions and forwarding, and flag changes. New AI tools can be assessed before use. You receive a brief quarterly status report.",
+            "you": "Send us the tools your colleagues would like to use.",
+            "price": "from DKK 2,500 per month"
+          },
+          {
+            "name": "AI-start",
+            "tag": "Recommended start",
+            "p": "AI-tjek, AI-sikring and 12 months of AI-tilsyn in one agreement, paid monthly. A practical route to understanding and controlling your AI access.",
+            "you": "One agreement, a clear overview and one regular contact.",
+            "price": "from DKK 4,500 per month for 12 months"
+          }
+        ],
+        "matureH": "Already working with AI?",
+        "matureP": "If you have your own IT staff, we can discuss agents, permissions and practical security with them.",
+        "note": "You know the price before the work begins."
+      },
+      "base": {
+        "lab": "The foundation",
+        "h": "AI depends on your IT.",
+        "hb": "Give it a sound foundation.",
+        "p": "Operations, security, backup and Microsoft 365 remain the foundation. We maintain them according to an agreed plan.",
+        "items": [
+          [
+            "Operations and monitoring",
+            "Monitoring of servers, clients and certificates, with updates in planned maintenance windows."
+          ],
+          [
+            "IT security",
+            "Firewalls, MFA, access controls and mail protection. Security has guided our work since {founded}."
+          ],
+          [
+            "Backup and recovery",
+            "Local and offsite copies, tested restores and a clear plan for who does what."
+          ],
+          [
+            "Microsoft 365 and infrastructure",
+            "Setup, migration and operation of Microsoft 365 and Azure, networks and virtualisation with VMware vSphere and Hyper-V."
+          ]
+        ],
+        "missH": "The backup that never ran",
+        "missP": "A job that never starts sends no failure message. Our monitoring also looks for that missing run.",
+        "engage": "Choose ongoing support or individual assignments. We can run your IT or support the person who already does."
+      },
+      "steps": {
+        "lab": "Getting started",
+        "h": "Four steps towards a clearer picture",
+        "items": [
+          [
+            "An informal conversation",
+            "Call or write. We can also visit your business."
+          ],
+          [
+            "Review the setup",
+            "We review AI tools, permissions, security and backup and give an honest assessment."
+          ],
+          [
+            "Agree the plan and price",
+            "Priorities come first. You know the price before work starts."
+          ],
+          [
+            "Ongoing checks and operations",
+            "We keep watch and let you know when something changes."
+          ]
+        ]
+      },
+      "people": {
+        "lab": "The people behind the work",
+        "quote": "Small enough to know who you are talking to. Experienced enough to take responsibility.",
+        "p": "Hans Kristiansen founded DataMatrix in {founded}. He brings over 30 years in IT, including work as an IT director in the USA. An established network of experienced independent consultants provides cover for holidays, illness and busy periods.",
+        "cover": "We document your environment so a colleague can take over without beginning from scratch.",
+        "nums": [
+          "years of DataMatrix",
+          "years in IT",
+          "regular contact"
+        ]
+      },
+      "faq": {
+        "lab": "Questions",
+        "h": "Things you may be wondering about",
+        "items": [
+          [
+            "Will you read our email?",
+            "We agree in advance what information we can see and what stays out of reach."
+          ],
+          [
+            "Is our business too small?",
+            "Every hour matters in a small business. We begin with a specific task and look at where AI can help your daily work."
+          ],
+          [
+            "Where should we begin?",
+            "Often with a Microsoft 365 review and a couple of practical tasks where AI can help with appropriate permissions."
+          ],
+          [
+            "We already have an IT person. How does this fit?",
+            "We work alongside them, providing reviews, ongoing checks or advice while they handle the day-to-day work."
+          ]
+        ]
+      },
+      "cta": {
+        "lab": "Contact",
+        "h": "What have your colleagues given AI access to?",
+        "hb": "Let’s find out together.",
+        "p": "Call or email to arrange an informal conversation, with no obligation."
+      },
+      "ui": {
+        "call": "Call {phone}",
+        "talk": "Talk it through with us",
+        "you": "Your part",
+        "vat": "All prices excl. VAT.",
+        "once": "One-off price",
+        "monthly": "Per month",
+        "portrait": "Hans Kristiansen",
+        "illustration": "Illustration",
+        "toast1": "Backup job missing",
+        "toast1p": "No run started overnight.",
+        "toast2": "A person is notified",
+        "toast2p": "The missing run has been detected."
+      },
+      "photos": {
+        "people-approve": "Illustration: Hands at a laptop showing an approval on screen.",
+        "people-hands-rack": "Illustration: Hands connecting a blue network cable in a server rack.",
+        "people-meeting": "Illustration: Two people reviewing printed charts at a table.",
+        "desk-pullfocus": "Illustration: A laptop and coffee cup on a light wooden desk.",
+        "rack-plant": "Illustration: A server rack with network cables and a green plant in front.",
+        "review-table": "Illustration: A report with charts and a fountain pen on a wooden table."
+      }
+    }
   }
- }
+},
+  "extra": {
+    "dag": {
+      "hero": {
+        "lab": "Ansvarlig AI · drift og sikkerhed · siden {founded}",
+        "h1": "Sæt AI i arbejde,",
+        "h1b": "uden at slippe styringen.",
+        "lead": "Vi hjælper små og mellemstore virksomheder med at tage AI i brug på en ansvarlig måde, og vi passer den drift, sikkerhed og backup, som det hele hviler på. Bag rådene står mere end 30 års erfaring og AI-agenter, som vi selv bruger hver dag.",
+        "cta2": "Se vores pakker",
+        "trust": [
+          "Siden {founded}",
+          "30+ års erfaring",
+          "Fast kontaktperson",
+          "Svinninge, Sjælland"
+        ]
+      },
+      "approval": {
+        "title": "Udkast fra agent",
+        "app": "Ny app beder om adgang",
+        "ask": "Mødenoter-app vil læse kalendere og sende mail i firmaets navn.",
+        "verdict": "Vurdering: bred adgang, kræver en beslutning",
+        "reject": "Afvis",
+        "approve": "Godkend",
+        "status": "Afventer et menneske",
+        "note": "Illustration",
+        "scopes": [
+          "Læse kalendere",
+          "Sende mail som firmaet"
+        ],
+        "alt": "Illustration: En app beder om kalender- og mailadgang. Udkastet afventer et menneskes beslutning."
+      },
+      "now": {
+        "lab": "Det sker let",
+        "h": "AI kan hurtigt blive en del af hverdagen.",
+        "hb": "Men hvem har overblikket?",
+        "items": [
+          [
+            "Ét klik giver adgang",
+            "Et nyt AI-værktøj kan få adgang til mail og filer med et enkelt klik. Derfor bør rettighederne gennemgås, før det tages i brug."
+          ],
+          [
+            "Mail i firmaets navn",
+            "En app kan få lov at sende mail på virksomhedens vegne. Det kræver klare rammer for, hvem der godkender hvad."
+          ],
+          [
+            "AI ved mødebordet",
+            "En AI-referent kan gemme mødenoter uden for jeres egne systemer. Tag stilling til data og adgang, før den inviteres med."
+          ]
+        ],
+        "close": "Det behøver ikke begynde med en stor plan. Vi hjælper jer med at få styr på adgange og vælge en konkret opgave."
+      },
+      "ai": {
+        "lab": "Ansvarlig AI",
+        "h": "Agenten forbereder.",
+        "hb": "Et menneske siger god for det.",
+        "p": "Vi kører selv AI-agenter i vores daglige drift. De læser henvendelserne, finder den rette kunde og opgave, vurderer hastværket og lægger en plan og et udkast klar. Den erfaring ligger bag alt, hvad vi anbefaler jer.",
+        "rule": "Intet bliver sendt, ændret eller købt, uden at et menneske har sagt ja.",
+        "rules": [
+          [
+            "Mennesket bestemmer",
+            "Forslaget kommer fra maskinen, beslutningen fra en af jeres egne."
+          ],
+          [
+            "Data bliver, hvor de hører til",
+            "Inden et værktøj tages i brug, kortlægger vi, hvilke data det kan nå."
+          ],
+          [
+            "Alt kan efterprøves",
+            "Hver handling efterlader et spor, som kan læses bagefter."
+          ],
+          [
+            "Start småt",
+            "Én opgave skal køre sikkert, før den næste kommer med."
+          ]
+        ],
+        "legendAgent": "Agentens arbejde",
+        "legendHuman": "Menneskets beslutning",
+        "stack": "Vores egne agenter kører på Hermes Agent, OpenClaw, en egen Grok-bot og OpenAI Dots, alle med faste sikkerhedsregler.",
+        "flow": [
+          "Henvendelse læst",
+          "Kunde og opgave fundet",
+          "Plan i trin",
+          "Udkast klar",
+          "Et menneske siger ja",
+          "Udført og logget"
+        ],
+        "legendLog": "Udført og logget"
+      },
+      "packages": {
+        "lab": "Pakker",
+        "h": "Pakker med klart indhold.",
+        "hb": "Klart indhold, kendt pris.",
+        "p": "Vores AI-agenter gør forarbejdet, og en erfaren konsulent står inde for resultatet.",
+        "items": [
+          {
+            "name": "AI-tjek",
+            "tag": "Overblikket",
+            "p": "Vi kortlægger, hvilke apps og AI-værktøjer der har adgang til jeres Microsoft 365, hvem der har givet lov, og hvad der kan sende mail i jeres navn. I får en kort rapport med de ti vigtigste rettelser.",
+            "you": "Jeres administrator giver os læseadgang, og vi guider undervejs.",
+            "price": "fra 8.500 kr."
+          },
+          {
+            "name": "AI-sikring",
+            "tag": "Ryd op og lås fast",
+            "p": "Vi gennemfører rettelserne efter en plan, I har godkendt. Nye apps kræver godkendelse, kun det rette kan sende mail, og følsomme data bliver hjemme. Hertil kommer en AI-politik på dansk og en kort guide til medarbejderne.",
+            "you": "I godkender planen, før vi ændrer noget.",
+            "price": "fra 24.500 kr."
+          },
+          {
+            "name": "AI-tilsyn",
+            "tag": "Hold det på plads",
+            "p": "Hver måned tjekker vi for nye apps, adgange og videresendelser og giver besked, når noget har ændret sig. Et nyt AI-værktøj kan blive vurderet, før det tages i brug, og hvert kvartal får I en kort status.",
+            "you": "I sender os blot de værktøjer, medarbejderne gerne vil bruge.",
+            "price": "fra 2.500 kr. pr. måned"
+          },
+          {
+            "name": "AI-start",
+            "tag": "Anbefalet start",
+            "p": "AI-tjek, AI-sikring og et års tilsyn samlet i én aftale med en aftalt månedlig betaling. Den nemmeste måde at komme fra usikkerhed til overblik på.",
+            "you": "Én aftale, ét overblik, én fast kontaktperson.",
+            "price": "fra 4.500 kr. pr. måned i 12 måneder"
+          }
+        ],
+        "matureH": "Har I selv styr på AI?",
+        "matureP": "Har I selv IT-folk? Så sparrer vi gerne om agenter, rettigheder og sikkerhed.",
+        "note": "I kender prisen, før vi går i gang."
+      },
+      "base": {
+        "lab": "Fundamentet",
+        "h": "AI bygger på jeres IT.",
+        "hb": "Den skal kunne holde.",
+        "p": "Den del af vores arbejde er ikke ny, men den betyder mere end nogensinde: drift, sikkerhed, backup og Microsoft 365, passet efter en fast plan.",
+        "items": [
+          [
+            "Drift og overvågning",
+            "Servere, klienter og certifikater bliver overvåget, og opdateringer kører i faste vinduer."
+          ],
+          [
+            "IT-sikkerhed",
+            "Firewall, MFA, styring af adgange og beskyttelse af mail. Sikkerhed har været vores fokus fra første dag i {founded}."
+          ],
+          [
+            "Backup og beredskab",
+            "Kopier lokalt og uden for huset, genskabelse, der er afprøvet, og en plan for, hvem der gør hvad."
+          ],
+          [
+            "Microsoft 365 og infrastruktur",
+            "Opsætning, flytning og drift af Microsoft 365 og Azure, netværk og virtualisering med VMware vSphere og Hyper-V."
+          ]
+        ],
+        "missH": "Den backup, der aldrig startede",
+        "missP": "Et job, der aldrig går i gang, giver ingen fejlmelding. Vores overvågning lægger mærke til det alligevel.",
+        "engage": "Vælg en fast aftale eller enkelte opgaver. Vi kan stå for det hele eller støtte den IT-ansvarlige, I allerede har."
+      },
+      "steps": {
+        "lab": "Sådan begynder vi",
+        "h": "Fire skridt fra snak til overblik",
+        "items": [
+          [
+            "En uforpligtende snak",
+            "Ring eller skriv. Vi kommer også gerne ud til jer."
+          ],
+          [
+            "Tjek og gennemgang",
+            "AI-værktøjer, adgange, sikkerhed og backup bliver gennemgået, og I får et ærligt billede af tilstanden."
+          ],
+          [
+            "Plan og aftalt pris",
+            "Det vigtigste kommer først, og I kender prisen, inden arbejdet starter."
+          ],
+          [
+            "Tilsyn og drift",
+            "Vi holder øje løbende og melder tilbage, når noget ændrer sig."
+          ]
+        ]
+      },
+      "people": {
+        "lab": "Hvem står bag",
+        "quote": "Små nok til, at I altid ved, hvem I taler med. Erfarne nok til at tage ansvaret.",
+        "p": "DataMatrix blev grundlagt i {founded} af Hans Kristiansen, der har arbejdet med IT i mere end 30 år, blandt andet som IT-direktør i USA. Ved ferie, sygdom og travle perioder træder en fast kreds af erfarne konsulenter med egne firmaer til.",
+        "cover": "Jeres miljø er dokumenteret, så en kollega kan tage over, når en af os holder fri.",
+        "nums": [
+          "år som DataMatrix",
+          "års erfaring i IT",
+          "fast kontaktperson"
+        ]
+      },
+      "faq": {
+        "lab": "Spørgsmål",
+        "h": "Det bliver vi ofte spurgt om",
+        "items": [
+          [
+            "Skal I kunne læse vores mails?",
+            "Vi aftaler altid på forhånd, hvad vi kan se, og hvad vi ikke kan."
+          ],
+          [
+            "Er vi ikke for små til det her?",
+            "I en lille virksomhed tæller hver time. Vi begynder med en konkret opgave og ser på, hvor AI kan hjælpe i netop jeres hverdag."
+          ],
+          [
+            "Hvor begynder vi?",
+            "Ofte med en gennemgang af Microsoft 365 og et par konkrete opgaver, hvor AI kan gøre nytte med de rette adgange."
+          ],
+          [
+            "Vi har allerede en IT-ansvarlig. Hvad så?",
+            "Så supplerer vi. Vi kan levere tjek og tilsyn eller være sparringspartner, mens jeres egen IT-ansvarlige passer hverdagen."
+          ]
+        ]
+      },
+      "cta": {
+        "lab": "Kontakt",
+        "h": "Hvad har jeres medarbejdere givet AI adgang til?",
+        "hb": "Lad os finde ud af det sammen.",
+        "p": "Ring eller skriv, så aftaler vi en kort snak. Den forpligter jer ikke til noget."
+      },
+      "ui": {
+        "call": "Ring {phone}",
+        "talk": "Tal med os om det",
+        "you": "Det gør I",
+        "vat": "Alle priser er ekskl. moms.",
+        "once": "Engangspris",
+        "monthly": "Pr. måned",
+        "portrait": "Hans Kristiansen",
+        "illustration": "Illustration",
+        "toast1": "Backupjobbet mangler",
+        "toast1p": "Intet job startet i nat.",
+        "toast2": "En person får besked",
+        "toast2p": "Den manglende kørsel er opdaget."
+      },
+      "photos": {
+        "people-approve": "Illustration: Hænder ved en bærbar computer med en godkendelse på skærmen.",
+        "people-hands-rack": "Illustration: Hænder tilslutter et blåt netværkskabel i et serverrack.",
+        "people-meeting": "Illustration: To personer gennemgår et papir med diagrammer ved et bord.",
+        "desk-pullfocus": "Illustration: Bærbar computer og kaffekop på et lyst træbord.",
+        "rack-plant": "Illustration: Serverrack med netværkskabler og en grøn plante i forgrunden.",
+        "review-table": "Illustration: Rapport med diagrammer og en fyldepen på et træbord."
+      }
+    }
+  }
 }

@@ -31,7 +31,7 @@ From now on Grok Bot manages the site for Hans. Hermes no longer works on it unl
   The whole site follows the look, Danish and English.
 - **No cookies, no storage, no consent banner. Ever.** The look depends only on the date.
 - Preview any look: add `?look=i|m|k|l` to any URL. The `/looks/` page (unlinked, noindex) shows the live look and the next 8 weeks.
-- **Show one look to everybody:** set `lib/look-pin.json` (`look`, `until` = a Monday) via PR. It ends automatically. To return to rotation, set both to `null`.
+- **Show one look to everybody:** set `lib/look-pin.json` (`look`, `until` = a Monday or `null` for an indefinite pin) via PR. A dated pin ends automatically; `look: null` restores rotation.
 - Each look has its own photo set and its **own wording**, Danish and English. Hans wants no two looks to share a sentence.
   `npm run check` (`scripts/check-looks.mjs`) fails on shared or near-duplicate sentences.
   Titles and meta descriptions are shared on purpose (stable SEO). So are the Indsigt article bodies.

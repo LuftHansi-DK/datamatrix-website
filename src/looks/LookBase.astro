@@ -1,6 +1,7 @@
 ---
 // Layout for the rotating looks. Title/description/canonical are SHARED across looks (SEO stays stable);
 // only body wording and design differ. Canonical always points at the clean URL (never /v/...).
+import LogoL from "./LogoL.astro";
 import Logo from "../components/Logo.astro";
 import { copy, site, type Look } from "./lib";
 interface Props { look: Look; lang?: "da" | "en"; title?: string; description: string; path: string; solid?: boolean }
@@ -36,6 +37,7 @@ const short = site.phone.replace("+45 ", "");
     <link rel="canonical" href={canonical} />
     <link rel="preload" href="/looks/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/looks/looks.css" />
+    {look === "l" && <><link rel="stylesheet" href="/looks/look-l.css" /><link rel="preload" href="/looks/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /></>}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -49,14 +51,14 @@ const short = site.phone.replace("+45 ", "");
     <link rel="alternate" hreflang="da" href="https://www.datamatrix.dk/" />
     <link rel="alternate" hreflang="en" href="https://www.datamatrix.dk/en/" />
     <link rel="alternate" hreflang="x-default" href="https://www.datamatrix.dk/" />
-    <meta name="theme-color" content={look === "l" || look === "m" ? "#F6F7F8" : "#0A1322"} />
+    <meta name="theme-color" content={look === "l" ? "#F7F5F1" : look === "m" ? "#F6F7F8" : "#0A1322"} />
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
   <body>
     <a class="skip" href="#main">{da ? "Gå til indhold" : "Skip to content"}</a>
     <header class:list={["site-header", { solid }]}>
       <div class="wrap bar">
-        <a href={da ? "/" : "/en/"} class="brand" aria-label={da ? "DataMatrix – forside" : "DataMatrix – home"}><Logo height={30} light={light} /></a>
+        <a href={da ? "/" : "/en/"} class="brand" aria-label={da ? "DataMatrix – forside" : "DataMatrix – home"}>{look === "l" ? <LogoL /> : <Logo height={30} light={light} />}</a>
         <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Menu" />
         <label for="navtoggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
         <nav aria-label={da ? "Hovedmenu" : "Main menu"}>
