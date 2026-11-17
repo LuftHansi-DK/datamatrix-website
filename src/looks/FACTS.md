@@ -79,4 +79,4 @@ These additions apply to look L only; the other looks keep their existing copy. 
 - AI-sikring stays from DKK 24,500 one-off; AI-tilsyn stays from DKK 2,500 per month. Prices exclude VAT and are agreed before work starts.
 - AI-start moves from the front page to a look L-only bundle box on /ai/: AI- og Copilot-tjek, AI-sikring and one year of AI-tilsyn, one agreement and one regular contact, from DKK 4,500 per month for 12 months excluding VAT.
 - Timeline/today line: IT partner for companies "fra lokale firmaer til internationale koncerner" (look L /om/).
-- Not claimed: certifications. Hans's AZ-104 (Azure Administrator Associate, Oct 2021) shows as expired Oct 2022 on LinkedIn; add only after renewal.
+- Certification: Hans holds Microsoft Certified: Azure Administrator Associate (AZ-104), renewed 17 Nov 2026 (Hans OK 17 Nov 2026, t148u). Plain text only; no logo, no expiry date. No other certifications are claimed.

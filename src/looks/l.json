@@ -686,7 +686,7 @@
     "people": {
      "lab": "The people behind the work",
      "quote": "Senior specialists who know your systems. And are used to working with a lot at stake.",
-     "p": "DataMatrix was founded in {founded} by Hans Kristiansen, who has worked in IT for more than 30 years, including as IT director and a member of management in the USA. When Hans takes time off, Niels Bertelsen or Niels Nordal takes over.",
+     "p": "DataMatrix was founded in {founded} by Hans Kristiansen, who has worked in IT for more than 30 years, including as IT director and a member of management in the USA. He is a Microsoft Certified Azure Administrator Associate. When Hans takes time off, Niels Bertelsen or Niels Nordal takes over.",
      "cover": "Your environment is documented so one of us can take over without starting from scratch.",
      "nums": [
       "years as DataMatrix",
@@ -832,7 +832,7 @@
      "role": "Owner, member of management and senior IT consultant",
      "bio": [
       "Hans has worked with IT systems and IT security for more than 30 years. After earning a Bachelor of Science in Management Information Systems from San Diego State University in 1990, he spent several years working in the USA – first developing database systems, then as IT director and a member of management.",
-      "Back in Denmark, he worked as an independent IT consultant and founded DataMatrix in {founded}. Assignments have ranged from local businesses to international projects with a lot at stake.",
+      "Back in Denmark, he worked as an independent IT consultant and founded DataMatrix in {founded}. Assignments have ranged from local businesses to international projects with a lot at stake. He holds the Microsoft Certified: Azure Administrator Associate (AZ-104) certification.",
       "That background shapes his advice: IT is more than technology; it is about the solution that works best for users, operations and the bottom line. Hans is personally involved in – and responsible for – every customer."
      ],
      "expH": "Experience where the stakes are high",
@@ -1015,7 +1015,7 @@
    "people": {
     "lab": "Hvem står bag",
     "quote": "Seniorer, der kender jeres systemer. Og som er vant til, at meget står på spil.",
-    "p": "DataMatrix blev grundlagt i {founded} af Hans Kristiansen, der har arbejdet med IT i mere end 30 år, blandt andet som IT-direktør og medlem af ledelsen i USA. Når Hans holder fri, er det Niels Bertelsen eller Niels Nordal, der tager over.",
+    "p": "DataMatrix blev grundlagt i {founded} af Hans Kristiansen, der har arbejdet med IT i mere end 30 år, blandt andet som IT-direktør og medlem af ledelsen i USA. Han er Microsoft-certificeret Azure Administrator Associate. Når Hans holder fri, er det Niels Bertelsen eller Niels Nordal, der tager over.",
     "cover": "Jeres miljø er dokumenteret, så en af os kan tage over uden at starte forfra.",
     "nums": [
      "år som DataMatrix",
@@ -1161,7 +1161,7 @@
     "role": "Ejer, medlem af ledelsen og senior IT-konsulent",
     "bio": [
      "Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Efter en Bachelor of Science i Management Information Systems fra San Diego State University i 1990 arbejdede han en årrække i USA – først som udvikler af databasesystemer, siden som IT-direktør og medlem af ledelsen.",
-     "Tilbage i Danmark arbejdede han som selvstændig IT-konsulent og grundlagde DataMatrix i {founded}. Opgaverne har spændt fra lokale virksomheder til internationale projekter med meget på spil.",
+     "Tilbage i Danmark arbejdede han som selvstændig IT-konsulent og grundlagde DataMatrix i {founded}. Opgaverne har spændt fra lokale virksomheder til internationale projekter med meget på spil. Han har certificeringen Microsoft Certified: Azure Administrator Associate (AZ-104).",
      "Den baggrund præger rådgivningen: IT er ikke bare teknik, men den løsning, der er bedst for brugerne, for driften og for bundlinjen. Hans er personligt involveret i – og ansvarlig for – alle kunder."
     ],
     "expH": "Erfaring fra den tunge ende",
