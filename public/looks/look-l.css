@@ -281,3 +281,35 @@
 [data-look=l] .dl-hero-bg img{object-position:100% 55%}
 [data-look=l] .dl-hero::after{bottom:auto;height:260px;background:linear-gradient(0deg,#F7F5F1 0%,rgba(247,245,241,.65) 16%,rgba(247,245,241,.08) 48%)}
 }
+
+/* Strategy sections, shared only by L's front and about pages. */
+[data-look=l] .dl-exp{background:var(--paper2)}
+[data-look=l] .dl-exp-grid{display:grid;gap:28px}
+[data-look=l] .dl-exp-grid article{border-top:1px solid var(--line);padding-top:24px;min-width:0}
+[data-look=l] .dl-exp-grid h3{font-size:1.15rem;margin:0 0 12px}
+[data-look=l] .dl-exp-grid p{font-size:.97rem;margin:0;line-height:1.65}
+[data-look=l] .dl-avail{padding:24px 28px;background:var(--bronze-tint);border-left:3px solid var(--bronze);border-radius:var(--r);margin:0 0 32px;max-width:80ch}
+[data-look=l] .dl-cases{display:grid;gap:20px}
+[data-look=l] .dl-cases article{background:var(--card);padding:28px;border-radius:var(--r);box-shadow:var(--sh);min-width:0}
+[data-look=l] .dl-cases h3{font-size:1.2rem;margin:0 0 20px}
+[data-look=l] .dl-cases p{font-size:.97rem;margin:16px 0 0}
+[data-look=l] .dl-cases b{display:block;font:600 .75rem var(--ui);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+[data-look=l] .dl-cases .dl-after b{color:var(--bronze)}
+[data-look=l] .dl-after{border-top:1px solid var(--line);padding-top:16px}
+[data-look=l] .dl-case-note{font-size:.88rem;color:var(--muted);margin-top:24px}
+[data-look=l] .dl-platform{max-width:80ch;font-size:.97rem}
+[data-look=l] .dl-team{display:grid;gap:24px;margin-top:32px}
+[data-look=l] .dl-team-card{display:flex;gap:20px;align-items:flex-start;min-width:0}
+[data-look=l] .dl-team-card picture{display:block;flex:0 0 120px}
+[data-look=l] .dl-team-card img{display:block;width:120px;height:120px;object-fit:cover;border-radius:12px;filter:grayscale(1)}
+[data-look=l] .dl-team-card h3{font-size:1.1rem;margin:0 0 6px}
+[data-look=l] .dl-team-card p{font-size:.92rem;margin:8px 0 0}
+[data-look=l] .dl-team-card .dl-team-role{font-size:.8rem;color:var(--muted);margin:0}
+[data-look=l] .dl-om-exp,[data-look=l] .dl-om-team{padding:0;margin-top:90px}
+[data-look=l] .dl-bundle{margin-top:32px;padding:28px;background:var(--paper2);border-left:3px solid var(--bronze);border-radius:var(--r)}
+[data-look=l] .dl-bundle p{margin-bottom:0}
+@media(min-width:700px){[data-look=l] .dl-cases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){
+[data-look=l] .dl-exp-grid,[data-look=l] .dl-cases{grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-look=l] .dl-team{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

@@ -2,6 +2,7 @@
 // All Danish inner pages for every look. Structure is shared; wording comes from src/looks/<look>.json (pages.*).
 import { getCollection } from "astro:content";
 import Photo from "./Photo.astro";
+import TeamL from "./TeamL.astro";
 import AiDiagram from "./AiDiagram.astro";
 import OpsBoard from "./OpsBoard.astro";
 import { copy, site, PAGE_PHOTO, type Look } from "./lib";
@@ -9,6 +10,8 @@ interface Props { look: Look; page: string }
 const { look, page } = Astro.props;
 const c = copy(look);
 const p = c.pages[page];
+const dag = look === "l" ? copy("l").extra.dag : null;
+const about = dag ? dag.om : p;
 const posts = page === "indsigt" ? (await getCollection("indsigt", ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date) : [];
 const fmt = (d: Date) => d.toLocaleDateString("da-DK", { day: "numeric", month: "long", year: "numeric" });
 const svcNames = ["Drift og overvågning", "IT-sikkerhed", "Backup og beredskab", "Microsoft 365 og cloud", "Servere, netværk og virtualisering", "Indkøb af hardware og licenser", "AI i drift"];
@@ -50,6 +53,7 @@ const harness = ["Hermes Agent", "OpenClaw", "Egen Grok-bot", "OpenAI Dots"];
     </div>
     <h2 style="margin-top:90px">{p.helpH}</h2><p style="max-width:60ch">{p.helpP}</p>
     <div class="cards3" style="margin-top:24px">{p.help.map(([t, s]: string[]) => <div><h3>{t}</h3><p>{s}</p></div>)}</div>
+    {dag && <div class="dl-bundle"><h3>{dag.aiBundle.h}</h3><p>{dag.aiBundle.p}</p></div>}
     <div class="split" style="margin-top:90px">
       <div><span class="lab">{p.proLab}</span><h2 style="margin-top:14px">{p.proH} <b>{p.proHb}</b></h2><p>{p.proP1}</p><p>{p.proP2}</p>
         <div class="chips">{harness.map((n) => <span>{n}</span>)}</div>
@@ -65,11 +69,15 @@ const harness = ["Hermes Agent", "OpenClaw", "Egen Grok-bot", "OpenAI Dots"];
   <div class="inner"><div class="wrap">
     <div class="split">
       <div class="portrait"><img src="/img/hans.jpg" alt="Hans Kristiansen, ejer af DataMatrix" width="350" height="350" /></div>
-      <div><h2>Hans Kristiansen</h2><p class="note" style="font-size:.9rem;margin:-8px 0 18px">{p.role}</p>{p.bio.map((b: string) => <p>{b}</p>)}</div>
+      <div><h2>Hans Kristiansen</h2><p class="note" style="font-size:.9rem;margin:-8px 0 18px">{about.role}</p>{about.bio.map((b: string) => <p>{b}</p>)}</div>
     </div>
+    {dag && <>
+      <section class="dl-om-exp"><h2>{dag.om.expH}</h2><div class="dl-exp-grid">{dag.om.exp.map(([title,text]: string[]) => <article><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+      <section class="dl-om-team"><h2>{dag.om.teamH}</h2><p>{dag.om.teamP}</p><TeamL team={dag.people.team}/></section>
+    </>}
     <div class="split" style="margin-top:90px">
-      <div><h2>{p.netH}</h2>{p.net.map((b: string) => <p>{b}</p>)}</div>
-      <ul class="timeline">{p.timeline.map(([w, t]: string[]) => <li><b>{w}</b> — {t}</li>)}</ul>
+      <div><h2>{about.netH}</h2>{about.net.map((b: string) => <p>{b}</p>)}</div>
+      <ul class="timeline">{about.timeline.map(([w, t]: string[]) => <li><b>{w}</b> — {t}</li>)}</ul>
     </div>
   </div></div>
 )}

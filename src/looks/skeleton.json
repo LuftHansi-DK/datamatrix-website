@@ -561,7 +561,7 @@
   }
  },
  "extra": {
-  "_doc": "Look-specific front-page keys. M needs: hint. K needs: flow, flowIntro, player, playLabel, foundation. I and L: omit 'extra' entirely. Same keys again in en.extra (English).",
+  "_doc": "Look-specific keys. M needs: hint. K needs: flow, flowIntro, player, playLabel, foundation. L needs: dag (front page and L-only inner-page additions). I omits extra. Same keys again in en.extra (English).",
   "hint": "<M: tiny hint under the morning-light hero, e.g. let the light follow the mouse>",
   "flow": [
    [
@@ -621,225 +621,330 @@
    "p": "<K: AI is only as good as what it runs on>"
   },
   "dag": {
-    "hero": {
-      "lab": "Text",
-      "h1": "Text",
-      "h1b": "Text",
-      "lead": "Text",
-      "cta2": "Text",
-      "trust": [
-        "Text",
-        "Text",
-        "Text",
-        "Text"
-      ]
-    },
-    "now": {
-      "lab": "Text",
-      "h": "Text",
-      "hb": "Text",
-      "items": [
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ]
-      ],
-      "close": "Text"
-    },
-    "ai": {
-      "lab": "Text",
-      "h": "Text",
-      "hb": "Text",
+   "hero": {
+    "lab": "Text",
+    "h1": "Text",
+    "h1b": "Text",
+    "lead": "Text",
+    "cta2": "Text",
+    "trust": [
+     "Text",
+     "Text",
+     "Text",
+     "Text"
+    ]
+   },
+   "ai": {
+    "lab": "Text",
+    "h": "Text",
+    "hb": "Text",
+    "p": "Text",
+    "rule": "Text",
+    "legendAgent": "Text",
+    "legendHuman": "Text",
+    "flow": [
+     "Text",
+     "Text",
+     "Text",
+     "Text",
+     "Text",
+     "Text"
+    ],
+    "legendLog": "Text"
+   },
+   "packages": {
+    "lab": "Text",
+    "h": "Text",
+    "hb": "Text",
+    "p": "Text",
+    "items": [
+     {
+      "name": "Text",
+      "tag": "Text",
       "p": "Text",
-      "rule": "Text",
-      "rules": [
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ]
-      ],
-      "legendAgent": "Text",
-      "legendHuman": "Text",
-      "stack": "Text",
-      "flow": [
-        "Text",
-        "Text",
-        "Text",
-        "Text",
-        "Text",
-        "Text"
-      ],
-      "legendLog": "Text"
-    },
-    "packages": {
-      "lab": "Text",
-      "h": "Text",
-      "hb": "Text",
-      "p": "Text",
-      "items": [
-        {
-          "name": "Text",
-          "tag": "Text",
-          "p": "Text",
-          "you": "Text",
-          "price": "Text"
-        },
-        {
-          "name": "Text",
-          "tag": "Text",
-          "p": "Text",
-          "you": "Text",
-          "price": "Text"
-        },
-        {
-          "name": "Text",
-          "tag": "Text",
-          "p": "Text",
-          "you": "Text",
-          "price": "Text"
-        },
-        {
-          "name": "Text",
-          "tag": "Text",
-          "p": "Text",
-          "you": "Text",
-          "price": "Text"
-        }
-      ],
-      "matureH": "Text",
-      "matureP": "Text",
-      "note": "Text"
-    },
-    "base": {
-      "lab": "Text",
-      "h": "Text",
-      "hb": "Text",
-      "p": "Text",
-      "items": [
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ]
-      ],
-      "missH": "Text",
-      "missP": "Text",
-      "engage": "Text"
-    },
-    "steps": {
-      "lab": "Text",
-      "h": "Text",
-      "items": [
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ]
-      ]
-    },
-    "people": {
-      "lab": "Text",
-      "quote": "Text",
-      "p": "Text",
-      "cover": "Text",
-      "nums": [
-        "Text",
-        "Text",
-        "Text"
-      ]
-    },
-    "faq": {
-      "lab": "Text",
-      "h": "Text",
-      "items": [
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ],
-        [
-          "Text",
-          "Text"
-        ]
-      ]
-    },
-    "cta": {
-      "lab": "Text",
-      "h": "Text",
-      "hb": "Text",
-      "p": "Text"
-    },
-    "ui": {
-      "call": "Text",
-      "talk": "Text",
       "you": "Text",
-      "vat": "Text",
-      "once": "Text",
-      "monthly": "Text",
-      "portrait": "Text",
-      "illustration": "Text",
-      "toast1": "Text",
-      "toast1p": "Text",
-      "toast2": "Text",
-      "toast2p": "Text"
-    },
-    "photos": {
-      "people-approve": "Text",
-      "people-hands-rack": "Text",
-      "people-meeting": "Text",
-      "desk-pullfocus": "Text",
-      "rack-plant": "Text",
-      "review-table": "Text"
-    }
+      "price": "Text",
+      "term": "Text"
+     },
+     {
+      "name": "Text",
+      "tag": "Text",
+      "p": "Text",
+      "you": "Text",
+      "price": "Text",
+      "term": "Text"
+     },
+     {
+      "name": "Text",
+      "tag": "Text",
+      "p": "Text",
+      "you": "Text",
+      "price": "Text",
+      "term": "Text"
+     },
+     {
+      "name": "Text",
+      "tag": "Text",
+      "p": "Text",
+      "you": "Text",
+      "price": "Text",
+      "term": "Text"
+     }
+    ],
+    "matureH": "Text",
+    "matureP": "Text",
+    "note": "Text"
+   },
+   "base": {
+    "lab": "Text",
+    "h": "Text",
+    "hb": "Text",
+    "p": "Text",
+    "items": [
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ]
+    ],
+    "missH": "Text",
+    "missP": "Text",
+    "engage": "Text"
+   },
+   "steps": {
+    "lab": "Text",
+    "h": "Text",
+    "items": [
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ]
+    ]
+   },
+   "people": {
+    "lab": "Text",
+    "quote": "Text",
+    "p": "Text",
+    "cover": "Text",
+    "nums": [
+     "Text",
+     "Text",
+     "Text"
+    ],
+    "team": [
+     {
+      "name": "Text",
+      "role": "Text",
+      "p": "Text",
+      "img": "Text",
+      "alt": "Text"
+     },
+     {
+      "name": "Text",
+      "role": "Text",
+      "p": "Text",
+      "img": "Text",
+      "alt": "Text"
+     }
+    ]
+   },
+   "faq": {
+    "lab": "Text",
+    "h": "Text",
+    "items": [
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ]
+    ]
+   },
+   "cta": {
+    "lab": "Text",
+    "h": "Text",
+    "hb": "Text",
+    "p": "Text"
+   },
+   "ui": {
+    "call": "Text",
+    "talk": "Text",
+    "you": "Text",
+    "vat": "Text",
+    "portrait": "Text",
+    "illustration": "Text",
+    "toast1": "Text",
+    "toast1p": "Text",
+    "toast2": "Text",
+    "toast2p": "Text",
+    "before": "Text",
+    "after": "Text"
+   },
+   "photos": {
+    "people-approve": "Text",
+    "people-hands-rack": "Text",
+    "people-meeting": "Text",
+    "desk-pullfocus": "Text",
+    "rack-plant": "Text",
+    "review-table": "Text"
+   },
+   "exp": {
+    "lab": "Text",
+    "h": "Text",
+    "hb": "Text",
+    "items": [
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ]
+    ]
+   },
+   "digital": {
+    "lab": "Text",
+    "h": "Text",
+    "hb": "Text",
+    "p": "Text",
+    "avail": "Text",
+    "cases": [
+     [
+      "Text",
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text",
+      "Text"
+     ]
+    ],
+    "note": "Text",
+    "platform": "Text"
+   },
+   "aiBundle": {
+    "h": "Text",
+    "p": "Text"
+   },
+   "om": {
+    "role": "Text",
+    "bio": [
+     "Text",
+     "Text",
+     "Text"
+    ],
+    "expH": "Text",
+    "exp": [
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ]
+    ],
+    "teamH": "Text",
+    "teamP": "Text",
+    "netH": "Text",
+    "net": [
+     "Text",
+     "Text"
+    ],
+    "timeline": [
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ],
+     [
+      "Text",
+      "Text"
+     ]
+    ]
+   }
   }
-}
+ }
 }
