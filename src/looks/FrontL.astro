@@ -3,10 +3,11 @@ import { copy, site } from './lib';
 import Photo from './Photo.astro';
 import FlowL from './FlowL.astro';
 import PhotoL from './PhotoL.astro';
+import TeamL from './TeamL.astro';
 const { lang = 'da' } = Astro.props;
 const raw = copy('l');
 const c = (lang === 'en' ? raw.en : raw).extra.dag;
-const {hero, now, ai, packages: pk, base, steps, people, faq, cta, ui} = c;
+const {hero, exp, digital, ai, packages: pk, base, steps, people, faq, cta, ui} = c;
 const years = new Date().getFullYear() - site.founded;
 ---
 <div class="dl-front">
@@ -14,22 +15,27 @@ const years = new Date().getFullYear() - site.founded;
  <div class="dl-hero-bg" aria-hidden="true"><Photo look="l" slot="hero" eager /></div>
  <div class="wrap dl-hero-g">
  <div><span class="dl-lab">{hero.lab}</span><h1>{hero.h1}<em>{hero.h1b}</em></h1><p class="dl-lead">{hero.lead}</p>
- <div class="dl-acts"><a class="dl-btn" href={site.phoneHref}>{ui.call} <span aria-hidden="true">→</span></a><a class="dl-btn dl-o" href="#packages">{hero.cta2}</a></div>
+ <div class="dl-acts"><a class="dl-btn" href={site.phoneHref}>{ui.call} <span aria-hidden="true">→</span></a><a class="dl-btn dl-o" href="#digital">{hero.cta2}</a></div>
  <ul class="dl-trust">{hero.trust.map((s: string) => <li>{s}</li>)}</ul></div>
 </div></section>
-<section class="dl-now"><div class="wrap">
- <div class="dl-chap"><span class="dl-lab">{now.lab}</span><h2>{now.h}<em>{now.hb}</em></h2></div>
- <div class="dl-three">{now.items.map(([h,p]: string[], i: number) => <article class="dl-obs"><span class="dl-ic" aria-hidden="true">{['↗','✉','◎'][i]}</span><h3>{h}</h3><p>{p}</p></article>)}</div><p class="dl-close">{now.close}</p>
+<section class="dl-exp"><div class="wrap">
+ <div class="dl-chap"><span class="dl-lab">{exp.lab}</span><h2>{exp.h}<em>{exp.hb}</em></h2></div>
+ <div class="dl-exp-grid">{exp.items.map(([h,p]: string[]) => <article><h3>{h}</h3><p>{p}</p></article>)}</div>
+</div></section>
+<section id="digital" class="dl-digital"><div class="wrap">
+ <div class="dl-chap"><span class="dl-lab">{digital.lab}</span><div><h2>{digital.h}<em>{digital.hb}</em></h2><p>{digital.p}</p></div></div>
+ <p class="dl-avail">{digital.avail}</p>
+ <div class="dl-cases">{digital.cases.map(([title,before,after]: string[]) => <article><h3>{title}</h3><p><b>{ui.before}</b>{before}</p><p class="dl-after"><b>{ui.after}</b>{after}</p></article>)}</div>
+ <p class="dl-case-note">{digital.note}</p><p class="dl-platform">{digital.platform}</p>
  <figure class="dl-inline-photo"><PhotoL sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1040px) calc(100vw - 80px), 960px" name="rack-plant" alt={c.photos['rack-plant']}/></figure>
 </div></section>
 <section id="ai" class="dl-night"><div class="wrap">
  <div class="dl-ai-g"><div><span class="dl-lab">{ai.lab}</span><h2>{ai.h}<em>{ai.hb}</em></h2><p>{ai.p}</p><blockquote class="dl-rule">{ai.rule}</blockquote></div><FlowL c={ai}/></div>
- <div class="dl-rules4">{ai.rules.map(([h,p]: string[], i: number) => <div><span class="dl-n">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>)}</div><p class="dl-stack">{ai.stack}</p>
  <figure class="dl-inline-photo"><PhotoL sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1040px) calc(100vw - 80px), 960px" name="people-approve" alt={c.photos['people-approve']} /></figure>
 </div></section>
 <section id="packages" class="dl-pkgs"><div class="wrap">
  <div class="dl-chap"><span class="dl-lab">{pk.lab}</span><div><h2>{pk.h}<em>{pk.hb}</em></h2><p>{pk.p}</p></div></div>
- <div class="dl-pk-g">{pk.items.map((p: any, i: number) => <article class:list={['dl-pk',{'dl-feat':i===3}]}><span class="dl-tag">{p.tag}</span><h3>{p.name}</h3><p>{p.p}</p><div class="dl-you"><b>{ui.you}</b>{p.you}</div><strong class="dl-price">{p.price}</strong><span class="dl-price-term">{i<2 ? ui.once : ui.monthly}</span></article>)}</div>
+ <div class="dl-pk-g">{pk.items.map((p: any, i: number) => <article class:list={['dl-pk',{'dl-feat':i===0}]}><span class="dl-tag">{p.tag}</span><h3>{p.name}</h3><p>{p.p}</p><div class="dl-you"><b>{ui.you}</b>{p.you}</div><strong class="dl-price">{p.price}</strong><span class="dl-price-term">{p.term}</span></article>)}</div>
  <p class="dl-pnote">{ui.vat} {pk.note}</p>
  <div class="dl-mature"><div><h3>{pk.matureH}</h3><p>{pk.matureP}</p></div><a class="dl-btn dl-o" href="#contact">{ui.talk} →</a></div>
  <figure class="dl-inline-photo"><PhotoL sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1040px) calc(100vw - 80px), 960px" name="people-meeting" alt={c.photos['people-meeting']} /></figure>
@@ -46,7 +52,7 @@ const years = new Date().getFullYear() - site.founded;
  <ol class="dl-st4">{steps.items.map(([h,p]: string[], i: number) => <li><span class="dl-n">{i+1}</span><h3>{h}</h3><p>{p}</p></li>)}</ol>
 </div></section>
 <section id="about" class="dl-people"><div class="wrap dl-pe-g"><div class="dl-portrait"><img src="/img/hans.jpg" alt={ui.portrait} width="350" height="350" loading="lazy" decoding="async"/></div>
- <div><span class="dl-lab">{people.lab}</span><h2 class="dl-bio-title">{people.quote}</h2><p>{people.p}</p><p class="dl-cover">{people.cover}</p><div class="dl-nums">{[years,'30+','1'].map((n,i) => <div><b>{n}</b>{people.nums[i]}</div>)}</div></div>
+ <div><span class="dl-lab">{people.lab}</span><h2 class="dl-bio-title">{people.quote}</h2><p>{people.p}</p><p class="dl-cover">{people.cover}</p><TeamL team={people.team}/><div class="dl-nums">{[years,'30+','1'].map((n,i) => <div><b>{n}</b>{people.nums[i]}</div>)}</div></div>
 </div></section>
 <section class="dl-faq"><div class="wrap"><div class="dl-chap"><span class="dl-lab">{faq.lab}</span><h2>{faq.h}</h2></div><div class="dl-faq-g">{faq.items.map(([q,a]: string[],i: number) => <details open={i===0}><summary>{q}</summary><p>{a}</p></details>)}</div>
  <figure class="dl-inline-photo"><PhotoL sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1040px) calc(100vw - 80px), 960px" name="review-table" alt={c.photos['review-table']}/></figure>

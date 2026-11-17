@@ -1,0 +1,7 @@
+---
+const { team } = Astro.props;
+---
+<div class="dl-team">{team.map((person: any) => <article class="dl-team-card">
+ <picture><source srcset={`/img/${person.img}.webp`} type="image/webp"/><img src={`/img/${person.img}.jpg`} alt={person.alt} width="350" height="350" loading="lazy" decoding="async"/></picture>
+ <div><h3>{person.name}</h3><p class="dl-team-role">{person.role}</p><p>{person.p}</p></div>
+</article>)}</div>

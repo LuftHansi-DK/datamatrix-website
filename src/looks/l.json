@@ -559,450 +559,660 @@
    ]
   },
   "extra": {
-    "dag": {
-      "hero": {
-        "lab": "Responsible AI · operations and security · since {founded}",
-        "h1": "Put AI to work,",
-        "h1b": "and keep hold of the decisions.",
-        "lead": "We help small and mid-sized businesses adopt AI responsibly, supported by reliable operations, security and backup. Our advice draws on more than 30 years in IT and the AI agents we use in our own daily work.",
-        "cta2": "Explore the packages",
-        "trust": [
-          "Since {founded}",
-          "30+ years in IT",
-          "One regular contact",
-          "Svinninge, Zealand"
-        ]
+   "dag": {
+    "hero": {
+     "lab": "IT operations · security · digital employees · since {founded}",
+     "h1": "Experienced IT specialists.",
+     "h1b": "And digital employees that get to work.",
+     "lead": "We run and secure IT for businesses with and without their own IT department – and put digital employees to work on emails, quotes and paperwork in your own Microsoft 365. They can work around the clock. Anything requiring approval waits for one of your people.",
+     "cta2": "See what a digital employee can do",
+     "trust": [
+      "Since {founded}",
+      "30+ years of experience",
+      "Experience from Shell Prelude",
+      "A regular senior contact"
+     ]
+    },
+    "ai": {
+     "lab": "We use it ourselves",
+     "h": "Our own agents work every day.",
+     "hb": "A person approves.",
+     "p": "In our daily operations, AI agents read all enquiries, identify the right customer and task, assess urgency, and prepare a plan and a draft. It is the same workflow we build for you.",
+     "rule": "Nothing gets sent, changed or purchased until a human has said yes.",
+     "legendAgent": "Agent preparation",
+     "legendHuman": "Human decision",
+     "legendLog": "Completed and logged",
+     "flow": [
+      "Request read",
+      "Customer and task identified",
+      "Step-by-step plan",
+      "Draft ready",
+      "A human says yes",
+      "Completed and logged"
+     ]
+    },
+    "packages": {
+     "lab": "Packages",
+     "h": "Four ways in.",
+     "hb": "Clear scope, clear prices.",
+     "p": "AI agents do the preparation, and an experienced consultant takes responsibility for the result.",
+     "items": [
+      {
+       "name": "Digital employee",
+       "tag": "The new colleague",
+       "p": "One defined task, for example from the list above, built, tested and maintained in your own Microsoft 365. Permissions are reviewed before launch, and we check in every month afterwards.",
+       "you": "You choose the task and who approves.",
+       "price": "Price by agreement",
+       "term": "Setup + monthly"
       },
-      "now": {
-        "lab": "An everyday risk",
-        "h": "AI can become part of work quickly.",
-        "hb": "Who keeps track of the access?",
-        "items": [
-          [
-            "One click opens a door",
-            "A new AI tool can gain access to mail and files with a click. Review permissions before you start using it."
-          ],
-          [
-            "Mail in your company’s name",
-            "An app may be allowed to send company mail. Set clear rules for who approves each action."
-          ],
-          [
-            "AI in the meeting",
-            "An AI note-taker may store meeting notes outside your own systems. Decide on data and access before inviting it."
-          ]
-        ],
-        "close": "A useful start can be small. We help you review access and choose a concrete task."
+      {
+       "name": "AI and Copilot review",
+       "tag": "The way in",
+       "p": "We map the apps and AI tools with access to your Microsoft 365, who granted permission and what can send mail on your behalf. You receive a short report with the ten most important fixes. You also receive three tasks a digital employee could take on.",
+       "you": "Your administrator grants read access, with our guidance.",
+       "price": "from DKK 8,500",
+       "term": "One-off price"
       },
-      "ai": {
-        "lab": "Responsible AI",
-        "h": "The agent prepares.",
-        "hb": "A person gives the go-ahead.",
-        "p": "We run AI agents in our own daily operations. They read requests, identify the customer and task, assess urgency and prepare a plan and draft. That practical experience informs the advice we give you.",
-        "rule": "Nothing gets sent, changed or purchased until a human has said yes.",
-        "rules": [
-          [
-            "People decide",
-            "The system makes a proposal; someone in your business makes the decision."
-          ],
-          [
-            "Keep data in its place",
-            "Before introducing a tool, we map the information it can reach."
-          ],
-          [
-            "Leave a readable trail",
-            "Actions are recorded so they can be checked afterwards."
-          ],
-          [
-            "Begin with one task",
-            "Get one useful task working safely before adding another."
-          ]
-        ],
-        "legendAgent": "Agent preparation",
-        "legendHuman": "Human decision",
-        "legendLog": "Completed and logged",
-        "stack": "Our agents use Hermes Agent, OpenClaw, our own Grok bot and OpenAI Dots, with fixed security rules.",
-        "flow": [
-          "Request read",
-          "Customer and task identified",
-          "Step-by-step plan",
-          "Draft ready",
-          "A human says yes",
-          "Completed and logged"
-        ]
+      {
+       "name": "AI-sikring",
+       "tag": "Put controls in place",
+       "p": "We implement fixes following a plan you approve. New apps require approval, mail-sending rights are restricted and sensitive data stays where it belongs. Includes an AI policy in Danish and a short staff guide.",
+       "you": "You approve the plan before we make changes.",
+       "price": "from DKK 24,500",
+       "term": "One-off price"
       },
-      "packages": {
-        "lab": "Packages",
-        "h": "Defined packages.",
-        "hb": "Clear scope, clear prices.",
-        "p": "Our AI agents prepare the work, and an experienced consultant reviews and takes responsibility for the result.",
-        "items": [
-          {
-            "name": "AI-tjek",
-            "tag": "The overview",
-            "p": "We map the apps and AI tools with access to your Microsoft 365, who granted permission and what can send mail on your behalf. You receive a short report with the ten most important fixes.",
-            "you": "Your administrator grants read access, with our guidance.",
-            "price": "from DKK 8,500"
-          },
-          {
-            "name": "AI-sikring",
-            "tag": "Put controls in place",
-            "p": "We implement fixes following a plan you approve. New apps require approval, mail-sending rights are restricted and sensitive data stays where it belongs. Includes an AI policy in Danish and a short staff guide.",
-            "you": "You approve the plan before we make changes.",
-            "price": "from DKK 24,500"
-          },
-          {
-            "name": "AI-tilsyn",
-            "tag": "Keep it in order",
-            "p": "Each month we check for new apps, permissions and forwarding, and flag changes. New AI tools can be assessed before use. You receive a brief quarterly status report.",
-            "you": "Send us the tools your colleagues would like to use.",
-            "price": "from DKK 2,500 per month"
-          },
-          {
-            "name": "AI-start",
-            "tag": "Recommended start",
-            "p": "AI-tjek, AI-sikring and 12 months of AI-tilsyn in one agreement, paid monthly. A practical route to understanding and controlling your AI access.",
-            "you": "One agreement, a clear overview and one regular contact.",
-            "price": "from DKK 4,500 per month for 12 months"
-          }
-        ],
-        "matureH": "Already working with AI?",
-        "matureP": "If you have your own IT staff, we can discuss agents, permissions and practical security with them.",
-        "note": "You know the price before the work begins."
-      },
-      "base": {
-        "lab": "The foundation",
-        "h": "AI depends on your IT.",
-        "hb": "Give it a sound foundation.",
-        "p": "Operations, security, backup and Microsoft 365 remain the foundation. We maintain them according to an agreed plan.",
-        "items": [
-          [
-            "Operations and monitoring",
-            "Monitoring of servers, clients and certificates, with updates in planned maintenance windows."
-          ],
-          [
-            "IT security",
-            "Firewalls, MFA, access controls and mail protection. Security has guided our work since {founded}."
-          ],
-          [
-            "Backup and recovery",
-            "Local and offsite copies, tested restores and a clear plan for who does what."
-          ],
-          [
-            "Microsoft 365 and infrastructure",
-            "Setup, migration and operation of Microsoft 365 and Azure, networks and virtualisation with VMware vSphere and Hyper-V."
-          ]
-        ],
-        "missH": "The backup that never ran",
-        "missP": "A job that never starts sends no failure message. Our monitoring also looks for that missing run.",
-        "engage": "Choose ongoing support or individual assignments. We can run your IT or support the person who already does."
-      },
-      "steps": {
-        "lab": "Getting started",
-        "h": "Four steps towards a clearer picture",
-        "items": [
-          [
-            "An informal conversation",
-            "Call or write. We can also visit your business."
-          ],
-          [
-            "Review the setup",
-            "We review AI tools, permissions, security and backup and give an honest assessment."
-          ],
-          [
-            "Agree the plan and price",
-            "Priorities come first. You know the price before work starts."
-          ],
-          [
-            "Ongoing checks and operations",
-            "We keep watch and let you know when something changes."
-          ]
-        ]
-      },
-      "people": {
-        "lab": "The people behind the work",
-        "quote": "Small enough to know who you are talking to. Experienced enough to take responsibility.",
-        "p": "Hans Kristiansen founded DataMatrix in {founded}. He brings over 30 years in IT, including work as an IT director in the USA. An established network of experienced independent consultants provides cover for holidays, illness and busy periods.",
-        "cover": "We document your environment so a colleague can take over without beginning from scratch.",
-        "nums": [
-          "years of DataMatrix",
-          "years in IT",
-          "regular contact"
-        ]
-      },
-      "faq": {
-        "lab": "Questions",
-        "h": "Things you may be wondering about",
-        "items": [
-          [
-            "Will you read our email?",
-            "We agree in advance what information we can see and what stays out of reach."
-          ],
-          [
-            "Is our business too small?",
-            "Every hour matters in a small business. We begin with a specific task and look at where AI can help your daily work."
-          ],
-          [
-            "Where should we begin?",
-            "Often with a Microsoft 365 review and a couple of practical tasks where AI can help with appropriate permissions."
-          ],
-          [
-            "We already have an IT person. How does this fit?",
-            "We work alongside them, providing reviews, ongoing checks or advice while they handle the day-to-day work."
-          ]
-        ]
-      },
-      "cta": {
-        "lab": "Contact",
-        "h": "What have your colleagues given AI access to?",
-        "hb": "Let’s find out together.",
-        "p": "Call or email to arrange an informal conversation, with no obligation."
-      },
-      "ui": {
-        "call": "Call {phone}",
-        "talk": "Talk it through with us",
-        "you": "Your part",
-        "vat": "All prices excl. VAT.",
-        "once": "One-off price",
-        "monthly": "Per month",
-        "portrait": "Hans Kristiansen",
-        "illustration": "Illustration",
-        "toast1": "Backup job missing",
-        "toast1p": "No run started overnight.",
-        "toast2": "A person is notified",
-        "toast2p": "The missing run has been detected."
-      },
-      "photos": {
-        "people-approve": "Illustration: Hands at a laptop showing an approval on screen.",
-        "people-hands-rack": "Illustration: Hands connecting a blue network cable in a server rack.",
-        "people-meeting": "Illustration: Two people reviewing printed charts at a table.",
-        "desk-pullfocus": "Illustration: A laptop and coffee cup on a light wooden desk.",
-        "rack-plant": "Illustration: A server rack with network cables and a green plant in front.",
-        "review-table": "Illustration: A report with charts and a fountain pen on a wooden table."
+      {
+       "name": "AI-tilsyn",
+       "tag": "Keep it in order",
+       "p": "Each month we check for new apps, permissions and forwarding, and flag changes. New AI tools can be assessed before use. You receive a brief quarterly status report.",
+       "you": "Send us the tools your colleagues would like to use.",
+       "price": "from DKK 2,500 per month",
+       "term": "Per month"
       }
-    }
-  }
-},
-  "extra": {
-    "dag": {
-      "hero": {
-        "lab": "Ansvarlig AI · drift og sikkerhed · siden {founded}",
-        "h1": "Sæt AI i arbejde,",
-        "h1b": "uden at slippe styringen.",
-        "lead": "Vi hjælper små og mellemstore virksomheder med at tage AI i brug på en ansvarlig måde, og vi passer den drift, sikkerhed og backup, som det hele hviler på. Bag rådene står mere end 30 års erfaring og AI-agenter, som vi selv bruger hver dag.",
-        "cta2": "Se vores pakker",
-        "trust": [
-          "Siden {founded}",
-          "30+ års erfaring",
-          "Fast kontaktperson",
-          "Svinninge, Sjælland"
-        ]
+     ],
+     "matureH": "An operations agreement – or an outside perspective",
+     "matureP": "We can take care of everything. If you have your own IT department, we complement it with projects, reviews and advice. A regular weekly day on site can also be arranged.",
+     "note": "You know the price before the work begins."
+    },
+    "base": {
+     "lab": "The foundation",
+     "h": "AI depends on your IT.",
+     "hb": "Give it a sound foundation.",
+     "p": "Operations, security, backup and Microsoft 365 remain the foundation. We maintain them according to an agreed plan.",
+     "items": [
+      [
+       "Operations and monitoring",
+       "Monitoring of servers, clients and certificates, with updates in planned maintenance windows."
+      ],
+      [
+       "IT security",
+       "Firewalls, MFA, access controls and mail protection. Security has guided our work since {founded}."
+      ],
+      [
+       "Backup and recovery",
+       "Local and offsite copies, tested restores and a clear plan for who does what."
+      ],
+      [
+       "Microsoft 365 and infrastructure",
+       "Setup, migration and operation of Microsoft 365 and Azure, networks and virtualisation with VMware vSphere and Hyper-V."
+      ]
+     ],
+     "missH": "The backup that never ran",
+     "missP": "A job that never starts sends no failure message. Our monitoring also looks for that missing run.",
+     "engage": "Choose an ongoing agreement or individual tasks. We can handle everything or work alongside your own IT department."
+    },
+    "steps": {
+     "lab": "Getting started",
+     "h": "Four steps towards a clearer picture",
+     "items": [
+      [
+       "An informal conversation",
+       "Call or write. We can also visit your business."
+      ],
+      [
+       "Review the setup",
+       "We review AI tools, permissions, security and backup and give an honest assessment."
+      ],
+      [
+       "Agree the plan and price",
+       "Priorities come first. You know the price before work starts."
+      ],
+      [
+       "Ongoing checks and operations",
+       "We keep watch and let you know when something changes."
+      ]
+     ]
+    },
+    "people": {
+     "lab": "The people behind the work",
+     "quote": "Senior specialists who know your systems. And are used to working with a lot at stake.",
+     "p": "DataMatrix was founded in {founded} by Hans Kristiansen, who has worked in IT for more than 30 years, including as IT director and a member of management in the USA. He is a Microsoft Certified Azure Administrator Associate. When Hans takes time off, Niels Bertelsen or Niels Nordal takes over.",
+     "cover": "Your environment is documented so one of us can take over without starting from scratch.",
+     "nums": [
+      "years as DataMatrix",
+      "years of IT experience",
+      "regular senior contact"
+     ],
+     "team": [
+      {
+       "name": "Niels Bertelsen",
+       "role": "Consultant with his own company",
+       "p": "More than 30 years of IT experience, specialising in networks. Together with Hans, he has built the infrastructure at the international manufacturing company.",
+       "img": "niels-bertelsen",
+       "alt": "Niels Bertelsen"
       },
-      "now": {
-        "lab": "Det sker let",
-        "h": "AI kan hurtigt blive en del af hverdagen.",
-        "hb": "Men hvem har overblikket?",
-        "items": [
-          [
-            "Ét klik giver adgang",
-            "Et nyt AI-værktøj kan få adgang til mail og filer med et enkelt klik. Derfor bør rettighederne gennemgås, før det tages i brug."
-          ],
-          [
-            "Mail i firmaets navn",
-            "En app kan få lov at sende mail på virksomhedens vegne. Det kræver klare rammer for, hvem der godkender hvad."
-          ],
-          [
-            "AI ved mødebordet",
-            "En AI-referent kan gemme mødenoter uden for jeres egne systemer. Tag stilling til data og adgang, før den inviteres med."
-          ]
-        ],
-        "close": "Det behøver ikke begynde med en stor plan. Vi hjælper jer med at få styr på adgange og vælge en konkret opgave."
-      },
-      "ai": {
-        "lab": "Ansvarlig AI",
-        "h": "Agenten forbereder.",
-        "hb": "Et menneske siger god for det.",
-        "p": "Vi kører selv AI-agenter i vores daglige drift. De læser henvendelserne, finder den rette kunde og opgave, vurderer hastværket og lægger en plan og et udkast klar. Den erfaring ligger bag alt, hvad vi anbefaler jer.",
-        "rule": "Intet bliver sendt, ændret eller købt, uden at et menneske har sagt ja.",
-        "rules": [
-          [
-            "Mennesket bestemmer",
-            "Forslaget kommer fra maskinen, beslutningen fra en af jeres egne."
-          ],
-          [
-            "Data bliver, hvor de hører til",
-            "Inden et værktøj tages i brug, kortlægger vi, hvilke data det kan nå."
-          ],
-          [
-            "Alt kan efterprøves",
-            "Hver handling efterlader et spor, som kan læses bagefter."
-          ],
-          [
-            "Start småt",
-            "Én opgave skal køre sikkert, før den næste kommer med."
-          ]
-        ],
-        "legendAgent": "Agentens arbejde",
-        "legendHuman": "Menneskets beslutning",
-        "stack": "Vores egne agenter kører på Hermes Agent, OpenClaw, en egen Grok-bot og OpenAI Dots, alle med faste sikkerhedsregler.",
-        "flow": [
-          "Henvendelse læst",
-          "Kunde og opgave fundet",
-          "Plan i trin",
-          "Udkast klar",
-          "Et menneske siger ja",
-          "Udført og logget"
-        ],
-        "legendLog": "Udført og logget"
-      },
-      "packages": {
-        "lab": "Pakker",
-        "h": "Pakker med klart indhold.",
-        "hb": "Klart indhold, kendt pris.",
-        "p": "Vores AI-agenter gør forarbejdet, og en erfaren konsulent står inde for resultatet.",
-        "items": [
-          {
-            "name": "AI-tjek",
-            "tag": "Overblikket",
-            "p": "Vi kortlægger, hvilke apps og AI-værktøjer der har adgang til jeres Microsoft 365, hvem der har givet lov, og hvad der kan sende mail i jeres navn. I får en kort rapport med de ti vigtigste rettelser.",
-            "you": "Jeres administrator giver os læseadgang, og vi guider undervejs.",
-            "price": "fra 8.500 kr."
-          },
-          {
-            "name": "AI-sikring",
-            "tag": "Ryd op og lås fast",
-            "p": "Vi gennemfører rettelserne efter en plan, I har godkendt. Nye apps kræver godkendelse, kun det rette kan sende mail, og følsomme data bliver hjemme. Hertil kommer en AI-politik på dansk og en kort guide til medarbejderne.",
-            "you": "I godkender planen, før vi ændrer noget.",
-            "price": "fra 24.500 kr."
-          },
-          {
-            "name": "AI-tilsyn",
-            "tag": "Hold det på plads",
-            "p": "Hver måned tjekker vi for nye apps, adgange og videresendelser og giver besked, når noget har ændret sig. Et nyt AI-værktøj kan blive vurderet, før det tages i brug, og hvert kvartal får I en kort status.",
-            "you": "I sender os blot de værktøjer, medarbejderne gerne vil bruge.",
-            "price": "fra 2.500 kr. pr. måned"
-          },
-          {
-            "name": "AI-start",
-            "tag": "Anbefalet start",
-            "p": "AI-tjek, AI-sikring og et års tilsyn samlet i én aftale med en aftalt månedlig betaling. Den nemmeste måde at komme fra usikkerhed til overblik på.",
-            "you": "Én aftale, ét overblik, én fast kontaktperson.",
-            "price": "fra 4.500 kr. pr. måned i 12 måneder"
-          }
-        ],
-        "matureH": "Har I selv styr på AI?",
-        "matureP": "Har I selv IT-folk? Så sparrer vi gerne om agenter, rettigheder og sikkerhed.",
-        "note": "I kender prisen, før vi går i gang."
-      },
-      "base": {
-        "lab": "Fundamentet",
-        "h": "AI bygger på jeres IT.",
-        "hb": "Den skal kunne holde.",
-        "p": "Den del af vores arbejde er ikke ny, men den betyder mere end nogensinde: drift, sikkerhed, backup og Microsoft 365, passet efter en fast plan.",
-        "items": [
-          [
-            "Drift og overvågning",
-            "Servere, klienter og certifikater bliver overvåget, og opdateringer kører i faste vinduer."
-          ],
-          [
-            "IT-sikkerhed",
-            "Firewall, MFA, styring af adgange og beskyttelse af mail. Sikkerhed har været vores fokus fra første dag i {founded}."
-          ],
-          [
-            "Backup og beredskab",
-            "Kopier lokalt og uden for huset, genskabelse, der er afprøvet, og en plan for, hvem der gør hvad."
-          ],
-          [
-            "Microsoft 365 og infrastruktur",
-            "Opsætning, flytning og drift af Microsoft 365 og Azure, netværk og virtualisering med VMware vSphere og Hyper-V."
-          ]
-        ],
-        "missH": "Den backup, der aldrig startede",
-        "missP": "Et job, der aldrig går i gang, giver ingen fejlmelding. Vores overvågning lægger mærke til det alligevel.",
-        "engage": "Vælg en fast aftale eller enkelte opgaver. Vi kan stå for det hele eller støtte den IT-ansvarlige, I allerede har."
-      },
-      "steps": {
-        "lab": "Sådan begynder vi",
-        "h": "Fire skridt fra snak til overblik",
-        "items": [
-          [
-            "En uforpligtende snak",
-            "Ring eller skriv. Vi kommer også gerne ud til jer."
-          ],
-          [
-            "Tjek og gennemgang",
-            "AI-værktøjer, adgange, sikkerhed og backup bliver gennemgået, og I får et ærligt billede af tilstanden."
-          ],
-          [
-            "Plan og aftalt pris",
-            "Det vigtigste kommer først, og I kender prisen, inden arbejdet starter."
-          ],
-          [
-            "Tilsyn og drift",
-            "Vi holder øje løbende og melder tilbage, når noget ændrer sig."
-          ]
-        ]
-      },
-      "people": {
-        "lab": "Hvem står bag",
-        "quote": "Små nok til, at I altid ved, hvem I taler med. Erfarne nok til at tage ansvaret.",
-        "p": "DataMatrix blev grundlagt i {founded} af Hans Kristiansen, der har arbejdet med IT i mere end 30 år, blandt andet som IT-direktør i USA. Ved ferie, sygdom og travle perioder træder en fast kreds af erfarne konsulenter med egne firmaer til.",
-        "cover": "Jeres miljø er dokumenteret, så en kollega kan tage over, når en af os holder fri.",
-        "nums": [
-          "år som DataMatrix",
-          "års erfaring i IT",
-          "fast kontaktperson"
-        ]
-      },
-      "faq": {
-        "lab": "Spørgsmål",
-        "h": "Det bliver vi ofte spurgt om",
-        "items": [
-          [
-            "Skal I kunne læse vores mails?",
-            "Vi aftaler altid på forhånd, hvad vi kan se, og hvad vi ikke kan."
-          ],
-          [
-            "Er vi ikke for små til det her?",
-            "I en lille virksomhed tæller hver time. Vi begynder med en konkret opgave og ser på, hvor AI kan hjælpe i netop jeres hverdag."
-          ],
-          [
-            "Hvor begynder vi?",
-            "Ofte med en gennemgang af Microsoft 365 og et par konkrete opgaver, hvor AI kan gøre nytte med de rette adgange."
-          ],
-          [
-            "Vi har allerede en IT-ansvarlig. Hvad så?",
-            "Så supplerer vi. Vi kan levere tjek og tilsyn eller være sparringspartner, mens jeres egen IT-ansvarlige passer hverdagen."
-          ]
-        ]
-      },
-      "cta": {
-        "lab": "Kontakt",
-        "h": "Hvad har jeres medarbejdere givet AI adgang til?",
-        "hb": "Lad os finde ud af det sammen.",
-        "p": "Ring eller skriv, så aftaler vi en kort snak. Den forpligter jer ikke til noget."
-      },
-      "ui": {
-        "call": "Ring {phone}",
-        "talk": "Tal med os om det",
-        "you": "Det gør I",
-        "vat": "Alle priser er ekskl. moms.",
-        "once": "Engangspris",
-        "monthly": "Pr. måned",
-        "portrait": "Hans Kristiansen",
-        "illustration": "Illustration",
-        "toast1": "Backupjobbet mangler",
-        "toast1p": "Intet job startet i nat.",
-        "toast2": "En person får besked",
-        "toast2p": "Den manglende kørsel er opdaget."
-      },
-      "photos": {
-        "people-approve": "Illustration: Hænder ved en bærbar computer med en godkendelse på skærmen.",
-        "people-hands-rack": "Illustration: Hænder tilslutter et blåt netværkskabel i et serverrack.",
-        "people-meeting": "Illustration: To personer gennemgår et papir med diagrammer ved et bord.",
-        "desk-pullfocus": "Illustration: Bærbar computer og kaffekop på et lyst træbord.",
-        "rack-plant": "Illustration: Serverrack med netværkskabler og en grøn plante i forgrunden.",
-        "review-table": "Illustration: Rapport med diagrammer og en fyldepen på et træbord."
+      {
+       "name": "Niels Nordal",
+       "role": "Consultant with his own company",
+       "p": "More than 25 years of experience across a wide range of IT systems. Steps in during holidays, illness and busy periods.",
+       "img": "niels-nordal",
+       "alt": "Niels Nordal"
       }
+     ]
+    },
+    "faq": {
+     "lab": "Questions",
+     "h": "Things you may be wondering about",
+     "items": [
+      [
+       "We have our own IT department. What can you add?",
+       "An outside perspective. We know the IT environments of many different businesses from the inside, and that breadth is hard to build internally. We handle projects, reviews and advice while your people look after daily operations."
+      ],
+      [
+       "Where is our data when a digital employee works?",
+       "In your own Microsoft 365. We build with Microsoft Copilot and your existing permissions, and data stays in the EU."
+      ],
+      [
+       "Can the digital employee send anything on its own?",
+       "No. It writes drafts and prepares. Anything to be sent, paid or changed waits for approval from one of your people."
+      ],
+      [
+       "Are we too small for this?",
+       "Every hour counts in a small business. We start with one concrete task and look at where a digital employee could help you most."
+      ],
+      [
+       "Do you come to our premises?",
+       "Yes. Much can be handled remotely, but a regular weekly day on site can be arranged."
+      ]
+     ]
+    },
+    "cta": {
+     "lab": "Contact",
+     "h": "Which task would you give a digital employee?",
+     "hb": "Let’s find it together.",
+     "p": "Call or email to arrange an informal conversation, with no obligation."
+    },
+    "ui": {
+     "call": "Call {phone}",
+     "talk": "Talk it through with us",
+     "you": "Your part",
+     "vat": "All prices excl. VAT.",
+     "portrait": "Hans Kristiansen",
+     "illustration": "Illustration",
+     "toast1": "Backup job missing",
+     "toast1p": "No run started overnight.",
+     "toast2": "A person is notified",
+     "toast2p": "The missing run has been detected.",
+     "before": "Before",
+     "after": "After"
+    },
+    "photos": {
+     "people-approve": "Illustration: Hands at a laptop showing an approval on screen.",
+     "people-hands-rack": "Illustration: Hands connecting a blue network cable in a server rack.",
+     "people-meeting": "Illustration: Two people reviewing printed charts at a table.",
+     "desk-pullfocus": "Illustration: A laptop and coffee cup on a light wooden desk.",
+     "rack-plant": "Illustration: A server rack with network cables and a green plant in front.",
+     "review-table": "Illustration: A report with charts and a fountain pen on a wooden table."
+    },
+    "exp": {
+     "lab": "Experience",
+     "h": "We are used to working at a higher level.",
+     "hb": "A business with 15 employees gets the same care.",
+     "items": [
+      [
+       "The world’s largest floating facility",
+       "As an external consultant for an international machinery monitoring supplier, Hans was sent to Singapore and South Korea to work on Shell’s Prelude – the world’s largest floating offshore facility, a project estimated at around DKK 100 billion. His work involved some of its most sensitive systems: vibration monitoring for the gas turbines."
+      ],
+      [
+       "International production since 2007",
+       "Since 2007, we have built and operated large parts of the infrastructure at an international manufacturing company – today alongside its own IT department."
+      ],
+      [
+       "A broader perspective",
+       "We know the IT environments of many different businesses from the inside. That brings an outside perspective an IT department can rarely gain internally."
+      ]
+     ]
+    },
+    "digital": {
+     "lab": "Digital employees",
+     "h": "A new colleague,",
+     "hb": "taking care of routine tasks.",
+     "p": "A digital employee is an AI agent with one defined task. It reads, sorts and prepares, leaving your people to check and approve. We build it with Microsoft Copilot in your own Microsoft 365, using the permissions you already have.",
+     "avail": "The digital employee can work around the clock – reading, sorting and preparing, even at night. Anything requiring approval waits until one of your people is at work.",
+     "cases": [
+      [
+       "Shared inbox",
+       "Every morning, an employee spends 45 minutes sorting and forwarding emails from info@.",
+       "By 7 am, emails are sorted, routed to the right person and have draft replies. Ten minutes of approval."
+      ],
+      [
+       "Quotes and order confirmations",
+       "The salesperson copies from old quotes and the price list. Half an hour per quote.",
+       "A draft is ready based on the customer’s email and the price list. A person checks and sends it."
+      ],
+      [
+       "Receipts and invoices",
+       "Invoices are checked against orders by hand.",
+       "The agent matches them and flags discrepancies. Accounts approves."
+      ],
+      [
+       "A handbook that answers",
+       "New colleagues ask the manager the same questions: holidays, IT, rules.",
+       "The answer comes from your own documents, with a link to the source."
+      ],
+      [
+       "Meeting notes and follow-up",
+       "Nobody has time to write the minutes, and tasks get forgotten.",
+       "Minutes and a task list appear in Teams shortly after the meeting. The meeting organiser approves."
+      ],
+      [
+       "IT first aid",
+       "“The printer isn’t working” ends up with the manager.",
+       "The agent guides the employee, opens a ticket with us including the details, and hands over to a person when needed."
+      ]
+     ],
+     "note": "Examples. Times are illustrative and depend on your working day.",
+     "platform": "Built in your own Microsoft 365 with Microsoft Copilot. Data stays in your environment and in the EU, and you own the agent."
+    },
+    "aiBundle": {
+     "h": "Everything in one agreement: AI-start",
+     "p": "An AI and Copilot review, AI security and a year of AI oversight in one agreement with one regular contact. From DKK 4,500 per month for 12 months, excluding VAT."
+    },
+    "om": {
+     "role": "Owner, member of management and senior IT consultant",
+     "bio": [
+      "Hans has worked with IT systems and IT security for more than 30 years. After earning a Bachelor of Science in Management Information Systems from San Diego State University in 1990, he spent several years working in the USA – first developing database systems, then as IT director and a member of management.",
+      "Back in Denmark, he worked as an independent IT consultant and founded DataMatrix in {founded}. Assignments have ranged from local businesses to international projects with a lot at stake. He holds the Microsoft Certified: Azure Administrator Associate (AZ-104) certification.",
+      "That background shapes his advice: IT is more than technology; it is about the solution that works best for users, operations and the bottom line. Hans is personally involved in – and responsible for – every customer."
+     ],
+     "expH": "Experience where the stakes are high",
+     "exp": [
+      [
+       "Shell Prelude",
+       "As an external consultant for an international machinery monitoring supplier, Hans was responsible for large parts of its internal infrastructure in Denmark for several years. He was sent to Singapore and South Korea to work on Shell’s Prelude – the world’s largest floating offshore facility, estimated at around DKK 100 billion – on some of its most sensitive systems: vibration monitoring for its gas turbines."
+      ],
+      [
+       "International manufacturing company",
+       "Since 2007, together with Niels Bertelsen, we have built and operated large parts of the infrastructure at an international manufacturing company. Today we work alongside its own IT department."
+      ],
+      [
+       "A broader perspective",
+       "Working in many different businesses lets us see what works – and what does not – across industries and sizes. That perspective is difficult to gain within a single IT department, and it is often where we make the biggest difference for customers with their own IT staff."
+      ]
+     ],
+     "teamH": "The people behind it",
+     "teamP": "We work closely with a regular network of experienced consultants with their own companies. Two of them know our customers particularly well:",
+     "netH": "When it matters",
+     "net": [
+      "When Hans is away or ill, Niels Bertelsen or Niels Nordal takes over. If a project needs more hands or a particular speciality, we bring in people from the same regular network.",
+      "Every customer environment is documented so a colleague can take over without starting from scratch. A regular weekly day on site can also be arranged."
+     ],
+     "timeline": [
+      [
+       "1990",
+       "B.Sc. in Management Information Systems, San Diego State University"
+      ],
+      [
+       "1990s",
+       "Developer, then IT director and member of management in the USA"
+      ],
+      [
+       "Back in Denmark",
+       "Independent IT consultant"
+      ],
+      [
+       "{founded}",
+       "DataMatrix is founded"
+      ],
+      [
+       "2007",
+       "Starts working with an international manufacturing company where we still operate the infrastructure"
+      ],
+      [
+       "Today",
+       "IT partner for businesses from local firms to international groups – now also with digital employees"
+      ]
+     ]
     }
+   }
   }
+ },
+ "extra": {
+  "dag": {
+   "hero": {
+    "lab": "IT-drift · sikkerhed · digitale medarbejdere · siden {founded}",
+    "h1": "Erfarne IT-specialister.",
+    "h1b": "Og digitale medarbejdere, der tager fat.",
+    "lead": "Vi driver og sikrer IT for virksomheder med og uden egen IT-afdeling – og sætter digitale medarbejdere i arbejde med mails, tilbud og papirarbejde i jeres egen Microsoft 365. De kan arbejde døgnet rundt. Det, der kræver et ja, venter på en af jeres egne.",
+    "cta2": "Se, hvad en digital medarbejder kan",
+    "trust": [
+     "Siden {founded}",
+     "30+ års erfaring",
+     "Erfaring fra Shell Prelude",
+     "Fast seniorkontakt"
+    ]
+   },
+   "ai": {
+    "lab": "Vi bruger det selv",
+    "h": "Vores egne agenter arbejder hver dag.",
+    "hb": "Et menneske siger ja.",
+    "p": "I vores daglige drift læser AI-agenter alle henvendelser, finder den rette kunde og opgave, vurderer hastværket og lægger en plan og et udkast klar. Det er den samme arbejdsgang, vi bygger hos jer.",
+    "rule": "Intet bliver sendt, ændret eller købt, uden at et menneske har sagt ja.",
+    "legendAgent": "Agentens arbejde",
+    "legendHuman": "Menneskets beslutning",
+    "flow": [
+     "Henvendelse læst",
+     "Kunde og opgave fundet",
+     "Plan i trin",
+     "Udkast klar",
+     "Et menneske siger ja",
+     "Udført og logget"
+    ],
+    "legendLog": "Udført og logget"
+   },
+   "packages": {
+    "lab": "Pakker",
+    "h": "Fire veje ind.",
+    "hb": "Klart indhold, kendt pris.",
+    "p": "AI-agenter gør forarbejdet, og en erfaren konsulent står inde for resultatet.",
+    "items": [
+     {
+      "name": "Digital medarbejder",
+      "tag": "Den nye kollega",
+      "p": "Én fast opgave, fx fra listen ovenfor, bygget, testet og passet i jeres egen Microsoft 365. Rettighederne bliver gennemgået før start, og vi holder øje hver måned bagefter.",
+      "you": "I vælger opgaven og den, der siger ja.",
+      "price": "Pris efter aftale",
+      "term": "Opsætning + pr. måned"
+     },
+     {
+      "name": "AI- og Copilot-tjek",
+      "tag": "Døren ind",
+      "p": "Vi kortlægger, hvilke apps og AI-værktøjer der har adgang til jeres Microsoft 365, hvem der har givet lov, og hvad der kan sende mail i jeres navn. I får en kort rapport med de ti vigtigste rettelser og tre opgaver, en digital medarbejder kunne tage.",
+      "you": "Jeres administrator giver os læseadgang, og vi guider undervejs.",
+      "price": "fra 8.500 kr.",
+      "term": "Engangspris"
+     },
+     {
+      "name": "AI-sikring",
+      "tag": "Ryd op og lås fast",
+      "p": "Vi gennemfører rettelserne efter en plan, I har godkendt. Nye apps kræver godkendelse, kun det rette kan sende mail, og følsomme data bliver hjemme. Hertil kommer en AI-politik på dansk og en kort guide til medarbejderne.",
+      "you": "I godkender planen, før vi ændrer noget.",
+      "price": "fra 24.500 kr.",
+      "term": "Engangspris"
+     },
+     {
+      "name": "AI-tilsyn",
+      "tag": "Hold det på plads",
+      "p": "Hver måned tjekker vi for nye apps, adgange og videresendelser og giver besked, når noget har ændret sig. Et nyt AI-værktøj kan blive vurderet, før det tages i brug, og hvert kvartal får I en kort status.",
+      "you": "I sender os blot de værktøjer, medarbejderne gerne vil bruge.",
+      "price": "fra 2.500 kr. pr. måned",
+      "term": "Pr. måned"
+     }
+    ],
+    "matureH": "Driftsaftale – eller et blik udefra",
+    "matureP": "Vi kan passe det hele. Har I egen IT-afdeling, supplerer vi med projekter, tjek og sparring. Efter aftale også med en fast ugentlig dag hos jer.",
+    "note": "I kender prisen, før vi går i gang."
+   },
+   "base": {
+    "lab": "Fundamentet",
+    "h": "AI bygger på jeres IT.",
+    "hb": "Den skal kunne holde.",
+    "p": "Den del af vores arbejde er ikke ny, men den betyder mere end nogensinde: drift, sikkerhed, backup og Microsoft 365, passet efter en fast plan.",
+    "items": [
+     [
+      "Drift og overvågning",
+      "Servere, klienter og certifikater bliver overvåget, og opdateringer kører i faste vinduer."
+     ],
+     [
+      "IT-sikkerhed",
+      "Firewall, MFA, styring af adgange og beskyttelse af mail. Sikkerhed har været vores fokus fra første dag i {founded}."
+     ],
+     [
+      "Backup og beredskab",
+      "Kopier lokalt og uden for huset, genskabelse, der er afprøvet, og en plan for, hvem der gør hvad."
+     ],
+     [
+      "Microsoft 365 og infrastruktur",
+      "Opsætning, flytning og drift af Microsoft 365 og Azure, netværk og virtualisering med VMware vSphere og Hyper-V."
+     ]
+    ],
+    "missH": "Den backup, der aldrig startede",
+    "missP": "Et job, der aldrig går i gang, giver ingen fejlmelding. Vores overvågning lægger mærke til det alligevel.",
+    "engage": "Vælg en fast aftale eller enkelte opgaver. Vi kan stå for det hele eller arbejde side om side med jeres egen IT-afdeling."
+   },
+   "steps": {
+    "lab": "Sådan begynder vi",
+    "h": "Fire skridt fra snak til overblik",
+    "items": [
+     [
+      "En uforpligtende snak",
+      "Ring eller skriv. Vi kommer også gerne ud til jer."
+     ],
+     [
+      "Tjek og gennemgang",
+      "AI-værktøjer, adgange, sikkerhed og backup bliver gennemgået, og I får et ærligt billede af tilstanden."
+     ],
+     [
+      "Plan og aftalt pris",
+      "Det vigtigste kommer først, og I kender prisen, inden arbejdet starter."
+     ],
+     [
+      "Tilsyn og drift",
+      "Vi holder øje løbende og melder tilbage, når noget ændrer sig."
+     ]
+    ]
+   },
+   "people": {
+    "lab": "Hvem står bag",
+    "quote": "Seniorer, der kender jeres systemer. Og som er vant til, at meget står på spil.",
+    "p": "DataMatrix blev grundlagt i {founded} af Hans Kristiansen, der har arbejdet med IT i mere end 30 år, blandt andet som IT-direktør og medlem af ledelsen i USA. Han er Microsoft-certificeret Azure Administrator Associate. Når Hans holder fri, er det Niels Bertelsen eller Niels Nordal, der tager over.",
+    "cover": "Jeres miljø er dokumenteret, så en af os kan tage over uden at starte forfra.",
+    "nums": [
+     "år som DataMatrix",
+     "års erfaring i IT",
+     "fast seniorkontakt"
+    ],
+    "team": [
+     {
+      "name": "Niels Bertelsen",
+      "role": "Konsulent med eget firma",
+      "p": "Mere end 30 års IT-erfaring med netværk som hovedspeciale. Har sammen med Hans bygget infrastrukturen hos den internationale produktionsvirksomhed.",
+      "img": "niels-bertelsen",
+      "alt": "Niels Bertelsen"
+     },
+     {
+      "name": "Niels Nordal",
+      "role": "Konsulent med eget firma",
+      "p": "Mere end 25 års erfaring med en bred vifte af IT-systemer. Træder til ved ferie, sygdom og travle perioder.",
+      "img": "niels-nordal",
+      "alt": "Niels Nordal"
+     }
+    ]
+   },
+   "faq": {
+    "lab": "Spørgsmål",
+    "h": "Det bliver vi ofte spurgt om",
+    "items": [
+     [
+      "Vi har vores egen IT-afdeling. Hvad kan I tilføre?",
+      "Et blik udefra. Vi kender IT-miljøet indefra hos mange forskellige virksomheder, og den bredde er svær at opbygge internt. Vi tager projekter, tjek og sparring, mens jeres egne passer hverdagen."
+     ],
+     [
+      "Hvor ligger vores data, når en digital medarbejder arbejder?",
+      "I jeres egen Microsoft 365. Vi bygger med Microsoft Copilot og de rettigheder, I allerede har, og data bliver i EU."
+     ],
+     [
+      "Kan den digitale medarbejder sende noget selv?",
+      "Nej. Den skriver udkast og forbereder. Det, der skal sendes, betales eller ændres, venter på et ja fra en af jeres egne."
+     ],
+     [
+      "Er vi ikke for små til det her?",
+      "I en lille virksomhed tæller hver time. Vi begynder med én konkret opgave og ser på, hvor en digital medarbejder kan gøre mest gavn hos jer."
+     ],
+     [
+      "Kommer I ud til os?",
+      "Ja. Meget kan klares med fjernsupport, men en fast ugentlig dag hos jer kan aftales."
+     ]
+    ]
+   },
+   "cta": {
+    "lab": "Kontakt",
+    "h": "Hvilken opgave skulle en digital medarbejder tage hos jer?",
+    "hb": "Lad os finde den sammen.",
+    "p": "Ring eller skriv, så aftaler vi en kort snak. Den forpligter jer ikke til noget."
+   },
+   "ui": {
+    "call": "Ring {phone}",
+    "talk": "Tal med os om det",
+    "you": "Det gør I",
+    "vat": "Alle priser er ekskl. moms.",
+    "portrait": "Hans Kristiansen",
+    "illustration": "Illustration",
+    "toast1": "Backupjobbet mangler",
+    "toast1p": "Intet job startet i nat.",
+    "toast2": "En person får besked",
+    "toast2p": "Den manglende kørsel er opdaget.",
+    "before": "Før",
+    "after": "Efter"
+   },
+   "photos": {
+    "people-approve": "Illustration: Hænder ved en bærbar computer med en godkendelse på skærmen.",
+    "people-hands-rack": "Illustration: Hænder tilslutter et blåt netværkskabel i et serverrack.",
+    "people-meeting": "Illustration: To personer gennemgår et papir med diagrammer ved et bord.",
+    "desk-pullfocus": "Illustration: Bærbar computer og kaffekop på et lyst træbord.",
+    "rack-plant": "Illustration: Serverrack med netværkskabler og en grøn plante i forgrunden.",
+    "review-table": "Illustration: Rapport med diagrammer og en fyldepen på et træbord."
+   },
+   "exp": {
+    "lab": "Erfaring",
+    "h": "Vi er vant til at spille i en højere liga.",
+    "hb": "Den samme omhu får en virksomhed med 15 ansatte.",
+    "items": [
+     [
+      "Verdens største flydende anlæg",
+      "Som ekstern konsulent for en international leverandør af maskinovervågning var Hans udsendt til Singapore og Sydkorea på Shells Prelude – verdens største flydende offshoreanlæg, et projekt anslået til omkring 100 mia. kr. Opgaven var nogle af de mest følsomme systemer: vibrationsovervågningen af gasturbinerne."
+     ],
+     [
+      "International produktion siden 2007",
+      "Hos en international produktionsvirksomhed har vi siden 2007 bygget og drevet store dele af infrastrukturen – i dag side om side med virksomhedens egen IT-afdeling."
+     ],
+     [
+      "Bredt udsyn",
+      "Vi kender IT-miljøet indefra hos mange forskellige virksomheder. Det giver et blik udefra, som en IT-afdeling sjældent kan få internt."
+     ]
+    ]
+   },
+   "digital": {
+    "lab": "Digitale medarbejdere",
+    "h": "En ny kollega,",
+    "hb": "der tager de faste opgaver.",
+    "p": "En digital medarbejder er en AI-agent med én fast opgave. Den læser, sorterer og forbereder, så jeres folk kan nøjes med at tjekke og sige ja. Vi bygger den med Microsoft Copilot i jeres egen Microsoft 365, med de rettigheder I allerede har.",
+    "avail": "Den digitale medarbejder kan arbejde døgnet rundt – den læser, sorterer og forbereder, også om natten. Det, der kræver et ja, venter, til en af jeres egne er på arbejde.",
+    "cases": [
+     [
+      "Fælles indbakke",
+      "Hver morgen bruger en medarbejder tre kvarter på at sortere og videresende mails fra info@.",
+      "Kl. 7 er mailene sorteret, sendt til den rette og har et udkast til svar. Ti minutters godkendelse."
+     ],
+     [
+      "Tilbud og ordrebekræftelser",
+      "Sælgeren kopierer fra gamle tilbud og prislisten. En halv time pr. tilbud.",
+      "Udkastet ligger klar ud fra kundens mail og prislisten. Et menneske tjekker og sender."
+     ],
+     [
+      "Bilag og fakturaer",
+      "Fakturaer bliver holdt op mod ordrer i hånden.",
+      "Agenten matcher og markerer afvigelser. Bogholderiet godkender."
+     ],
+     [
+      "Håndbogen, der svarer",
+      "Nye kolleger spørger chefen om de samme ting: ferie, IT, regler.",
+      "Svaret kommer fra jeres egne dokumenter, med et link til kilden."
+     ],
+     [
+      "Mødereferat og opfølgning",
+      "Ingen når at skrive referatet, og opgaver bliver glemt.",
+      "Referat og opgaveliste ligger i Teams kort efter mødet. Mødeholderen godkender."
+     ],
+     [
+      "IT-førstehjælp",
+      "\"Printeren virker ikke\" ender hos lederen.",
+      "Agenten guider medarbejderen, opretter sagen hos os med detaljerne og giver videre til et menneske, når det er nødvendigt."
+     ]
+    ],
+    "note": "Eksempler. Tiderne er illustrative og afhænger af jeres hverdag.",
+    "platform": "Bygget i jeres egen Microsoft 365 med Microsoft Copilot. Data bliver i jeres miljø og i EU, og I ejer agenten."
+   },
+   "aiBundle": {
+    "h": "Alt samlet i én aftale: AI-start",
+    "p": "AI- og Copilot-tjek, AI-sikring og et års AI-tilsyn i én aftale med én fast kontaktperson. Fra 4.500 kr. pr. måned i 12 måneder, ekskl. moms."
+   },
+   "om": {
+    "role": "Ejer, medlem af ledelsen og senior IT-konsulent",
+    "bio": [
+     "Hans har arbejdet med IT-systemer og IT-sikkerhed i mere end 30 år. Efter en Bachelor of Science i Management Information Systems fra San Diego State University i 1990 arbejdede han en årrække i USA – først som udvikler af databasesystemer, siden som IT-direktør og medlem af ledelsen.",
+     "Tilbage i Danmark arbejdede han som selvstændig IT-konsulent og grundlagde DataMatrix i {founded}. Opgaverne har spændt fra lokale virksomheder til internationale projekter med meget på spil. Han har certificeringen Microsoft Certified: Azure Administrator Associate (AZ-104).",
+     "Den baggrund præger rådgivningen: IT er ikke bare teknik, men den løsning, der er bedst for brugerne, for driften og for bundlinjen. Hans er personligt involveret i – og ansvarlig for – alle kunder."
+    ],
+    "expH": "Erfaring fra den tunge ende",
+    "exp": [
+     [
+      "Shell Prelude",
+      "Som ekstern konsulent for en international leverandør af maskinovervågning stod Hans i en årrække for store dele af den interne infrastruktur i Danmark. Han blev udsendt til Singapore og Sydkorea på Shells Prelude – verdens største flydende offshoreanlæg, anslået til omkring 100 mia. kr. – hvor han arbejdede på nogle af de mest følsomme systemer: vibrationsovervågningen af anlæggets gasturbiner."
+     ],
+     [
+      "International produktionsvirksomhed",
+      "Siden 2007 har vi, sammen med Niels Bertelsen, bygget og drevet store dele af infrastrukturen hos en international produktionsvirksomhed. I dag arbejder vi side om side med virksomhedens egen IT-afdeling."
+     ],
+     [
+      "Bredt udsyn",
+      "Fordi vi arbejder i mange forskellige virksomheder, ser vi, hvad der virker – og hvad der ikke gør – på tværs af brancher og størrelser. Det udsyn er svært at få fra en enkelt IT-afdeling, og det er ofte dér, vi gør den største forskel for kunder med egne IT-folk."
+     ]
+    ],
+    "teamH": "Holdet bag",
+    "teamP": "Vi arbejder tæt sammen med et fast netværk af erfarne konsulenter med egne firmaer. To af dem kender vores kunder særligt godt:",
+    "netH": "Når det gælder",
+    "net": [
+     "Når Hans holder fri eller er syg, er det Niels Bertelsen eller Niels Nordal, der tager over. Kræver et projekt flere hænder eller et særligt speciale, henter vi folk fra det samme faste netværk.",
+     "Vi dokumenterer hvert kundemiljø, så en kollega kan overtage arbejdet med det samme. Efter aftale kan vi også have en fast ugentlig dag hos jer."
+    ],
+    "timeline": [
+     [
+      "1990",
+      "B.Sc. i Management Information Systems, San Diego State University"
+     ],
+     [
+      "1990’erne",
+      "Udvikler, siden IT-direktør og medlem af ledelsen i USA"
+     ],
+     [
+      "Tilbage i Danmark",
+      "Selvstændig IT-konsulent"
+     ],
+     [
+      "{founded}",
+      "DataMatrix grundlægges"
+     ],
+     [
+      "2007",
+      "Begynder hos en international produktionsvirksomhed, hvor vi stadig driver infrastrukturen"
+     ],
+     [
+      "I dag",
+      "IT-partner for virksomheder fra lokale firmaer til internationale koncerner – nu også med digitale medarbejdere"
+     ]
+    ]
+   }
+  }
+ }
 }
