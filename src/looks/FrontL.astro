@@ -1,6 +1,6 @@
 ---
 import { copy, site } from './lib';
-import ApprovalCard from './ApprovalCard.astro';
+import Photo from './Photo.astro';
 import FlowL from './FlowL.astro';
 import PhotoL from './PhotoL.astro';
 const { lang = 'da' } = Astro.props;
@@ -10,11 +10,12 @@ const {hero, now, ai, packages: pk, base, steps, people, faq, cta, ui} = c;
 const years = new Date().getFullYear() - site.founded;
 ---
 <div class="dl-front">
-<section class="dl-hero"><div class="wrap dl-hero-g">
+<section class="dl-hero">
+ <div class="dl-hero-bg" aria-hidden="true"><Photo look="l" slot="hero" eager /></div>
+ <div class="wrap dl-hero-g">
  <div><span class="dl-lab">{hero.lab}</span><h1>{hero.h1}<em>{hero.h1b}</em></h1><p class="dl-lead">{hero.lead}</p>
  <div class="dl-acts"><a class="dl-btn" href={site.phoneHref}>{ui.call} <span aria-hidden="true">→</span></a><a class="dl-btn dl-o" href="#packages">{hero.cta2}</a></div>
  <ul class="dl-trust">{hero.trust.map((s: string) => <li>{s}</li>)}</ul></div>
- <ApprovalCard c={c.approval}/>
 </div></section>
 <section class="dl-now"><div class="wrap">
  <div class="dl-chap"><span class="dl-lab">{now.lab}</span><h2>{now.h}<em>{now.hb}</em></h2></div>

@@ -634,21 +634,6 @@
         "Text"
       ]
     },
-    "approval": {
-      "title": "Text",
-      "app": "Text",
-      "ask": "Text",
-      "verdict": "Text",
-      "reject": "Text",
-      "approve": "Text",
-      "status": "Text",
-      "note": "Text",
-      "scopes": [
-        "Text",
-        "Text"
-      ],
-      "alt": "Text"
-    },
     "now": {
       "lab": "Text",
       "h": "Text",

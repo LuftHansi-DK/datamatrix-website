@@ -51,6 +51,12 @@
   const hf = $(".hero-f");
   if (hf) requestAnimationFrame(() => setTimeout(() => hf.classList.add("focus"), 150));
 
+  // Head .js CSS supplies L's soft first paint; CSS also provides a fallback.
+  const daylightHero = $(".dl-hero");
+  if (daylightHero && !RM) {
+    requestAnimationFrame(() => setTimeout(() => daylightHero.classList.add("dl-focus"), 150));
+  }
+
   // Rack focus: photos start soft and pull into focus as they enter the viewport.
   const rf = $$(".rf img");
   if (rf.length && !RM) {
