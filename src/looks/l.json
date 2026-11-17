@@ -573,21 +573,6 @@
           "Svinninge, Zealand"
         ]
       },
-      "approval": {
-        "title": "Draft from an agent",
-        "app": "New app requests access",
-        "ask": "A meeting-notes app wants to read calendars and send mail on behalf of the business.",
-        "verdict": "Assessment: broad access, a decision is needed",
-        "reject": "Reject",
-        "approve": "Approve",
-        "status": "Waiting for a human",
-        "note": "Illustration",
-        "scopes": [
-          "Read calendars",
-          "Send company mail"
-        ],
-        "alt": "Illustration: An app requests calendar and mail access. A draft awaits a human decision."
-      },
       "now": {
         "lab": "An everyday risk",
         "h": "AI can become part of work quickly.",
@@ -811,21 +796,6 @@
           "Fast kontaktperson",
           "Svinninge, Sjælland"
         ]
-      },
-      "approval": {
-        "title": "Udkast fra agent",
-        "app": "Ny app beder om adgang",
-        "ask": "Mødenoter-app vil læse kalendere og sende mail i firmaets navn.",
-        "verdict": "Vurdering: bred adgang, kræver en beslutning",
-        "reject": "Afvis",
-        "approve": "Godkend",
-        "status": "Afventer et menneske",
-        "note": "Illustration",
-        "scopes": [
-          "Læse kalendere",
-          "Sende mail som firmaet"
-        ],
-        "alt": "Illustration: En app beder om kalender- og mailadgang. Udkastet afventer et menneskes beslutning."
       },
       "now": {
         "lab": "Det sker let",
