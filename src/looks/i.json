@@ -9,7 +9,7 @@
    "lab": "AI i drift · senior IT-partner siden {founded}",
    "h1": "IT holdt i fokus,",
    "h1b": "så I kan holde jeres.",
-   "lead": "Vi driver og sikrer IT i små og mellemstore virksomheder. Erfaringen rækker over 30 år tilbage, og AI er en fast del af vores daglige drift.",
+   "lead": "Vi driver og sikrer IT i små og mellemstore virksomheder. Det har vi mere end 30 års erfaring med. AI-agenter hjælper os som digitale medarbejdere i den daglige drift.",
    "cta2": "Se ydelserne"
   },
   "ai": {
@@ -222,6 +222,8 @@
    "ctaP": "En kort samtale er nok til at finde ud af, hvad der er vigtigst."
   },
   "ai": {
+   "agentH": "Hvad er en AI-agent?",
+   "agentP": "En AI-agent er software, der selv løser en afgrænset opgave. I en mindre virksomhed kan den for eksempel sortere henvendelser efter, hvor meget de haster. Et menneske godkender, før noget sendes, ændres eller købes.",
    "lab": "AI i drift",
    "h1": "AI i drift.",
    "h1b": "Med fokus på kontrol.",
@@ -430,7 +432,7 @@
     "lab": "AI in operations · senior IT partner since {founded}",
     "h1": "IT kept in focus,",
     "h1b": "so you can keep yours.",
-    "lead": "DataMatrix runs and secures IT for small and mid-sized businesses. Over 30 years of experience, with AI working alongside us in day-to-day operations.",
+    "lead": "DataMatrix runs and secures IT for small and mid-sized businesses. We bring over 30 years of experience to the work. In our day-to-day operations, AI agents work alongside us as digital employees.",
     "cta2": "See our services"
    },
    "ai": {
@@ -548,6 +550,10 @@
     "hb": "what matters to you.",
     "p": "Call or write. We're also happy to visit for an informal chat."
    }
+  },
+  "ai": {
+   "agentH": "What is an AI agent?",
+   "agentP": "An AI agent is software that can carry out a defined task on its own. In a small business, it can sort incoming requests by urgency. A human must approve before anything is sent, changed or bought."
   },
   "about": {
    "h": "One senior contact.",

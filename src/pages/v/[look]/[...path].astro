@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 import { VARIANT_LOOKS } from "../../../looks/lib";
 export async function getStaticPaths() {
   const posts = await getCollection("indsigt", ({ data }) => !data.draft);
-  const routes = ["", "en", "ai", "ydelser", "om", "kontakt", "fjernsupport", "privatliv", "indsigt"];
+  const routes = ["", "en", "ai", "en/ai", "ydelser", "om", "kontakt", "fjernsupport", "privatliv", "indsigt"];
   return VARIANT_LOOKS.flatMap((look) => [
     ...routes.map((r) => ({ params: { look, path: r || undefined }, props: { look, route: r } })),
     ...posts.map((post) => ({ params: { look, path: `indsigt/${post.id}` }, props: { look, route: `indsigt/${post.id}`, post } })),

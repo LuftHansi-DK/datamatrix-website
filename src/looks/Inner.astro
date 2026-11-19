@@ -44,6 +44,10 @@ const harness = ["Hermes Agent", "OpenClaw", "Egen Grok-bot", "OpenAI Dots"];
 
 {page === "ai" && (
   <div class="inner"><div class="wrap">
+    <section class="prose">
+      <h2>{p.agentH}</h2>
+      <p>{p.agentP}</p>
+    </section>
     <div class="ai-vis" style="margin:0 auto 80px"><AiDiagram variant="flow" /></div>
     <div class="split">
       <div><h2>{p.useH}</h2><p>{p.useP}</p>
