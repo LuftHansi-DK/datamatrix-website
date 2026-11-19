@@ -222,6 +222,8 @@
    "ctaP": "<1 sentence>"
   },
   "ai": {
+   "agentH": "Text",
+   "agentP": "Text",
    "lab": "AI i drift",
    "h1": "<headline part 1>",
    "h1b": "<bold>",
@@ -549,6 +551,10 @@
     "hb": "<bold part>",
     "p": "<1 sentence: call or write; we also visit for an informal talk>"
    }
+  },
+  "ai": {
+   "agentH": "Text",
+   "agentP": "Text"
   },
   "about": {
    "h": "<part 1>",

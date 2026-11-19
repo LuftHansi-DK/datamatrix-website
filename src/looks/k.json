@@ -9,7 +9,7 @@
    "lab": "AI i drift · senior IT-partner siden {founded}",
    "h1": "Sådan passer vi på",
    "h1b": "jeres IT, trin for trin.",
-   "lead": "DataMatrix driver og sikrer IT for små og mellemstore virksomheder. Bag arbejdet står mere end 30 års erfaring, og i den daglige drift arbejder AI-agenter med.",
+   "lead": "DataMatrix driver og sikrer IT for små og mellemstore virksomheder. Bag arbejdet står mere end 30 års erfaring. Til det daglige arbejde bruger vi AI-agenter, der fungerer som digitale medarbejdere.",
    "cta2": "Se, hvordan det foregår"
   },
   "ai": {
@@ -222,6 +222,8 @@
    "ctaP": "Ring til os, så aftaler vi, hvordan en gennemgang af jeres IT kan se ud."
   },
   "ai": {
+   "agentH": "Sådan arbejder en AI-agent",
+   "agentP": "En AI-agent er software, der selv kan tage de aftalte trin i en opgave. I en lille virksomhed kan den gennemgå indbakken og pege på de henvendelser, der bør ses først. De vigtige beslutninger venter på, at et menneske siger ja.",
    "lab": "AI i drift",
    "h1": "AI gør arbejdet klar.",
    "h1b": "Et menneske beslutter.",
@@ -430,7 +432,7 @@
     "lab": "AI in operations · senior IT partner since {founded}",
     "h1": "How we look after",
     "h1b": "your IT, step by step.",
-    "lead": "DataMatrix runs and secures IT for small and mid-sized businesses. More than 30 years of experience sit behind the work, and AI agents help out in day-to-day operations.",
+    "lead": "DataMatrix runs and secures IT for small and mid-sized businesses. We bring more than 30 years of experience to that work. We use AI agents as digital employees to help keep daily operations running.",
     "cta2": "See how it works"
    },
    "ai": {
@@ -548,6 +550,10 @@
     "hb": "a conversation.",
     "p": "Give us a ring or drop us a line, or we can come by for an informal chat."
    }
+  },
+  "ai": {
+   "agentH": "How an AI agent works",
+   "agentP": "An AI agent is software that can follow the agreed steps of a task without someone guiding it through each one. For a small company, that might mean reviewing the inbox and flagging the requests that need attention first. Important decisions wait for a human to say yes."
   },
   "about": {
    "h": "One person who",

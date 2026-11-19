@@ -10,6 +10,9 @@ const da = lang === "da";
 const c = copy(look);
 const fullTitle = title ? `${title} · DataMatrix` : (da ? "IT-partner med AI-pakker på Sjælland · DataMatrix" : "Senior IT partner with AI packages · DataMatrix");
 const canonical = new URL(path, Astro.site);
+const aiPage = path === "/ai/" || path === "/en/ai/";
+const danishPath = aiPage ? "/ai/" : "/";
+const englishPath = aiPage ? "/en/ai/" : "/en/";
 const ld = {
   "@context": "https://schema.org", "@type": "ProfessionalService", name: site.legalName, url: "https://www.datamatrix.dk/",
   telephone: site.phone, email: site.email, foundingDate: String(site.founded),
@@ -18,7 +21,7 @@ const ld = {
   vatID: "DK" + site.cvr,
   areaServed: [{ "@type": "AdministrativeArea", name: "Sjælland" }, { "@type": "Country", name: "Danmark" }],
   knowsLanguage: ["da", "en"], image: "https://www.datamatrix.dk/og.png", logo: "https://www.datamatrix.dk/img/mark.svg",
-  knowsAbout: ["IT-drift", "IT-sikkerhed", "Backup", "Disaster recovery", "Microsoft 365", "Azure", "Virtualisering", "Netværk", "AI i drift", "AI-tjek", "AI-sikring", "AI-tilsyn", "AI-start"],
+  knowsAbout: ["IT-drift", "IT-sikkerhed", "Backup", "Disaster recovery", "Microsoft 365", "Azure", "Virtualisering", "Netværk", "AI i drift", "AI-agenter", "AI agents", "AI-tjek", "AI-sikring", "AI-tilsyn", "AI-start"],
   hasOfferCatalog: {
     "@type": "OfferCatalog", name: da ? "AI-pakker" : "AI packages",
     itemListElement: [
@@ -41,7 +44,7 @@ const ld = {
 };
 const nav = da
   ? [["/ai/", "AI i drift", "ai"], ["/ydelser/", "Ydelser", ""], ["/om/", "Om DataMatrix", ""], ["/indsigt/", "Indsigt", ""], ["/kontakt/", "Kontakt", ""]]
-  : [["/en/#ai", "AI", "ai"], ["/en/#services", "Services", ""], ["/en/#about", "About", ""], ["/en/#contact", "Contact", ""]];
+  : [["/en/ai/", "AI agents", "ai"], ["/en/#services", "Services", ""], ["/en/#about", "About", ""], ["/en/#contact", "Contact", ""]];
 const light = look !== "l" && look !== "m";
 const short = site.phone.replace("+45 ", "");
 ---
@@ -70,9 +73,9 @@ const short = site.phone.replace("+45 ", "");
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://www.datamatrix.dk/og.png" />
-    <link rel="alternate" hreflang="da" href="https://www.datamatrix.dk/" />
-    <link rel="alternate" hreflang="en" href="https://www.datamatrix.dk/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://www.datamatrix.dk/" />
+    <link rel="alternate" hreflang="da" href={new URL(danishPath, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(englishPath, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(danishPath, Astro.site)} />
     <meta name="theme-color" content={look === "l" ? "#F7F5F1" : look === "m" ? "#F6F7F8" : "#0A1322"} />
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
@@ -85,9 +88,9 @@ const short = site.phone.replace("+45 ", "");
         <label for="navtoggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
         <nav aria-label={da ? "Hovedmenu" : "Main menu"}>
           {nav.map(([href, label, cls]) => (
-            <a href={href} class={cls || undefined} aria-current={da && path.startsWith(href) ? "page" : undefined}>{label}</a>
+            <a href={href} class={cls || undefined} aria-current={path.startsWith(href) ? "page" : undefined}>{label}</a>
           ))}
-          <a href={da ? "/en/" : "/"} lang={da ? "en" : "da"}>{da ? "EN" : "DA"}</a>
+          <a href={da ? englishPath : danishPath} lang={da ? "en" : "da"}>{da ? "EN" : "DA"}</a>
           <a class="btn o" href={site.phoneHref}>{short}</a>
         </nav>
       </div>
@@ -98,7 +101,7 @@ const short = site.phone.replace("+45 ", "");
         <div><div class="brand"><Logo height={28} light={light} /></div><p>{c.footer && (da ? c.footer.tagline : c.en.footer.tagline)}</p></div>
         <div><h4>{da ? "Kontakt" : "Contact"}</h4><p><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a>{site.linkedin && <><br /><a href={site.linkedin} rel="me noopener">LinkedIn</a></>}</p></div>
         <div><h4>{da ? "Adresse" : "Address"}</h4><p>{site.legalName}<br />{site.street}<br />{site.city}<br />CVR {site.cvr}</p></div>
-        <div><h4>{da ? "Genveje" : "Links"}</h4><p><a href="/fjernsupport/">{da ? "Fjernsupport" : "Remote support"}</a><br /><a href="/privatliv/">{da ? "Privatliv" : "Privacy"}</a><br /><a href={da ? "/en/" : "/"}>{da ? "English" : "Dansk"}</a></p></div>
+        <div><h4>{da ? "Genveje" : "Links"}</h4><p><a href="/fjernsupport/">{da ? "Fjernsupport" : "Remote support"}</a><br /><a href="/privatliv/">{da ? "Privatliv" : "Privacy"}</a><br /><a href={da ? englishPath : danishPath}>{da ? "English" : "Dansk"}</a></p></div>
       </div>
       <div class="wrap fine">© {new Date().getFullYear()} {site.legalName}. {da ? c.footer.fine : c.en.footer.fine}</div>
     </footer>

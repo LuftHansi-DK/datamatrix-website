@@ -9,7 +9,7 @@
    "lab": "Morgenlys · senior IT-partner siden {founded}",
    "h1": "Klart lys over",
    "h1b": "jeres IT.",
-   "lead": "DataMatrix passer drift, sikkerhed og backup for små og mellemstore virksomheder — med over 30 års erfaring, personlig kontakt og AI, der hjælper os i hverdagen.",
+   "lead": "DataMatrix passer drift, sikkerhed og backup for små og mellemstore virksomheder — med over 30 års erfaring og personlig kontakt. I vores hverdag tager AI-agenter del i arbejdet som digitale medarbejdere.",
    "cta2": "Udforsk ydelserne"
   },
   "ai": {
@@ -222,6 +222,8 @@
    "ctaP": "Start med en samtale. Vi siger ærligt, hvad der kan vente — og hvad der ikke bør."
   },
   "ai": {
+   "agentH": "En digital medarbejder med en klar opgave",
+   "agentP": "En AI-agent er et program, der arbejder på egen hånd inden for de regler, virksomheden sætter. Den kan for eksempel læse nye henvendelser og gøre et svar klar. Før svaret sendes eller andre vigtige handlinger udføres, skal et menneske godkende det.",
    "lab": "AI i drift",
    "h1": "AI til",
    "h1b": "jeres hverdag",
@@ -430,7 +432,7 @@
     "lab": "Morning light · senior IT partner since {founded}",
     "h1": "Clear daylight on",
     "h1b": "your IT.",
-    "lead": "DataMatrix runs, secures and backs up IT for small and mid-sized businesses — with 30+ years of experience, a personal contact and AI helping us every day.",
+    "lead": "DataMatrix runs, secures and backs up IT for small and mid-sized businesses — with over 30 years of experience and a personal contact. AI agents give us a hand with everyday work as digital employees.",
     "cta2": "Explore our services"
    },
    "ai": {
@@ -548,6 +550,10 @@
     "hb": "out",
     "p": "Call, write or ask us to drop by for a calm, no-obligation chat."
    }
+  },
+  "ai": {
+   "agentH": "A digital employee with a clear job",
+   "agentP": "An AI agent is a program that works independently within rules set by the business. It might read new enquiries and draft a reply. Sending that reply or taking any other important action requires human approval."
   },
   "about": {
    "h": "Close enough to know your setup.",

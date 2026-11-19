@@ -39,7 +39,7 @@ for (const look of LOOKS) {
   if (!existsSync(f)) { err(`${f} missing`); continue; }
   const d = JSON.parse(readFileSync(f, "utf8"));
   data[look] = d;
-  const ref = { footer: skel.footer, front: skel.front, pages: skel.pages, en: { footer: skel.en.footer, front: skel.en.front, about: skel.en.about } };
+  const ref = { footer: skel.footer, front: skel.front, pages: skel.pages, en: { footer: skel.en.footer, front: skel.en.front, ai: skel.en.ai, about: skel.en.about } };
   if (EXTRA[look].length) { ref.extra = pickExtra(look); ref.en.extra = pickExtra(look); }
   shape(ref, d, look);
   if (d._look !== look) err(`${f}: _look must be "${look}"`);

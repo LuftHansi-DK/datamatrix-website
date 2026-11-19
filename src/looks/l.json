@@ -222,6 +222,8 @@
    "ctaP": "Så start med en snak. Vi fortæller ærligt, hvad vi ser — og hvad der kan vente."
   },
   "ai": {
+   "agentH": "Hvad kan en AI-agent hjælpe med?",
+   "agentP": "En AI-agent er et stykke software, der selv kan udføre en opgave inden for klare rammer. I en mindre virksomhed kan den holde styr på nye henvendelser og lave udkast til svar. Et menneske tager stilling til det vigtige og godkender, inden et svar bliver sendt.",
    "lab": "AI i drift",
    "h1": "AI, der arbejder for jer.",
    "h1b": "Under opsyn.",
@@ -549,6 +551,10 @@
     "p": "Call or email us — we're also happy to drop by for an informal chat."
    }
   },
+  "ai": {
+   "agentH": "What can an AI agent help with?",
+   "agentP": "An AI agent is software that handles a task on its own within clear limits. A small business can use one to sort enquiries and prepare replies. A human reviews important actions and signs off before a reply goes out."
+  },
   "about": {
    "h": "Small enough to know you.",
    "hb": "Strong enough to back you.",
@@ -563,7 +569,7 @@
     "hero": {
      "lab": "IT operations · security · digital employees · since {founded}",
      "h1": "Experienced IT specialists.",
-     "h1b": "And digital employees that get to work.",
+     "h1b": "AI agents that work as digital employees.",
      "lead": "We run and secure IT for businesses with and without their own IT department – and put digital employees to work on emails, quotes and paperwork in your own Microsoft 365. They can work around the clock. Anything requiring approval waits for one of your people.",
      "cta2": "See what a digital employee can do",
      "trust": [
@@ -757,7 +763,7 @@
      "after": "After"
     },
     "photos": {
-     "people-approve": "Illustration: Hands at a laptop showing an approval on screen.",
+     "people-approve": "Hands at a laptop showing a task proposed by AI agents awaiting approval.",
      "people-hands-rack": "Illustration: Hands connecting a blue network cable in a server rack.",
      "people-meeting": "Illustration: Two people reviewing printed charts at a table.",
      "desk-pullfocus": "Illustration: A laptop and coffee cup on a light wooden desk.",
@@ -892,7 +898,7 @@
    "hero": {
     "lab": "IT-drift · sikkerhed · digitale medarbejdere · siden {founded}",
     "h1": "Erfarne IT-specialister.",
-    "h1b": "Og digitale medarbejdere, der tager fat.",
+    "h1b": "AI-agenter som digitale medarbejdere.",
     "lead": "Vi driver og sikrer IT for virksomheder med og uden egen IT-afdeling – og sætter digitale medarbejdere i arbejde med mails, tilbud og papirarbejde i jeres egen Microsoft 365. De kan arbejde døgnet rundt. Det, der kræver et ja, venter på en af jeres egne.",
     "cta2": "Se, hvad en digital medarbejder kan",
     "trust": [
@@ -1086,7 +1092,7 @@
     "after": "Efter"
    },
    "photos": {
-    "people-approve": "Illustration: Hænder ved en bærbar computer med en godkendelse på skærmen.",
+    "people-approve": "Hænder ved en bærbar computer, hvor en opgave foreslået af AI-agenter afventer godkendelse.",
     "people-hands-rack": "Illustration: Hænder tilslutter et blåt netværkskabel i et serverrack.",
     "people-meeting": "Illustration: To personer gennemgår et papir med diagrammer ved et bord.",
     "desk-pullfocus": "Illustration: Bærbar computer og kaffekop på et lyst træbord.",
